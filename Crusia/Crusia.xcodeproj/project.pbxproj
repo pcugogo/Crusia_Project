@@ -159,7 +159,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1448BC541F3C582A006A1AEB /* Host */ = {
+		1448BC541F3C582A006A1AEB /* Hosting */ = {
 			isa = PBXGroup;
 			children = (
 				1448BC7E1F3C5B95006A1AEB /* FirstStep */,
@@ -167,7 +167,7 @@
 				1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */,
 				1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */,
 			);
-			name = Host;
+			name = Hosting;
 			sourceTree = "<group>";
 		};
 		1448BC7E1F3C5B95006A1AEB /* FirstStep */ = {
@@ -313,7 +313,6 @@
 		3715D0191F31FB44002AD5CB /* Crusia */ = {
 			isa = PBXGroup;
 			children = (
-				1448BC7B1F3C59CD006A1AEB /* CW.storyboard */,
 				3715D01E1F31FB44002AD5CB /* Main.storyboard */,
 				3715D01A1F31FB44002AD5CB /* AppDelegate.swift */,
 				3715D0231F31FB44002AD5CB /* LaunchScreen.storyboard */,
@@ -325,8 +324,9 @@
 				37E85EAB1F39960F00CFA8DA /* SignUpView */,
 				3715D03D1F3243C4002AD5CB /* MainView */,
 				3728182E1F332E96003719D2 /* DetailView */,
+				1448BC7B1F3C59CD006A1AEB /* CW.storyboard */,
+				1448BC541F3C582A006A1AEB /* Hosting */,
 				37109C081F3A2CC500CFCC55 /* WishListView */,
-				1448BC541F3C582A006A1AEB /* Host */,
 				3710998C1F397929003D87D5 /* LogOut */,
 			);
 			path = Crusia;
