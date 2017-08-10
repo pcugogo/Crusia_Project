@@ -1,0 +1,812 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1448BC671F3C585A006A1AEB /* AmenitiesCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC551F3C585A006A1AEB /* AmenitiesCheckViewController.swift */; };
+		1448BC681F3C585A006A1AEB /* AmenitiesBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC561F3C585A006A1AEB /* AmenitiesBasicCell.swift */; };
+		1448BC691F3C585A006A1AEB /* AmenitiesDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC571F3C585A006A1AEB /* AmenitiesDetailCell.swift */; };
+		1448BC6A1F3C585A006A1AEB /* GuestSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC581F3C585A006A1AEB /* GuestSpaceViewController.swift */; };
+		1448BC6B1F3C585A006A1AEB /* BathRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC591F3C585A006A1AEB /* BathRoomViewController.swift */; };
+		1448BC6C1F3C585A006A1AEB /* GuestSpaceBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5A1F3C585A006A1AEB /* GuestSpaceBasicCell.swift */; };
+		1448BC6D1F3C585A006A1AEB /* PersonnelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5B1F3C585A006A1AEB /* PersonnelViewController.swift */; };
+		1448BC6E1F3C585A006A1AEB /* PersonnePickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5C1F3C585A006A1AEB /* PersonnePickCell.swift */; };
+		1448BC6F1F3C585A006A1AEB /* BathRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5D1F3C585A006A1AEB /* BathRoomCell.swift */; };
+		1448BC701F3C585A006A1AEB /* HouseCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5E1F3C585A006A1AEB /* HouseCreateViewController.swift */; };
+		1448BC711F3C585A006A1AEB /* GuestSpaceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC5F1F3C585A006A1AEB /* GuestSpaceDetailCell.swift */; };
+		1448BC721F3C585A006A1AEB /* RoomsTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC601F3C585A006A1AEB /* RoomsTypeViewController.swift */; };
+		1448BC731F3C585A006A1AEB /* WhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC611F3C585A006A1AEB /* WhereViewController.swift */; };
+		1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC621F3C585A006A1AEB /* HostingService.swift */; };
+		1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC631F3C585A006A1AEB /* MapLocationViewController.swift */; };
+		1448BC761F3C585A006A1AEB /* HouseCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC641F3C585A006A1AEB /* HouseCreateCell.swift */; };
+		1448BC771F3C585A006A1AEB /* ThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */; };
+		1448BC781F3C585A006A1AEB /* SecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */; };
+		1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */; };
+		1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448BC7B1F3C59CD006A1AEB /* CW.storyboard */; };
+		370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */; };
+		370BF3EF1F35793F00A04A6F /* ExtraFeeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */; };
+		370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */; };
+		370BF3F31F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3F21F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift */; };
+		3710998A1F397808003D87D5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371099891F397808003D87D5 /* MainTabBarController.swift */; };
+		3710998E1F39793F003D87D5 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3710998D1F39793F003D87D5 /* LogOutViewController.swift */; };
+		371099901F39896E003D87D5 /* WelcomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3710998F1F39896E003D87D5 /* WelcomeNavigationController.swift */; };
+		37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C041F3A1AAF00CFCC55 /* WishList.swift */; };
+		37109C071F3A1C4600CFCC55 /* WishListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C061F3A1C4600CFCC55 /* WishListService.swift */; };
+		37109C0A1F3A2D0A00CFCC55 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C091F3A2D0A00CFCC55 /* WishListViewController.swift */; };
+		37109C0C1F3A34D500CFCC55 /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37109C0B1F3A34D500CFCC55 /* WishListTableViewCell.swift */; };
+		37116C6B1F346B2800E31625 /* UserInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */; };
+		37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C6D1F34839B00E31625 /* AmenitiesCustomCell.swift */; };
+		37116C721F3483CF00E31625 /* AmenitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C711F3483CF00E31625 /* AmenitiesViewController.swift */; };
+		3713F8651F3B2EEA00708F39 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3713F8641F3B2EEA00708F39 /* MapViewController.swift */; };
+		3715D01B1F31FB44002AD5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D01A1F31FB44002AD5CB /* AppDelegate.swift */; };
+		3715D0201F31FB44002AD5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3715D01E1F31FB44002AD5CB /* Main.storyboard */; };
+		3715D0221F31FB44002AD5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3715D0211F31FB44002AD5CB /* Assets.xcassets */; };
+		3715D0251F31FB44002AD5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3715D0231F31FB44002AD5CB /* LaunchScreen.storyboard */; };
+		3715D02D1F31FFBD002AD5CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D02C1F31FFBD002AD5CB /* WelcomeViewController.swift */; };
+		3715D0301F32002B002AD5CB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D02F1F32002B002AD5CB /* LogInViewController.swift */; };
+		3715D0351F321BC0002AD5CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D0341F321BC0002AD5CB /* User.swift */; };
+		3715D0371F3220A8002AD5CB /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D0361F3220A8002AD5CB /* House.swift */; };
+		3715D0391F323445002AD5CB /* SignUpViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D0381F323445002AD5CB /* SignUpViewController1.swift */; };
+		3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D03B1F323FB4002AD5CB /* PostService.swift */; };
+		3715D03F1F324405002AD5CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D03E1F324405002AD5CB /* MainViewController.swift */; };
+		371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */; };
+		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
+		371E608E1F360BA70073AAF0 /* DetailedUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */; };
+		371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */; };
+		3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725298C1F38420200687E9A /* MapViewCustomCell.swift */; };
+		3725298F1F38449700687E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3725298E1F38449700687E9A /* MapKit.framework */; };
+		372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728182F1F332EC4003719D2 /* MainTableViewCell.swift */; };
+		372818331F33305D003719D2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818321F33305D003719D2 /* CacheManager.swift */; };
+		372818371F338815003719D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818361F338815003719D2 /* DetailViewController.swift */; };
+		3728183B1F3388B0003719D2 /* FirstCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728183A1F3388B0003719D2 /* FirstCustomCell.swift */; };
+		3728183D1F3388C3003719D2 /* SecondCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728183C1F3388C3003719D2 /* SecondCustomCell.swift */; };
+		3728183F1F3388D2003719D2 /* ThirdCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */; };
+		373255F21F372B5F00006C25 /* RefundPolicyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */; };
+		373255F51F372C5600006C25 /* RefundPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373255F41F372C5600006C25 /* RefundPolicyViewController.swift */; };
+		37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B06B201F376A3C005E41CF /* HouseImagesCollectionViewCell.swift */; };
+		37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EAE1F3996CA00CFA8DA /* SignUpNameViewController.swift */; };
+		37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EB01F399FA500CFA8DA /* SignUpEmailViewController.swift */; };
+		37E85EB31F399FB300CFA8DA /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */; };
+		6156C1428082B3B7DBFB9A25 /* Pods_Crusia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FC64872741FA86EFBD6564 /* Pods_Crusia.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1448BC551F3C585A006A1AEB /* AmenitiesCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesCheckViewController.swift; sourceTree = "<group>"; };
+		1448BC561F3C585A006A1AEB /* AmenitiesBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesBasicCell.swift; sourceTree = "<group>"; };
+		1448BC571F3C585A006A1AEB /* AmenitiesDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesDetailCell.swift; sourceTree = "<group>"; };
+		1448BC581F3C585A006A1AEB /* GuestSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSpaceViewController.swift; sourceTree = "<group>"; };
+		1448BC591F3C585A006A1AEB /* BathRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BathRoomViewController.swift; sourceTree = "<group>"; };
+		1448BC5A1F3C585A006A1AEB /* GuestSpaceBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSpaceBasicCell.swift; sourceTree = "<group>"; };
+		1448BC5B1F3C585A006A1AEB /* PersonnelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonnelViewController.swift; sourceTree = "<group>"; };
+		1448BC5C1F3C585A006A1AEB /* PersonnePickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonnePickCell.swift; sourceTree = "<group>"; };
+		1448BC5D1F3C585A006A1AEB /* BathRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BathRoomCell.swift; sourceTree = "<group>"; };
+		1448BC5E1F3C585A006A1AEB /* HouseCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCreateViewController.swift; sourceTree = "<group>"; };
+		1448BC5F1F3C585A006A1AEB /* GuestSpaceDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSpaceDetailCell.swift; sourceTree = "<group>"; };
+		1448BC601F3C585A006A1AEB /* RoomsTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeViewController.swift; sourceTree = "<group>"; };
+		1448BC611F3C585A006A1AEB /* WhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereViewController.swift; sourceTree = "<group>"; };
+		1448BC621F3C585A006A1AEB /* HostingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostingService.swift; sourceTree = "<group>"; };
+		1448BC631F3C585A006A1AEB /* MapLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationViewController.swift; sourceTree = "<group>"; };
+		1448BC641F3C585A006A1AEB /* HouseCreateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCreateCell.swift; sourceTree = "<group>"; };
+		1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdStepViewController.swift; sourceTree = "<group>"; };
+		1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondStepViewController.swift; sourceTree = "<group>"; };
+		1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeCell.swift; sourceTree = "<group>"; };
+		1448BC7C1F3C59CD006A1AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CW.storyboard; sourceTree = "<group>"; };
+		370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundInfoCustomCell.swift; sourceTree = "<group>"; };
+		370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeCustomCell.swift; sourceTree = "<group>"; };
+		370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeViewController.swift; sourceTree = "<group>"; };
+		370BF3F21F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeInfoCustomCell.swift; sourceTree = "<group>"; };
+		371099891F397808003D87D5 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3710998D1F39793F003D87D5 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		3710998F1F39896E003D87D5 /* WelcomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeNavigationController.swift; sourceTree = "<group>"; };
+		37109C041F3A1AAF00CFCC55 /* WishList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishList.swift; sourceTree = "<group>"; };
+		37109C061F3A1C4600CFCC55 /* WishListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListService.swift; sourceTree = "<group>"; };
+		37109C091F3A2D0A00CFCC55 /* WishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		37109C0B1F3A34D500CFCC55 /* WishListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
+		37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCustomCell.swift; sourceTree = "<group>"; };
+		37116C6D1F34839B00E31625 /* AmenitiesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesCustomCell.swift; sourceTree = "<group>"; };
+		37116C711F3483CF00E31625 /* AmenitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesViewController.swift; sourceTree = "<group>"; };
+		3713F8641F3B2EEA00708F39 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3715D0171F31FB44002AD5CB /* Crusia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crusia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3715D01A1F31FB44002AD5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3715D01F1F31FB44002AD5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3715D0211F31FB44002AD5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3715D0241F31FB44002AD5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3715D0261F31FB44002AD5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3715D02C1F31FFBD002AD5CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		3715D02F1F32002B002AD5CB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3715D0341F321BC0002AD5CB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3715D0361F3220A8002AD5CB /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		3715D0381F323445002AD5CB /* SignUpViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController1.swift; sourceTree = "<group>"; };
+		3715D03B1F323FB4002AD5CB /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		3715D03E1F324405002AD5CB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInOutCustomCell.swift; sourceTree = "<group>"; };
+		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
+		371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoViewController.swift; sourceTree = "<group>"; };
+		371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoCell.swift; sourceTree = "<group>"; };
+		3725298C1F38420200687E9A /* MapViewCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCustomCell.swift; sourceTree = "<group>"; };
+		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3728182F1F332EC4003719D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		372818321F33305D003719D2 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		372818361F338815003719D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3728183A1F3388B0003719D2 /* FirstCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomCell.swift; sourceTree = "<group>"; };
+		3728183C1F3388C3003719D2 /* SecondCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondCustomCell.swift; sourceTree = "<group>"; };
+		3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCustomCell.swift; sourceTree = "<group>"; };
+		373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundPolicyCustomCell.swift; sourceTree = "<group>"; };
+		373255F41F372C5600006C25 /* RefundPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundPolicyViewController.swift; sourceTree = "<group>"; };
+		37B06B201F376A3C005E41CF /* HouseImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		37E85EAE1F3996CA00CFA8DA /* SignUpNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
+		37E85EB01F399FA500CFA8DA /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		44A413DCC5958E830E43ACF0 /* Pods-Crusia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crusia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crusia/Pods-Crusia.release.xcconfig"; sourceTree = "<group>"; };
+		55FC64872741FA86EFBD6564 /* Pods_Crusia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crusia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8328C660F260FA235898D93E /* Pods-Crusia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crusia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crusia/Pods-Crusia.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3715D0141F31FB44002AD5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3725298F1F38449700687E9A /* MapKit.framework in Frameworks */,
+				6156C1428082B3B7DBFB9A25 /* Pods_Crusia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1448BC541F3C582A006A1AEB /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC7E1F3C5B95006A1AEB /* FirstStep */,
+				1448BC621F3C585A006A1AEB /* HostingService.swift */,
+				1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */,
+				1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */,
+			);
+			name = Host;
+			sourceTree = "<group>";
+		};
+		1448BC7E1F3C5B95006A1AEB /* FirstStep */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC5E1F3C585A006A1AEB /* HouseCreateViewController.swift */,
+				1448BC641F3C585A006A1AEB /* HouseCreateCell.swift */,
+				1448BC831F3C5BB9006A1AEB /* RoomsType */,
+				1448BC821F3C5BB7006A1AEB /* Personne */,
+				1448BC811F3C5BB5006A1AEB /* BathRoom */,
+				1448BC801F3C5BB3006A1AEB /* Where */,
+				1448BC7F1F3C5BB1006A1AEB /* MapLocation */,
+				1448BC851F3C5BE6006A1AEB /* Amenities */,
+				1448BC861F3C5C08006A1AEB /* GuestSpace */,
+			);
+			name = FirstStep;
+			sourceTree = "<group>";
+		};
+		1448BC7F1F3C5BB1006A1AEB /* MapLocation */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC631F3C585A006A1AEB /* MapLocationViewController.swift */,
+			);
+			name = MapLocation;
+			sourceTree = "<group>";
+		};
+		1448BC801F3C5BB3006A1AEB /* Where */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC611F3C585A006A1AEB /* WhereViewController.swift */,
+			);
+			name = Where;
+			sourceTree = "<group>";
+		};
+		1448BC811F3C5BB5006A1AEB /* BathRoom */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC591F3C585A006A1AEB /* BathRoomViewController.swift */,
+				1448BC5D1F3C585A006A1AEB /* BathRoomCell.swift */,
+			);
+			name = BathRoom;
+			sourceTree = "<group>";
+		};
+		1448BC821F3C5BB7006A1AEB /* Personne */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC5B1F3C585A006A1AEB /* PersonnelViewController.swift */,
+				1448BC5C1F3C585A006A1AEB /* PersonnePickCell.swift */,
+			);
+			name = Personne;
+			sourceTree = "<group>";
+		};
+		1448BC831F3C5BB9006A1AEB /* RoomsType */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC601F3C585A006A1AEB /* RoomsTypeViewController.swift */,
+				1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */,
+			);
+			name = RoomsType;
+			sourceTree = "<group>";
+		};
+		1448BC851F3C5BE6006A1AEB /* Amenities */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC551F3C585A006A1AEB /* AmenitiesCheckViewController.swift */,
+				1448BC561F3C585A006A1AEB /* AmenitiesBasicCell.swift */,
+				1448BC571F3C585A006A1AEB /* AmenitiesDetailCell.swift */,
+			);
+			name = Amenities;
+			sourceTree = "<group>";
+		};
+		1448BC861F3C5C08006A1AEB /* GuestSpace */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC581F3C585A006A1AEB /* GuestSpaceViewController.swift */,
+				1448BC5A1F3C585A006A1AEB /* GuestSpaceBasicCell.swift */,
+				1448BC5F1F3C585A006A1AEB /* GuestSpaceDetailCell.swift */,
+			);
+			name = GuestSpace;
+			sourceTree = "<group>";
+		};
+		370BF3ED1F3578F100A04A6F /* ExtraFeeView */ = {
+			isa = PBXGroup;
+			children = (
+				370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */,
+				370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */,
+			);
+			name = ExtraFeeView;
+			sourceTree = "<group>";
+		};
+		3710998C1F397929003D87D5 /* LogOut */ = {
+			isa = PBXGroup;
+			children = (
+				3710998D1F39793F003D87D5 /* LogOutViewController.swift */,
+			);
+			name = LogOut;
+			sourceTree = "<group>";
+		};
+		37109C081F3A2CC500CFCC55 /* WishListView */ = {
+			isa = PBXGroup;
+			children = (
+				37109C091F3A2D0A00CFCC55 /* WishListViewController.swift */,
+				37109C0B1F3A34D500CFCC55 /* WishListTableViewCell.swift */,
+			);
+			name = WishListView;
+			sourceTree = "<group>";
+		};
+		37116C6C1F3482FE00E31625 /* AmenitiesView */ = {
+			isa = PBXGroup;
+			children = (
+				37116C711F3483CF00E31625 /* AmenitiesViewController.swift */,
+				37116C6D1F34839B00E31625 /* AmenitiesCustomCell.swift */,
+			);
+			name = AmenitiesView;
+			sourceTree = "<group>";
+		};
+		3713F8631F3B2ED000708F39 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3713F8641F3B2EEA00708F39 /* MapViewController.swift */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		3715D00E1F31FB44002AD5CB = {
+			isa = PBXGroup;
+			children = (
+				3715D0191F31FB44002AD5CB /* Crusia */,
+				3715D0181F31FB44002AD5CB /* Products */,
+				4775BB3A3D41E5A306B74C2D /* Pods */,
+				40D5269099310E7F09106F33 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3715D0181F31FB44002AD5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3715D0171F31FB44002AD5CB /* Crusia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3715D0191F31FB44002AD5CB /* Crusia */ = {
+			isa = PBXGroup;
+			children = (
+				1448BC7B1F3C59CD006A1AEB /* CW.storyboard */,
+				3715D01E1F31FB44002AD5CB /* Main.storyboard */,
+				3715D01A1F31FB44002AD5CB /* AppDelegate.swift */,
+				3715D0231F31FB44002AD5CB /* LaunchScreen.storyboard */,
+				3715D0211F31FB44002AD5CB /* Assets.xcassets */,
+				3715D0261F31FB44002AD5CB /* Info.plist */,
+				372818311F333018003719D2 /* Service */,
+				3715D0331F321BB1002AD5CB /* Model */,
+				3715D02E1F320011002AD5CB /* LogInView */,
+				37E85EAB1F39960F00CFA8DA /* SignUpView */,
+				3715D03D1F3243C4002AD5CB /* MainView */,
+				3728182E1F332E96003719D2 /* DetailView */,
+				37109C081F3A2CC500CFCC55 /* WishListView */,
+				1448BC541F3C582A006A1AEB /* Host */,
+				3710998C1F397929003D87D5 /* LogOut */,
+			);
+			path = Crusia;
+			sourceTree = "<group>";
+		};
+		3715D02E1F320011002AD5CB /* LogInView */ = {
+			isa = PBXGroup;
+			children = (
+				3715D02C1F31FFBD002AD5CB /* WelcomeViewController.swift */,
+				3715D02F1F32002B002AD5CB /* LogInViewController.swift */,
+				3715D0381F323445002AD5CB /* SignUpViewController1.swift */,
+				3710998F1F39896E003D87D5 /* WelcomeNavigationController.swift */,
+			);
+			name = LogInView;
+			sourceTree = "<group>";
+		};
+		3715D0331F321BB1002AD5CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3715D0341F321BC0002AD5CB /* User.swift */,
+				3715D0361F3220A8002AD5CB /* House.swift */,
+				37109C041F3A1AAF00CFCC55 /* WishList.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3715D03D1F3243C4002AD5CB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				371099891F397808003D87D5 /* MainTabBarController.swift */,
+				3715D03E1F324405002AD5CB /* MainViewController.swift */,
+				3728182F1F332EC4003719D2 /* MainTableViewCell.swift */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		371E608C1F360B580073AAF0 /* DetailedUserInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */,
+				371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */,
+			);
+			name = DetailedUserInfoView;
+			sourceTree = "<group>";
+		};
+		3728182E1F332E96003719D2 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				372818361F338815003719D2 /* DetailViewController.swift */,
+				37B06B201F376A3C005E41CF /* HouseImagesCollectionViewCell.swift */,
+				37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */,
+				370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */,
+				370BF3F21F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift */,
+				371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */,
+				373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */,
+				3725298C1F38420200687E9A /* MapViewCustomCell.swift */,
+				371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */,
+				3728183A1F3388B0003719D2 /* FirstCustomCell.swift */,
+				3728183C1F3388C3003719D2 /* SecondCustomCell.swift */,
+				3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */,
+				373255F31F372C3600006C25 /* RefundPolicyView */,
+				371E608C1F360B580073AAF0 /* DetailedUserInfoView */,
+				3713F8631F3B2ED000708F39 /* MapView */,
+				370BF3ED1F3578F100A04A6F /* ExtraFeeView */,
+				37116C6C1F3482FE00E31625 /* AmenitiesView */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
+		372818311F333018003719D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				372818321F33305D003719D2 /* CacheManager.swift */,
+				3715D03B1F323FB4002AD5CB /* PostService.swift */,
+				37109C061F3A1C4600CFCC55 /* WishListService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		373255F31F372C3600006C25 /* RefundPolicyView */ = {
+			isa = PBXGroup;
+			children = (
+				373255F41F372C5600006C25 /* RefundPolicyViewController.swift */,
+			);
+			name = RefundPolicyView;
+			sourceTree = "<group>";
+		};
+		37E85EAB1F39960F00CFA8DA /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				37E85EAE1F3996CA00CFA8DA /* SignUpNameViewController.swift */,
+				37E85EB01F399FA500CFA8DA /* SignUpEmailViewController.swift */,
+				37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */,
+			);
+			name = SignUpView;
+			sourceTree = "<group>";
+		};
+		40D5269099310E7F09106F33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3725298E1F38449700687E9A /* MapKit.framework */,
+				55FC64872741FA86EFBD6564 /* Pods_Crusia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4775BB3A3D41E5A306B74C2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8328C660F260FA235898D93E /* Pods-Crusia.debug.xcconfig */,
+				44A413DCC5958E830E43ACF0 /* Pods-Crusia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3715D0161F31FB44002AD5CB /* Crusia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3715D0291F31FB44002AD5CB /* Build configuration list for PBXNativeTarget "Crusia" */;
+			buildPhases = (
+				30302F1D949D8F0913974692 /* [CP] Check Pods Manifest.lock */,
+				3715D0131F31FB44002AD5CB /* Sources */,
+				3715D0141F31FB44002AD5CB /* Frameworks */,
+				3715D0151F31FB44002AD5CB /* Resources */,
+				FC3C419308970D5EC764D99D /* [CP] Embed Pods Frameworks */,
+				375073F548AE06DE7A139BAB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Crusia;
+			productName = Crusia;
+			productReference = 3715D0171F31FB44002AD5CB /* Crusia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3715D00F1F31FB44002AD5CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Hyoungsu Ham";
+				TargetAttributes = {
+					3715D0161F31FB44002AD5CB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 6T7QK3ZAXH;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3715D0121F31FB44002AD5CB /* Build configuration list for PBXProject "Crusia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3715D00E1F31FB44002AD5CB;
+			productRefGroup = 3715D0181F31FB44002AD5CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3715D0161F31FB44002AD5CB /* Crusia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3715D0151F31FB44002AD5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3715D0251F31FB44002AD5CB /* LaunchScreen.storyboard in Resources */,
+				3715D0221F31FB44002AD5CB /* Assets.xcassets in Resources */,
+				1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */,
+				3715D0201F31FB44002AD5CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30302F1D949D8F0913974692 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		375073F548AE06DE7A139BAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crusia/Pods-Crusia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC3C419308970D5EC764D99D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crusia/Pods-Crusia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3715D0131F31FB44002AD5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */,
+				37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */,
+				1448BC671F3C585A006A1AEB /* AmenitiesCheckViewController.swift in Sources */,
+				3715D01B1F31FB44002AD5CB /* AppDelegate.swift in Sources */,
+				370BF3F31F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift in Sources */,
+				1448BC721F3C585A006A1AEB /* RoomsTypeViewController.swift in Sources */,
+				1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */,
+				3728183B1F3388B0003719D2 /* FirstCustomCell.swift in Sources */,
+				371E608E1F360BA70073AAF0 /* DetailedUserInfoViewController.swift in Sources */,
+				37116C721F3483CF00E31625 /* AmenitiesViewController.swift in Sources */,
+				372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */,
+				3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */,
+				372818371F338815003719D2 /* DetailViewController.swift in Sources */,
+				1448BC771F3C585A006A1AEB /* ThirdStepViewController.swift in Sources */,
+				370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */,
+				1448BC711F3C585A006A1AEB /* GuestSpaceDetailCell.swift in Sources */,
+				373255F51F372C5600006C25 /* RefundPolicyViewController.swift in Sources */,
+				3715D0391F323445002AD5CB /* SignUpViewController1.swift in Sources */,
+				37109C0A1F3A2D0A00CFCC55 /* WishListViewController.swift in Sources */,
+				3728183F1F3388D2003719D2 /* ThirdCustomCell.swift in Sources */,
+				3710998E1F39793F003D87D5 /* LogOutViewController.swift in Sources */,
+				370BF3EF1F35793F00A04A6F /* ExtraFeeCustomCell.swift in Sources */,
+				1448BC6E1F3C585A006A1AEB /* PersonnePickCell.swift in Sources */,
+				3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */,
+				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,
+				1448BC781F3C585A006A1AEB /* SecondStepViewController.swift in Sources */,
+				371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */,
+				1448BC761F3C585A006A1AEB /* HouseCreateCell.swift in Sources */,
+				3715D02D1F31FFBD002AD5CB /* WelcomeViewController.swift in Sources */,
+				1448BC701F3C585A006A1AEB /* HouseCreateViewController.swift in Sources */,
+				1448BC6C1F3C585A006A1AEB /* GuestSpaceBasicCell.swift in Sources */,
+				37116C6B1F346B2800E31625 /* UserInfoCustomCell.swift in Sources */,
+				3715D0351F321BC0002AD5CB /* User.swift in Sources */,
+				1448BC731F3C585A006A1AEB /* WhereViewController.swift in Sources */,
+				3713F8651F3B2EEA00708F39 /* MapViewController.swift in Sources */,
+				372818331F33305D003719D2 /* CacheManager.swift in Sources */,
+				1448BC6F1F3C585A006A1AEB /* BathRoomCell.swift in Sources */,
+				370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */,
+				37109C071F3A1C4600CFCC55 /* WishListService.swift in Sources */,
+				1448BC681F3C585A006A1AEB /* AmenitiesBasicCell.swift in Sources */,
+				371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */,
+				1448BC6B1F3C585A006A1AEB /* BathRoomViewController.swift in Sources */,
+				371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */,
+				3728183D1F3388C3003719D2 /* SecondCustomCell.swift in Sources */,
+				373255F21F372B5F00006C25 /* RefundPolicyCustomCell.swift in Sources */,
+				3715D0371F3220A8002AD5CB /* House.swift in Sources */,
+				3710998A1F397808003D87D5 /* MainTabBarController.swift in Sources */,
+				1448BC6D1F3C585A006A1AEB /* PersonnelViewController.swift in Sources */,
+				37109C0C1F3A34D500CFCC55 /* WishListTableViewCell.swift in Sources */,
+				37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */,
+				3715D0301F32002B002AD5CB /* LogInViewController.swift in Sources */,
+				37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */,
+				1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */,
+				1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */,
+				1448BC691F3C585A006A1AEB /* AmenitiesDetailCell.swift in Sources */,
+				1448BC6A1F3C585A006A1AEB /* GuestSpaceViewController.swift in Sources */,
+				37E85EB31F399FB300CFA8DA /* SignUpPasswordViewController.swift in Sources */,
+				371099901F39896E003D87D5 /* WelcomeNavigationController.swift in Sources */,
+				3715D03F1F324405002AD5CB /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1448BC7B1F3C59CD006A1AEB /* CW.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1448BC7C1F3C59CD006A1AEB /* Base */,
+			);
+			name = CW.storyboard;
+			sourceTree = "<group>";
+		};
+		3715D01E1F31FB44002AD5CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3715D01F1F31FB44002AD5CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3715D0231F31FB44002AD5CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3715D0241F31FB44002AD5CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3715D0271F31FB44002AD5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3715D0281F31FB44002AD5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3715D02A1F31FB44002AD5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8328C660F260FA235898D93E /* Pods-Crusia.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
+				INFOPLIST_FILE = Crusia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3715D02B1F31FB44002AD5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44A413DCC5958E830E43ACF0 /* Pods-Crusia.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
+				INFOPLIST_FILE = Crusia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3715D0121F31FB44002AD5CB /* Build configuration list for PBXProject "Crusia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3715D0271F31FB44002AD5CB /* Debug */,
+				3715D0281F31FB44002AD5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3715D0291F31FB44002AD5CB /* Build configuration list for PBXNativeTarget "Crusia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3715D02A1F31FB44002AD5CB /* Debug */,
+				3715D02B1F31FB44002AD5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3715D00F1F31FB44002AD5CB /* Project object */;
+}
