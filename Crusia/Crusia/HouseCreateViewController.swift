@@ -84,20 +84,21 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
 
+    let cwStoryboard = UIStoryboard(name: "CW", bundle: nil)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let firstStepNavi = storyboard?.instantiateViewController(withIdentifier: "FirstStep")
-        let secondStepNavi = storyboard?.instantiateViewController(withIdentifier: "SecondStep")
-        let thirdStepNavi = storyboard?.instantiateViewController(withIdentifier: "ThirdStep")
+        let firstStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "FirstStep")
+        let secondStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "SecondStep")
+        let thirdStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "ThirdStep")
        
         if indexPath.row == 0{
             
-            present(firstStepNavi!, animated: true, completion: nil)
+            present(firstStepNavi, animated: true, completion: nil)
         
         
         }else if indexPath.row == 1{
-            present(secondStepNavi!, animated: true, completion: nil)
+            present(secondStepNavi, animated: true, completion: nil)
         }else if indexPath.row == 2{
-            present(thirdStepNavi!, animated: true, completion: nil)
+            present(thirdStepNavi, animated: true, completion: nil)
         }
     }
     

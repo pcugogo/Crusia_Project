@@ -188,6 +188,10 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     }
 
     
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        HostingService.shared.latitude = mapView.centerCoordinate.latitude
+        HostingService.shared.longitude = mapView.centerCoordinate.longitude
+    }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
