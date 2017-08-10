@@ -1914,6 +1914,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tUS-W6-7bS" kind="presentation" id="gLJ-pB-j4Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2120,6 +2123,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyT-BX-itQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2863" y="2113"/>
+        </scene>
+        <!--LaunchScreen-->
+        <scene sceneID="lU6-Fn-SEq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LaunchScreen" id="tUS-W6-7bS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sED-AR-hGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3244" y="2575"/>
         </scene>
         <!--탐색하기-->
         <scene sceneID="tOk-K4-h9D">

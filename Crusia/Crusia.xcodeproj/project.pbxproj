@@ -59,6 +59,7 @@
 		371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */; };
 		3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725298C1F38420200687E9A /* MapViewCustomCell.swift */; };
 		3725298F1F38449700687E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3725298E1F38449700687E9A /* MapKit.framework */; };
+		372619471F3CDFED0036EAB4 /* StartPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372619461F3CDFED0036EAB4 /* StartPoint.storyboard */; };
 		372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728182F1F332EC4003719D2 /* MainTableViewCell.swift */; };
 		372818331F33305D003719D2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818321F33305D003719D2 /* CacheManager.swift */; };
 		372818371F338815003719D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818361F338815003719D2 /* DetailViewController.swift */; };
@@ -129,6 +130,7 @@
 		371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoCell.swift; sourceTree = "<group>"; };
 		3725298C1F38420200687E9A /* MapViewCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCustomCell.swift; sourceTree = "<group>"; };
 		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		372619461F3CDFED0036EAB4 /* StartPoint.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartPoint.storyboard; sourceTree = "<group>"; };
 		3728182F1F332EC4003719D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		372818321F33305D003719D2 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		372818361F338815003719D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		3715D0191F31FB44002AD5CB /* Crusia */ = {
 			isa = PBXGroup;
 			children = (
+				372619461F3CDFED0036EAB4 /* StartPoint.storyboard */,
 				3715D01E1F31FB44002AD5CB /* Main.storyboard */,
 				3715D01A1F31FB44002AD5CB /* AppDelegate.swift */,
 				3715D0231F31FB44002AD5CB /* LaunchScreen.storyboard */,
@@ -514,6 +517,7 @@
 				3715D0221F31FB44002AD5CB /* Assets.xcassets in Resources */,
 				1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */,
 				3715D0201F31FB44002AD5CB /* Main.storyboard in Resources */,
+				372619471F3CDFED0036EAB4 /* StartPoint.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
