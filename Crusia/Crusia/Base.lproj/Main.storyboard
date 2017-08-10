@@ -344,7 +344,7 @@
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="b2i-Oh-mOn" id="KX5-sl-41L"/>
                                                 </connections>
@@ -1354,6 +1354,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="AcE-Tg-pOs" id="sqG-yd-cpu"/>
                         <outlet property="pricePerDayLabe" destination="cm9-6q-qeF" id="XJO-tq-MaU"/>
                         <outlet property="reserveButton" destination="bzT-eh-dus" id="kHm-ES-BU6"/>
                         <outlet property="tableView" destination="biS-V2-v6p" id="dxT-Xu-RLy"/>
