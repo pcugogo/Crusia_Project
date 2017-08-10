@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pricePerDayLabe: UILabel! {
         didSet {
@@ -30,6 +31,9 @@ class DetailViewController: UIViewController {
             reserveButton.layer.cornerRadius = 3
         }
     }
+    
+    
+    
     
     var house: House!
     var isHouseInfoCellExtended: Bool = false
@@ -285,7 +289,6 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
             
-            
         default:
             let reuseIdentifier = "SecondCustomCell"
             
@@ -329,7 +332,6 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HouseImagesCollectionViewCell
         
-        
         if let url = house.houseImages[indexPath.row]["image"].url {
             cell.configure(imageURL:  url)
         }
@@ -342,5 +344,6 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return CGSize(width: collectionView.frame.width, height:(collectionView.frame.height))
     }
+    
     
 }
