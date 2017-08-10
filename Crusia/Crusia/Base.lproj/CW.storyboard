@@ -188,7 +188,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnP-8b-LRo" id="Rg3-aD-THD">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집 전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-PN-e5t">
@@ -270,6 +270,13 @@
                                     <segue destination="yDN-st-4ad" kind="show" identifier="nextPersonnelView" id="m6P-RN-Lqd"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cES-QR-8zL">
+                                <rect key="frame" x="0.0" y="18" width="375" height="2"/>
+                                <color key="tintColor" red="0.33333333329999998" green="0.7262196541" blue="0.67847931390000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="1qd-u9-hxp"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -277,13 +284,16 @@
                             <constraint firstAttribute="trailing" secondItem="ogV-rs-TlH" secondAttribute="trailing" id="2iE-BY-PmK"/>
                             <constraint firstItem="ogV-rs-TlH" firstAttribute="centerY" secondItem="fkJ-9f-4SN" secondAttribute="centerY" id="4Ij-Se-WKt"/>
                             <constraint firstItem="fkJ-9f-4SN" firstAttribute="top" secondItem="GXX-1c-Dwc" secondAttribute="bottom" constant="5" id="79M-9q-60F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cES-QR-8zL" secondAttribute="trailing" constant="-16" id="Ksp-yq-VTU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KZf-Ve-jST" secondAttribute="trailing" id="MJp-fQ-7EO"/>
                             <constraint firstAttribute="trailing" secondItem="fkJ-9f-4SN" secondAttribute="trailing" id="OgH-oS-HJB"/>
+                            <constraint firstItem="cES-QR-8zL" firstAttribute="top" secondItem="jIm-Bc-eoA" secondAttribute="topMargin" constant="18" id="YnS-h3-QF6"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="leading" secondItem="jIm-Bc-eoA" secondAttribute="leading" id="ZST-zU-HXR"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="top" secondItem="fkJ-9f-4SN" secondAttribute="top" id="e1Q-yY-vBI"/>
+                            <constraint firstItem="KZf-Ve-jST" firstAttribute="top" secondItem="BZO-Cu-3EJ" secondAttribute="bottom" id="f5Y-Sz-zBy"/>
                             <constraint firstItem="fkJ-9f-4SN" firstAttribute="leading" secondItem="KZU-3l-4MH" secondAttribute="trailing" id="j2q-jJ-3zF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cES-QR-8zL" secondAttribute="leading" constant="16" id="joL-t8-Zj5"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="centerY" secondItem="fkJ-9f-4SN" secondAttribute="centerY" id="nmn-8k-5fZ"/>
-                            <constraint firstItem="KZf-Ve-jST" firstAttribute="top" secondItem="BZO-Cu-3EJ" secondAttribute="bottom" id="q70-4O-Agr"/>
                             <constraint firstItem="7fX-iL-W65" firstAttribute="leading" secondItem="jIm-Bc-eoA" secondAttribute="leadingMargin" id="uvZ-YQ-PAb"/>
                             <constraint firstItem="pz1-Na-2RQ" firstAttribute="top" secondItem="7fX-iL-W65" secondAttribute="bottom" constant="100" id="wOd-9z-Fcb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7fX-iL-W65" secondAttribute="trailing" id="wfF-FC-gg2"/>
@@ -1490,7 +1500,6 @@
         <!--Third Step View Controller-->
         <scene sceneID="JXy-py-NmU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S2F-Ms-W8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ThirdStepViewController" id="6uY-F1-e7W" customClass="ThirdStepViewController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xNf-rD-Ul3"/>
@@ -1503,13 +1512,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zi9-Qx-kyZ"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2F-Ms-W8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818" y="3598"/>
         </scene>
         <!--Second Step View Controller-->
         <scene sceneID="0G4-KL-s8Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AVg-7t-cEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SecondStepViewController" id="f8H-Bm-S5g" customClass="SecondStepViewController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wRQ-lJ-NZu"/>
@@ -1522,6 +1531,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vkr-8F-1kd"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVg-7t-cEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1378" y="3535"/>
         </scene>
@@ -1546,7 +1556,6 @@
         <!--Navigation Controller-->
         <scene sceneID="OTb-Tz-heJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bpM-QN-Jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SecondStep" automaticallyAdjustsScrollViewInsets="NO" id="BMY-JB-cji" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0nM-Ji-5iA">
@@ -1558,13 +1567,13 @@
                         <segue destination="f8H-Bm-S5g" kind="relationship" relationship="rootViewController" id="Dsv-EW-moP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpM-QN-Jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="439" y="3535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T5K-tF-t4Z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ymj-9y-9Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ThirdStep" automaticallyAdjustsScrollViewInsets="NO" id="RJd-gl-c53" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Z6-lt-VaF">
@@ -1576,6 +1585,7 @@
                         <segue destination="6uY-F1-e7W" kind="relationship" relationship="rootViewController" id="PQY-k9-fPn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ymj-9y-9Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1759" y="3597"/>
         </scene>
