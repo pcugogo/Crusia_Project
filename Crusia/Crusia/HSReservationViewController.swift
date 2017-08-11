@@ -18,11 +18,16 @@ class HSReservationViewController: UIViewController {
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor.blue
     
+    let todaysDate = Date()
 //    var year: String = ""
     
     
     let formatter = DateFormatter()
     
+    // 스테이더스 바 숨기기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     
     override func viewDidLoad() {
@@ -45,6 +50,7 @@ class HSReservationViewController: UIViewController {
     func setupCalenderView() {
         
         calendarView.scrollToDate(Date(), animateScroll: false)
+        calendarView.selectDates([Date()])
         
         // Setup calendar spacing
         calendarView.minimumLineSpacing = 0
@@ -63,18 +69,36 @@ class HSReservationViewController: UIViewController {
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         
         guard let validCell = view as? HSReservationViewCell else { return }
-
-        if cellState.isSelected {
+        
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let todaysDateString = formatter.string(from: todaysDate)
+        let monthDateString = formatter.string(from: cellState.date)
+        
+        if todaysDateString == monthDateString {
             
-            validCell.dateLabel.textColor = selectedMonthColor
-        } else {
-            
-            if cellState.dateBelongsTo == .thisMonth {
-                validCell.dateLabel.textColor = monthColor
+            if cellState.isSelected {
+                validCell.dateLabel.textColor = selectedMonthColor
             } else {
-                validCell.dateLabel.textColor = outsideMonthColor
+                validCell.dateLabel.textColor = UIColor(red: 240/255, green: 109/255, blue: 81/255, alpha: 1.0)
             }
+            
+        } else {
+            validCell.dateLabel.textColor = cellState.isSelected ? selectedMonthColor : monthColor
         }
+        
+//        if cellState.isSelected {
+//            
+//            validCell.dateLabel.textColor = selectedMonthColor
+//        } else {
+//            
+//            if cellState.dateBelongsTo == .thisMonth {
+//                
+//                validCell.dateLabel.textColor = monthColor
+//            } else {
+//                validCell.dateLabel.textColor = outsideMonthColor
+//            }
+//        }
     }
     
     func handleCellVisiblity(view: JTAppleCell?, cellState: CellState) {
