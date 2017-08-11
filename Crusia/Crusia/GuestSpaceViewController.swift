@@ -50,40 +50,27 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     var detailCellData:[String] = []
     var basicCellData:[String] = []
 
+    @IBOutlet weak var registrationProgressView: UIProgressView!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var nextBtnOut: UIButton!
     
     @IBOutlet weak var detailExplanationBtnOut: UIButton!
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nextBtnOut.layer.cornerRadius = 3
         detailExplanationBtnOut.layer.cornerRadius = 25
         print(HostingService.shared.houseParameters())
         
-        
-        
-        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
-        let parameters:Parameters = HostingService.shared.houseParameters()
-        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
-        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
-        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                
-                print("Validation Successful")
-                
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-            
-        }
-
-        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.9, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -170,6 +157,26 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBAction func toHouseCreateViewBtnAction(_ sender: UIButton) {
        
+        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
+        let parameters:Parameters = HostingService.shared.houseParameters()
+        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
+        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
+        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
+            switch response.result {
+                
+            case .success(let value):
+                
+                print("Validation Successful")
+                
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+        }
+
+        
         dismiss(animated: true, completion: nil)
     }
     

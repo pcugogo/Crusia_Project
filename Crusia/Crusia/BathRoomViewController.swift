@@ -14,8 +14,10 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     let totalBath = ["1","2","3","4","5","6","7","8"]
     
+    @IBOutlet weak var registrationProgressView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var nextBtnOut: UIButton!
     
     
     
@@ -23,13 +25,13 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextBtnOut.layer.cornerRadius = 3
         
-        
-        // Do any additional setup after loading the view.
-        
-        
-                
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.3, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

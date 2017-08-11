@@ -17,16 +17,25 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     var detailCellData:[String] = []
     var basicCellData:[String] = []
     
+    @IBOutlet weak var registrationProgressView: UIProgressView!
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var nextBtnOut: UIButton!
     
     @IBOutlet weak var detailExplanationBtnOut: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBtnOut.layer.cornerRadius = 3
         detailExplanationBtnOut.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.8, animated: true)
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         //        HouseData.shared.amenities += detailCellData
