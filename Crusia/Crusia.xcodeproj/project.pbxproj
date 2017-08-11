@@ -27,6 +27,7 @@
 		1448BC781F3C585A006A1AEB /* SecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */; };
 		1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */; };
 		1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448BC7B1F3C59CD006A1AEB /* CW.storyboard */; };
+		14E9C61C1F3DBDCF00CD3CD3 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */; };
 		370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */; };
 		370BF3EF1F35793F00A04A6F /* ExtraFeeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */; };
 		370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */; };
@@ -96,6 +97,7 @@
 		1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondStepViewController.swift; sourceTree = "<group>"; };
 		1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeCell.swift; sourceTree = "<group>"; };
 		1448BC7C1F3C59CD006A1AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CW.storyboard; sourceTree = "<group>"; };
+		14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
 		370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundInfoCustomCell.swift; sourceTree = "<group>"; };
 		370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeCustomCell.swift; sourceTree = "<group>"; };
 		370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				1448BC7E1F3C5B95006A1AEB /* FirstStep */,
 				1448BC621F3C585A006A1AEB /* HostingService.swift */,
+				14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */,
 				1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */,
 				1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */,
 			);
@@ -620,6 +623,7 @@
 				1448BC6B1F3C585A006A1AEB /* BathRoomViewController.swift in Sources */,
 				371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */,
 				3728183D1F3388C3003719D2 /* SecondCustomCell.swift in Sources */,
+				14E9C61C1F3DBDCF00CD3CD3 /* ExplanationViewController.swift in Sources */,
 				373255F21F372B5F00006C25 /* RefundPolicyCustomCell.swift in Sources */,
 				3715D0371F3220A8002AD5CB /* House.swift in Sources */,
 				3710998A1F397808003D87D5 /* MainTabBarController.swift in Sources */,

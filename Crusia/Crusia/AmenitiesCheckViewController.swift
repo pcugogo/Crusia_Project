@@ -18,9 +18,12 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     var basicCellData:[String] = []
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var detailExplanationBtnOut: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        detailExplanationBtnOut.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
     
@@ -108,6 +111,20 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             return 100
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "AmeniteiesViewExplanation" {
+            let explanationView = segue.destination as! ExplanationViewController
+            explanationView.explanationTitle = "어떤 편의시설을 제공해야 하나요?"
+            explanationView.explanationContent.append("게스트 대부분은 침대 시트,수건,휴지 등\n필수 품목이 제공될 것이라 생각합니다.")
+            explanationView.explanationContent.append("커피나 차 등의 부가 서비스가 필수는 아니\n지만 작은 배려로 게스트의 만족도를 높이면\n서 좋은 후기도 기대할 수 있습니다.")
+        }
+        
+    }
+
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         

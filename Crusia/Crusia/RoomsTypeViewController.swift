@@ -13,13 +13,18 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     var firstCellBtnCheck:Bool = false
     var secondCellBtnCheck:Bool = false
     var thirdCellBtnCheck:Bool = false
+   
     
+    
+    @IBOutlet weak var nextBtnOut: UIButton!
+    @IBOutlet weak var detailExplanationBtnOut: UIButton!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        nextBtnOut.alpha = 0.7
+        detailExplanationBtnOut.layer.cornerRadius = 25
       
         // Do any additional setup after loading the view.
     }
@@ -35,12 +40,16 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
         if identifier == "nextPersonnelView"{
            
             if HostingService.shared.roomType == ""{
+                
                 houseTypeCheck = false
                
             }else{
                 houseTypeCheck = true
+    
             }
             
+        }else if identifier == "RoomTypeViewExplanation" {
+            houseTypeCheck = true
         }
         return houseTypeCheck
     }
@@ -57,13 +66,16 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
             cell.RoomsTypeLb.text = "집 전체"
             if firstCellBtnCheck == true {
                 
-                cell.RoomTypeCheckImg.image = UIImage(named: "CheckImg")
+                
+                nextBtnOut.alpha = 1.0
+                
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
                 
                 tableView.deselectRow(at: indexPath, animated: true)
                 
             }else{
                
-                cell.RoomTypeCheckImg.image = UIImage(named: "CircleImg")
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
                 
             }
 
@@ -72,12 +84,16 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
             cell.RoomsTypeLb.text = "개인실"
             if secondCellBtnCheck == true {
                 
-               cell.RoomTypeCheckImg.image = UIImage(named: "CheckImg")
+                
+                nextBtnOut.alpha = 1.0
+                
+               cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
                 tableView.deselectRow(at: indexPath, animated: true)
+
                 
             }else{
                 
-                cell.RoomTypeCheckImg.image = UIImage(named: "CircleImg")
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
             
                 
             }
@@ -86,12 +102,15 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
             cell.RoomsTypeLb.text = "다인실"
             if thirdCellBtnCheck == true {
                 
-                cell.RoomTypeCheckImg.image = UIImage(named: "CheckImg")
+                
+                nextBtnOut.alpha = 1.0
+                
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
                 tableView.deselectRow(at: indexPath, animated: true)
                 
             }else{
                 
-                 cell.RoomTypeCheckImg.image = UIImage(named: "CircleImg")
+                 cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
                
             }
         }
@@ -145,7 +164,30 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    
+//    let explanationView = ExplanationViewController()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "RoomTypeViewExplanation" {
+            let explanationView = segue.destination as! ExplanationViewController
+            explanationView.explanationTitle = "숙소 유형별 의미"
+            explanationView.explanationContent.append("집전체\n게스트가 집 전체를 빌립니다. 별채도 가능합니다")
+            explanationView.explanationContent.append("개인실\n게스트가 일부 공간을 공유하나 침실은 단독으로 사용합니다.")
+            explanationView.explanationContent.append("다인실\n게스트가 단독으로 쓸 수 있는 방이 제공되지 않습니다.")
+            
+            
+        }
+            
+    }
+
+
+
     @IBAction func dissmissBtnAction(_ sender: UIButton) {
+        
+        HostingService.shared.roomType.removeAll()
         dismiss(animated: true, completion: nil)
     }
     /*
