@@ -53,12 +53,13 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var detailExplanationBtnOut: UIButton!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        HostingService.shared.amenities += AmenitiesViewController.standard.detailCellData
-//        HostingService.shared.amenities += AmenitiesViewController.standard.basicCellData
-        
+
+        detailExplanationBtnOut.layer.cornerRadius = 25
         print(HostingService.shared.houseParameters())
         
         
@@ -152,6 +153,20 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             return 100
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "GuestSpaceViewExplanation" {
+            let explanationView = segue.destination as! ExplanationViewController
+            explanationView.explanationTitle = "어떤 공간을 명시해야 하나요?"
+            explanationView.explanationContent.append("내 집에 속하지 않는 공간(예:동네 빨래방,\n체육관 등)은 포함하지 마세요.")
+            explanationView.explanationContent.append("내 집에 속한 공유 공간(예: 수영장, 욕조등)\n은 포함하실 수 있습니다.")
+        }
+        
+    }
+
     
     @IBAction func toHouseCreateViewBtnAction(_ sender: UIButton) {
        

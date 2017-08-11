@@ -33,8 +33,8 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         //        HouseData.shared.roomType = "House"     //등록할 숙소 종류는 무엇인가요?11111111 House(집전체 빌려줄 공간)  Individual(개인실),Shared_Room(다인실) 3개중 하나 (필)
         HostingService.shared.houseImages = ""////2-1
         //        HouseData.shared.amenities = ["TV","Internet"] //게스트가 이용할 수 있는 편의시설6666666,게스트가 어떤 공간을 사용 할 수 있나요?777777777 (테이블에 스위치로 구현) 숙소 내 편의시설 및 이용안내 사항
-        HostingService.shared.latitude = 37.517584 //핀이 놓인 위치가 정확한 가요?5555555 위도 (필)
-        HostingService.shared.longitude = 127.018133 //5555555555경도 (필)
+//        HostingService.shared.latitude = 37.517584 //핀이 놓인 위치가 정확한 가요?5555555 위도 (필)
+//        HostingService.shared.longitude = 127.018133 //5555555555경도 (필)
         
         
         print(HostingService.shared.amenities)
