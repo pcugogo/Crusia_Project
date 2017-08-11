@@ -100,8 +100,8 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        centerPinImg.animationImages = [#imageLiteral(resourceName: "PinHostingPick"),#imageLiteral(resourceName: "PinHosting")]
-        centerPinImg.animationDuration = 1
+        centerPinImg.animationImages = [#imageLiteral(resourceName: "MapCenterPinPick"),#imageLiteral(resourceName: "MapCenterPin")]
+        centerPinImg.animationDuration = 0.7
         centerPinImg.animationRepeatCount = 2
         centerPinImg.startAnimating()
         

@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i2H-OT-BCD" id="cFZ-tp-2ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 사항을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-bJ-x7J">
@@ -278,6 +278,9 @@
                                     <segue destination="yDN-st-4ad" kind="show" identifier="nextPersonnelView" id="m6P-RN-Lqd"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-vm-ZVo">
+                                <rect key="frame" x="0.0" y="16" width="375" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -285,12 +288,15 @@
                             <constraint firstAttribute="trailing" secondItem="ogV-rs-TlH" secondAttribute="trailing" constant="16" id="2iE-BY-PmK"/>
                             <constraint firstItem="ogV-rs-TlH" firstAttribute="centerY" secondItem="fkJ-9f-4SN" secondAttribute="centerY" id="4Ij-Se-WKt"/>
                             <constraint firstItem="fkJ-9f-4SN" firstAttribute="top" secondItem="GXX-1c-Dwc" secondAttribute="bottom" constant="5" id="79M-9q-60F"/>
+                            <constraint firstItem="Z3G-vm-ZVo" firstAttribute="leading" secondItem="jIm-Bc-eoA" secondAttribute="leadingMargin" constant="-16" id="KgV-iT-Xg1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KZf-Ve-jST" secondAttribute="trailing" id="MJp-fQ-7EO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z3G-vm-ZVo" secondAttribute="trailing" constant="-16" id="OLq-eI-nd9"/>
                             <constraint firstAttribute="trailing" secondItem="fkJ-9f-4SN" secondAttribute="trailing" id="OgH-oS-HJB"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="leading" secondItem="jIm-Bc-eoA" secondAttribute="leading" id="ZST-zU-HXR"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="top" secondItem="fkJ-9f-4SN" secondAttribute="top" id="e1Q-yY-vBI"/>
                             <constraint firstItem="fkJ-9f-4SN" firstAttribute="leading" secondItem="KZU-3l-4MH" secondAttribute="trailing" id="j2q-jJ-3zF"/>
                             <constraint firstItem="KZU-3l-4MH" firstAttribute="centerY" secondItem="fkJ-9f-4SN" secondAttribute="centerY" id="nmn-8k-5fZ"/>
+                            <constraint firstItem="Z3G-vm-ZVo" firstAttribute="top" secondItem="jIm-Bc-eoA" secondAttribute="topMargin" constant="16" id="phX-xT-rk2"/>
                             <constraint firstItem="KZf-Ve-jST" firstAttribute="top" secondItem="BZO-Cu-3EJ" secondAttribute="bottom" id="q70-4O-Agr"/>
                             <constraint firstItem="7fX-iL-W65" firstAttribute="leading" secondItem="jIm-Bc-eoA" secondAttribute="leadingMargin" id="uvZ-YQ-PAb"/>
                             <constraint firstItem="pz1-Na-2RQ" firstAttribute="top" secondItem="7fX-iL-W65" secondAttribute="bottom" constant="100" id="wOd-9z-Fcb"/>
@@ -440,14 +446,20 @@
                                     <constraint firstItem="V88-5H-cfq" firstAttribute="leading" secondItem="EXH-bU-1di" secondAttribute="leading" constant="10" id="zwC-M7-XHy"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-Nn-jW9">
+                                <rect key="frame" x="-16" y="16" width="407" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WeQ-BF-Wt8" firstAttribute="top" secondItem="EXH-bU-1di" secondAttribute="bottom" id="27R-bC-Gd9"/>
+                            <constraint firstItem="lzc-Nn-jW9" firstAttribute="top" secondItem="S06-bf-aNv" secondAttribute="top" constant="16" id="4ip-wF-V5L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Vb-cA-s20" secondAttribute="trailing" id="526-pc-tjF"/>
+                            <constraint firstAttribute="trailing" secondItem="lzc-Nn-jW9" secondAttribute="trailing" constant="-16" id="7E7-w3-FIs"/>
                             <constraint firstItem="AbQ-PC-JSV" firstAttribute="top" secondItem="isj-p2-Xk8" secondAttribute="bottom" id="7fY-cC-1f1"/>
                             <constraint firstItem="V88-5H-cfq" firstAttribute="top" secondItem="AbQ-PC-JSV" secondAttribute="bottom" id="APk-Ey-sQl"/>
                             <constraint firstAttribute="trailing" secondItem="AbQ-PC-JSV" secondAttribute="trailing" id="OjE-Mj-aPY"/>
+                            <constraint firstItem="lzc-Nn-jW9" firstAttribute="leading" secondItem="S06-bf-aNv" secondAttribute="leading" constant="-16" id="XBR-n1-hxB"/>
                             <constraint firstItem="GFN-Gk-Duc" firstAttribute="top" secondItem="8Vb-cA-s20" secondAttribute="bottom" constant="75" id="ZZ0-rP-dcg"/>
                             <constraint firstItem="EXH-bU-1di" firstAttribute="leading" secondItem="S06-bf-aNv" secondAttribute="leading" id="l3O-ik-o7e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WeQ-BF-Wt8" secondAttribute="trailing" id="lds-mI-2Tx"/>
@@ -1008,7 +1020,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinHostingPick" translatesAutoresizingMaskIntoConstraints="NO" id="kUO-0o-1hi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MapCenterPinPick" translatesAutoresizingMaskIntoConstraints="NO" id="kUO-0o-1hi">
                                 <rect key="frame" x="169.5" y="330.5" width="35" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="0PY-S5-CJl"/>
@@ -1083,7 +1095,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrL-fg-Nxd" id="hCA-r3-cuj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1667,11 +1679,11 @@
     <resources>
         <image name="BackBtnItemImg" width="34" height="34"/>
         <image name="CheckImg.png" width="240" height="240"/>
-        <image name="PinHostingPick" width="160" height="275"/>
+        <image name="MapCenterPinPick" width="240" height="369"/>
         <image name="UpArrow_Hosting" width="240" height="240"/>
         <image name="XbtnImg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w9f-1B-tOw"/>
+        <segue reference="HZM-kF-IKT"/>
     </inferredMetricsTieBreakers>
 </document>
