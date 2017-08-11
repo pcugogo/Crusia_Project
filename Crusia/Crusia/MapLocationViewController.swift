@@ -9,18 +9,7 @@
 import UIKit
 import MapKit
 
-//class MyAnnotation: NSObject,MKAnnotation { //어노테이션즈는 핀이 여러개 찍힌다
-//    
-//    var coordinate: CLLocationCoordinate2D
-//    var title:String?
-//    var subtitle: String?
-//    
-//    init(coordinate:CLLocationCoordinate2D,title:String) {
-//        self.title = title
-//        self.coordinate = coordinate
-//    }
-//    
-//}
+
 
 
 class MapLocationViewController: UIViewController,MKMapViewDelegate {
@@ -33,24 +22,23 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     var currentPlacemark:CLPlacemark?
     
     var currentTransportType = MKDirectionsTransportType.automobile
-    @IBOutlet weak var mapView: MKMapView!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        mapView.delegate = self
-//        // Do any additional setup after loading the view.
-//    }
+    
+    @IBOutlet weak var registrationProgressView: UIProgressView!
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     @IBOutlet weak var centerPinImg: UIImageView!
- 
+    
+    @IBOutlet weak var nextBtnOut: UIButton!
+    
+    
     var check = false
    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        nextBtnOut.layer.cornerRadius = 3
         
             print("true@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
             let geoCoder = CLGeocoder()
@@ -100,6 +88,7 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.7, animated: true)
         centerPinImg.animationImages = [#imageLiteral(resourceName: "MapCenterPinPick"),#imageLiteral(resourceName: "MapCenterPin")]
         centerPinImg.animationDuration = 0.7
         centerPinImg.animationRepeatCount = 2

@@ -13,10 +13,13 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     
     
+    @IBOutlet weak var registrationProgressView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextBtnOut: UIButton!
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBtnOut.layer.cornerRadius = 3
         
         print("================숙소 종류 데이터체크===================", HostingService.shared.roomType)
         
@@ -26,6 +29,11 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.2, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

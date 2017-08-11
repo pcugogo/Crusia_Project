@@ -19,14 +19,22 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var nextBtnOut: UIButton!
     @IBOutlet weak var detailExplanationBtnOut: UIButton!
    
+    @IBOutlet weak var registrationProgressView: UIProgressView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextBtnOut.layer.cornerRadius = 3
         nextBtnOut.alpha = 0.7
         detailExplanationBtnOut.layer.cornerRadius = 25
       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registrationProgressView.setProgress(0.1, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
