@@ -110,6 +110,14 @@ class LogInViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func secureTextButtonTouched(_ sender: UIButton) {
+        
+        if passwordTextField.isSecureTextEntry {
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
 }
 
 
