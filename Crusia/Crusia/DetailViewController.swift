@@ -122,12 +122,12 @@ class DetailViewController: UIViewController {
         
         // 아직 미구현
         
-        let alertController = UIAlertController(title: "미구현", message: "아직 구현되지 않았습니다.. 😭😭😭", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-        
-        alertController.addAction(okayAction)
-        
-        self.present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: "미구현", message: "아직 구현되지 않았습니다.. 😭😭😭", preferredStyle: .alert)
+//        let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+//        
+//        alertController.addAction(okayAction)
+//        
+//        self.present(alertController, animated: true, completion: nil)
     }
     
 
