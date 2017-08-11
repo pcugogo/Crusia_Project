@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  JTAppleCalendar
+import JTAppleCalendar
 
 class HSReservationViewController: UIViewController {
 
@@ -18,6 +18,7 @@ class HSReservationViewController: UIViewController {
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor.blue
     
+//    var year: String = ""
     
     
     let formatter = DateFormatter()
@@ -43,8 +44,16 @@ class HSReservationViewController: UIViewController {
     
     func setupCalenderView() {
         
+        // Setup calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
+        
+        // Setup labels
+        calendarView.visibleDates { (visibleDates) in
+            
+            self.setupViewsOfCalendar(from: visibleDates)
+            
+        }
     }
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
@@ -63,6 +72,10 @@ class HSReservationViewController: UIViewController {
             }
         }
     }
+    
+    func handleCellVisiblity(view: JTAppleCell?, cellState: CellState) {
+        view?.isHidden = cellState.dateBelongsTo == .thisMonth ? false : true
+    }
 
     func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
         
@@ -74,6 +87,36 @@ class HSReservationViewController: UIViewController {
             validCell.selectedView.isHidden = true
         }
     }
+    
+    func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
+        
+        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "header", for: indexPath) as! HSCalendarHeader
+        
+        self.formatter.dateFormat = "MMM"
+        header.monthLabel.text = formatter.string(from: range.start)
+        
+        return header
+    }
+    
+    func calendarSizeForMonths(_ calendar: JTAppleCalendarView?) -> MonthSize? {
+        return MonthSize(defaultSize: 50)
+    }
+    
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
+        
+//        let date = visibleDates.monthDates.first?.date
+        
+        
+        self.formatter.dateFormat = "yyyy"
+//        self.year = self.formatter.string(from: date!)
+        
+        self.formatter.dateFormat = "MMM"
+//        self.yearAndMonth.text = self.formatter.string(from: date!)
+        
+        
+    }
+    
+    
 }
 
 extension HSReservationViewController: JTAppleCalendarViewDataSource {
@@ -92,6 +135,9 @@ extension HSReservationViewController: JTAppleCalendarViewDataSource {
         
         return parameters
     }
+    
+    
+    
 }
 
 extension HSReservationViewController: JTAppleCalendarViewDelegate {
@@ -105,6 +151,7 @@ extension HSReservationViewController: JTAppleCalendarViewDelegate {
         
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        handleCellVisiblity(view: cell, cellState: cellState)
         
         return cell
     }
@@ -114,13 +161,22 @@ extension HSReservationViewController: JTAppleCalendarViewDelegate {
         
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        handleCellVisiblity(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        handleCellVisiblity(view: cell, cellState: cellState)
     }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        
+        setupViewsOfCalendar(from: visibleDates)
+        
+    }
+    
     
 }
 
