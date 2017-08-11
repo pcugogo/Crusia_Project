@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N5c-OU-43F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1bq-WF-EHo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1867,7 +1867,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="09Z-ZO-1hN">
-                                <rect key="frame" x="16" y="183" width="343" height="421.5"/>
+                                <rect key="frame" x="16" y="193" width="343" height="421.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="alr-LA-twQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -1924,7 +1924,7 @@
                                             <constraint firstAttribute="width" constant="343" id="P6j-Po-Hs4"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yGK-Yt-LAE" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yGK-Yt-LAE" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                         <rect key="frame" x="0.0" y="21.5" width="343" height="400"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -2003,16 +2003,47 @@
                                     </collectionView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJQ-XK-HHj">
+                                <rect key="frame" x="0.0" y="595" width="375" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-W4-Vuv">
+                                        <rect key="frame" x="16" y="16" width="343" height="40"/>
+                                        <color key="backgroundColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ZVl-XN-mHE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="저장">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="U7v-W4-Vuv" firstAttribute="centerY" secondItem="uJQ-XK-HHj" secondAttribute="centerY" id="bHO-DV-Wbo"/>
+                                    <constraint firstAttribute="trailing" secondItem="U7v-W4-Vuv" secondAttribute="trailing" constant="16" id="cVj-TD-whX"/>
+                                    <constraint firstAttribute="height" constant="72" id="hz3-8B-CQ6"/>
+                                    <constraint firstItem="U7v-W4-Vuv" firstAttribute="leading" secondItem="uJQ-XK-HHj" secondAttribute="leading" constant="16" id="oyH-dS-jHp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XfP-5Y-sN6" firstAttribute="leading" secondItem="9AX-9x-VU0" secondAttribute="leading" constant="16" id="Bad-ba-TbC"/>
+                            <constraint firstItem="uJQ-XK-HHj" firstAttribute="leading" secondItem="9AX-9x-VU0" secondAttribute="leading" id="Lza-gP-283"/>
+                            <constraint firstAttribute="trailing" secondItem="uJQ-XK-HHj" secondAttribute="trailing" id="Q2U-2q-7tM"/>
                             <constraint firstItem="09Z-ZO-1hN" firstAttribute="centerX" secondItem="9AX-9x-VU0" secondAttribute="centerX" id="WT8-aq-dfW"/>
-                            <constraint firstItem="09Z-ZO-1hN" firstAttribute="centerY" secondItem="9AX-9x-VU0" secondAttribute="centerY" constant="60" id="dYL-cK-FGq"/>
+                            <constraint firstItem="09Z-ZO-1hN" firstAttribute="centerY" secondItem="9AX-9x-VU0" secondAttribute="centerY" constant="70" id="dYL-cK-FGq"/>
                             <constraint firstItem="vzY-MB-mIB" firstAttribute="top" secondItem="XfP-5Y-sN6" secondAttribute="bottom" constant="16" id="h19-d3-aie"/>
                             <constraint firstItem="XfP-5Y-sN6" firstAttribute="top" secondItem="CPU-gE-fs5" secondAttribute="bottom" constant="16" id="qGN-RD-zwO"/>
                             <constraint firstAttribute="trailing" secondItem="vzY-MB-mIB" secondAttribute="trailing" constant="16" id="qHA-xN-VEm"/>
                             <constraint firstItem="vzY-MB-mIB" firstAttribute="leading" secondItem="9AX-9x-VU0" secondAttribute="leading" constant="16" id="uF2-eW-NJw"/>
+                            <constraint firstItem="yPq-b7-6AC" firstAttribute="top" secondItem="uJQ-XK-HHj" secondAttribute="bottom" id="yR1-ru-H9G"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2021,7 +2052,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9e3-LF-Oip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="1978.56071964018"/>
+            <point key="canvasLocation" x="3476" y="1906"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Us9-4y-UKy">

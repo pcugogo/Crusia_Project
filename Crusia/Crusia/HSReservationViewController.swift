@@ -44,6 +44,8 @@ class HSReservationViewController: UIViewController {
     
     func setupCalenderView() {
         
+        calendarView.scrollToDate(Date(), animateScroll: false)
+        
         // Setup calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
@@ -55,6 +57,8 @@ class HSReservationViewController: UIViewController {
             
         }
     }
+    
+    
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         
@@ -171,6 +175,7 @@ extension HSReservationViewController: JTAppleCalendarViewDelegate {
         handleCellVisiblity(view: cell, cellState: cellState)
     }
     
+    // scroll 하면 업데이트 한다. 연도와 시간을
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         
         setupViewsOfCalendar(from: visibleDates)
