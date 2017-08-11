@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
+  - JTAppleCalendar (7.0.6)
   - Kingfisher (3.10.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - JTAppleCalendar (~> 7.0)
   - Kingfisher (~> 3.0)
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0ffd1ab01e974a4c2c0a990d49cde18bbc33a4f7
+PODFILE CHECKSUM: d18e5e5373ee3e9a7d8f4d1682ffcab787539cd5
 
 COCOAPODS: 1.2.1
