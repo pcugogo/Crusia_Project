@@ -23,6 +23,12 @@ class ProfileViewController: UIViewController {
         configureUser()
         configureTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureUser()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,7 +39,7 @@ class ProfileViewController: UIViewController {
     func configureUser() {
         
         // 유저 이름 가져오기
-        let userName = CurrentUserInfoService.shared.currentUser?.firstName.stringValue
+        let userName = CurrentUserInfoService.shared.currentUser?.userName.stringValue
         self.userNameLabel.text = userName
         
         // 유저 이미지 가져오기
