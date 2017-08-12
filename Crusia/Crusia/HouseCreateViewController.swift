@@ -13,11 +13,11 @@ import Alamofire
 
 class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-   
+   let currentUserData = CurrentUserInfoService.shared.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        CurrentUserInfoService.shared.setCurrentUser()
         //        HouseData.shared.address = "" //숙소가 어디에 있나요? 44444 주소 (국가, 시/도,시/군/구,도로명 주소, 아파트 동호수,우편번호
         HostingService.shared.introduce = "안녕하세요" // 숙소 소개
         HostingService.shared.spaceInfo = "정원 있습니다" // 숙소 부연 설명
