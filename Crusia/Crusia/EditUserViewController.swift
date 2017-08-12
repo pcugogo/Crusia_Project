@@ -88,7 +88,8 @@ class EditUserViewController: UIViewController {
     @IBAction func saveButtonTouched(_ sender: UIButton) {
         CurrentUserInfoService.shared.edit()
         print("save 후 ........커렌트 유저 정보 ..................................................................")
-        print(CurrentUserInfoService.shared.currentUser)
+        print(CurrentUserInfoService.shared.currentUser!)
+        CurrentUserInfoService.shared.patchUserInfo()
         
         let alertController = UIAlertController(title: nil, message: "저장되었습니다.", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)

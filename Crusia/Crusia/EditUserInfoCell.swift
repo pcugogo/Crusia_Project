@@ -108,9 +108,6 @@ class EditUserInfoCell: UITableViewCell {
         default:
             break
         }
-        
-        print("tempUser Info edited ........................................................")
-        print(CurrentUserInfoService.shared.tempUser)
     }
 
 }

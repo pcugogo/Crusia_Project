@@ -12,27 +12,19 @@ import Alamofire
 
 
 class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    //    func configureUser() {
-    //
-    //        // 유저 이름 가져오기
-    //        let userName = CurrentUserInfoService.shared.currentUser?.userName.stringValue
-    //        self.userNameLabel.text = userName
-    //
-    //        // 유저 이미지 가져오기
-    //        if let imgUrl = CurrentUserInfoService.shared.currentUser?.imgProfile.url {
-    //            self.profileImageView.kf.setImage(with: imgUrl)
-    //        }
-    //    }
-    
-    var currentUserData:User?
   
     @IBOutlet weak var hostingWelcomeLb: UILabel!
+    
+    var currentUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        CurrentUserInfoService.shared.setCurrentUser()
-        currentUserData = CurrentUserInfoService.shared.currentUser
-        hostingWelcomeLb.text = "\(String(describing: currentUserData?.firstName.stringValue))"
+        
+        
+
+        currentUser = CurrentUserInfoService.shared.currentUser
+        
+        hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
         
 //                print("!!!!!!!!!!!!!!!!!!!!!!!!",currentUserData)
 //        print("@@@@@@@@@@@@@@@@@@@@@@@@@@",CurrentUserInfoService.shared.currentUser)
@@ -54,22 +46,31 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         //        HouseData.shared.amenities = ["TV","Internet"] //게스트가 이용할 수 있는 편의시설6666666,게스트가 어떤 공간을 사용 할 수 있나요?777777777 (테이블에 스위치로 구현) 숙소 내 편의시설 및 이용안내 사항
 //        HostingService.shared.latitude = 37.517584 //핀이 놓인 위치가 정확한 가요?5555555 위도 (필)
 //        HostingService.shared.longitude = 127.018133 //5555555555경도 (필)
-        
+        self.currentUser = CurrentUserInfoService.shared.currentUser
+
         
         print(HostingService.shared.amenities)
        
-
+        
+//        hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
         
         // Do any additional setup after loading the view.
     }
 
-   
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//                hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
+    }
    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
 
     
