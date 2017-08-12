@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EditUserInfoCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextField: UITextField!
     
-    var delegate: EditUserInfoCellDelegate?
-    
+    var tempUser: User?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,6 +35,8 @@ class EditUserInfoCell: UITableViewCell {
         var user: User = CurrentUserInfoService.shared.currentUser!
         
         switch title {
+        case "유저네임":
+            contentTextField.text = user.userName.stringValue
         case "이름":
             contentTextField.text = user.firstName.stringValue
         case "성":
@@ -58,6 +61,57 @@ class EditUserInfoCell: UITableViewCell {
 
     }
     
+    func editUser() {
+
+        let title: String = self.titleLabel.text!
+
+        
+        switch title {
+        case "유저네임":
+            let userName: JSON = ["username": contentTextField.text!]
+            
+            CurrentUserInfoService.shared.tempUser?.userName = userName["username"]
+            
+        case "이름":
+            let userName: JSON = ["first_name": contentTextField.text!]
+            
+            CurrentUserInfoService.shared.tempUser?.firstName = userName["first_name"]
+            
+        case "성":
+            let lastName: JSON = ["last_name": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.lastName = lastName["last_name"]
+
+        case "성별":
+            let gender: JSON = ["gender": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.gender = gender["gender"]
+
+        case "생일":
+            let birthday: JSON = ["birthday": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.birthday = birthday["birthday"]
+
+        case "연락처":
+            let phoneNumber: JSON = ["phone_num": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.phoneNum = phoneNumber["phone_num"]
+
+        case "자기소개":
+            let introduce: JSON = ["introduce": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.introduce = introduce["introduce"]
+
+        case "언어":
+            let language: JSON = ["preference_language": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.prefLanguage = language["preference_language"]
+
+        case "거주지":
+            let site: JSON = ["living_site": contentTextField.text!]
+            CurrentUserInfoService.shared.tempUser?.livingSite = site["living_site"]
+
+        default:
+            break
+        }
+        
+        print("tempUser Info edited ........................................................")
+        print(CurrentUserInfoService.shared.tempUser)
+    }
 
 }
 
@@ -72,16 +126,16 @@ extension EditUserInfoCell: UITextFieldDelegate {
         
         contentTextField.resignFirstResponder()
         
-        
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        editUser()
     }
     
 }
 
-protocol EditUserInfoCellDelegate {
-    
-    func set(height: Double)
-}
+
 
 
 
