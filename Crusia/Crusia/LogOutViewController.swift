@@ -28,6 +28,8 @@ class LogOutViewController: UIViewController {
 
     @IBAction func logOutButtonTouched(_ sender: UIButton) {
         
+        CurrentUserInfoService.shared.logOutCurrentUser()
+        
         UserDefaults.standard.set(false, forKey: "Authentification")
 
         
