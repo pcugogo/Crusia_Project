@@ -59,7 +59,7 @@ class EditUserViewController: UIViewController {
     func configureUser() {
         
         // 유저 이름 가져오기
-        let userName = CurrentUserInfoService.shared.currentUser?.firstName.stringValue
+        let userName = CurrentUserInfoService.shared.currentUser?.userName.stringValue
         self.userNameLabel.text = userName
         
         // 유저 이미지 가져오기
@@ -85,6 +85,18 @@ class EditUserViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func saveButtonTouched(_ sender: UIButton) {
+        CurrentUserInfoService.shared.edit()
+        print("save 후 ........커렌트 유저 정보 ..................................................................")
+        print(CurrentUserInfoService.shared.currentUser)
+        
+        let alertController = UIAlertController(title: nil, message: "저장되었습니다.", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        
+        alertController.addAction(okayAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
 }
@@ -92,7 +104,7 @@ class EditUserViewController: UIViewController {
 extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,27 +117,30 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let title = "이름"
+            let title = "유저네임"
             cell.configure(title: title)
         case 1:
-            let title = "성"
+            let title = "이름"
             cell.configure(title: title)
         case 2:
-            let title = "성별"
+            let title = "성"
             cell.configure(title: title)
         case 3:
-            let title = "생일"
+            let title = "성별"
             cell.configure(title: title)
         case 4:
-            let title = "연락처"
+            let title = "생일"
             cell.configure(title: title)
         case 5:
-            let title = "자기소개"
+            let title = "연락처"
             cell.configure(title: title)
         case 6:
-            let title = "언어"
+            let title = "자기소개"
             cell.configure(title: title)
         case 7:
+            let title = "언어"
+            cell.configure(title: title)
+        case 8:
             let title = "거주지"
             cell.configure(title: title)
         default:
@@ -138,13 +153,7 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension EditUserViewController: EditUserInfoCellDelegate {
-    
-    func set(height: Double) {
-//        self.tableView.setContentOffset(CGPoint(x: 0.0, y: 400.0), animated: true)
-//        tableView.reloadData()
-    }
-}
+
 
 
 

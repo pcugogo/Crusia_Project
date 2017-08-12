@@ -15,8 +15,13 @@ class CurrentUserInfoService {
     static let shared: CurrentUserInfoService = CurrentUserInfoService()
     
     var currentUser: User?
+    var tempUser: User?
     
-    private init() {}
+    private init() {
+    
+        let userName: JSON = ["first_name": ""]
+        tempUser = User.init(user: userName)
+    }
     
     func setCurrentUser() {
         
@@ -35,11 +40,14 @@ class CurrentUserInfoService {
                 
                 self.currentUser = User.init(user: json)
                 
+                self.tempUser = self.currentUser
+                
             case .failure(let error):
                 print(error)
                 
             }
         }
+        
     }
     
     func patchUserInfo() {
@@ -69,6 +77,26 @@ class CurrentUserInfoService {
 //            }
 //        }
     }
+    
+    func edit() {
+        
+        currentUser = tempUser
+    }
+    
+//    func edit(user: User) {
+//        
+//        let userName: JSON = ["first_name": ""]
+//        tempUser = User.init(user: userName)
+//        
+//        tempUser?.firstName = user.firstName
+//        tempUser?.lastName = user.lastName
+//        tempUser?.gender = user.gender
+//        tempUser?.birthday = user.birthday
+//        tempUser?.phoneNum = user.phoneNum
+//        tempUser?.introduce = user.introduce
+//        tempUser?.prefLanguage = user.prefLanguage
+//        tempUser?.livingSite = user.livingSite
+//    }
     
     func logOutCurrentUser() {
         self.currentUser = nil
