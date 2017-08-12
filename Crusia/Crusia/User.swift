@@ -29,6 +29,20 @@ struct User {
     var lastJoin: JSON
     var dateJoin: JSON
     
+    var dic: [String: Any] {
+        get {
+            let tempDic: [String: Any] = ["img_profile": imgProfile.stringValue,
+                                          "gender": gender.stringValue,
+                                          "birthday": birthday.stringValue,
+                                          "phone_number": phoneNum.stringValue,
+                                          "preference_language": prefLanguage.stringValue,
+                                          "preference_currency": prefCurrency.stringValue,
+                                          "living_site": livingSite.stringValue,
+                                          "introduce": introduce.stringValue]
+            return tempDic
+        }
+    }
+    
     init(user: JSON ) {
         self.pk = user["pk"]
         self.userName = user["username"]

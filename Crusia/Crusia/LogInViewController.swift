@@ -67,16 +67,19 @@ class LogInViewController: UIViewController {
                 print("JSON: \(json)")
                 
                 let currentUserToken = json["token"].stringValue
+                let currentUserPk = json["user_pk"].numberValue
                 
                 // UserDefaults 에 토큰 저장
                 UserDefaults.standard.set(currentUserToken, forKey: "token")
+                UserDefaults.standard.set(currentUserPk, forKey: "userPk")
                 UserDefaults.standard.set(true, forKey: "Authentification")
                 
-                print(UserDefaults.standard.object(forKey: "token") as! String)
                 
                 if let json = response.result.value {
                     print("JSON: \(json)")
                 }
+                
+                CurrentUserInfoService.shared.setCurrentUser()
                 
                 // Dismiss keyboard
                 self.view.endEditing(true)
