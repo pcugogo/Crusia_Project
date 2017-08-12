@@ -31,14 +31,15 @@ struct User {
     
     var dic: [String: Any] {
         get {
-            let tempDic: [String: Any] = ["img_profile": imgProfile.stringValue,
+            let tempDic: [String: Any] = ["username": userName.stringValue,
+                                          "first_name": firstName.stringValue,
+                                          "last_name": firstName.stringValue,
                                           "gender": gender.stringValue,
                                           "birthday": birthday.stringValue,
                                           "phone_number": phoneNum.stringValue,
+                                          "introduce": introduce.stringValue,
                                           "preference_language": prefLanguage.stringValue,
-                                          "preference_currency": prefCurrency.stringValue,
-                                          "living_site": livingSite.stringValue,
-                                          "introduce": introduce.stringValue]
+                                          "living_site": livingSite.stringValue]
             return tempDic
         }
     }

@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aT-6g-gYK">
-                                <rect key="frame" x="304" y="80" width="39" height="30"/>
+                                <rect key="frame" x="320" y="80" width="39" height="30"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루시아에 오신 것을 환영합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-8F-nqC">
-                                <rect key="frame" x="32" y="169" width="311" height="77"/>
+                                <rect key="frame" x="16" y="169" width="343" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="JIo-xT-3X0"/>
                                 </constraints>
@@ -42,14 +42,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_bg" translatesAutoresizingMaskIntoConstraints="NO" id="DG9-UB-NaS">
-                                <rect key="frame" x="32" y="69" width="65" height="65"/>
+                                <rect key="frame" x="16" y="69" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="2jK-0H-0a4"/>
                                     <constraint firstAttribute="width" secondItem="DG9-UB-NaS" secondAttribute="height" multiplier="1:1" id="dxD-HP-ypK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'계속하기' 또는 '회원가입'을 탭하면, 크루시아의 서비스 약관, 결제 서비스 약관, 개인정보 보호정책, 차별 금지 정책에 동의하는 것입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao3-V7-zS6">
-                                <rect key="frame" x="32" y="421" width="311" height="43"/>
+                                <rect key="frame" x="16" y="421" width="343" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="xZh-ve-HLM"/>
                                 </constraints>
@@ -58,10 +58,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sVY-2y-aM4">
-                                <rect key="frame" x="32" y="281" width="311" height="105"/>
+                                <rect key="frame" x="16" y="281" width="343" height="105"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-Zi-U7I">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="MFx-gV-By1"/>
@@ -71,7 +71,7 @@
                                         <state key="normal" title="페이스북(으)로 계속하기"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlY-DP-tm4">
-                                        <rect key="frame" x="0.0" y="60" width="311" height="45"/>
+                                        <rect key="frame" x="0.0" y="60" width="343" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="yTg-dZ-LdC"/>
                                         </constraints>
@@ -91,14 +91,14 @@
                             <constraint firstItem="sVY-2y-aM4" firstAttribute="top" secondItem="VEd-8F-nqC" secondAttribute="bottom" constant="35" id="0YG-ra-O0z"/>
                             <constraint firstItem="4aT-6g-gYK" firstAttribute="top" secondItem="c8g-xL-l1W" secondAttribute="bottom" constant="16" id="1hU-JP-v7P"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="trailing" secondItem="FlY-DP-tm4" secondAttribute="trailing" id="3en-7M-Y9k"/>
-                            <constraint firstAttribute="trailing" secondItem="4aT-6g-gYK" secondAttribute="trailing" constant="32" id="77F-a1-AG9"/>
+                            <constraint firstAttribute="trailing" secondItem="4aT-6g-gYK" secondAttribute="trailing" constant="16" id="77F-a1-AG9"/>
                             <constraint firstItem="VEd-8F-nqC" firstAttribute="width" secondItem="gy5-Zi-U7I" secondAttribute="width" id="GO7-NC-ZxO"/>
                             <constraint firstItem="VEd-8F-nqC" firstAttribute="centerX" secondItem="XGU-Q6-QWg" secondAttribute="centerX" id="Gzu-jb-nEa"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="leading" secondItem="sVY-2y-aM4" secondAttribute="leading" id="Iqe-T3-DR3"/>
-                            <constraint firstAttribute="trailing" secondItem="sVY-2y-aM4" secondAttribute="trailing" constant="32" id="N2z-0k-USy"/>
+                            <constraint firstAttribute="trailing" secondItem="sVY-2y-aM4" secondAttribute="trailing" constant="16" id="N2z-0k-USy"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="top" secondItem="sVY-2y-aM4" secondAttribute="bottom" constant="35" id="NQM-VW-wDF"/>
-                            <constraint firstItem="sVY-2y-aM4" firstAttribute="leading" secondItem="XGU-Q6-QWg" secondAttribute="leading" constant="32" id="XEP-sK-eOZ"/>
-                            <constraint firstItem="DG9-UB-NaS" firstAttribute="leading" secondItem="XGU-Q6-QWg" secondAttribute="leading" constant="32" id="cMn-si-wHw"/>
+                            <constraint firstItem="sVY-2y-aM4" firstAttribute="leading" secondItem="XGU-Q6-QWg" secondAttribute="leading" constant="16" id="XEP-sK-eOZ"/>
+                            <constraint firstItem="DG9-UB-NaS" firstAttribute="leading" secondItem="XGU-Q6-QWg" secondAttribute="leading" constant="16" id="cMn-si-wHw"/>
                             <constraint firstItem="VEd-8F-nqC" firstAttribute="top" secondItem="DG9-UB-NaS" secondAttribute="bottom" constant="35" id="mFw-Z6-kuH"/>
                             <constraint firstItem="sVY-2y-aM4" firstAttribute="centerY" secondItem="XGU-Q6-QWg" secondAttribute="centerY" id="tFP-42-Nzl"/>
                         </constraints>
@@ -416,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwk-qy-ceN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="457"/>
+            <point key="canvasLocation" x="-1020" y="473"/>
         </scene>
         <!--Sign Up Email View Controller-->
         <scene sceneID="Sck-k3-fda">
@@ -516,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yId-nk-re0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="457"/>
+            <point key="canvasLocation" x="-65" y="473"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Rvg-5L-W4x">
@@ -632,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCJ-M3-wrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="1218.440779610195"/>
+            <point key="canvasLocation" x="-66" y="1218"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="EnL-kU-rRr">
@@ -1365,7 +1365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymP-xz-FWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784.79999999999995" y="1217.5412293853074"/>
+            <point key="canvasLocation" x="913" y="1218"/>
         </scene>
         <!--Amenities View Controller-->
         <scene sceneID="8J8-c9-4Ky">
@@ -1569,7 +1569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izn-DN-sAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="1217.5412293853074"/>
+            <point key="canvasLocation" x="1740" y="1218"/>
         </scene>
         <!--Refund Policy View Controller-->
         <scene sceneID="D6m-aQ-jju">
@@ -2101,7 +2101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-3Z-MAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="1905.697151424288"/>
+            <point key="canvasLocation" x="1740" y="1906"/>
         </scene>
         <!--프로필-->
         <scene sceneID="dxV-fq-BFs">
@@ -2522,7 +2522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJF-iY-Cv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="1998"/>
+            <point key="canvasLocation" x="-66" y="1997"/>
         </scene>
         <!--탐색하기-->
         <scene sceneID="tOk-K4-h9D">
@@ -2543,7 +2543,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyq-Bk-JuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047.2" y="1219.3403298350825"/>
+            <point key="canvasLocation" x="-1020" y="1218"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="D3E-J5-Xio">
@@ -2725,7 +2725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phF-PZ-H78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="457"/>
+            <point key="canvasLocation" x="914" y="473"/>
         </scene>
         <!--저장목록-->
         <scene sceneID="ZvU-Fa-NXs">
@@ -2744,7 +2744,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8I-qr-9qj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="1999"/>
+            <point key="canvasLocation" x="-1020" y="1997"/>
         </scene>
     </scenes>
     <resources>
