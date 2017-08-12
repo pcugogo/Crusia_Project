@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i2H-OT-BCD" id="cFZ-tp-2ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 사항을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-bJ-x7J">
@@ -132,6 +132,9 @@
                             <constraint firstItem="NeQ-Fd-gbM" firstAttribute="leading" secondItem="DSR-Vs-eXU" secondAttribute="leadingMargin" id="e1y-U9-nvY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hostingWelcomeLb" destination="wzH-UO-HbI" id="PoO-xg-qeY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glb-Uy-5ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1129,7 +1132,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrL-fg-Nxd" id="hCA-r3-cuj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

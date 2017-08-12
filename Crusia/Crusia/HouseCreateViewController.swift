@@ -12,12 +12,31 @@ import Alamofire
 
 
 class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
-   let currentUserData = CurrentUserInfoService.shared.currentUser
     
+    //    func configureUser() {
+    //
+    //        // 유저 이름 가져오기
+    //        let userName = CurrentUserInfoService.shared.currentUser?.userName.stringValue
+    //        self.userNameLabel.text = userName
+    //
+    //        // 유저 이미지 가져오기
+    //        if let imgUrl = CurrentUserInfoService.shared.currentUser?.imgProfile.url {
+    //            self.profileImageView.kf.setImage(with: imgUrl)
+    //        }
+    //    }
+    
+    var currentUserData:User?
+  
+    @IBOutlet weak var hostingWelcomeLb: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         CurrentUserInfoService.shared.setCurrentUser()
+        currentUserData = CurrentUserInfoService.shared.currentUser
+        hostingWelcomeLb.text = "\(String(describing: currentUserData?.firstName.stringValue))"
+        
+//                print("!!!!!!!!!!!!!!!!!!!!!!!!",currentUserData)
+//        print("@@@@@@@@@@@@@@@@@@@@@@@@@@",CurrentUserInfoService.shared.currentUser)
+//        hostingWelcomeLb.text = "\(String(describing: currentUserData?.firstName.stringValue))님 안녕하세요! 호스팅 준비를 시작하세요."
         //        HouseData.shared.address = "" //숙소가 어디에 있나요? 44444 주소 (국가, 시/도,시/군/구,도로명 주소, 아파트 동호수,우편번호
         HostingService.shared.introduce = "안녕하세요" // 숙소 소개
         HostingService.shared.spaceInfo = "정원 있습니다" // 숙소 부연 설명
@@ -44,6 +63,9 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         // Do any additional setup after loading the view.
     }
 
+   
+   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,6 +127,8 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+
     
     /*
     // MARK: - Navigation
