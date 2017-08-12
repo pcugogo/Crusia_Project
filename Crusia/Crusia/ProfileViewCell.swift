@@ -32,13 +32,13 @@ class ProfileViewCell: UITableViewCell {
         
         
         if title == "숙소등록" {
-            
+            self.iconImageView.image = #imageLiteral(resourceName: "addhome5")
         } else if title == "호스트 모드로 전환" {
-            
+            self.iconImageView.image = #imageLiteral(resourceName: "transfer2")
         } else if title == "서비스 약관" {
-            
+            self.iconImageView.image = #imageLiteral(resourceName: "terms2")
         } else {
-            self.iconImageView.image = #imageLiteral(resourceName: "setting1")
+            self.iconImageView.image = #imageLiteral(resourceName: "setting")
         }
     }
 
