@@ -1678,19 +1678,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-am-Ymr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="191" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-am-Ymr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailedUserInfoCell" rowHeight="148" id="jzc-5S-Zr7" customClass="DetailedUserInfoCell" customModule="Crusia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="148"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailedUserInfoCell" rowHeight="191" id="jzc-5S-Zr7" customClass="DetailedUserInfoCell" customModule="Crusia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzc-5S-Zr7" id="zfF-8E-H0k">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-Vd-dpN">
-                                                    <rect key="frame" x="16" y="16" width="343" height="60.5"/>
+                                                    <rect key="frame" x="16" y="32" width="343" height="60.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-Lv-FW3">
                                                             <rect key="frame" x="0.0" y="0.0" width="141.5" height="60.5"/>
@@ -1720,26 +1720,26 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 introduce content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL9-2H-7hj">
-                                                    <rect key="frame" x="16" y="92.5" width="343" height="21"/>
+                                                    <rect key="frame" x="16" y="124.5" width="343" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="더 읽어보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOV-II-2di">
-                                                    <rect key="frame" x="290" y="113.5" width="69" height="18"/>
+                                                    <rect key="frame" x="290" y="156.5" width="69" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                                     <color key="textColor" red="0.43360990290000001" green="0.71826535459999996" blue="0.6784769893" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kL9-2H-7hj" firstAttribute="top" secondItem="9Dv-Vd-dpN" secondAttribute="bottom" constant="16" id="IUq-iV-yhv"/>
+                                                <constraint firstItem="kL9-2H-7hj" firstAttribute="top" secondItem="9Dv-Vd-dpN" secondAttribute="bottom" constant="32" id="IUq-iV-yhv"/>
                                                 <constraint firstAttribute="trailing" secondItem="KOV-II-2di" secondAttribute="trailing" constant="16" id="IhQ-Ep-d1q"/>
                                                 <constraint firstItem="9Dv-Vd-dpN" firstAttribute="leading" secondItem="zfF-8E-H0k" secondAttribute="leading" constant="16" id="KTF-rc-Txw"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Dv-Vd-dpN" secondAttribute="trailing" constant="16" id="bCY-uv-AKg"/>
                                                 <constraint firstAttribute="bottom" secondItem="KOV-II-2di" secondAttribute="bottom" constant="16" id="eYm-aP-BOr"/>
                                                 <constraint firstItem="KOV-II-2di" firstAttribute="top" secondItem="kL9-2H-7hj" secondAttribute="bottom" id="mAr-bY-D0H"/>
-                                                <constraint firstItem="9Dv-Vd-dpN" firstAttribute="top" secondItem="zfF-8E-H0k" secondAttribute="top" constant="16" id="sS9-jE-0bm"/>
+                                                <constraint firstItem="9Dv-Vd-dpN" firstAttribute="top" secondItem="zfF-8E-H0k" secondAttribute="top" constant="32" id="sS9-jE-0bm"/>
                                                 <constraint firstAttribute="trailing" secondItem="kL9-2H-7hj" secondAttribute="trailing" constant="16" id="tsf-bY-aJK"/>
                                                 <constraint firstItem="kL9-2H-7hj" firstAttribute="leading" secondItem="zfF-8E-H0k" secondAttribute="leading" constant="16" id="z7f-3W-YkY"/>
                                             </constraints>

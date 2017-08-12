@@ -57,7 +57,7 @@ extension DetailedUserInfoViewController: UITableViewDataSource, UITableViewDele
                     cell.readMoreLabel.textColor = .clear
                 }
                 
-                tableView.estimatedRowHeight = 148.0
+                tableView.estimatedRowHeight = 191.0
                 tableView.rowHeight = UITableViewAutomaticDimension
             }
             
@@ -88,7 +88,7 @@ extension DetailedUserInfoViewController: UITableViewDataSource, UITableViewDele
         
         tableView.beginUpdates()
         
-        tableView.estimatedRowHeight = 148.0
+        tableView.estimatedRowHeight = 191.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         
