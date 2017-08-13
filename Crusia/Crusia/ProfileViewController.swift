@@ -117,6 +117,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         CurrentUserInfoService.shared.logOutCurrentUser()
         
+        UserDefaults.standard.set(nil, forKey: "token")
+        UserDefaults.standard.set(nil, forKey: "userPk")
         UserDefaults.standard.set(false, forKey: "Authentification")
         
         if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeView") {

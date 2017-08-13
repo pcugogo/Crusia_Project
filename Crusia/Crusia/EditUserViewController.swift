@@ -74,7 +74,7 @@ class EditUserViewController: UIViewController {
         // 안쓰는 테이블 로우 줄 지우기
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        tableView.estimatedRowHeight = 100.0
+        tableView.estimatedRowHeight = 120.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
 
@@ -110,47 +110,94 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let reuseIdentifier = "EditUserInfoCell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
-        
-        cell.selectionStyle = .none
+
         
         switch indexPath.row {
         case 0:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "유저네임"
             cell.configure(title: title)
+            return cell
+
         case 1:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "이름"
             cell.configure(title: title)
+            return cell
+
         case 2:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "성"
             cell.configure(title: title)
+            return cell
+
         case 3:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "성별"
             cell.configure(title: title)
+            return cell
+
         case 4:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "생일"
             cell.configure(title: title)
+            return cell
+
         case 5:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "연락처"
             cell.configure(title: title)
+            return cell
+
         case 6:
+            tableView.estimatedRowHeight = 120.0
+            tableView.rowHeight = UITableViewAutomaticDimension
+            let reuseIdentifier = "EditIntroduceCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditIntroduceCell
             let title = "자기소개"
+            cell.selectionStyle = .none
             cell.configure(title: title)
+            return cell
+            
         case 7:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "언어"
             cell.configure(title: title)
+            return cell
+
         case 8:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "거주지"
             cell.configure(title: title)
+            return cell
+
         default:
+            let reuseIdentifier = "EditUserInfoCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
+            cell.selectionStyle = .none
             let title = "이름"
             cell.configure(title: title)
+            return cell
         }
-        
-        return cell
     }
+    
+    
     
 }
 
