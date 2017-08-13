@@ -17,28 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        
-//        var isAuthentified: Bool = false
-//        
-//        isAuthentified = UserDefaults.standard.bool(forKey: "Authentification")
-//        
-//        print(isAuthentified)
-//        
-//        
-//        
-//        
-//        if !isAuthentified {
-//            
-//            let loginView = storyboard.instantiateViewController(withIdentifier: "WelcomeView") as! WelcomeNavigationController
-//            self.window?.rootViewController = loginView
-//            
-//        } else {
-//        
-//            let mainView = storyboard.instantiateViewController(withIdentifier: "MainTabBarView") as! MainTabBarController
-//            self.window?.rootViewController = mainView
-//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        
+        var isAuthentified: Bool = false
+        
+        isAuthentified = UserDefaults.standard.bool(forKey: "Authentification")
+        
+        print(isAuthentified)
+        
+        
+        
+        
+        if !isAuthentified {
+            
+            let loginView = storyboard.instantiateViewController(withIdentifier: "WelcomeView") as! WelcomeNavigationController
+            self.window?.rootViewController = loginView
+            
+        } else {
+        
+            CurrentUserInfoService.shared.setCurrentUser()
+            let mainView = storyboard.instantiateViewController(withIdentifier: "MainTabBarView") as! MainTabBarController
+            self.window?.rootViewController = mainView
+        }
         
         return true
     }
