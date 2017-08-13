@@ -336,10 +336,10 @@
 				37E85EAB1F39960F00CFA8DA /* SignUpView */,
 				3715D03D1F3243C4002AD5CB /* MainView */,
 				3728182E1F332E96003719D2 /* DetailView */,
+				37109C081F3A2CC500CFCC55 /* WishListView */,
 				374B8AD01F3EDA4800E9E010 /* ProfileView */,
 				1448BC7B1F3C59CD006A1AEB /* CW.storyboard */,
 				1448BC541F3C582A006A1AEB /* Hosting */,
-				37109C081F3A2CC500CFCC55 /* WishListView */,
 			);
 			path = Crusia;
 			sourceTree = "<group>";
