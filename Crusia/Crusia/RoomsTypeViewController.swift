@@ -24,17 +24,6 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(HostingService.shared.roomType)
-        if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "House" {
-            firstCellBtnCheck = true
-            
-        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Individual" {
-            firstCellBtnCheck = true
-          
-        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Shared_Room" {
-            firstCellBtnCheck = true
-      
-        }
         
         nextBtnOut.layer.cornerRadius = 3
         nextBtnOut.alpha = 0.7
@@ -82,7 +71,10 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
         let cell:RoomsTypeCell = tableView.dequeueReusableCell(withIdentifier: "RoomsTypeCell", for: indexPath) as! RoomsTypeCell
         
         if indexPath.row == 0 {
-            
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "House" {
+                firstCellBtnCheck = true
+                
+            }
             cell.RoomsTypeLb.text = "집 전체"
             if firstCellBtnCheck == true {
                 
@@ -102,8 +94,8 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
             
         }else if indexPath.row == 1 {
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "개인실" {
-                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Individual" {
+                firstCellBtnCheck = true
             }
             
             cell.RoomsTypeLb.text = "개인실"
@@ -125,7 +117,7 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
             
         }else if indexPath.row == 2 {
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "다인실" {
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Shared_Room" {
                 cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
             }
             
