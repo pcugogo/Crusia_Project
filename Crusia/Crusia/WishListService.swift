@@ -19,11 +19,9 @@ class WishListService {
     // 위시 리스트에 하우스 추가
     func add(house: House) {
         
-        var houseInfo = house
-        houseInfo.addedTowishList = false
+//        var houseInfo = house
         
-        self.houses.append(houseInfo)
-        
+        self.houses.append(house)
     }
     
     // 위시 리스트에서 하우스 삭제

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EditIntroduceViewController: UIViewController {
 
@@ -31,6 +32,8 @@ class EditIntroduceViewController: UIViewController {
     
     // 자기 소개 저장
     @IBAction func saveButtonTouched(_ sender: UIButton) {
+        let introduce: JSON = ["introduce": contentTextView.text!]
+        CurrentUserInfoService.shared.tempUser?.introduce = introduce["introduce"]
         
         
         self.dismiss(animated: true, completion: nil)

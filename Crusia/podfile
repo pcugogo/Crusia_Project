@@ -10,5 +10,6 @@ target 'Crusia' do
   pod 'SwiftyJSON', '~> 3.1'
   pod 'Kingfisher', '~> 3.0'
   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'Fusuma', '~> 1.2'
 
 end

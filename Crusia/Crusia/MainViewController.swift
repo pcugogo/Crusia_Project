@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     
+    var heartImages: [UIImage] = []
     var postData: [House] = []
     var isLoadingPost = false
     let refreshControl = UIRefreshControl()
@@ -50,6 +51,7 @@ class MainViewController: UIViewController {
         // Load recent posts
         loadRecentPosts()
 
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +77,7 @@ class MainViewController: UIViewController {
                 
                 // 새로운 포스트 데이터를 postData 어레이 제일 앞에 넣는다.
                 self.postData.insert(contentsOf: newPosts, at: 0)
+                self.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
             }
             
             self.isLoadingPost = false
@@ -91,6 +94,8 @@ class MainViewController: UIViewController {
                 
                 self.displayNewPosts(newPosts: newPosts)
             }
+            print("하트 숫자.............................................................")
+            print(self.heartImages.count)
         }
     }
     
@@ -131,7 +136,7 @@ class MainViewController: UIViewController {
     }
 }
 
-
+// MARK: - TableView Setting
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,8 +151,14 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MainTableViewCell
         
         let currentPost = postData[indexPath.row]
-
+        
         cell.configure(post: currentPost)
+
+        // 위시리스트 추가 기능
+        cell.heartButton.tag = indexPath.row
+        cell.heartButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
+        cell.heartButton.setImage(heartImages[indexPath.row], for: .normal)
+
         
         
         return cell
@@ -179,17 +190,36 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             for newPost in newPosts {
                 
                 self.postData.append(newPost)
+                self.heartImages.append(#imageLiteral(resourceName: "heart2"))
+                print("하트 숫자.............................................................")
+                print(self.heartImages.count)
                 
                 let indexPath = IndexPath(row: self.postData.count - 1, section: 0)
                 
                 indexPaths.append(indexPath)
             }
             
+
+            
             self.tableView.insertRows(at: indexPaths, with: .fade)
             self.tableView.endUpdates()
             
             self.isLoadingPost = false
         }
+    }
+    
+    // 위시리스트 추가, 삭제
+    func handleLikes(sender: AnyObject){
+        
+        if heartImages[sender.tag] == #imageLiteral(resourceName: "heart1") {
+            heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
+            WishListService.shared.delete(house: postData[sender.tag])
+        } else {
+            heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
+            WishListService.shared.add(house: postData[sender.tag])
+        }
+        
+        sender.setImage(heartImages[sender.tag], for: .normal)
         
     }
 }
