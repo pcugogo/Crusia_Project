@@ -16,7 +16,6 @@ class WishListTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var heartButton: UIButton!
     
-    var isHeartTouched: Bool = false
     
     private var currentPost: House!
     
@@ -31,23 +30,6 @@ class WishListTableViewCell: UITableViewCell {
     
     @IBAction func heartTouched(_ sender: UIButton) {
         
-        if isHeartTouched {
-            
-            WishListService.shared.delete(house: currentPost)
-            isHeartTouched = false
-            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-            
-        } else {
-            
-            WishListService.shared.add(house: currentPost)
-            isHeartTouched = true
-            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
-        }
-        
-        print("Heart Button touched ....................................")
-        for i in WishListService.shared.houses {
-            print(i.pk)
-        }
         
     }
     
@@ -64,6 +46,7 @@ class WishListTableViewCell: UITableViewCell {
         titleLabel.text = post.title.string
         typeLabel.text = post.roomType.string
         
+        // 가격에 , 찍기
         if let price = post.pricePerDay.int {
             
             let numberFormatter = NumberFormatter()
@@ -73,9 +56,10 @@ class WishListTableViewCell: UITableViewCell {
             priceLabel.text = "￦" + formattedNumber!
         }
         
-        // Reset image view's image
-        mainImageView.image = nil
         
+        mainImageView.image = #imageLiteral(resourceName: "preparingImage")
+        
+        // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
             print("image ......................")
             print(url)
@@ -84,12 +68,6 @@ class WishListTableViewCell: UITableViewCell {
             self.mainImageView.kf.setImage(with: url)
         }
         
-        for i in WishListService.shared.houses {
-            
-            if i.pk == post.pk {
-                isHeartTouched = true
-            }
-        }
     }
 
 }

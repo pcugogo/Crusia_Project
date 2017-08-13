@@ -34,35 +34,35 @@ class MainTableViewCell: UITableViewCell {
 
     @IBAction func heartTouched(_ sender: UIButton) {
         
-        if !isHeartTouched {
-            var isAleady: Bool = false
-            
-            for i in WishListService.shared.houses {
-                if i.pk == currentPost.pk {
-                    isAleady = true
-                }
-            }
-            
-            if !isAleady {
-                WishListService.shared.add(house: currentPost)
-            }
-            
-            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
-            isHeartTouched = true
-            
-        } else {
-            
-            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-            WishListService.shared.delete(house: currentPost)
-            isHeartTouched = false
-            
-        }
-        
-
-        print("Heart Button touched ....................................")
-        for i in WishListService.shared.houses {
-            print(i.pk)
-        }
+//        if !isHeartTouched {
+//            var isAleady: Bool = false
+//            
+//            for i in WishListService.shared.houses {
+//                if i.pk == currentPost.pk {
+//                    isAleady = true
+//                }
+//            }
+//            
+//            if !isAleady {
+//                WishListService.shared.add(house: currentPost)
+//            }
+//            
+//            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+//            isHeartTouched = true
+//            
+//        } else {
+//            
+//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+//            WishListService.shared.delete(house: currentPost)
+//            isHeartTouched = false
+//            
+//        }
+//        
+//
+//        print("Heart Button touched ....................................")
+//        for i in WishListService.shared.houses {
+//            print(i.pk)
+//        }
         
     }
     
@@ -90,14 +90,15 @@ class MainTableViewCell: UITableViewCell {
         }
         
         
-        if isPostShown == false {
-        
-            // Reset image view's image
-            mainImageView.image = nil
-            
-            isHeartTouched = false
-            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-        }
+        mainImageView.image = #imageLiteral(resourceName: "preparingImage")
+//        if isPostShown == false {
+//        
+//            // Reset image view's image
+//            mainImageView.image = nil
+//            
+//            isHeartTouched = false
+//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+//        }
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
@@ -108,25 +109,25 @@ class MainTableViewCell: UITableViewCell {
             self.mainImageView.kf.setImage(with: url)
         }
         
-        isHeartTouched = nil
-        
-        isHeartTouched = post.addedTowishList
+//        isHeartTouched = nil
+//        
+//        isHeartTouched = post.addedTowishList
         
         // 버튼 컬러 바꾸기
 //        let origImage = UIImage(named: "heart2.png")
 //        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         
         
-        if isHeartTouched {
-            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
-
-        } else {
-            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-            heartButton.tintColor = .white
-
-        }
-        print("Configure post ................................................")
-        print(currentPost)
+//        if isHeartTouched {
+//            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+//
+//        } else {
+//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+//            heartButton.tintColor = .white
+//
+//        }
+//        print("Configure post ................................................")
+//        print(currentPost)
 
         // 포스트가 보여졌다고 표시
         isPostShown = true

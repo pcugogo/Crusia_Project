@@ -27,7 +27,6 @@ class EditIntroduceCell: UITableViewCell {
     func configure(title: String) {
         titleLabel.text = title
         contentLabel.text = CurrentUserInfoService.shared.tempUser?.introduce.stringValue
-
     }
 
 }

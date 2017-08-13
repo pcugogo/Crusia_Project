@@ -70,6 +70,7 @@
 		3728183F1F3388D2003719D2 /* ThirdCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */; };
 		373039791F405A6800C41071 /* EditIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373039781F405A6800C41071 /* EditIntroduceCell.swift */; };
 		3730397C1F405C1500C41071 /* EditIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730397B1F405C1500C41071 /* EditIntroduceViewController.swift */; };
+		3730397F1F40A03B00C41071 /* ImageScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730397E1F40A03B00C41071 /* ImageScale.swift */; };
 		373255F21F372B5F00006C25 /* RefundPolicyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */; };
 		373255F51F372C5600006C25 /* RefundPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373255F41F372C5600006C25 /* RefundPolicyViewController.swift */; };
 		374B8ACF1F3EB9AE00E9E010 /* CurrentUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B8ACE1F3EB9AE00E9E010 /* CurrentUserInfoService.swift */; };
@@ -151,6 +152,7 @@
 		3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCustomCell.swift; sourceTree = "<group>"; };
 		373039781F405A6800C41071 /* EditIntroduceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIntroduceCell.swift; sourceTree = "<group>"; };
 		3730397B1F405C1500C41071 /* EditIntroduceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIntroduceViewController.swift; sourceTree = "<group>"; };
+		3730397E1F40A03B00C41071 /* ImageScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScale.swift; sourceTree = "<group>"; };
 		373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundPolicyCustomCell.swift; sourceTree = "<group>"; };
 		373255F41F372C5600006C25 /* RefundPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundPolicyViewController.swift; sourceTree = "<group>"; };
 		374B8ACE1F3EB9AE00E9E010 /* CurrentUserInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserInfoService.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				3715D0261F31FB44002AD5CB /* Info.plist */,
 				372818311F333018003719D2 /* Service */,
 				3715D0331F321BB1002AD5CB /* Model */,
+				3730397D1F40A00900C41071 /* Util */,
 				3715D02E1F320011002AD5CB /* LogInView */,
 				37E85EAB1F39960F00CFA8DA /* SignUpView */,
 				3715D03D1F3243C4002AD5CB /* MainView */,
@@ -441,6 +444,14 @@
 				3730397B1F405C1500C41071 /* EditIntroduceViewController.swift */,
 			);
 			name = EditIntroduceView;
+			sourceTree = "<group>";
+		};
+		3730397D1F40A00900C41071 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3730397E1F40A03B00C41071 /* ImageScale.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		373255F31F372C3600006C25 /* RefundPolicyView */ = {
@@ -678,6 +689,7 @@
 				371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */,
 				1448BC6B1F3C585A006A1AEB /* BathRoomViewController.swift in Sources */,
 				37CD3C4D1F3DC314008B695A /* HSReservationViewCell.swift in Sources */,
+				3730397F1F40A03B00C41071 /* ImageScale.swift in Sources */,
 				371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */,
 				3728183D1F3388C3003719D2 /* SecondCustomCell.swift in Sources */,
 				14E9C61C1F3DBDCF00CD3CD3 /* ExplanationViewController.swift in Sources */,

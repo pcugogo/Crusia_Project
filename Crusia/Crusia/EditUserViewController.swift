@@ -7,15 +7,17 @@
 //
 
 import UIKit
-
+import Fusuma
 class EditUserViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
+    let fusumaViewController = FusumaViewController()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,12 @@ class EditUserViewController: UIViewController {
         // Note that SO highlighting makes the new selector syntax (#selector()) look
         // like a comment but it isn't one
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     deinit {
@@ -59,11 +67,11 @@ class EditUserViewController: UIViewController {
     func configureUser() {
         
         // 유저 이름 가져오기
-        let userName = CurrentUserInfoService.shared.currentUser?.userName.stringValue
+        let userName = CurrentUserInfoService.shared.tempUser?.userName.stringValue
         self.userNameLabel.text = userName
         
         // 유저 이미지 가져오기
-        if let imgUrl = CurrentUserInfoService.shared.currentUser?.imgProfile.url {
+        if let imgUrl = CurrentUserInfoService.shared.tempUser?.imgProfile.url {
             self.profileImageView.kf.setImage(with: imgUrl)
         }
     }
@@ -74,11 +82,24 @@ class EditUserViewController: UIViewController {
         // 안쓰는 테이블 로우 줄 지우기
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        tableView.estimatedRowHeight = 120.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
+//        tableView.estimatedRowHeight = 120.0
+//        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    
+    
+    @IBAction func imageChangeButtonTouched(_ sender: UIButton) {
 
         
+        // Configure Fusuma
+        fusumaViewController.hasVideo = false
+        fusumaBackgroundColor = UIColor.black
+        fusumaTintColor = UIColor(red: 46.0/255.0, green: 204.0/255.0, blue: 113.0/255.0, alpha: 1.0)
+        fusumaViewController.view.backgroundColor = UIColor.black
+        fusumaViewController.delegate = self
+        
+        // Bring it up
+        present(fusumaViewController, animated: true, completion: nil)
     }
     
     @IBAction func dismissButtonTouched(_ sender: UIButton) {
@@ -109,8 +130,6 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-
         
         switch indexPath.row {
         case 0:
@@ -201,9 +220,52 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
-
-
+extension EditUserViewController: FusumaDelegate {
+    
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
+        
+    }
+    
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        
+        // Resize the image
+        let scaledImage = image.scale(newWidth: 100.0)
+        
+        guard let imageData = UIImageJPEGRepresentation(scaledImage, 0.3) else {
+            return
+        }
+        
+        profileImageView.image = image
+        
+        
+        CurrentUserInfoService.shared.editUserProfileImage(imageData: imageData)
+        
+        
+    }
+    
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+        
+    }
+    
+    func fusumaCameraRollUnauthorized() {
+        
+        let alertController = UIAlertController(title: "Request Access", message: "We need to access your photo library for saving and retrieving your photos. Please choose Settings to grant us the access right.", preferredStyle: .alert)
+        let settingAction = UIAlertAction(title: "Settings", style: .default) { (action) in
+            
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(settingAction)
+            alertController.addAction(cancelAction)
+            
+            presentedViewController?.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+}
 
 
 
