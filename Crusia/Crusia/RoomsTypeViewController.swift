@@ -24,6 +24,17 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(HostingService.shared.roomType)
+        if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "House" {
+            firstCellBtnCheck = true
+            
+        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Individual" {
+            firstCellBtnCheck = true
+          
+        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Shared_Room" {
+            firstCellBtnCheck = true
+      
+        }
         
         nextBtnOut.layer.cornerRadius = 3
         nextBtnOut.alpha = 0.7
@@ -71,6 +82,7 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
         let cell:RoomsTypeCell = tableView.dequeueReusableCell(withIdentifier: "RoomsTypeCell", for: indexPath) as! RoomsTypeCell
         
         if indexPath.row == 0 {
+            
             cell.RoomsTypeLb.text = "집 전체"
             if firstCellBtnCheck == true {
                 
@@ -89,6 +101,11 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
 
             
         }else if indexPath.row == 1 {
+            
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "개인실" {
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+            }
+            
             cell.RoomsTypeLb.text = "개인실"
             if secondCellBtnCheck == true {
                 
@@ -106,7 +123,12 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
                 
             }
             
-        }else if indexPath.row == 2{
+        }else if indexPath.row == 2 {
+            
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "다인실" {
+                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+            }
+            
             cell.RoomsTypeLb.text = "다인실"
             if thirdCellBtnCheck == true {
                 

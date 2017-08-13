@@ -14,18 +14,33 @@ protocol WhereViewControllerDelegate {
     
 }
 
-class WhereViewController: UIViewController {
+class WhereViewController: UIViewController,UITextFieldDelegate {
   
     var delegate:WhereViewControllerDelegate?
    
 //    let mapViewContrllor = MapLocationViewController()
     
     @IBOutlet weak var registrationProgressView: UIProgressView!
+    
+    @IBOutlet weak var countryLb: UILabel!
+    @IBOutlet weak var addressLb: UILabel!
+    @IBOutlet weak var postalNumberLb: UILabel!
+    
     @IBOutlet weak var countryTextField: UITextField!
+    
+    
+    
     @IBOutlet weak var firstLineAddressTextField: UITextField!
+    
+    
     @IBOutlet weak var secondLineAddressTextField: UITextField!
+    
+    
     @IBOutlet weak var thirdLineAddressTextField: UITextField!
+    
+    
     @IBOutlet weak var postalNumberTextField: UITextField!
+    
    
     @IBOutlet weak var detailExplanationBtnOut: UIButton!
     
@@ -49,6 +64,23 @@ class WhereViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !(countryTextField.text?.isEmpty)! && !(firstLineAddressTextField.text?.isEmpty)! && !(secondLineAddressTextField.text?.isEmpty)! && !(thirdLineAddressTextField.text?.isEmpty)! && !(postalNumberTextField.text?.isEmpty)! {
+            
+            return true
+
+        }else{
+            
+            let checkAlert:UIAlertController = UIAlertController(title: "오류", message: "모든 항목을 입력해주세요.", preferredStyle: .alert)
+            let checkError:UIAlertAction = UIAlertAction(title: "네", style:UIAlertActionStyle.cancel, handler: nil)
+            checkAlert.addAction(checkError)
+            self.present(checkAlert, animated: true, completion:nil)
+
+            
+            return false
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
         
@@ -72,13 +104,23 @@ class WhereViewController: UIViewController {
         
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     
-  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("ReturnTouched")
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
   
 
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
+         HostingService.shared.address = ""
         navigationController?.popViewController(animated: true)
     }
 

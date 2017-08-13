@@ -20,7 +20,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
 
         currentUser = CurrentUserInfoService.shared.currentUser
         

@@ -19,6 +19,7 @@ class AmenitiesDetailCell: UITableViewCell {
     
     @IBOutlet weak var AmeitiesTitleLb: UILabel!
     @IBOutlet weak var AmeitiesContentLb: UILabel!
+    @IBOutlet weak var checkSwitchOut: UISwitch!
     
     
     

@@ -49,6 +49,9 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         cell.pickerInputValue = totalBath
         
+        if HostingService.shared.oneStepComplete == true {
+            cell.bathRoomCheckTextField.text = String(HostingService.shared.accommodates)
+        }
        
         return cell
     }
@@ -65,6 +68,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
+        HostingService.shared.bathrooms = 0
         navigationController?.popViewController(animated: true)
     }
     

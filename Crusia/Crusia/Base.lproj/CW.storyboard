@@ -965,10 +965,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLb" destination="ZNq-bh-mAi" id="k8j-1j-nXp"/>
+                        <outlet property="countryLb" destination="sIQ-EC-ERQ" id="hYa-H0-X9u"/>
                         <outlet property="countryTextField" destination="wXW-7i-6bc" id="1An-iS-xcf"/>
                         <outlet property="detailExplanationBtnOut" destination="7UM-DZ-9KG" id="ilv-dZ-pCG"/>
                         <outlet property="firstLineAddressTextField" destination="r7d-qm-agA" id="dIH-Vg-oUV"/>
                         <outlet property="nextBtnOut" destination="uv1-Ph-Otf" id="rcy-K1-o9V"/>
+                        <outlet property="postalNumberLb" destination="4jY-rA-KbL" id="C01-Um-zEo"/>
                         <outlet property="postalNumberTextField" destination="UPP-Xc-nTw" id="ebP-WF-zg9"/>
                         <outlet property="registrationProgressView" destination="urp-fN-acp" id="OC4-pI-OZL"/>
                         <outlet property="secondLineAddressTextField" destination="1C9-bg-tw7" id="Z7C-88-ILw"/>
@@ -1248,6 +1251,7 @@
                                         <connections>
                                             <outlet property="AmeitiesContentLb" destination="UOs-Be-bRa" id="mlH-fh-RVn"/>
                                             <outlet property="AmeitiesTitleLb" destination="oYB-Rr-RHW" id="wKH-82-dYQ"/>
+                                            <outlet property="checkSwitchOut" destination="uWN-qe-UGX" id="E39-sG-a5W"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmenitiesBasicCell" rowHeight="63" id="UKC-VG-CCv" customClass="AmenitiesBasicCell" customModule="Crusia" customModuleProvider="target">
@@ -1284,6 +1288,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="AmenitiesLb" destination="LCC-mh-U5j" id="qkI-2j-bMF"/>
+                                            <outlet property="checkSwitchOut" destination="hlD-2b-cBK" id="fVA-tc-YUb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1500,6 +1505,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkSwitchOut" destination="2xa-7e-Gg6" id="JsJ-Ri-ctP"/>
                                             <outlet property="guestSpaceContentLb" destination="Zse-rN-uMj" id="JGS-v2-xwW"/>
                                             <outlet property="guestSpaceTitleLb" destination="RC6-re-C4e" id="GnU-rC-hu4"/>
                                         </connections>
@@ -1537,6 +1543,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkSwitchOut" destination="KPp-Tn-YLh" id="Jf9-yu-lJz"/>
                                             <outlet property="guestSpaceTitleLb" destination="X7e-qk-7k0" id="Bma-Jm-DSv"/>
                                         </connections>
                                     </tableViewCell>
@@ -1637,30 +1644,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="You-hB-FCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6657" y="2676"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="UEZ-53-5ws">
-            <objects>
-                <viewController id="uYJ-Go-eLs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kfh-e2-KzB"/>
-                        <viewControllerLayoutGuide type="bottom" id="Vd8-PN-YFQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t9L-70-y67">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-JD-dyr">
-                                <rect key="frame" x="0.0" y="193" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KvJ-TZ-Kbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6534" y="3239"/>
         </scene>
         <!--Third Step View Controller-->
         <scene sceneID="JXy-py-NmU">
@@ -1764,7 +1747,7 @@
         <image name="XbtnImg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w9f-1B-tOw"/>
+        <segue reference="Gwv-6m-DwV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.39971524479999998" green="0.71328240629999995" blue="0.74938315150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

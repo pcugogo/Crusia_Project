@@ -58,12 +58,16 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
+
         if indexPath.row == 0 {
+            
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
-            
-            
+            for i in HostingService.shared.amenities{
+            if HostingService.shared.oneStepComplete == true && i == "Essentials"  {
+                amenitiesDetailCell.checkSwitchOut.isOn = true
+                
+            }
+        }
             amenitiesDetailCell.AmeitiesTitleLb.text = amenitieTitleValues[indexPath.row]
             amenitiesDetailCell.parameterName = parameterName[indexPath.row]
             amenitiesDetailCell.AmeitiesContentLb.text = amenitieContentValues[0]
@@ -73,6 +77,10 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 1{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Wireless_Internet") {
+                amenitiesDetailCell.checkSwitchOut.isOn = true
+                
+            }
             
             amenitiesDetailCell.AmeitiesTitleLb.text = amenitieTitleValues[indexPath.row]
             amenitiesDetailCell.parameterName = parameterName[indexPath.row]
@@ -83,6 +91,10 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 6{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Heating") {
+                amenitiesDetailCell.checkSwitchOut.isOn = true
+                
+            }
             
             amenitiesDetailCell.AmeitiesTitleLb.text = amenitieTitleValues[indexPath.row]
             amenitiesDetailCell.parameterName = parameterName[indexPath.row]
@@ -93,18 +105,46 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 13{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Wheelchair_accessible") {
+                amenitiesDetailCell.checkSwitchOut.isOn = true
+                
+            }
             
             amenitiesDetailCell.AmeitiesTitleLb.text = amenitieTitleValues[indexPath.row]
             amenitiesDetailCell.parameterName = parameterName[indexPath.row]
             amenitiesDetailCell.AmeitiesContentLb.text = amenitieContentValues[3]
             
             return amenitiesDetailCell
-            
+        
         }else{
             
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            
+//            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Shampoo") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//                
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Hangers") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("TV") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Cable_TV") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Heating") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Air_conditioning") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Breakfast") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Indoor_fireplace") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Dryer") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pets_allowed") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Doorman") {
+//                amenitiesBasicCell.checkSwitchOut.isOn = true
+//            }
+                amenitiesBasicCell.checkSwitchOut.isOn = true
             amenitiesBasicCell.AmenitiesLb.text = amenitieTitleValues[indexPath.row]
             amenitiesBasicCell.parameterName = parameterName[indexPath.row]
             
@@ -136,7 +176,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
 
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-        
+         HostingService.shared.amenities.removeAll()
         navigationController?.popViewController(animated: true)
     }
     

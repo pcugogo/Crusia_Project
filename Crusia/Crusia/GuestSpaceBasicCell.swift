@@ -16,6 +16,7 @@ class GuestSpaceBasicCell: UITableViewCell {
     
     @IBOutlet weak var guestSpaceTitleLb: UILabel!
     
+    @IBOutlet weak var checkSwitchOut: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,7 +32,7 @@ class GuestSpaceBasicCell: UITableViewCell {
         if sender.isOn == true{
             if let parameter = parameterName {
                 HostingService.shared.amenities.append(parameter)
-                
+                HostingService.shared.switchCheckNumber += 1
             }
         }else{
             HostingService.shared.amenities.removeLast()

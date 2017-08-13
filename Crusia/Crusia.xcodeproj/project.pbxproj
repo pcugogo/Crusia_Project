@@ -252,8 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				1448BC551F3C585A006A1AEB /* AmenitiesCheckViewController.swift */,
-				1448BC561F3C585A006A1AEB /* AmenitiesBasicCell.swift */,
 				1448BC571F3C585A006A1AEB /* AmenitiesDetailCell.swift */,
+				1448BC561F3C585A006A1AEB /* AmenitiesBasicCell.swift */,
 			);
 			name = Amenities;
 			sourceTree = "<group>";
