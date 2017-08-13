@@ -34,6 +34,9 @@ class HostingService {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
+    var switchCheckNumber = 0
+    var oneStepComplete = false
+    
     func houseParameters() -> Parameters{
         let parameters: Parameters = ["title": title,
                                       "address":address,

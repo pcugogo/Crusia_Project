@@ -17,6 +17,7 @@ class AmenitiesBasicCell: UITableViewCell {
     
     
     @IBOutlet weak var AmenitiesLb: UILabel!
+    @IBOutlet weak var checkSwitchOut: UISwitch!
     
     
     override func awakeFromNib() {

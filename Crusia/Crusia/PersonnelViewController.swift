@@ -53,6 +53,10 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         
         if indexPath.row == 0 {
+            if HostingService.shared.oneStepComplete == true {
+                print("0000000000000000000000000")
+                cell.personneTextField.text = String(HostingService.shared.accommodates)
+            }
             cell.personneCheckLb.text = "총 게스트 수"
             cell.personneTextField.text = "1"
             cell.pickerInputValue = totalGuest
@@ -60,6 +64,9 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
             
             
         }else if indexPath.row == 1 {
+            if HostingService.shared.oneStepComplete == true {
+                cell.personneTextField.text = String(HostingService.shared.beds)
+            }
             cell.personneCheckLb.text = "게스트용 침대"
             cell.personneTextField.text = "1"
             cell.pickerInputValue = totalBed
@@ -77,13 +84,15 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     @IBAction func nextBtnAction(_ sender: UIButton) {
-       print("================침대 갯수 데이터체크===================", HostingService.shared.beds)
+        print("================침대 갯수 데이터체크===================", HostingService.shared.beds)
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-    navigationController?.popViewController(animated: true)
+        HostingService.shared.accommodates = 0
+        HostingService.shared.beds = 0
+        navigationController?.popViewController(animated: true)
     }
-   
+    
     /*
     // MARK: - Navigation
 
