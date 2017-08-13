@@ -47,10 +47,21 @@ class SignUpEmailViewController: UIViewController {
     
     @IBAction func nextButtonTouched(_ sender: UIButton) {
         
+        // 이메일 유효성 체크
+        guard isValidEmail(testStr: emailTextfield.text!) else {
+            let alertController = UIAlertController(title: nil, message: "올바른 이메일 형식이 아닙니다. 다시 작성해주세요.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            
+            alertController.addAction(okayAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
         let email: JSON = JSON(stringLiteral: emailTextfield.text!)
         
         signUpdata.email = email
-        
     }
     
     
@@ -78,6 +89,7 @@ class SignUpEmailViewController: UIViewController {
     }
     
     func emailCehck() {
+        
         
         Alamofire.request("http://crusia.xyz/apis/user/", method: .get).validate().responseJSON { response in
             
@@ -122,6 +134,15 @@ class SignUpEmailViewController: UIViewController {
                 
             }
         }
+    }
+    
+    // 이메일 유효성 검사
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
 
 }

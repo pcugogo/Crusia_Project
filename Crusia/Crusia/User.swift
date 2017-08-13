@@ -33,10 +33,10 @@ struct User {
         get {
             let tempDic: [String: Any] = ["username": userName.stringValue,
                                           "first_name": firstName.stringValue,
-                                          "last_name": firstName.stringValue,
+                                          "last_name": lastName.stringValue,
                                           "gender": gender.stringValue,
                                           "birthday": birthday.stringValue,
-                                          "phone_number": phoneNum.stringValue,
+                                          "phone_num": phoneNum.stringValue,
                                           "introduce": introduce.stringValue,
                                           "preference_language": prefLanguage.stringValue,
                                           "living_site": livingSite.stringValue]
