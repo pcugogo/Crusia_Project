@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = true
         
         self.tabBarController?.tabBar.isHidden = true

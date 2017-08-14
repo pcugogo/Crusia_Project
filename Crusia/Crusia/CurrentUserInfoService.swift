@@ -115,7 +115,7 @@ class CurrentUserInfoService {
         print("PatchUserInfo..........................")
         print(httpHeader)
         
-        let parameters: Parameters = ["image_url": imageData]
+        let parameters: Parameters = ["img_profile": imageData]
         
         let currentUserPk: Int = UserDefaults.standard.object(forKey: "userPk") as! Int
         
