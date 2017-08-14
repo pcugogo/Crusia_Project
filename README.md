@@ -13,10 +13,6 @@
 
 - Airbnb와 동일한 UI / 기능 제공을 목표로 합니다.
 
-### Prototyping
-
- ![](Crusia/Document/prototyping.png)
- 
 ## 핵심기능
 
 * 유저관련 기능
