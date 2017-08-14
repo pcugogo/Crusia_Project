@@ -2646,6 +2646,7 @@
                                             <outlet property="priceLabel" destination="C3R-jL-ogz" id="cej-Y5-5Ql"/>
                                             <outlet property="titleLabel" destination="qFQ-fH-wNw" id="c3u-DU-keS"/>
                                             <outlet property="typeLabel" destination="ucJ-Re-EgY" id="kHL-wk-Tur"/>
+                                            <segue destination="Pqh-mL-uYC" kind="show" identifier="showDetailFromWishList" id="AuA-HA-qnc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2912,4 +2913,7 @@
         <image name="nextBtn" width="200" height="200"/>
         <image name="writeicon" width="23" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AuA-HA-qnc"/>
+    </inferredMetricsTieBreakers>
 </document>

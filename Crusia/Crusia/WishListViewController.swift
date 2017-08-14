@@ -25,6 +25,8 @@ class WishListViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = true
         tableView.separatorColor = .clear
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +40,9 @@ class WishListViewController: UIViewController {
         for i in postData {
             print(i.pk)
         }
+        
+        self.tabBarController?.tabBar.isHidden = false
+
     
     }
 
@@ -54,7 +59,7 @@ class WishListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "showPostDetail" {
+        if segue.identifier == "showDetailFromWishList" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 
                 let destinationController = segue.destination as! DetailViewController

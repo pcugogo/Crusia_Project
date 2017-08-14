@@ -109,39 +109,45 @@ class CurrentUserInfoService {
     func editUserProfileImage(imageData: Data) {
         
         let token: String = UserDefaults.standard.object(forKey: "token") as! String
-        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
-        //        let parameters: Parameters = ["email": emailAddress, "password1": password, "password2": confirm]
         
         print("PatchUserInfo..........................")
-        print(httpHeader)
-        
-        let parameters: Parameters = ["img_profile": imageData]
         
         let currentUserPk: Int = UserDefaults.standard.object(forKey: "userPk") as! Int
+
+        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
         
+        let URL = "http://crusia.xyz/apis/user/\(currentUserPk)/"
         
-        Alamofire.request("http://crusia.xyz/apis/user/\(currentUserPk)/", method: .patch, parameters: parameters, headers: httpHeader).validate().responseJSON { (response) in
+
+        // 이미지 파일 수정
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
             
-            switch response.result {
+            multipartFormData.append(imageData, withName: "img_profile", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            
+        }, usingThreshold:UInt64.init(),
+           to: URL, //URL Here
+            method: .patch,
+            headers: httpHeader,
+            encodingCompletion: { (result) in
                 
-            case .success(let value):
-                
-                print("Validation Successful")
-                
-                let json = JSON(value)
-                print("UserData가 다음과 같이 수정되었음!: \(json)")
-                
-                self.currentUser = User.init(user: json)
-                
-                CurrentUserInfoService.shared.setCurrentUser()
-                
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
-        
+                switch result {
+                case .success(let upload, _, _):
+                    print("패치 성공 ......................................................")
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print("something")
+                    })
+                    
+                    upload.responseJSON { response in
+                        print("the resopnse code is : \(String(describing: response.response?.statusCode))")
+                        print("the response is : \(response)")
+                    }
+                    break
+                case .failure(let encodingError):
+                    print("the error is  : \(encodingError.localizedDescription)")
+                    break
+                }
+        })
 
 
     }
