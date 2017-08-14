@@ -647,7 +647,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="biS-V2-v6p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="AcE-Tg-pOs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
@@ -688,6 +688,11 @@
                                         <outlet property="delegate" destination="Pqh-mL-uYC" id="jNQ-eS-jJg"/>
                                     </connections>
                                 </collectionView>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="YAD-4o-m8B">
+                                    <rect key="frame" x="0.0" y="1447" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCustomCell" rowHeight="140" id="INB-eg-4IR" customClass="UserInfoCustomCell" customModule="Crusia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="375" height="140"/>
@@ -1332,11 +1337,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0iG-bX-DfL" firstAttribute="leading" secondItem="t9D-wz-k2D" secondAttribute="leading" id="3FV-4S-E4Q"/>
-                            <constraint firstItem="biS-V2-v6p" firstAttribute="centerY" secondItem="t9D-wz-k2D" secondAttribute="centerY" constant="-25" id="7WA-CI-ebj"/>
+                            <constraint firstItem="biS-V2-v6p" firstAttribute="top" secondItem="t9D-wz-k2D" secondAttribute="top" id="7YR-yR-sYd"/>
+                            <constraint firstItem="Dzq-EJ-rjI" firstAttribute="top" secondItem="biS-V2-v6p" secondAttribute="bottom" id="HcF-Xi-xGE"/>
                             <constraint firstItem="biS-V2-v6p" firstAttribute="leading" secondItem="t9D-wz-k2D" secondAttribute="leading" id="Jwi-TO-zDi"/>
                             <constraint firstItem="Dzq-EJ-rjI" firstAttribute="top" secondItem="0iG-bX-DfL" secondAttribute="bottom" id="RTg-tm-VaM"/>
                             <constraint firstAttribute="trailing" secondItem="0iG-bX-DfL" secondAttribute="trailing" id="Zk3-hZ-yG4"/>
-                            <constraint firstItem="Dzq-EJ-rjI" firstAttribute="top" secondItem="biS-V2-v6p" secondAttribute="bottom" constant="50" id="iIC-04-YiY"/>
                             <constraint firstAttribute="trailing" secondItem="biS-V2-v6p" secondAttribute="trailing" id="ybU-n5-hu5"/>
                         </constraints>
                     </view>
@@ -1365,7 +1370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymP-xz-FWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3186" y="3499"/>
+            <point key="canvasLocation" x="-3186.4000000000001" y="3498.8005997001501"/>
         </scene>
         <!--Amenities View Controller-->
         <scene sceneID="8J8-c9-4Ky">
