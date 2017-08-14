@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class WishListService {
     
     static let shared: WishListService = WishListService()
     
     var houses: [House] = []
+    var heartImages: [UIImage] = []
+    var heartIndex: [Int] = []
     
     private init() {}
 
@@ -46,6 +49,11 @@ class WishListService {
         })
         
         completionHandler(posts)
+    }
+    
+    func deleteHeart() {
+        
+ 
     }
     
 }
