@@ -33,6 +33,7 @@ struct House {
     var amenities: JSON
     var latitude: JSON
     var longitude: JSON
+    var wished: Bool = false
     
     init(house: JSON) {
         
