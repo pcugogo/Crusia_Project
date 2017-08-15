@@ -10,7 +10,15 @@
 
 import UIKit
 
+protocol HouseCreateViewCellDelegate {
+    func nextBtn(indexPath:Int)
+    func asd()
+}
+
 class HouseCreateCell: UITableViewCell {
+    
+    var delegate:HouseCreateViewCellDelegate?
+    
     var topText:String?
     var detailText:String?
     var btnHidden:Bool?
@@ -20,6 +28,7 @@ class HouseCreateCell: UITableViewCell {
     
     @IBOutlet weak var detailTextLb: UILabel!
     @IBOutlet weak var continueBtnOut: UIButton!
+    @IBOutlet weak var checkImgView: UIImageView!
     
   
     
@@ -27,6 +36,8 @@ class HouseCreateCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        continueBtnOut.layer.cornerRadius = 3
+        
 //        topTextLabel.text = topText 이렇게 하니깐 시점이 늦다
 //        detailTextLb.text = detailText
 //        continueBtnOut.isHidden = btnHidden ?? true
@@ -37,5 +48,13 @@ class HouseCreateCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+   
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        delegate?.nextBtn(indexPath: cellIndexPath!)
+        delegate?.asd()
+        print("Btn")
+    }
+    
+   
 
 }

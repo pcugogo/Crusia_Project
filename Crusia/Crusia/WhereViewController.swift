@@ -28,8 +28,6 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var countryTextField: UITextField!
     
-    
-    
     @IBOutlet weak var firstLineAddressTextField: UITextField!
     
     
@@ -48,7 +46,20 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        countryTextField.delegate = self
+        firstLineAddressTextField.delegate = self
+        secondLineAddressTextField.delegate = self
+        thirdLineAddressTextField.delegate = self
+        postalNumberTextField.delegate = self
+        
+//        if HostingService.shared.oneStepComplete == true{
+            countryTextField.text = HostingService.shared.whereViewCountry
+            firstLineAddressTextField.text = HostingService.shared.whereViewFirstLineAddress
+            secondLineAddressTextField.text = HostingService.shared.whereViewSecondLineAddress
+            thirdLineAddressTextField.text = HostingService.shared.whereViewThirdLineAddress
+            postalNumberTextField.text = HostingService.shared.whereViewPostalNumber
+//        }
+        
         nextBtnOut.layer.cornerRadius = 3
         detailExplanationBtnOut.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
@@ -56,6 +67,7 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    
         registrationProgressView.setProgress(0.5, animated: true)
     }
     
@@ -89,8 +101,11 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
             print(secondLineAddressTextField.text!)
             mapViewControllor.address = "\(self.secondLineAddressTextField.text!)"
             HostingService.shared.address = "\(countryTextField.text!) \(firstLineAddressTextField.text!) \(secondLineAddressTextField.text!) \(thirdLineAddressTextField.text!) 우편번호: \(postalNumberTextField.text!)"
-            
-            
+            HostingService.shared.whereViewCountry = countryTextField.text!
+            HostingService.shared.whereViewFirstLineAddress = firstLineAddressTextField.text!
+            HostingService.shared.whereViewSecondLineAddress = secondLineAddressTextField.text!
+            HostingService.shared.whereViewThirdLineAddress = thirdLineAddressTextField.text!
+            HostingService.shared.whereViewPostalNumber = postalNumberTextField.text!
             print("=========================================, \(HostingService.shared.address)")
 
         }else if segue.identifier == "WhereViewExplanation" {
@@ -120,8 +135,16 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
   
 
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-         HostingService.shared.address = ""
+        
         navigationController?.popViewController(animated: true)
+        
+//        if HostingService.shared.oneStepComplete == true{
+//            navigationController?.popViewController(animated: true)
+//        }else{
+//            HostingService.shared.address = ""
+//            navigationController?.popViewController(animated: true)
+//        }
+       
     }
 
     

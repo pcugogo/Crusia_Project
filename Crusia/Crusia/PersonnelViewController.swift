@@ -20,7 +20,7 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtnOut.layer.cornerRadius = 3
-        
+        HostingService.shared.personnelSaveAndBack = false
         print("================숙소 종류 데이터체크===================", HostingService.shared.roomType)
         
         HostingService.shared.title = "안녕하세요 테스트 " //2-3 숙소제목 (필)
@@ -44,6 +44,7 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     let totalBedRoom = 11
     let totalBed = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","15"]
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -54,11 +55,13 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         if indexPath.row == 0 {
             if HostingService.shared.oneStepComplete == true {
-                print("0000000000000000000000000")
+                
+                cell.personneTextField.text = String(HostingService.shared.accommodates)
+            }else {
                 cell.personneTextField.text = String(HostingService.shared.accommodates)
             }
+            
             cell.personneCheckLb.text = "총 게스트 수"
-            cell.personneTextField.text = "1"
             cell.pickerInputValue = totalGuest
             cell.indexPath = indexPath.row //커스텀에 인덱스를 넘겨줘서 이 인덱스로 어디에 들어갈 데이터인지 식별한다
             
@@ -66,9 +69,11 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         }else if indexPath.row == 1 {
             if HostingService.shared.oneStepComplete == true {
                 cell.personneTextField.text = String(HostingService.shared.beds)
+            }else {
+                cell.personneTextField.text = String(HostingService.shared.beds)
             }
+            
             cell.personneCheckLb.text = "게스트용 침대"
-            cell.personneTextField.text = "1"
             cell.pickerInputValue = totalBed
             cell.indexPath = indexPath.row
           
@@ -88,11 +93,36 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-        HostingService.shared.accommodates = 0
-        HostingService.shared.beds = 0
-        navigationController?.popViewController(animated: true)
+       
+        
+        if HostingService.shared.oneStepComplete == true{
+            navigationController?.popViewController(animated: true)
+        }else if HostingService.shared.personnelSaveAndBack == true && HostingService.shared.accommodates != 1 && HostingService.shared.beds != 1 {
+            backAlert()
+        }else{
+
+            navigationController?.popViewController(animated: true)
+        }
+       
+        
     }
-    
+    func backAlert() {
+        let alert:UIAlertController = UIAlertController(title: "변경된 내용을 저장할까요?", message: "변경사항을 저장하지 않고 계속할 경우 변경사항이 적용되지 않습니다.", preferredStyle: .alert)
+        let removeBtn:UIAlertAction = UIAlertAction(title: "삭제", style: .default) { (alert) in
+            HostingService.shared.accommodates = 1
+            HostingService.shared.beds = 1
+            self.navigationController?.popViewController(animated: true)
+            
+        }
+        
+        let saveBtn:UIAlertAction = UIAlertAction(title: "저장", style: .default) { (alert) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(removeBtn)
+        alert.addAction(saveBtn)
+        self.present(alert, animated: true, completion: nil)
+    }
+
     /*
     // MARK: - Navigation
 

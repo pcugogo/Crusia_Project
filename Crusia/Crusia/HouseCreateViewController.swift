@@ -11,20 +11,36 @@ import SwiftyJSON
 import Alamofire
 
 
-class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+
+class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HouseCreateViewCellDelegate {
   
-    @IBOutlet weak var hostingWelcomeLb: UILabel!
+    
     
     var currentUser: User?
+    
+    var houseCreateCell = HouseCreateCell()
+    
+    @IBOutlet weak var hostingWelcomeLb: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        houseCreateCell.delegate = self
+        
+       //디드셀렉에서 뷰 식별해서 넘겨줘야됨
 
         currentUser = CurrentUserInfoService.shared.currentUser
         
-        hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
+        hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요! 호스팅 준비를 시작하세요."
         
 //                print("!!!!!!!!!!!!!!!!!!!!!!!!",currentUserData)
 //        print("@@@@@@@@@@@@@@@@@@@@@@@@@@",CurrentUserInfoService.shared.currentUser)
@@ -60,8 +76,8 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//                hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
+        tableView.reloadData()
+
     }
    
     
@@ -71,7 +87,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
 
-    
+   
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,25 +98,42 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if indexPath.row == 0 {
             
+           
             cell.topTextLabel.text = "기본 사항을 입력하세요"
             cell.detailTextLb.text = "침대, 욕실, 편의시설에 대한 정보를 작성하세요."
-            cell.continueBtnOut.isHidden = false
+            cell.cellIndexPath = indexPath.row
+            
+            if HostingService.shared.oneStepComplete == true{
+                cell.continueBtnOut.isHidden = true
+                cell.checkImgView.isHidden = false
+            }else{
+                cell.continueBtnOut.isHidden = false
+                cell.checkImgView.isHidden = true
+            }
             
             return cell
         }else if indexPath.row == 1 {
             
             cell.topTextLabel.text = "상세 정보를 제공해 주세요"
             cell.detailTextLb.text = "숙소가 잘 나온 사진을 올리고 게스트의 흥미를 끌 수 이쓴 설명을 작성하세요."
-            cell.continueBtnOut.isHidden = true
-
+            cell.cellIndexPath = indexPath.row
+            
+            cell.checkImgView.isHidden = true
+            if HostingService.shared.oneStepComplete == true{
+                cell.continueBtnOut.isHidden = false
+            }else{
+                cell.continueBtnOut.isHidden = true
+            }
             
             return cell
         }else {
-           
+            
+            cell.checkImgView.isHidden = true
             cell.topTextLabel.text = "게스트를 맞이할 준비를 하세요."
             cell.detailTextLb.text = "요금,달력,예약 조건을 설정하세요."
+            cell.cellIndexPath = indexPath.row
             cell.continueBtnOut.isHidden = true
-
+            
             
             return cell
         }
@@ -108,20 +141,33 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     }
 
     let cwStoryboard = UIStoryboard(name: "CW", bundle: nil)
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let firstStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "FirstStep")
         let secondStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "SecondStep")
         let thirdStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "ThirdStep")
-       
+        
         if indexPath.row == 0{
             
-            present(firstStepNavi, animated: true, completion: nil)
-        
-        
+            if HostingService.shared.oneStepComplete == true{
+                present(firstStepNavi, animated: true, completion: nil)
+            }
+            
         }else if indexPath.row == 1{
-            present(secondStepNavi, animated: true, completion: nil)
+            
+            if HostingService.shared.oneStepComplete == true{ //추후에 여기서 &&로 투스텝도 만들어야된다 그리고 버튼 프리페어 처리해야된다
+                present(secondStepNavi, animated: true, completion: nil)
+            }
+            
+           
         }else if indexPath.row == 2{
-            present(thirdStepNavi, animated: true, completion: nil)
+            
+            if HostingService.shared.oneStepComplete == true{
+                present(thirdStepNavi, animated: true, completion: nil)
+            }
+            
         }
     }
     
@@ -130,7 +176,25 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
 
-    
+    func nextBtn(indexPath: Int) {
+        let firstStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "FirstStep")
+        let secondStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "SecondStep")
+        let thirdStepNavi = cwStoryboard.instantiateViewController(withIdentifier: "ThirdStep")
+        
+        print("=======================indexPath===============",indexPath)
+        
+        if indexPath == 0 {
+            present(firstStepNavi, animated: true, completion: nil)
+        }else if indexPath == 1{
+            present(secondStepNavi, animated: true, completion: nil)
+        }else if indexPath == 2{
+            present(thirdStepNavi, animated: true, completion: nil)
+        }
+    }
+    func asd() {
+        print("------------------------------asd------------------------------")
+    }
+   
     /*
     // MARK: - Navigation
 

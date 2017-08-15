@@ -187,8 +187,8 @@
 				1448BC7E1F3C5B95006A1AEB /* FirstStep */,
 				1448BC621F3C585A006A1AEB /* HostingService.swift */,
 				14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */,
-				1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */,
 				1448BC661F3C585A006A1AEB /* SecondStepViewController.swift */,
+				1448BC651F3C585A006A1AEB /* ThirdStepViewController.swift */,
 			);
 			name = Hosting;
 			sourceTree = "<group>";

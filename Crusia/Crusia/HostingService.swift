@@ -24,7 +24,7 @@ class HostingService {
     var extraPeopleFee: Int = 0
     var cleaningFee: Int = 0
     var weeklyDiscount: Int = 0
-    var accommodates: Int = 0
+    var accommodates: Int = 1
     var bathrooms: Int = 1
     var bedrooms: Int = 0
     var beds: Int = 1
@@ -36,6 +36,14 @@ class HostingService {
     
     var switchCheckNumber = 0
     var oneStepComplete = false
+    
+    var whereViewCountry = ""
+    var whereViewFirstLineAddress = ""
+    var whereViewSecondLineAddress = ""
+    var whereViewThirdLineAddress = ""
+    var whereViewPostalNumber = ""
+    var personnelSaveAndBack = false
+    var bathRoomSaveAndBack = false
     
     func houseParameters() -> Parameters{
         let parameters: Parameters = ["title": title,
@@ -58,6 +66,16 @@ class HostingService {
                                       "longitude":longitude
         ]
         return parameters
+    }
+    
+    func remove(item: String) {
+
+        
+        for i in 0...amenities.count - 1 {
+            if item == amenities[i] {
+                amenities.remove(at: i)
+            }
+        }
     }
 
    
