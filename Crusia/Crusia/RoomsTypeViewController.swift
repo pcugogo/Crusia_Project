@@ -24,20 +24,15 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(HostingService.shared.roomType)
-        if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "House" {
-            firstCellBtnCheck = true
-            
-        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Individual" {
-            firstCellBtnCheck = true
-          
-        }else if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Shared_Room" {
-            firstCellBtnCheck = true
-      
-        }
         
         nextBtnOut.layer.cornerRadius = 3
-        nextBtnOut.alpha = 0.7
+        if HostingService.shared.roomType == "" {
+            nextBtnOut.alpha = 0.7
+        }else{
+            nextBtnOut.alpha = 1.0
+        }
+        
+        
         detailExplanationBtnOut.layer.cornerRadius = 25
       
         // Do any additional setup after loading the view.
@@ -82,7 +77,6 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
         let cell:RoomsTypeCell = tableView.dequeueReusableCell(withIdentifier: "RoomsTypeCell", for: indexPath) as! RoomsTypeCell
         
         if indexPath.row == 0 {
-            
             cell.RoomsTypeLb.text = "집 전체"
             if firstCellBtnCheck == true {
                 
@@ -94,17 +88,17 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
                 tableView.deselectRow(at: indexPath, animated: true)
                 
             }else{
-               
-                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
-                
+                if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "House" {
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+                    
+                }else{
+                    
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
+                }
             }
-
+            
             
         }else if indexPath.row == 1 {
-            
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "개인실" {
-                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
-            }
             
             cell.RoomsTypeLb.text = "개인실"
             if secondCellBtnCheck == true {
@@ -118,16 +112,18 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
                 
             }else{
                 
-                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
-            
+                if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Individual" {
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+                    
+                }else{
+                    
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
+                }
+                
                 
             }
             
         }else if indexPath.row == 2 {
-            
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "다인실" {
-                cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
-            }
             
             cell.RoomsTypeLb.text = "다인실"
             if thirdCellBtnCheck == true {
@@ -140,7 +136,14 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
                 
             }else{
                 
-                 cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
+                if HostingService.shared.oneStepComplete == true && HostingService.shared.roomType == "Shared_Room" {
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CheckImg")
+                    
+                }else{
+                    
+                    cell.RoomTypeCheckImg.image = #imageLiteral(resourceName: "CircleImg-1")
+                }
+
                
             }
         }
@@ -217,8 +220,15 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     @IBAction func dissmissBtnAction(_ sender: UIButton) {
         
-        HostingService.shared.roomType.removeAll()
-        dismiss(animated: true, completion: nil)
+        if HostingService.shared.oneStepComplete == true{
+            dismiss(animated: true, completion: nil)
+        }else{
+            HostingService.shared.roomType.removeAll()
+            dismiss(animated: true, completion: nil)
+        }
+        
+            
+        
     }
     /*
      // MARK: - Navigation

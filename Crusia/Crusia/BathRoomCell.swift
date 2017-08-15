@@ -58,6 +58,8 @@ class BathRoomCell: UITableViewCell,UITextFieldDelegate,UIPickerViewDelegate,UIP
         
         HostingService.shared.bathrooms = Int(bathRoomCheckTextField.text!)!
         
+        HostingService.shared.bathRoomSaveAndBack = true
+        
         bathRoomCheckTextField.resignFirstResponder()
         
         

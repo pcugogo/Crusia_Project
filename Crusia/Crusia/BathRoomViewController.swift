@@ -24,7 +24,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        HostingService.shared.bathRoomSaveAndBack = false
         nextBtnOut.layer.cornerRadius = 3
         
     }
@@ -51,6 +51,8 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if HostingService.shared.oneStepComplete == true {
             cell.bathRoomCheckTextField.text = String(HostingService.shared.accommodates)
+        }else{
+            cell.bathRoomCheckTextField.text = String(HostingService.shared.accommodates)
         }
        
         return cell
@@ -68,9 +70,35 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-        HostingService.shared.bathrooms = 0
-        navigationController?.popViewController(animated: true)
+        if HostingService.shared.oneStepComplete == true{
+            navigationController?.popViewController(animated: true)
+        }else if HostingService.shared.bathrooms == 0{
+            HostingService.shared.bathrooms = 1
+            navigationController?.popViewController(animated: true)
+        }else if HostingService.shared.bathRoomSaveAndBack == true && HostingService.shared.bathrooms != 1 {
+            backAlert()
+        }else{
+
+            navigationController?.popViewController(animated: true)
+        }
+        
     }
+    
+    func backAlert() {
+        let alert:UIAlertController = UIAlertController(title: "변경된 내용을 저장할까요?", message: "변경사항을 저장하지 않고 계속할 경우 변경사항이 적용되지 않습니다.", preferredStyle: .alert)
+        let removeBtn:UIAlertAction = UIAlertAction(title: "삭제", style: .default) { (alert) in
+            HostingService.shared.bathrooms = 1
+            self.navigationController?.popViewController(animated: true)
+            
+        }
+        let saveBtn:UIAlertAction = UIAlertAction(title: "저장", style: .default) { (alert) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(removeBtn)
+        alert.addAction(saveBtn)
+        self.present(alert, animated: true, completion: nil)
+    }
+
     
     /*
      // MARK: - Navigation

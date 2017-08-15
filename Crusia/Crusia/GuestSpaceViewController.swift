@@ -15,25 +15,25 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
-        var parameters: Parameters = ["title":  HostingService.shared.title,
-                                      "address":HostingService.shared.address,
-                                      "introduce":HostingService.shared.introduce!,
-                                      "space_info":HostingService.shared.spaceInfo!,
-                                      "guest_access":HostingService.shared.guestAccess!,
-                                      "price_per_day":HostingService.shared.pricePerDay,
-                                      "extra_people_fee":HostingService.shared.extraPeopleFee,
-                                      "cleaning_fee":HostingService.shared.cleaningFee,
-                                      "weekly_discount":HostingService.shared.weeklyDiscount,
-                                      "accommodates":HostingService.shared.accommodates,
-                                      "bathrooms":HostingService.shared.bathrooms,
-                                      "bedrooms":HostingService.shared.bedrooms,
-                                      "beds":HostingService.shared.beds,
-                                      "room_type":HostingService.shared.roomType,
-                                      "house_images":HostingService.shared.houseImages ?? "",
-                                      "amenities":HostingService.shared.amenities,
-                                      "latitude":HostingService.shared.latitude,
-                                      "longitude":HostingService.shared.longitude
-        ]
+//        var parameters: Parameters = ["title":  HostingService.shared.title,
+//                                      "address":HostingService.shared.address,
+//                                      "introduce":HostingService.shared.introduce!,
+//                                      "space_info":HostingService.shared.spaceInfo!,
+//                                      "guest_access":HostingService.shared.guestAccess!,
+//                                      "price_per_day":HostingService.shared.pricePerDay,
+//                                      "extra_people_fee":HostingService.shared.extraPeopleFee,
+//                                      "cleaning_fee":HostingService.shared.cleaningFee,
+//                                      "weekly_discount":HostingService.shared.weeklyDiscount,
+//                                      "accommodates":HostingService.shared.accommodates,
+//                                      "bathrooms":HostingService.shared.bathrooms,
+//                                      "bedrooms":HostingService.shared.bedrooms,
+//                                      "beds":HostingService.shared.beds,
+//                                      "room_type":HostingService.shared.roomType,
+//                                      "house_images":HostingService.shared.houseImages ?? "",
+//                                      "amenities":HostingService.shared.amenities,
+//                                      "latitude":HostingService.shared.latitude,
+//                                      "longitude":HostingService.shared.longitude
+//        ]
     
         let header = UserDefaults.standard.object(forKey: "token") as! String
     
@@ -91,8 +91,12 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             let guestSpaceDetailCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceDetailCell", for: indexPath) as! GuestSpaceDetailCell
             if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Kitchen") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
-                
+            }else if HostingService.shared.amenities.contains("Kitchen") {
+                guestSpaceDetailCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceDetailCell.checkSwitchOut.isOn = false
             }
+
 
             guestSpaceDetailCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
             guestSpaceDetailCell.parameterName = parameterName[indexPath.row]
@@ -105,6 +109,10 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Washer") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
+            }else if HostingService.shared.amenities.contains("Washer") {
+                guestSpaceDetailCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceDetailCell.checkSwitchOut.isOn = false
             }
             guestSpaceDetailCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
             guestSpaceDetailCell.parameterName = parameterName[indexPath.row]
@@ -117,6 +125,10 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Elevator") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
+            }else if HostingService.shared.amenities.contains("Elevator") {
+                guestSpaceDetailCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceDetailCell.checkSwitchOut.isOn = false
             }
             guestSpaceDetailCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
             guestSpaceDetailCell.parameterName = parameterName[indexPath.row]
@@ -129,6 +141,10 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Gym") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
+            }else if HostingService.shared.amenities.contains("Gym") {
+                guestSpaceDetailCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceDetailCell.checkSwitchOut.isOn = false
             }
 
             guestSpaceDetailCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
@@ -137,16 +153,35 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             
             return guestSpaceDetailCell
             
-        }else{
-            
+        }else if indexPath.row == 2{
             let guestSpaceBasicCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceBasicCell", for: indexPath) as! GuestSpaceBasicCell
             
             if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Free_parking") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pool") {
+            }else if HostingService.shared.amenities.contains("Free_parking") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceBasicCell.checkSwitchOut.isOn = false
             }
+
+            
+            guestSpaceBasicCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
+            guestSpaceBasicCell.parameterName = parameterName[indexPath.row]
+            return guestSpaceBasicCell
+        }else{
+            
+            let guestSpaceBasicCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceBasicCell", for: indexPath) as! GuestSpaceBasicCell
+            
+            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pool") {
+                guestSpaceBasicCell.checkSwitchOut.isOn = true
+                
+            }else if HostingService.shared.amenities.contains("Pool") {
+                guestSpaceBasicCell.checkSwitchOut.isOn = true
+            }else{
+                guestSpaceBasicCell.checkSwitchOut.isOn = false
+            }
+
 
             
             guestSpaceBasicCell.guestSpaceTitleLb.text = guestSpaceTitleValues[indexPath.row]
@@ -205,13 +240,18 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-        
-        let swicthCheckNumber = HostingService.shared.switchCheckNumber
-        
-        
-        HostingService.shared.amenities.removeLast(swicthCheckNumber)
-
         navigationController?.popViewController(animated: true)
+//        if HostingService.shared.oneStepComplete == true{
+//            navigationController?.popViewController(animated: true)
+//        }else{
+//            let swicthCheckNumber = HostingService.shared.switchCheckNumber
+//            
+//            HostingService.shared.amenities.removeLast(swicthCheckNumber)
+//            
+//            navigationController?.popViewController(animated: true)
+//        }
+        
+       
     }
     
     /*

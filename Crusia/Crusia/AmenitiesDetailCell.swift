@@ -45,7 +45,15 @@ class AmenitiesDetailCell: UITableViewCell {
                 
             }
         }else{
-            HostingService.shared.amenities.removeLast()
+            
+            if let parameter = parameterName {
+                
+                HostingService.shared.remove(item: parameter)
+                
+            }
+            
+            
+            
         }
         print("=========detailCellData=========", HostingService.shared.amenities)
     }

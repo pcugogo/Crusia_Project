@@ -25,6 +25,7 @@ class PersonnePickCell: UITableViewCell,UITextFieldDelegate,UIPickerViewDelegate
     override func awakeFromNib() {
         super.awakeFromNib()
        
+      
         
         let toolBar = UIToolbar(frame:CGRect(x: 0,y: self.frame.size.height/6, width: self.frame.size.width, height: 50.0))
         
@@ -69,10 +70,13 @@ class PersonnePickCell: UITableViewCell,UITextFieldDelegate,UIPickerViewDelegate
     func donePressed(sender: UIBarButtonItem) {
         if indexPath == 0{
             HostingService.shared.accommodates = Int(personneTextField.text!)!
+            HostingService.shared.personnelSaveAndBack = true
         }else{
             HostingService.shared.beds = Int(personneTextField.text!)!
+            HostingService.shared.personnelSaveAndBack = true
         }
-        
+        print("======================",HostingService.shared.accommodates)
+        print("======================",HostingService.shared.beds)
         personneTextField.resignFirstResponder()
 
     }
