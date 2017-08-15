@@ -69,6 +69,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="페이스북(으)로 계속하기"/>
+                                        <connections>
+                                            <action selector="facebookLogInButtonTouched:" destination="2td-Wh-aTU" eventType="touchUpInside" id="gKE-rY-LoB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlY-DP-tm4">
                                         <rect key="frame" x="0.0" y="60" width="343" height="45"/>

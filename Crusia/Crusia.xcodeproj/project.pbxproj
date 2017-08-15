@@ -146,6 +146,7 @@
 		3725298C1F38420200687E9A /* MapViewCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCustomCell.swift; sourceTree = "<group>"; };
 		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		372619461F3CDFED0036EAB4 /* StartPoint.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartPoint.storyboard; sourceTree = "<group>"; };
+		37271A941F42EA0A00DB46D4 /* Crusia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crusia.entitlements; sourceTree = "<group>"; };
 		3728182F1F332EC4003719D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		372818321F33305D003719D2 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		372818361F338815003719D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +333,7 @@
 		3715D0191F31FB44002AD5CB /* Crusia */ = {
 			isa = PBXGroup;
 			children = (
+				37271A941F42EA0A00DB46D4 /* Crusia.entitlements */,
 				372619461F3CDFED0036EAB4 /* StartPoint.storyboard */,
 				3715D01E1F31FB44002AD5CB /* Main.storyboard */,
 				3715D01A1F31FB44002AD5CB /* AppDelegate.swift */,
@@ -551,6 +553,9 @@
 						DevelopmentTeam = 6T7QK3ZAXH;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -846,6 +851,7 @@
 			baseConfigurationReference = 8328C660F260FA235898D93E /* Pods-Crusia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Crusia/Crusia.entitlements;
 				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
 				INFOPLIST_FILE = Crusia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -860,6 +866,7 @@
 			baseConfigurationReference = 44A413DCC5958E830E43ACF0 /* Pods-Crusia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Crusia/Crusia.entitlements;
 				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
 				INFOPLIST_FILE = Crusia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

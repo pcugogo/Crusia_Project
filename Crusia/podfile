@@ -12,5 +12,8 @@ target 'Crusia' do
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'Fusuma', '~> 1.2'
   pod 'NVActivityIndicatorView'
+  pod 'FBSDKCoreKit', '~> 4.25'
+  pod 'FBSDKLoginKit', '~> 4.25'
+  pod 'FBSDKShareKit', '~> 4.25'
 
 end

@@ -9,12 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import FBSDKLoginKit
 
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var facebookLogInBtn: UIButton!
     @IBOutlet weak var emailLogInBtn: UIButton!
-    
+    var dict : [String : AnyObject]!
+    var facebookToken: FBSDKAccessToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,109 @@ class WelcomeViewController: UIViewController {
     @IBAction func unwindtoWelcomeView(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func facebookLogInButtonTouched(_ sender: UIButton) {
+        
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil {
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+//                        fbLoginManager.logOut()
+                        self.facebookLogin()
+                    }
+                }
+            }
+        }
+
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            print("Access Token ..........................")
+            facebookToken = FBSDKAccessToken.current()
+            
+            if let token = facebookToken {
+                print(token.tokenString)
+            }
+            
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.dict = result as! [String : AnyObject]
+                    print(result!)
+                    print(self.dict)
+                }
+            })
+        }
+    }
+    
+    func facebookLogin() {
+        
+        print("페이스북 호출 함 수 .......안 쪽 ........................")
+        guard let token = facebookToken else {
+            return
+        }
+        
+        // 로그인
+        let parameters: Parameters = ["token": token.tokenString]
+        
+        print("로그인")
+        
+        Alamofire.request("http://crusia.xyz/apis/user/facebook-login/", method: .post, parameters: parameters).validate().responseJSON { response in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                print("Validation Successful")
+                
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let currentUserToken = json["token"].stringValue
+                let currentUserPk = json["user_pk"].numberValue
+                
+                // UserDefaults 에 토큰 저장
+                UserDefaults.standard.set(currentUserToken, forKey: "token")
+                UserDefaults.standard.set(currentUserPk, forKey: "userPk")
+                UserDefaults.standard.set(true, forKey: "Authentification")
+                
+                
+                if let json = response.result.value {
+                    print("JSON: \(json)")
+                }
+                
+//                CurrentUserInfoService.shared.setCurrentUser()
+                
+                // Dismiss keyboard
+//                self.view.endEditing(true)
+                
+                // Present the main view
+                
+//                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
+//                    UIApplication.shared.keyWindow?.rootViewController = viewController
+//                    self.dismiss(animated: true, completion: nil)
+//                }
+                
+            case .failure(let error):
+                print(error)
+                
+                //                self.view.backgroundColor = .red
+                
+                let alertController = UIAlertController(title: "로그인 에러", message: "아이디와 비밀번호가 유효하지 않습니다.", preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                
+                alertController.addAction(okayAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+
+    }
+    
 
 }
 
@@ -98,4 +203,6 @@ func getHouseInfoForTest() {
             
         }
     }
+    
+    
 }
