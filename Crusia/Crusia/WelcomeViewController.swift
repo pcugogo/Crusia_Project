@@ -108,7 +108,7 @@ class WelcomeViewController: UIViewController {
                 print("JSON: \(json)")
                 
                 let currentUserToken = json["token"].stringValue
-                let currentUserPk = json["user_pk"].numberValue
+                let currentUserPk = json["user"]["pk"].numberValue
                 
                 // UserDefaults 에 토큰 저장
                 UserDefaults.standard.set(currentUserToken, forKey: "token")
@@ -116,21 +116,21 @@ class WelcomeViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "Authentification")
                 
                 
-                if let json = response.result.value {
-                    print("JSON: \(json)")
-                }
+//                if let json = response.result.value {
+//                    print("JSON: \(json)")
+//                }
                 
-//                CurrentUserInfoService.shared.setCurrentUser()
+                CurrentUserInfoService.shared.setCurrentUser()
                 
                 // Dismiss keyboard
 //                self.view.endEditing(true)
                 
                 // Present the main view
                 
-//                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
-//                    UIApplication.shared.keyWindow?.rootViewController = viewController
-//                    self.dismiss(animated: true, completion: nil)
-//                }
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                    self.dismiss(animated: true, completion: nil)
+                }
                 
             case .failure(let error):
                 print(error)
