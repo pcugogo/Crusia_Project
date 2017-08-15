@@ -1,5 +1,17 @@
 PODS:
   - Alamofire (4.5.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.25.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.25.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.25.0):
+    - FBSDKCoreKit
   - Fusuma (1.2.0)
   - JTAppleCalendar (7.0.6)
   - Kingfisher (3.10.4)
@@ -10,6 +22,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - FBSDKCoreKit (~> 4.25)
+  - FBSDKLoginKit (~> 4.25)
+  - FBSDKShareKit (~> 4.25)
   - Fusuma (~> 1.2)
   - JTAppleCalendar (~> 7.0)
   - Kingfisher (~> 3.0)
@@ -18,12 +33,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
+  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
+  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
   Fusuma: e8158ad6650507455c9898c22bc01583fbc86d8e
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f634935d9a6fe34cb35c97357b293f71681490c9
+PODFILE CHECKSUM: 816834341a727a21694dc6c6da427306cfb5757e
 
 COCOAPODS: 1.2.1
