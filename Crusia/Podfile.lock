@@ -13,6 +13,13 @@ PODS:
   - FBSDKShareKit (4.25.0):
     - FBSDKCoreKit
   - Fusuma (1.2.0)
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
   - JTAppleCalendar (7.0.6)
   - Kingfisher (3.10.4)
   - NVActivityIndicatorView (3.7.0):
@@ -26,6 +33,8 @@ DEPENDENCIES:
   - FBSDKLoginKit (~> 4.25)
   - FBSDKShareKit (~> 4.25)
   - Fusuma (~> 1.2)
+  - GoogleMaps
+  - GooglePlaces
   - JTAppleCalendar (~> 7.0)
   - Kingfisher (~> 3.0)
   - NVActivityIndicatorView
@@ -38,11 +47,13 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
   FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
   Fusuma: e8158ad6650507455c9898c22bc01583fbc86d8e
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4a6038989149c94c019df88f1a7223c84a8cd5c7
+PODFILE CHECKSUM: 05310724f0e6e04ac956c87168933860f58d6963
 
 COCOAPODS: 1.2.1
