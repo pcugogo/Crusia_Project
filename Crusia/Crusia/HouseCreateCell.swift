@@ -12,7 +12,7 @@ import UIKit
 
 protocol HouseCreateViewCellDelegate {
     func nextBtn(indexPath:Int)
-    func asd()
+    
 }
 
 class HouseCreateCell: UITableViewCell {
@@ -30,6 +30,8 @@ class HouseCreateCell: UITableViewCell {
     @IBOutlet weak var continueBtnOut: UIButton!
     @IBOutlet weak var checkImgView: UIImageView!
     
+    @IBOutlet weak var secondStepBtnOut: UIButton!
+    @IBOutlet weak var thirdStepBtnOut: UIButton!
   
     
     
@@ -51,8 +53,7 @@ class HouseCreateCell: UITableViewCell {
    
     @IBAction func nextBtnAction(_ sender: UIButton) {
         delegate?.nextBtn(indexPath: cellIndexPath!)
-        delegate?.asd()
-        print("Btn")
+        
     }
     
    

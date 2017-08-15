@@ -1,5 +1,5 @@
 //
-//  SecondStepViewController.swift
+//  ThirdStepViewController.swift
 //  Crusia
 //
 //  Created by 샤인 on 2017. 8. 4..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondStepViewController: UIViewController {
+class GuestPrerequisiteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

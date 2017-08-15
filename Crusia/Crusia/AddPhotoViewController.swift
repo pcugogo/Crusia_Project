@@ -1,5 +1,5 @@
 //
-//  ThirdStepViewController.swift
+//  SecondStepViewController.swift
 //  Crusia
 //
 //  Created by 샤인 on 2017. 8. 4..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdStepViewController: UIViewController {
+class AddPhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
