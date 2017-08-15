@@ -11,5 +11,6 @@ target 'Crusia' do
   pod 'Kingfisher', '~> 3.0'
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'Fusuma', '~> 1.2'
+  pod 'NVActivityIndicatorView'
 
 end

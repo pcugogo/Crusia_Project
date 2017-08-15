@@ -9,11 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
     
     var heartImages: [UIImage] = []
     var postData: [House] = []
@@ -28,6 +30,12 @@ class MainViewController: UIViewController {
 
         print("MainViewController 에 들어옴 ......................")
         print("CurrentUserToken: \(UserDefaults.standard.object(forKey: "token") as! String)")
+        
+        // 로딩 애니메이션
+        loadingIndicator.type = .ballBeat
+        loadingIndicator.color = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+
+        loadingIndicator.startAnimating()
         
         // Configure the pull to refresh
         refreshControl.backgroundColor = UIColor.clear
@@ -122,6 +130,8 @@ class MainViewController: UIViewController {
         
         // 테이블 로드 전 애니메이션 뷰
         emptyView.isHidden = true
+        loadingIndicator.stopAnimating()
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -220,9 +230,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
             WishListService.shared.delete(house: postData[sender.tag])
             
+            
         } else {
             WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
             WishListService.shared.add(house: postData[sender.tag])
+            WishListService.shared.heartIndex.append(sender.tag)
             
         }
         
@@ -238,12 +250,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
 }
-
-
-
-
-
-
 
 
 

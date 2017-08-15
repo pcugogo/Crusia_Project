@@ -55,6 +55,7 @@
 		3715D03F1F324405002AD5CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D03E1F324405002AD5CB /* MainViewController.swift */; };
 		3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2311F3F048800643AED /* EditUserViewController.swift */; };
 		3715D2341F3F04A700643AED /* EditUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2331F3F04A700643AED /* EditUserInfoCell.swift */; };
+		371C39511F42C950000107F6 /* ImageRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C39501F42C950000107F6 /* ImageRotating.swift */; };
 		371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */; };
 		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
 		371E608E1F360BA70073AAF0 /* DetailedUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */; };
@@ -137,6 +138,7 @@
 		3715D03E1F324405002AD5CB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3715D2311F3F048800643AED /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		3715D2331F3F04A700643AED /* EditUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfoCell.swift; sourceTree = "<group>"; };
+		371C39501F42C950000107F6 /* ImageRotating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRotating.swift; sourceTree = "<group>"; };
 		371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInOutCustomCell.swift; sourceTree = "<group>"; };
 		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
 		371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				3730397E1F40A03B00C41071 /* ImageScale.swift */,
+				371C39501F42C950000107F6 /* ImageRotating.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				1448BC771F3C585A006A1AEB /* ThirdStepViewController.swift in Sources */,
 				3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */,
 				370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */,
+				371C39511F42C950000107F6 /* ImageRotating.swift in Sources */,
 				37CD3C4F1F3DC32D008B695A /* HSReservationViewController.swift in Sources */,
 				1448BC711F3C585A006A1AEB /* GuestSpaceDetailCell.swift in Sources */,
 				373255F51F372C5600006C25 /* RefundPolicyViewController.swift in Sources */,

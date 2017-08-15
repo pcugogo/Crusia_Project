@@ -56,6 +56,7 @@ class WishListTableViewCell: UITableViewCell {
             priceLabel.text = "￦" + formattedNumber!
         }
         
+        heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
         
         mainImageView.image = #imageLiteral(resourceName: "preparingImage")
         

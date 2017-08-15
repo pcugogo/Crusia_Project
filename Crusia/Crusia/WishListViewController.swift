@@ -88,9 +88,26 @@ extension WishListViewController: UITableViewDataSource, UITableViewDelegate {
         let currentPost = postData[indexPath.row]
         
         cell.configure(post: currentPost)
+                
+        // 위시리스트 추가 기능
+        cell.heartButton.tag = indexPath.row
+        cell.heartButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
+        //        cell.heartButton.setImage(heartImages[indexPath.row], for: .normal)
+//        cell.heartButton.setImage(WishListService.shared.heartImages[indexPath.row], for: .normal)
+
         
         
         return cell
+    }
+    
+
+    
+    // 위시리스트 추가, 삭제
+    func handleLikes(sender: AnyObject){
+        
+        
+
+        
     }
     
 }

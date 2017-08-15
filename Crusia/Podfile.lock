@@ -3,6 +3,9 @@ PODS:
   - Fusuma (1.2.0)
   - JTAppleCalendar (7.0.6)
   - Kingfisher (3.10.4)
+  - NVActivityIndicatorView (3.7.0):
+    - NVActivityIndicatorView/Presenter (= 3.7.0)
+  - NVActivityIndicatorView/Presenter (3.7.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -10,6 +13,7 @@ DEPENDENCIES:
   - Fusuma (~> 1.2)
   - JTAppleCalendar (~> 7.0)
   - Kingfisher (~> 3.0)
+  - NVActivityIndicatorView
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
@@ -17,8 +21,9 @@ SPEC CHECKSUMS:
   Fusuma: e8158ad6650507455c9898c22bc01583fbc86d8e
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4dbf10b145aa8447910e4509dbe23dbb85c64c5a
+PODFILE CHECKSUM: f634935d9a6fe34cb35c97357b293f71681490c9
 
 COCOAPODS: 1.2.1
