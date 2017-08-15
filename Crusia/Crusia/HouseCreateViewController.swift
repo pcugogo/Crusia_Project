@@ -106,9 +106,13 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             if HostingService.shared.oneStepComplete == true{
                 cell.continueBtnOut.isHidden = true
                 cell.checkImgView.isHidden = false
+                cell.secondStepBtnOut.isHidden = true
+                cell.thirdStepBtnOut.isHidden = true
             }else{
                 cell.continueBtnOut.isHidden = false
                 cell.checkImgView.isHidden = true
+                cell.secondStepBtnOut.isHidden = true
+                cell.thirdStepBtnOut.isHidden = true
             }
             
             return cell
@@ -117,12 +121,20 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             cell.topTextLabel.text = "상세 정보를 제공해 주세요"
             cell.detailTextLb.text = "숙소가 잘 나온 사진을 올리고 게스트의 흥미를 끌 수 이쓴 설명을 작성하세요."
             cell.cellIndexPath = indexPath.row
-            
             cell.checkImgView.isHidden = true
+            
             if HostingService.shared.oneStepComplete == true{
-                cell.continueBtnOut.isHidden = false
+                cell.continueBtnOut.isHidden = true
+                cell.secondStepBtnOut.isHidden = false
+                cell.thirdStepBtnOut.isHidden = true
+                cell.topTextLabel.textColor = UIColor.black
+                cell.detailTextLb.textColor = UIColor.black
             }else{
                 cell.continueBtnOut.isHidden = true
+                cell.secondStepBtnOut.isHidden = true
+                cell.thirdStepBtnOut.isHidden = true
+                cell.topTextLabel.textColor = UIColor.lightGray
+                cell.detailTextLb.textColor = UIColor.lightGray
             }
             
             return cell
@@ -132,9 +144,21 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             cell.topTextLabel.text = "게스트를 맞이할 준비를 하세요."
             cell.detailTextLb.text = "요금,달력,예약 조건을 설정하세요."
             cell.cellIndexPath = indexPath.row
-            cell.continueBtnOut.isHidden = true
             
-            
+            if HostingService.shared.oneStepComplete == true{
+                cell.continueBtnOut.isHidden = true
+                cell.secondStepBtnOut.isHidden = true
+                cell.topTextLabel.textColor = UIColor.lightGray
+                cell.detailTextLb.textColor = UIColor.lightGray
+
+            }else{
+                cell.continueBtnOut.isHidden = true
+                cell.secondStepBtnOut.isHidden = true
+                cell.thirdStepBtnOut.isHidden = true
+                cell.topTextLabel.textColor = UIColor.lightGray
+                cell.detailTextLb.textColor = UIColor.lightGray
+            }
+
             return cell
         }
         
@@ -191,8 +215,9 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             present(thirdStepNavi, animated: true, completion: nil)
         }
     }
-    func asd() {
-        print("------------------------------asd------------------------------")
+   
+    @IBAction func dismissBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
    
     /*
