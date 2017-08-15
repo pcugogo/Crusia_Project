@@ -41,21 +41,19 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>fb145133486075730</string>
+                <string>fb1622345861171632</string>
             </array>
         </dict>
     </array>
     <key>FacebookAppID</key>
-    <string>145133486075730</string>
+    <string>1622345861171632</string>
     <key>FacebookDisplayName</key>
-    <string>hhyoungsu</string>
-    
+    <string>WPS5-airbnb</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>fbapi</string>
