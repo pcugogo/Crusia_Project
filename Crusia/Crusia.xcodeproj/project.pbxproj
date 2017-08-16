@@ -28,6 +28,7 @@
 		1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */; };
 		1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448BC7B1F3C59CD006A1AEB /* CW.storyboard */; };
 		14E9C61C1F3DBDCF00CD3CD3 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */; };
+		14ED53161F435E0800A81B37 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED53151F435E0800A81B37 /* IntroduceViewController.swift */; };
 		370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */; };
 		370BF3EF1F35793F00A04A6F /* ExtraFeeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */; };
 		370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */; };
@@ -109,6 +110,7 @@
 		1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeCell.swift; sourceTree = "<group>"; };
 		1448BC7C1F3C59CD006A1AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CW.storyboard; sourceTree = "<group>"; };
 		14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
+		14ED53151F435E0800A81B37 /* IntroduceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundInfoCustomCell.swift; sourceTree = "<group>"; };
 		370BF3EE1F35793F00A04A6F /* ExtraFeeCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeCustomCell.swift; sourceTree = "<group>"; };
 		370BF3F01F35795600A04A6F /* ExtraFeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFeeViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				1448BC661F3C585A006A1AEB /* AddPhotoViewController.swift */,
+				14ED53151F435E0800A81B37 /* IntroduceViewController.swift */,
 			);
 			name = SecondStep;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				37109C0C1F3A34D500CFCC55 /* WishListTableViewCell.swift in Sources */,
 				37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */,
 				3715D0301F32002B002AD5CB /* LogInViewController.swift in Sources */,
+				14ED53161F435E0800A81B37 /* IntroduceViewController.swift in Sources */,
 				37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */,
 				1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */,
 				1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */,

@@ -65,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i2H-OT-BCD" id="cFZ-tp-2ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="154.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 사항을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-bJ-x7J">
@@ -1190,7 +1190,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrL-fg-Nxd" id="hCA-r3-cuj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1745,7 +1745,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qy9-AI-DPi" id="pyr-dv-68h">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1753,7 +1753,7 @@
                                         <rect key="frame" x="0.0" y="94" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSH-DZ-izQ" id="uj2-qY-Ti2">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 조건" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-Jz-itd">
@@ -1875,7 +1875,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y8K-gf-g8D" id="qJF-5q-fSL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="137.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즉시 예약 이용 가능일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-AI-Jmq">
@@ -1923,7 +1923,7 @@
                                         <rect key="frame" x="0.0" y="166" width="343" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wia-dG-7bl" id="ntT-Ir-syI">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="105.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 시각 후에 체크인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-Am-pkZ">
@@ -2147,6 +2147,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="addPhotoBtnAction:" destination="f8H-Bm-S5g" eventType="touchUpInside" id="UIY-NU-chG"/>
                                     <segue destination="tD3-wY-8On" kind="show" id="Uwv-0d-vaf"/>
                                 </connections>
                             </button>
@@ -2210,10 +2211,10 @@
             </objects>
             <point key="canvasLocation" x="2470" y="2687"/>
         </scene>
-        <!--View Controller-->
+        <!--Introduce View Controller-->
         <scene sceneID="8NF-z0-ElW">
             <objects>
-                <viewController id="tD3-wY-8On" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroduceViewController" id="tD3-wY-8On" customClass="IntroduceViewController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t4b-cx-mSW"/>
                         <viewControllerLayoutGuide type="bottom" id="dpX-Z9-hK4"/>
@@ -2238,6 +2239,7 @@
                                         </constraints>
                                         <state key="normal" image="BackBtnItemImg"/>
                                         <connections>
+                                            <action selector="backBtnItemAction:" destination="tD3-wY-8On" eventType="touchUpInside" id="zDl-2t-f2l"/>
                                             <action selector="dissmissBtnAction:" destination="orl-v2-uA0" eventType="touchUpInside" id="5MH-Qb-pDR"/>
                                         </connections>
                                     </button>
