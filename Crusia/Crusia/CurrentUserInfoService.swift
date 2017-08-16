@@ -148,8 +148,6 @@ class CurrentUserInfoService {
                     break
                 }
         })
-
-
     }
     
     func edit() {

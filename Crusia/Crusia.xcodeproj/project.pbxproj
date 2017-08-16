@@ -41,6 +41,7 @@
 		37116C6B1F346B2800E31625 /* UserInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */; };
 		37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C6D1F34839B00E31625 /* AmenitiesCustomCell.swift */; };
 		37116C721F3483CF00E31625 /* AmenitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37116C711F3483CF00E31625 /* AmenitiesViewController.swift */; };
+		3712F3F01F43EE6E00E07783 /* MainMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3712F3EF1F43EE6E00E07783 /* MainMapCollectionViewCell.swift */; };
 		3713F8651F3B2EEA00708F39 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3713F8641F3B2EEA00708F39 /* MapViewController.swift */; };
 		3715D01B1F31FB44002AD5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D01A1F31FB44002AD5CB /* AppDelegate.swift */; };
 		3715D0201F31FB44002AD5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3715D01E1F31FB44002AD5CB /* Main.storyboard */; };
@@ -123,6 +124,7 @@
 		37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCustomCell.swift; sourceTree = "<group>"; };
 		37116C6D1F34839B00E31625 /* AmenitiesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesCustomCell.swift; sourceTree = "<group>"; };
 		37116C711F3483CF00E31625 /* AmenitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesViewController.swift; sourceTree = "<group>"; };
+		3712F3EF1F43EE6E00E07783 /* MainMapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		3713F8641F3B2EEA00708F39 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3715D0171F31FB44002AD5CB /* Crusia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crusia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3715D01A1F31FB44002AD5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				37B646831F4378C4002FABBE /* MainMapViewController.swift */,
+				3712F3EF1F43EE6E00E07783 /* MainMapCollectionViewCell.swift */,
 			);
 			name = MapView;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				3713F8651F3B2EEA00708F39 /* MapViewController.swift in Sources */,
 				372818331F33305D003719D2 /* CacheManager.swift in Sources */,
 				1448BC6F1F3C585A006A1AEB /* BathRoomCell.swift in Sources */,
+				3712F3F01F43EE6E00E07783 /* MainMapCollectionViewCell.swift in Sources */,
 				370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */,
 				37109C071F3A1C4600CFCC55 /* WishListService.swift in Sources */,
 				1448BC681F3C585A006A1AEB /* AmenitiesBasicCell.swift in Sources */,

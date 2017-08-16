@@ -48,6 +48,10 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func facebookLogInButtonTouched(_ sender: UIButton) {
         
+        // 로그인시 버튼 작동 x
+        facebookLogInBtn.isEnabled = false
+        emailLogInBtn.isEnabled = false
+        
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if (error == nil){
@@ -130,6 +134,7 @@ class WelcomeViewController: UIViewController {
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
                     self.dismiss(animated: true, completion: nil)
+                    
                 }
                 
             case .failure(let error):
@@ -143,12 +148,15 @@ class WelcomeViewController: UIViewController {
                 alertController.addAction(okayAction)
                 
                 self.present(alertController, animated: true, completion: nil)
+                
             }
         }
-
+        
+        
+//        // 페이스북 로그인 액션 끝나면 버튼 활성화
+//        self.facebookLogInBtn.isEnabled = true
+//        self.emailLogInBtn.isEnabled = true
     }
-    
-
 }
 
 // Test: 유저 정보 하나 가져오기

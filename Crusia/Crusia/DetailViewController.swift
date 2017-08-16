@@ -344,6 +344,4 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return CGSize(width: collectionView.frame.width, height:(collectionView.frame.height))
     }
-    
-    
 }

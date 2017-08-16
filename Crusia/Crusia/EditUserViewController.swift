@@ -67,7 +67,7 @@ class EditUserViewController: UIViewController {
     func configureUser() {
         
         // 유저 이름 가져오기
-        let userName = CurrentUserInfoService.shared.tempUser?.userName.stringValue
+        let userName = CurrentUserInfoService.shared.tempUser?.firstName.stringValue
         self.userNameLabel.text = userName
         
         // 유저 이미지 가져오기

@@ -13,6 +13,9 @@ class MainMapViewController: UIViewController {
 
     @IBOutlet weak var viewForMap: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var houseImageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,35 @@ class MainMapViewController: UIViewController {
     @IBAction func dismissButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-
-
 }
+
+
+extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let reuseIdentifier = "ImagesCell"
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HouseImagesCollectionViewCell
+        
+//        if let url = house.h/ouseImages[indexPath.row]["image"].url {
+//            cell.configure(imageURL:  url)
+//        }
+        
+        return cell
+    }
+    
+    // image size를 collectionview size에 맞춘다.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.frame.width, height:(collectionView.frame.height))
+    }
+}
+
+
