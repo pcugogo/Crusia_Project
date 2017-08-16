@@ -15,4 +15,6 @@ target 'Crusia' do
   pod 'FBSDKShareKit', '~> 4.25'
   pod 'FBSDKLoginKit', '~> 4.25'
   pod 'FBSDKCoreKit', '~> 4.25'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

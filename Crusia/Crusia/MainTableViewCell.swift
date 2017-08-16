@@ -90,7 +90,7 @@ class MainTableViewCell: UITableViewCell {
         }
         
         
-        mainImageView.image = #imageLiteral(resourceName: "preparingImage")
+        mainImageView.image = #imageLiteral(resourceName: "Flat")
 //        if isPostShown == false {
 //        
 //            // Reset image view's image
@@ -106,7 +106,8 @@ class MainTableViewCell: UITableViewCell {
             print(url)
             print("post ........................")
             print(post)
-            self.mainImageView.kf.setImage(with: url)
+//            self.mainImageView.kf.setImage(with: url)
+            self.mainImageView.kf.setImage(with: url, placeholder: nil, options: [.keepCurrentImageWhileLoading], progressBlock: nil, completionHandler: nil)
         }
         
 //        isHeartTouched = nil

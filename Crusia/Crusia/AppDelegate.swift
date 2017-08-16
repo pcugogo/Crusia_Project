@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,18 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyBsSJxb19XqXzVBLnKJlCWqPvSF7tCHWZ4")
+        GMSPlacesClient.provideAPIKey("AIzaSyDD_CDs6CcZDZlObZASKSsaRbpM6fZkzkI")
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-        
         var isAuthentified: Bool = false
-        
         isAuthentified = UserDefaults.standard.bool(forKey: "Authentification")
-        
         print(isAuthentified)
-        
-        
-        
         
         if !isAuthentified {
             
