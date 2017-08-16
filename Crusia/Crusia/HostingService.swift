@@ -37,6 +37,7 @@ class HostingService {
     var switchCheckNumber = 0
     var oneStepComplete = false
     
+    var amenityString: String = ""
     
     
     var whereViewCountry = ""
@@ -46,9 +47,16 @@ class HostingService {
     var whereViewPostalNumber = ""
     var personnelSaveAndBack = false
     var bathRoomSaveAndBack = false
-    var str = "Gym,Internet"
+   
+    
+    
+    
+    
     
     func houseParameters() -> Parameters{
+        
+        
+        
         let parameters: Parameters = ["title": title,
                                       "address":address,
                                       "introduce":introduce!,
@@ -63,12 +71,40 @@ class HostingService {
                                       "bedrooms":bedrooms,
                                       "beds":beds,
                                       "room_type":roomType,
-                                      "house_images":houseImages,
-                                      "amenities":str,
+//                                      "house_images":houseImages,
+                                      "amenities":amenityString,
                                       "latitude":latitude,
                                       "longitude":longitude
         ]
         return parameters
+    }
+    
+    let header = UserDefaults.standard.object(forKey: "token") as! String
+    
+    func houseCreateRequest(){
+        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
+        
+//        HostingService.shared.amenity()
+        print(HostingService.shared.amenityString)
+        
+        let parameters:Parameters = HostingService.shared.houseParameters()
+        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
+        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
+        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
+            switch response.result {
+                
+            case .success(let value):
+                
+                print("Validation Successful")
+                
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+        }
+        
     }
     
     func remove(item: String) {
@@ -80,7 +116,32 @@ class HostingService {
             }
         }
     }
-
-   
+    
+    func amenity() {
+        
+        
+        var amenity: String = ""
+        
+        
+        
+        if amenities.count > 1 {
+            for i in amenities {
+                if amenity == ""{
+                    amenity = amenities[0]
+                }else{
+                    amenity = amenity + ", " + i
+                }
+            }
+        }else if amenities.count != 0{
+            
+            amenity = amenities[0]
+            
+        }
+        self.amenityString = amenity
+        
+        
+    }
+    
+    
     
 }

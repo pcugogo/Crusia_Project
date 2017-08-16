@@ -11,30 +11,17 @@ import Alamofire
 import SwiftyJSON
 
 class IntroduceViewController: UIViewController {
-    
-let header = UserDefaults.standard.object(forKey: "token") as! String
+    let addPhotoViewController = AddPhotoViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+         
         
-            print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
-            let parameters:Parameters = HostingService.shared.houseParameters()
-            let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
-            print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
-            Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
-            switch response.result {
+//        HostingService.shared.houseCreateRequest()
         
-            case .success(let value):
         
-            print("Validation Successful")
         
-            
-            case .failure(let error):
-            print(error)
-            
-            }
-            
-            }
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,8 +29,13 @@ let header = UserDefaults.standard.object(forKey: "token") as! String
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        addPhotoViewController.houseCreateUpload()
+    }
     
     @IBAction func backBtnItemAction(_ sender: UIButton) {
+        
+
         navigationController?.popViewController(animated: true)
     }
 

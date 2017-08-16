@@ -66,7 +66,7 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
         
         nextBtnOut.layer.cornerRadius = 3
         detailExplanationBtnOut.layer.cornerRadius = 25
-        print(HostingService.shared.houseParameters())
+        
         
     }
     
@@ -234,7 +234,7 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
 //            }
 //            
 //        }
-
+        HostingService.shared.amenity()
         HostingService.shared.oneStepComplete = true
         dismiss(animated: true, completion: nil)
     }

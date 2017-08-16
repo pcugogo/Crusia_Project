@@ -8,6 +8,8 @@
 
 import UIKit
 import Fusuma
+import Alamofire
+import SwiftyJSON
 
 extension AddPhotoViewController: FusumaDelegate {
     
@@ -15,7 +17,7 @@ extension AddPhotoViewController: FusumaDelegate {
        
         print("fusumaMultipleImageSelected")
         for i in 0...images.count - 1{
-            images[i].scale(newWidth: 100.0)
+//            images[i].scale(newWidth: 100.0)
             
             
             guard let imageData = UIImageJPEGRepresentation(images[i], 0.3) else {
@@ -93,6 +95,92 @@ class AddPhotoViewController: UIViewController {
         present(fusumaViewController, animated: true, completion: nil)
     
     }
+    @IBAction func dismissBtnAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    let parameters: Parameters = HostingService.shared.houseParameters()
+    
+    func houseCreateUpload() {
+        
+        
+        print(parameters)
+        let httpHeader:HTTPHeaders = ["Authorization":"Token \(HostingService.shared.header)"]
+        let url = "http://crusia.xyz/apis/house/"
+        // 이미지 파일 수정
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            let image = HostingService.shared.houseImages
+            
+            for key in self.parameters.keys{
+                let name = String(key)
+                if let val = self.parameters[name!] as? String{
+                    print(val)
+                    multipartFormData.append(val.data(using: .utf8)!, withName: name!)
+                    
+                }
+            }
+            for key in self.parameters.keys{
+                let name = String(key)
+                if let val = self.parameters[name!] as? Int{
+                    print(val)
+                    multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
+                    
+                }
+            }
+            for key in self.parameters.keys{
+                let name = String(key)
+                if let val = self.parameters[name!] as? Double{
+                    print(val)
+                    multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
+                    
+                }
+            }
+
+            
+           
+                
+            
+            if image.count == 1{
+                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            }else if image.count == 2{
+                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(image[1], withName: "image1", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            }else if image.count == 3{
+                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(image[1], withName: "image1", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(image[2], withName: "image2", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            }
+            
+            
+        }, usingThreshold:UInt64.init(),
+           to: url, //URL Here
+            method: .post,
+            headers: httpHeader,
+            encodingCompletion: { (result) in
+                
+                switch result {
+                case .success(let upload, _, _):
+                    print("success ......................................................")
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print("something")
+                    })
+                    
+                    upload.responseJSON { response in
+                        print("the resopnse code is : \(String(describing: response.response?.statusCode))")
+                        print("the response is : \(response)")
+                    }
+                    break
+                case .failure(let encodingError):
+                    print("the error is  : \(encodingError.localizedDescription)")
+                    break
+                }
+        })
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
