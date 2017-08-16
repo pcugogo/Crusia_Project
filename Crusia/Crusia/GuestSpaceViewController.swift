@@ -35,7 +35,7 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
 //                                      "longitude":HostingService.shared.longitude
 //        ]
     
-        let header = UserDefaults.standard.object(forKey: "token") as! String
+//        let header = UserDefaults.standard.object(forKey: "token") as! String
     
     
     
@@ -216,24 +216,24 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBAction func toHouseCreateViewBtnAction(_ sender: UIButton) {
        
-        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
-        let parameters:Parameters = HostingService.shared.houseParameters()
-        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
-        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
-        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                
-                print("Validation Successful")
-                
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-            
-        }
+//        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
+//        let parameters:Parameters = HostingService.shared.houseParameters()
+//        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
+//        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
+//        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
+//            switch response.result {
+//                
+//            case .success(let value):
+//                
+//                print("Validation Successful")
+//                
+//                
+//            case .failure(let error):
+//                print(error)
+//                
+//            }
+//            
+//        }
 
         HostingService.shared.oneStepComplete = true
         dismiss(animated: true, completion: nil)

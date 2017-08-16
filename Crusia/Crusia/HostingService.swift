@@ -29,13 +29,15 @@ class HostingService {
     var bedrooms: Int = 0
     var beds: Int = 1
     var roomType: String = "" //구현 할때 세그먼트같은것으로 생각해보자
-    var houseImages: String? //필수인지 아닌지 헤깔린다
+    var houseImages:[Data] = [] //필수인지 아닌지 헤깔린다
     var amenities: [String] = []
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
     var switchCheckNumber = 0
     var oneStepComplete = false
+    
+    
     
     var whereViewCountry = ""
     var whereViewFirstLineAddress = ""
@@ -44,6 +46,7 @@ class HostingService {
     var whereViewPostalNumber = ""
     var personnelSaveAndBack = false
     var bathRoomSaveAndBack = false
+    var str = "Gym,Internet"
     
     func houseParameters() -> Parameters{
         let parameters: Parameters = ["title": title,
@@ -60,8 +63,8 @@ class HostingService {
                                       "bedrooms":bedrooms,
                                       "beds":beds,
                                       "room_type":roomType,
-                                      "house_images":houseImages ?? "",
-                                      "amenities":amenities,
+                                      "house_images":houseImages,
+                                      "amenities":str,
                                       "latitude":latitude,
                                       "longitude":longitude
         ]
