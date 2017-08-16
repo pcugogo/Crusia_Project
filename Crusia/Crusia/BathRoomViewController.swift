@@ -50,9 +50,9 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.pickerInputValue = totalBath
         
         if HostingService.shared.oneStepComplete == true {
-            cell.bathRoomCheckTextField.text = String(HostingService.shared.accommodates)
+            cell.bathRoomCheckTextField.text = String(HostingService.shared.bathrooms)
         }else{
-            cell.bathRoomCheckTextField.text = String(HostingService.shared.accommodates)
+            cell.bathRoomCheckTextField.text = String(HostingService.shared.bathrooms)
         }
        
         return cell

@@ -12,7 +12,8 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     
     let amenitieTitleValues = ["생필품","무선인터넷","샴푸","옷걸이","TV","케이블 TV","난방","에어컨","아침식사,커피,차 제공","실내 벽난로","헤어드라이어","숙소에 반려동물이 있음","도어맨","휠체어 접근가능"]
     let parameterName = ["Essentials","Wireless_Internet","Shampoo","Hangers","TV","Cable_TV","Heating","Air_conditioning","Breakfast","Indoor_fireplace","Dryer","Pets_allowed","Doorman","Wheelchair_accessible"]
-    
+        
+   
     let amenitieContentValues = ["수건, 침대시트, 비누, 휴지","숙소 내에서 끊김없이 연결","중앙 난방 또는 숙소 내 개별 난방","특정 요구사항이 있는지 현지 법규를 확인해보세요"]
     var detailCellData:[String] = []
     var basicCellData:[String] = []

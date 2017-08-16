@@ -2095,7 +2095,7 @@
                                         </constraints>
                                         <state key="normal" image="XbtnImg"/>
                                         <connections>
-                                            <action selector="dissmissBtnAction:" destination="orl-v2-uA0" eventType="touchUpInside" id="eLY-2A-OYL"/>
+                                            <action selector="dismissBtnAction:" destination="f8H-Bm-S5g" eventType="touchUpInside" id="YDE-aG-ER4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 추가할 준비가 되셨나요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McH-ib-Gli">
@@ -2347,6 +2347,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="nextBtnAction:" destination="tD3-wY-8On" eventType="touchUpInside" id="JLI-I7-mec"/>
                                                     <segue destination="p0m-1Y-IG1" kind="show" id="lYT-Gu-Gsd"/>
                                                 </connections>
                                             </button>
@@ -2406,7 +2407,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="x0L-Zu-3by" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCR-Wn-4jj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CCR-Wn-4jj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2424,7 +2425,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SecondStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="BMY-JB-cji" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0nM-Ji-5iA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0nM-Ji-5iA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2442,7 +2443,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ThirdStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="RJd-gl-c53" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Z6-lt-VaF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9Z6-lt-VaF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2912,7 +2913,7 @@
         <image name="XbtnImg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b1M-gW-orn"/>
+        <segue reference="HZM-kF-IKT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.39971524479999998" green="0.71328240629999995" blue="0.74938315150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
