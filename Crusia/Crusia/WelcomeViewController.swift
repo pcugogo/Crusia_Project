@@ -119,16 +119,10 @@ class WelcomeViewController: UIViewController {
                 UserDefaults.standard.set(currentUserPk, forKey: "userPk")
                 UserDefaults.standard.set(true, forKey: "Authentification")
                 
-                
-//                if let json = response.result.value {
-//                    print("JSON: \(json)")
-//                }
-                
+
                 CurrentUserInfoService.shared.setCurrentUser()
                 
-                // Dismiss keyboard
-//                self.view.endEditing(true)
-                
+
                 // Present the main view
                 
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
