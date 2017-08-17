@@ -20,25 +20,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         print("여기는 맵뷰!   ...................................................................................")
         
-//        if let lat = house.latitude.double, let long = house.longitude.double {
-//            
-//            let location = CLLocation(latitude: lat, longitude: long)
-//            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 350.0, 350.0)
-//            
-//            mapView.setRegion(coordinateRegion, animated: true)
-//            
-//            let annotation  = MKPointAnnotation()
-//            annotation.title = "위치"
-//            annotation.coordinate = location.coordinate
-//            
-////            mapView.addAnnotation(annotation)
-//            
-//            mapView.showAnnotations([annotation], animated: true)
-//            mapView.selectAnnotation(annotation, animated: true)
-//            
-//        }
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
-
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
         
@@ -108,6 +92,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         annotationView?.pinTintColor = UIColor.orange
         
         return annotationView
+    }
+    @IBAction func dismissButtonTouched(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
