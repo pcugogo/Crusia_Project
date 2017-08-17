@@ -14,6 +14,7 @@ class MainMapCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var lineView: UIView!
     
     var isLiked:Bool = false  {
         didSet {
@@ -38,8 +39,10 @@ class MainMapCollectionViewCell: UICollectionViewCell {
         
         // 현재 포스트 설정
         currentPost = post
-        
         titleLabel.text = post.title.string
+        
+        // 현재 셀 표시 숨기기
+        lineView.isHidden = true
         
         // 가격에 , 찍기
         if let price = post.pricePerDay.int {

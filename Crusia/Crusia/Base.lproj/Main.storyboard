@@ -2638,10 +2638,9 @@
                                     <constraint firstAttribute="height" constant="220" id="XLR-Hl-aYb"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD6-gs-fc9" customClass="GMSMapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pxz-TV-5zF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NHu-US-hHq">
                                 <rect key="frame" x="0.0" y="447" width="375" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2699,6 +2698,14 @@
                                                     <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" image="heart2"/>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiP-Yz-2Iy" userLabel="Line View">
+                                                    <rect key="frame" x="0.0" y="5" width="230" height="5"/>
+                                                    <color key="backgroundColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="230" id="3Zd-hn-nvp"/>
+                                                        <constraint firstAttribute="height" constant="5" id="hOm-5O-VSh"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -2706,8 +2713,10 @@
                                             <constraint firstItem="PCP-pK-XAf" firstAttribute="leading" secondItem="d3N-R8-doM" secondAttribute="leading" id="90S-Mx-WtX"/>
                                             <constraint firstAttribute="trailing" secondItem="RJi-D8-Shd" secondAttribute="trailing" constant="5" id="I6S-M9-tgB"/>
                                             <constraint firstAttribute="trailing" secondItem="PCP-pK-XAf" secondAttribute="trailing" id="ILr-q9-gF5"/>
+                                            <constraint firstItem="KiP-Yz-2Iy" firstAttribute="centerX" secondItem="d3N-R8-doM" secondAttribute="centerX" id="Skb-ED-luG"/>
                                             <constraint firstAttribute="trailing" secondItem="Cso-OG-GwY" secondAttribute="trailing" id="Soq-vh-CuJ"/>
                                             <constraint firstItem="PCP-pK-XAf" firstAttribute="top" secondItem="Cso-OG-GwY" secondAttribute="bottom" id="WWX-po-mXS"/>
+                                            <constraint firstItem="Cso-OG-GwY" firstAttribute="top" secondItem="KiP-Yz-2Iy" secondAttribute="bottom" id="YWT-l8-7hK"/>
                                             <constraint firstAttribute="bottom" secondItem="PCP-pK-XAf" secondAttribute="bottom" constant="10" id="hKv-Ad-OnT"/>
                                             <constraint firstItem="Cso-OG-GwY" firstAttribute="height" secondItem="PCP-pK-XAf" secondAttribute="height" multiplier="2.666" id="lkw-wS-WO0"/>
                                             <constraint firstItem="RJi-D8-Shd" firstAttribute="top" secondItem="d3N-R8-doM" secondAttribute="top" constant="15" id="vRS-wm-mfT"/>
@@ -2716,6 +2725,7 @@
                                         <connections>
                                             <outlet property="heartButton" destination="RJi-D8-Shd" id="4C9-WO-Vni"/>
                                             <outlet property="houseImage" destination="Cso-OG-GwY" id="cqZ-Le-ASl"/>
+                                            <outlet property="lineView" destination="KiP-Yz-2Iy" id="Ope-yi-TyP"/>
                                             <outlet property="priceLabel" destination="kEi-U9-DBN" id="eT7-ki-95i"/>
                                             <outlet property="titleLabel" destination="65V-ib-7sI" id="sR5-G4-IOw"/>
                                         </connections>
@@ -2750,18 +2760,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iD6-gs-fc9" firstAttribute="leading" secondItem="Cjo-YF-ca1" secondAttribute="leading" id="C1H-5e-ySa"/>
-                            <constraint firstItem="iD6-gs-fc9" firstAttribute="top" secondItem="Cjo-YF-ca1" secondAttribute="top" id="Okv-E3-3mE"/>
+                            <constraint firstItem="Pxz-TV-5zF" firstAttribute="leading" secondItem="Cjo-YF-ca1" secondAttribute="leading" id="LzN-70-du0"/>
                             <constraint firstAttribute="bottom" secondItem="d1p-56-bUd" secondAttribute="bottom" id="T56-x2-CW3"/>
                             <constraint firstItem="XIV-Fx-OiJ" firstAttribute="centerX" secondItem="Cjo-YF-ca1" secondAttribute="centerX" id="V5i-Vg-3ph"/>
                             <constraint firstItem="7Xl-3l-o72" firstAttribute="top" secondItem="tD2-U4-uHK" secondAttribute="bottom" constant="16" id="aZo-l7-vag"/>
                             <constraint firstItem="NHu-US-hHq" firstAttribute="centerX" secondItem="Cjo-YF-ca1" secondAttribute="centerX" id="cn1-GP-zuZ"/>
                             <constraint firstAttribute="trailing" secondItem="d1p-56-bUd" secondAttribute="trailing" id="dXu-Sq-Uxc"/>
+                            <constraint firstItem="NHu-US-hHq" firstAttribute="top" secondItem="Pxz-TV-5zF" secondAttribute="bottom" id="gt8-Un-h6D"/>
+                            <constraint firstItem="Pxz-TV-5zF" firstAttribute="top" secondItem="Cjo-YF-ca1" secondAttribute="top" id="hfc-kW-NYa"/>
                             <constraint firstAttribute="trailing" secondItem="NHu-US-hHq" secondAttribute="trailing" id="iD5-MB-Bvp"/>
                             <constraint firstItem="NHu-US-hHq" firstAttribute="leading" secondItem="Cjo-YF-ca1" secondAttribute="leading" id="j9W-FG-dAo"/>
                             <constraint firstItem="DE0-y5-Dsp" firstAttribute="top" secondItem="NHu-US-hHq" secondAttribute="bottom" id="mKO-Lr-cyK"/>
-                            <constraint firstItem="NHu-US-hHq" firstAttribute="top" secondItem="iD6-gs-fc9" secondAttribute="bottom" id="n5k-zm-cam"/>
-                            <constraint firstAttribute="trailing" secondItem="iD6-gs-fc9" secondAttribute="trailing" id="oce-fb-CRk"/>
+                            <constraint firstAttribute="trailing" secondItem="Pxz-TV-5zF" secondAttribute="trailing" id="wVE-Vi-Lvu"/>
                             <constraint firstItem="7Xl-3l-o72" firstAttribute="leading" secondItem="Cjo-YF-ca1" secondAttribute="leading" constant="10" id="wVk-qk-FGM"/>
                             <constraint firstItem="DE0-y5-Dsp" firstAttribute="top" secondItem="XIV-Fx-OiJ" secondAttribute="bottom" constant="120" id="xRi-1i-c4P"/>
                             <constraint firstItem="d1p-56-bUd" firstAttribute="leading" secondItem="Cjo-YF-ca1" secondAttribute="leading" id="xW2-VZ-23y"/>
@@ -2771,7 +2781,7 @@
                         <outlet property="activityIndicatorView" destination="XIV-Fx-OiJ" id="MAr-CL-ILt"/>
                         <outlet property="backgroundImageView" destination="d1p-56-bUd" id="Y6T-W1-R0f"/>
                         <outlet property="collectionView" destination="NHu-US-hHq" id="qwG-X9-g7t"/>
-                        <outlet property="viewForMap" destination="iD6-gs-fc9" id="fwf-fy-KVN"/>
+                        <outlet property="mapView" destination="Pxz-TV-5zF" id="6xT-V6-Jb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvE-kZ-xXp" userLabel="First Responder" sceneMemberID="firstResponder"/>

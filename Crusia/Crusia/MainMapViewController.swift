@@ -9,9 +9,11 @@
 import UIKit
 import GoogleMaps
 import NVActivityIndicatorView
+import MapKit
 
 class MainMapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var viewForMap: GMSMapView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -20,6 +22,8 @@ class MainMapViewController: UIViewController {
     var heartImages: [UIImage] = []
     var postData: [House] = []
     var isLoadingPost = false
+    var displayMarker = GMSMarker()
+    var mapPin: [MKPointAnnotation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,37 +38,7 @@ class MainMapViewController: UIViewController {
         // Make the colleciton view transparent
         collectionView.backgroundColor = UIColor.clear
         
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-//        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-//        
-//        let width = super.view.frame.size.width
-//        let height = super.view.frame.size.height - backgroundImageView.frame.size.height
-//        
-//        let mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: width, height: height), camera: camera)
-//        
-////        let mapView = GMSMapView.map(withFrame: viewForMap.bounds, camera: camera)
-//        viewForMap.addSubview(mapView)
-//        
-//        mapView.settings.myLocationButton = true
-        
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
-//        
-//        
-//        let marker2 = GMSMarker()
-//        marker2.position = CLLocationCoordinate2D(latitude: 37.515364, longitude: 127.096749)
-//        marker2.title = "우리집"
-//        marker2.snippet = "잠실"
-//        marker2.map = mapView
-        
         loadRecentPosts()
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,10 +70,8 @@ class MainMapViewController: UIViewController {
                 self.postData.insert(contentsOf: newPosts, at: 0)
                 
                 for i in newPosts {
-        
-                    self.displayMarkerfor(house: i)
+                    self.configureLocationOf(house: i)
                 }
-                
                 self.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
                 
                 WishListService.shared.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
@@ -112,22 +84,57 @@ class MainMapViewController: UIViewController {
             
             self.collectionView.reloadData()
             
-//            self.displayNewPosts(newPosts: newPosts)
             
-            print("하트 숫자.............................................................")
+            // 로딩시 첫 카메라 위치
+            let currentPost = self.postData[0]
+            let lat = currentPost.latitude.numberValue as! Double
+            let long = currentPost.longitude.numberValue as! Double
+            let location = CLLocation(latitude: lat, longitude: long)
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 5000.0, 5000.0)
+            
+            self.mapView.setRegion(coordinateRegion, animated: true)
+            self.mapView.selectAnnotation(self.mapPin[0], animated: true)
         }
     }
     
-    // 마커 표시
-    func displayMarkerfor(house: House) {
-        let marker = GMSMarker()
-        let lat = house.latitude.numberValue as! Double
-        let long = house.longitude.numberValue as! Double
-        marker.position = CLLocationCoordinate2DMake(lat,long)
-        marker.title = house.pricePerDay.stringValue
-        marker.snippet = house.title.stringValue
-        marker.map = self.viewForMap
+    // 마커 표시 (구글맵)
+//    func displayMarkerfor(house: House) {
+//        let marker = GMSMarker()
+//        let lat = house.latitude.numberValue as! Double
+//        let long = house.longitude.numberValue as! Double
+//        marker.position = CLLocationCoordinate2DMake(lat,long)
+//        marker.title = house.pricePerDay.stringValue
+//        marker.snippet = house.title.stringValue
+//        self.displayMarker = marker
+//        displayMarker.map = self.viewForMap
+////        marker.map = self.viewForMap
+//    }
+    
+    // 마커표시 (mapkit)
+    func configureLocationOf(house: House) {
         
+        if let lat = house.latitude.double, let long = house.longitude.double {
+            
+            let location = CLLocation(latitude: lat, longitude: long)
+            let pin = MKPointAnnotation()
+            
+            // 가격에 , 찍기
+            if let price = house.pricePerDay.int {
+                
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = NumberFormatter.Style.decimal
+                let formattedNumber = numberFormatter.string(from: NSNumber(value:price))
+                
+                pin.title = "￦" + formattedNumber!
+            }
+            
+            pin.coordinate = location.coordinate
+            
+            self.mapPin.append(pin)
+            mapView.addAnnotation(pin)
+            mapView.showAnnotations([pin], animated: true)
+        }
+
     }
 
 
@@ -148,28 +155,7 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         let currentPost = postData[indexPath.row]
         
         cell.configure(post: currentPost)
-        
-        let lat = currentPost.latitude.numberValue as! Double
-        let long = currentPost.longitude.numberValue as! Double
-        
-        let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        viewForMap.camera = GMSCameraPosition.camera(withTarget: location, zoom: 11)
 
-        
-//        // 마커 표시
-//        let marker = GMSMarker()
-//
-//        let lat = currentPost.latitude.numberValue as! Double
-//        let long = currentPost.longitude.numberValue as! Double
-//        marker.position = CLLocationCoordinate2DMake(lat,long)
-//        marker.title = currentPost.pricePerDay.stringValue
-//        marker.snippet = currentPost.title.stringValue
-//        marker.map = viewForMap
-        
-        
-//
-//        viewForMap.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 10)
-//
         return cell
     }
 
@@ -202,16 +188,12 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
                 self.heartImages.append(#imageLiteral(resourceName: "heart2"))
                 WishListService.shared.heartImages.append(#imageLiteral(resourceName: "heart2"))
                 
-                print("하트 숫자.............................................................")
-                //                print(self.heartImages.count)
-                
                 let indexPath = IndexPath(row: self.postData.count - 1, section: 0)
                 
                 indexPaths.append(indexPath)
                 
                 // 마커 표시
-                self.displayMarkerfor(house: newPost)
-                
+                self.configureLocationOf(house: newPost)
             }
             
             
@@ -221,9 +203,9 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         }
     }
     
+    // 커스텀 셀 Paging
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        //      if let collectionView = collectionView {
         targetContentOffset.pointee = scrollView.contentOffset
         var cellToSwipe: Int = Int(scrollView.contentOffset.x/250 + 0.5)
         
@@ -232,56 +214,20 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         } else if cellToSwipe >= postData.count {
             cellToSwipe = postData.count - 1
         }
+
+        var indexPath = IndexPath(row: cellToSwipe, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         
-        collectionView.scrollToItem(at: IndexPath(row: cellToSwipe, section: 0), at: .left, animated: true)
-        
-        
-//        
-//        targetContentOffset.pointee = scrollView.contentOffset
-//        var factor: CGFloat = 0.5
-//        if velocity.x < 0 {
-//            factor = -factor
-//        }
-//        let indexPath = IndexPath(row: Int(scrollView.contentOffset.x/250 + factor), section: 0)
-//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
-//        
-//        
-//        // set acceleration to 0.0
-//        let pageWidth = Float(collectionView.bounds.size.width)
-//        let minSpace: Int = 20
-//        var cellToSwipe: Int = (scrollView.contentOffset.x) / (pageWidth + minSpace) + 0.5
-//        // cell width + min spacing for lines
-//        if cellToSwipe < 0 {
-//            cellToSwipe = 0
-//        }
-//        else if cellToSwipe >= articles.count {
-//            cellToSwipe = articles.count - 1
-//        }
-//        
-//        articlesCollectionView.scrollToItem(at: IndexPath(row: cellToSwipe, section: 0), at: .left, animated: true)
+        // 현재 위치로 지도뷰 카메라 이동
+        let currentPost = postData[indexPath.row]
+        let lat = currentPost.latitude.numberValue as! Double
+        let long = currentPost.longitude.numberValue as! Double
+        let location = CLLocation(latitude: lat, longitude: long)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 5000.0, 5000.0)
+
+        mapView.setRegion(coordinateRegion, animated: true)
+        self.mapView.selectAnnotation(mapPin[indexPath.row], animated: true)
     }
-    
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        
-//        targetContentOffset.pointee = scrollView.contentOffset
-//        var factor: CGFloat = 0.5
-//        if velocity.x < 0 {
-//            factor = -factor
-//        }
-//        let indexPath = IndexPath(row: Int((scrollView.contentOffset.x/200 + factor)), section: 0)
-//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
-//    }
-    
-    
-//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        targetContentOffset.pointee = scrollView.contentOffset
-//        var factor: CGFloat = 0.5
-//        if velocity.x < 0 {
-//            factor = -factor
-//        }
-//        let indexPath = IndexPath(row: (scrollView.contentOffset.x/cellSize.width + factor).int, section: 0)
-//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
-//    }
     
     
     
@@ -291,7 +237,6 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         if WishListService.shared.heartImages[sender.tag] == #imageLiteral(resourceName: "heart1") {
             WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
             WishListService.shared.delete(house: postData[sender.tag])
-            
             
         } else {
             WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
@@ -304,5 +249,4 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         
     }
 }
-
 
