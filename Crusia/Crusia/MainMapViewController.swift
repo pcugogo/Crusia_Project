@@ -20,7 +20,6 @@ class MainMapViewController: UIViewController {
     var heartImages: [UIImage] = []
     var postData: [House] = []
     var isLoadingPost = false
-    let marker = GMSMarker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,12 +120,14 @@ class MainMapViewController: UIViewController {
     
     // 마커 표시
     func displayMarkerfor(house: House) {
+        let marker = GMSMarker()
         let lat = house.latitude.numberValue as! Double
         let long = house.longitude.numberValue as! Double
-        self.marker.position = CLLocationCoordinate2DMake(lat,long)
-        self.marker.title = house.pricePerDay.stringValue
-        self.marker.snippet = house.title.stringValue
-        self.marker.map = self.viewForMap
+        marker.position = CLLocationCoordinate2DMake(lat,long)
+        marker.title = house.pricePerDay.stringValue
+        marker.snippet = house.title.stringValue
+        marker.map = self.viewForMap
+        
     }
 
 
@@ -147,6 +148,12 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         let currentPost = postData[indexPath.row]
         
         cell.configure(post: currentPost)
+        
+        let lat = currentPost.latitude.numberValue as! Double
+        let long = currentPost.longitude.numberValue as! Double
+        
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        viewForMap.camera = GMSCameraPosition.camera(withTarget: location, zoom: 11)
 
         
 //        // 마커 표시
@@ -165,6 +172,7 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
 //
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -211,10 +219,69 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
 
             self.isLoadingPost = false
         }
-        
-        
-        
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        //      if let collectionView = collectionView {
+        targetContentOffset.pointee = scrollView.contentOffset
+        var cellToSwipe: Int = Int(scrollView.contentOffset.x/250 + 0.5)
+        
+        if cellToSwipe < 0 {
+            cellToSwipe = 0
+        } else if cellToSwipe >= postData.count {
+            cellToSwipe = postData.count - 1
+        }
+        
+        collectionView.scrollToItem(at: IndexPath(row: cellToSwipe, section: 0), at: .left, animated: true)
+        
+        
+//        
+//        targetContentOffset.pointee = scrollView.contentOffset
+//        var factor: CGFloat = 0.5
+//        if velocity.x < 0 {
+//            factor = -factor
+//        }
+//        let indexPath = IndexPath(row: Int(scrollView.contentOffset.x/250 + factor), section: 0)
+//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
+//        
+//        
+//        // set acceleration to 0.0
+//        let pageWidth = Float(collectionView.bounds.size.width)
+//        let minSpace: Int = 20
+//        var cellToSwipe: Int = (scrollView.contentOffset.x) / (pageWidth + minSpace) + 0.5
+//        // cell width + min spacing for lines
+//        if cellToSwipe < 0 {
+//            cellToSwipe = 0
+//        }
+//        else if cellToSwipe >= articles.count {
+//            cellToSwipe = articles.count - 1
+//        }
+//        
+//        articlesCollectionView.scrollToItem(at: IndexPath(row: cellToSwipe, section: 0), at: .left, animated: true)
+    }
+    
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        
+//        targetContentOffset.pointee = scrollView.contentOffset
+//        var factor: CGFloat = 0.5
+//        if velocity.x < 0 {
+//            factor = -factor
+//        }
+//        let indexPath = IndexPath(row: Int((scrollView.contentOffset.x/200 + factor)), section: 0)
+//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
+//    }
+    
+    
+//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        targetContentOffset.pointee = scrollView.contentOffset
+//        var factor: CGFloat = 0.5
+//        if velocity.x < 0 {
+//            factor = -factor
+//        }
+//        let indexPath = IndexPath(row: (scrollView.contentOffset.x/cellSize.width + factor).int, section: 0)
+//        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
+//    }
     
     
     
