@@ -58,11 +58,15 @@ class DetailViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
+        navigationController?.navigationBar.isHidden = false
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = true
         
         self.tabBarController?.tabBar.isHidden = true
-    
+//        self.navigationController?.navigationBar.isTranslucent = true
+        self.automaticallyAdjustsScrollViewInsets = false
+//        self.edgesForExtendedLayout = .top
+
 
     }
 
@@ -108,6 +112,10 @@ class DetailViewController: UIViewController {
             
 
             
+        } else if segue.identifier == "reservationView" {
+            let destinationController = segue.destination as! HSReservationViewController
+            
+            destinationController.currentHousePk = house.pk.numberValue as! Int
         } else {
             
         }
@@ -345,3 +353,10 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: collectionView.frame.width, height:(collectionView.frame.height))
     }
 }
+
+//extension DetailViewController: UINavigationControllerDelegate {
+//
+//    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+//        viewController.edgesForExtendedLayout = []
+//    }
+//}

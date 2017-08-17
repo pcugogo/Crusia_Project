@@ -57,6 +57,8 @@
 		3715D03F1F324405002AD5CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D03E1F324405002AD5CB /* MainViewController.swift */; };
 		3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2311F3F048800643AED /* EditUserViewController.swift */; };
 		3715D2341F3F04A700643AED /* EditUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2331F3F04A700643AED /* EditUserInfoCell.swift */; };
+		371B34DD1F46012300F59C08 /* UIViewBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */; };
+		371B34DF1F46230C00F59C08 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B34DE1F46230C00F59C08 /* ReservationService.swift */; };
 		371C39511F42C950000107F6 /* ImageRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C39501F42C950000107F6 /* ImageRotating.swift */; };
 		371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */; };
 		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
@@ -143,6 +145,8 @@
 		3715D03E1F324405002AD5CB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3715D2311F3F048800643AED /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		3715D2331F3F04A700643AED /* EditUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfoCell.swift; sourceTree = "<group>"; };
+		371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewBounceAnimation.swift; sourceTree = "<group>"; };
+		371B34DE1F46230C00F59C08 /* ReservationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
 		371C39501F42C950000107F6 /* ImageRotating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRotating.swift; sourceTree = "<group>"; };
 		371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInOutCustomCell.swift; sourceTree = "<group>"; };
 		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 				374B8ACE1F3EB9AE00E9E010 /* CurrentUserInfoService.swift */,
 				3715D03B1F323FB4002AD5CB /* PostService.swift */,
 				37109C061F3A1C4600CFCC55 /* WishListService.swift */,
+				371B34DE1F46230C00F59C08 /* ReservationService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 			children = (
 				3730397E1F40A03B00C41071 /* ImageScale.swift */,
 				371C39501F42C950000107F6 /* ImageRotating.swift */,
+				371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -720,6 +726,7 @@
 				3715D02D1F31FFBD002AD5CB /* WelcomeViewController.swift in Sources */,
 				1448BC701F3C585A006A1AEB /* HouseCreateViewController.swift in Sources */,
 				1448BC6C1F3C585A006A1AEB /* GuestSpaceBasicCell.swift in Sources */,
+				371B34DF1F46230C00F59C08 /* ReservationService.swift in Sources */,
 				37116C6B1F346B2800E31625 /* UserInfoCustomCell.swift in Sources */,
 				3715D0351F321BC0002AD5CB /* User.swift in Sources */,
 				1448BC731F3C585A006A1AEB /* WhereViewController.swift in Sources */,
@@ -743,6 +750,7 @@
 				1448BC6D1F3C585A006A1AEB /* PersonnelViewController.swift in Sources */,
 				37109C0C1F3A34D500CFCC55 /* WishListTableViewCell.swift in Sources */,
 				37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */,
+				371B34DD1F46012300F59C08 /* UIViewBounceAnimation.swift in Sources */,
 				3715D0301F32002B002AD5CB /* LogInViewController.swift in Sources */,
 				14ED53161F435E0800A81B37 /* IntroduceViewController.swift in Sources */,
 				37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */,

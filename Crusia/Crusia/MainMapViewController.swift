@@ -24,9 +24,16 @@ class MainMapViewController: UIViewController {
     var isLoadingPost = false
     var displayMarker = GMSMarker()
     var mapPin: [MKPointAnnotation] = []
+    var indexPathOfCurrent: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 스크롤뷰 인셋 삭제
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
         
         // Apply blurring effect
         backgroundImageView.image = UIImage(named: "cloud")
@@ -39,6 +46,15 @@ class MainMapViewController: UIViewController {
         collectionView.backgroundColor = UIColor.clear
         
         loadRecentPosts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 네비게이션 바 숨기기
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,7 +152,23 @@ class MainMapViewController: UIViewController {
         }
 
     }
+    
+    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+
+        assert(sender as? UICollectionViewCell != nil, "sender is not a collection view")
+        
+        if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
+            if segue.identifier == "showDetailFromMapView" {
+                let destinationController = segue.destination as! DetailViewController
+                destinationController.house = postData[indexPath.row]
+            }
+        } else {
+            // Error sender is not a cell or cell is not in collectionView.
+        }
+    }
 
 }
 
@@ -248,5 +280,14 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         sender.setImage(WishListService.shared.heartImages[sender.tag], for: .normal)
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+//            performSegue(withIdentifier: "showDetailFromMapView", sender: cell)
+        } else {
+            // Error indexPath is not on screen: this should never happen.
+        }
+    }
+    
 }
 

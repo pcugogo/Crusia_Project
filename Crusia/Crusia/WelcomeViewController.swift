@@ -49,8 +49,8 @@ class WelcomeViewController: UIViewController {
     @IBAction func facebookLogInButtonTouched(_ sender: UIButton) {
         
         // 로그인시 버튼 작동 x
-        facebookLogInBtn.isEnabled = false
-        emailLogInBtn.isEnabled = false
+//        facebookLogInBtn.isEnabled = false
+//        emailLogInBtn.isEnabled = false
         
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
