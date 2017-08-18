@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class WishListService {
     
@@ -48,8 +50,149 @@ class WishListService {
             return first.pk.int! < second.pk.int!
         })
         
+        
         completionHandler(posts)
     }
+    
+    
+    func addAndDeleteHouseToWishList(housePk: Int) {
+        
+//        let housePk = house.pk.numberValue
+        let token: String = UserDefaults.standard.object(forKey: "token") as! String
+        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
+        
+        Alamofire.request("http://crusia.xyz/apis/like/?house=\(housePk)", method: .post, headers: httpHeader).validate().responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                print("Validation Successful")
+                
+                let json = JSON(value)
+                print("메세지: \(json)")
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+        }
+    }
+    
+//    func addAndDeleteHouseToWishList(housePk: Int, completionHandler: @escaping (Void) -> Void) {
+//        
+//        //        let housePk = house.pk.numberValue
+//        let token: String = UserDefaults.standard.object(forKey: "token") as! String
+//        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
+//        
+//        Alamofire.request("http://crusia.xyz/apis/like/?house=\(housePk)", method: .post, headers: httpHeader).validate().responseJSON { (response) in
+//            
+//            switch response.result {
+//                
+//            case .success(let value):
+//                
+//                print("Validation Successful")
+//                
+//                let json = JSON(value)
+//                print("메세지: \(json)")
+//                
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
+    func requestWishList(completionHandler: @escaping ([House]) -> Void) {
+        
+        let token: String = UserDefaults.standard.object(forKey: "token") as! String
+        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
+        
+        print("현재 유저 토큰 !! .................................................")
+        print(token)
+        
+        Alamofire.request("http://crusia.xyz/apis/like/", method: .get, headers: httpHeader).validate().responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                var allPost: [House] = []
+                
+                let json = JSON(value)
+                
+                for (index,subJson):(String, JSON) in json {
+                    
+                    print(index)
+                    
+                    let temp: House = House(house: subJson)
+                    
+                    allPost.append(temp)
+                }
+                
+                self.heartIndex = []
+                
+                for i in allPost {
+                    
+                    if !self.heartIndex.contains(i.pk.numberValue as! Int) {
+                        self.heartIndex.append(i.pk.numberValue as! Int)
+                    }
+                }
+                
+                self.houses = allPost
+                
+                completionHandler(allPost)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    
+    func loadWishList() {
+        
+        let token: String = UserDefaults.standard.object(forKey: "token") as! String
+        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
+        
+        print("현재 유저 토큰 !! .................................................")
+        print(token)
+        
+        Alamofire.request("http://crusia.xyz/apis/like/", method: .get, headers: httpHeader).validate().responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                var allPost: [House] = []
+                
+                let json = JSON(value)
+                
+                for (index,subJson):(String, JSON) in json {
+                    
+                    print(index)
+                    
+                    let temp: House = House(house: subJson)
+                    
+                    allPost.append(temp)
+                }
+                
+                self.heartIndex = []
+
+                for i in allPost {
+                    
+                    if !self.heartIndex.contains(i.pk.numberValue as! Int) {
+                        self.heartIndex.append(i.pk.numberValue as! Int)
+                    }
+                }
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    
     
     func deleteHeart() {
         

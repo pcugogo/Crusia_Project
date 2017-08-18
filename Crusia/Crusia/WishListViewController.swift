@@ -18,7 +18,8 @@ class WishListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        loadPosts()
+
         tableView.estimatedRowHeight = 390.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -34,16 +35,10 @@ class WishListViewController: UIViewController {
     
 //        loadRecentPosts()
         loadPosts()
-        tableView.reloadData()
         print("WishListViewwill appear ...........................................")
         
-        for i in postData {
-            print(i.pk)
-        }
         
         self.tabBarController?.tabBar.isHidden = false
-
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,10 +46,25 @@ class WishListViewController: UIViewController {
     }
     
     func loadPosts() {
-        WishListService.shared.getWishList { (newPosts) in
+        
+        WishListService.shared.requestWishList { (newPosts) in
             
             self.postData = newPosts
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            for i in self.postData {
+                print("로드포스트 안 ..........")
+                print(i.pk.numberValue)
+            }
+            
+            print("하트 인덱스 프린트.....")
+            print(WishListService.shared.heartIndex)
+            
         }
+        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -90,24 +100,22 @@ extension WishListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(post: currentPost)
                 
         // 위시리스트 추가 기능
-        cell.heartButton.tag = indexPath.row
+        cell.heartButton.tag = currentPost.pk.numberValue as! Int
         cell.heartButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
-        //        cell.heartButton.setImage(heartImages[indexPath.row], for: .normal)
-//        cell.heartButton.setImage(WishListService.shared.heartImages[indexPath.row], for: .normal)
 
-        
-        
         return cell
     }
     
 
     
-    // 위시리스트 추가, 삭제
+    // 위시리스트 삭제
     func handleLikes(sender: AnyObject){
         
+        WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         
+        NotificationCenter.default.post(name: Notification.Name("WishChangedNoti"), object: "delete")
 
-        
+        loadPosts()
     }
     
 }

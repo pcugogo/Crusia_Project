@@ -98,6 +98,7 @@ class MainMapViewController: UIViewController {
             self.activityIndicatorView.stopAnimating()
             self.activityIndicatorView.isHidden = true
             
+            DispatchQueue.main.async {
             self.collectionView.reloadData()
             
             
@@ -108,8 +109,11 @@ class MainMapViewController: UIViewController {
             let location = CLLocation(latitude: lat, longitude: long)
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 5000.0, 5000.0)
             
-            self.mapView.setRegion(coordinateRegion, animated: true)
-            self.mapView.selectAnnotation(self.mapPin[0], animated: true)
+            
+                self.mapView.setRegion(coordinateRegion, animated: true)
+                self.mapView.selectAnnotation(self.mapPin[0], animated: true)
+            }
+            
         }
     }
     
@@ -185,9 +189,20 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MainMapCollectionViewCell
         
         let currentPost = postData[indexPath.row]
-        
-        cell.configure(post: currentPost)
+        let housePk: Int = currentPost.pk.numberValue as! Int
 
+        cell.configure(post: currentPost)
+        
+        // 위시리스트 추가 기능
+        cell.heartButton.tag = currentPost.pk.numberValue as! Int
+        cell.heartButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
+        
+        if WishListService.shared.heartIndex.contains(housePk) {
+            cell.heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+        } else {
+            cell.heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+        }
+        
         return cell
     }
 
@@ -266,27 +281,38 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
     // 위시리스트 추가, 삭제
     func handleLikes(sender: AnyObject){
         
-        if WishListService.shared.heartImages[sender.tag] == #imageLiteral(resourceName: "heart1") {
-            WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
-            WishListService.shared.delete(house: postData[sender.tag])
-            
-        } else {
-            WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
-            WishListService.shared.add(house: postData[sender.tag])
+        // 위시리스트에 있는 상태
+        
+        if !WishListService.shared.heartIndex.contains(sender.tag) {
             WishListService.shared.heartIndex.append(sender.tag)
             
+            sender.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+            //            // 서버 데이터 통신 - 삭제
+            
+            WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
+            
+        } else {
+            for i in 0...WishListService.shared.heartIndex.count - 1 {
+                if WishListService.shared.heartIndex[i] == sender.tag {
+                    WishListService.shared.heartIndex.remove(at: i)
+                }
+            }
+            
+            sender.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+            //            // 서버 데이터 통신 - 추가
+            WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         }
         
-        sender.setImage(WishListService.shared.heartImages[sender.tag], for: .normal)
-        
+        // 메인 테이블에 위시리스트 변경 노티
+        NotificationCenter.default.post(name: Notification.Name("WishChangedNotiFromMapView"), object: "delete")
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) {
-//            performSegue(withIdentifier: "showDetailFromMapView", sender: cell)
-        } else {
-            // Error indexPath is not on screen: this should never happen.
-        }
+//        if let cell = collectionView.cellForItem(at: indexPath) {
+////            performSegue(withIdentifier: "showDetailFromMapView", sender: cell)
+//        } else {
+//            // Error indexPath is not on screen: this should never happen.
+//        }
     }
     
 }

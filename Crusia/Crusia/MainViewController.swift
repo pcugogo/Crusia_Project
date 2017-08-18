@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
     
-    var heartImages: [UIImage] = []
+//    var heartImages: [UIImage] = []
     var postData: [House] = []
     var isLoadingPost = false
     let refreshControl = UIRefreshControl()
@@ -57,18 +57,25 @@ class MainViewController: UIViewController {
 //        self.navigationController?.navigationItem.backBarButtonItem = backItem
 
         // Load recent posts
+        loadWishList()
         loadRecentPosts()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNoti"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNotiFromMapView"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func loadWishList() {
+        WishListService.shared.loadWishList()
     }
     
     
@@ -84,9 +91,9 @@ class MainViewController: UIViewController {
                 
                 // 새로운 포스트 데이터를 postData 어레이 제일 앞에 넣는다.
                 self.postData.insert(contentsOf: newPosts, at: 0)
-                self.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
+//                self.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
                 
-                WishListService.shared.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
+//                WishListService.shared.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
             }
             
             self.isLoadingPost = false
@@ -165,17 +172,19 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MainTableViewCell
         
         let currentPost = postData[indexPath.row]
+        let housePk: Int = currentPost.pk.numberValue as! Int
         
         cell.configure(post: currentPost)
 
         // 위시리스트 추가 기능
-        cell.heartButton.tag = indexPath.row
+        cell.heartButton.tag = currentPost.pk.numberValue as! Int
         cell.heartButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
-//        cell.heartButton.setImage(heartImages[indexPath.row], for: .normal)
-        cell.heartButton.setImage(WishListService.shared.heartImages[indexPath.row], for: .normal)
-
-
         
+        if WishListService.shared.heartIndex.contains(housePk) {
+            cell.heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+        } else {
+            cell.heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+        }
         
         return cell
     }
@@ -206,8 +215,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             for newPost in newPosts {
                 
                 self.postData.append(newPost)
-                self.heartImages.append(#imageLiteral(resourceName: "heart2"))
-                WishListService.shared.heartImages.append(#imageLiteral(resourceName: "heart2"))
+//                self.heartImages.append(#imageLiteral(resourceName: "heart2"))
+//                WishListService.shared.heartIndex.append(newPost.pk.numberValue as! Int)
+//                WishListService.shared.heartImages.append(#imageLiteral(resourceName: "heart2"))
 
                 print("하트 숫자.............................................................")
 //                print(self.heartImages.count)
@@ -229,28 +239,27 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     // 위시리스트 추가, 삭제
     func handleLikes(sender: AnyObject){
         
-        if WishListService.shared.heartImages[sender.tag] == #imageLiteral(resourceName: "heart1") {
-            WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
-            WishListService.shared.delete(house: postData[sender.tag])
-            
-            
-        } else {
-            WishListService.shared.heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
-            WishListService.shared.add(house: postData[sender.tag])
+        // 추가
+        if !WishListService.shared.heartIndex.contains(sender.tag) {
             WishListService.shared.heartIndex.append(sender.tag)
-            
+            sender.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
+            WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
+
+        
+        // 삭제
+        } else {
+            for i in 0...WishListService.shared.heartIndex.count - 1 {
+                if WishListService.shared.heartIndex[i] == sender.tag {
+                    WishListService.shared.heartIndex.remove(at: i)
+                }
+            }
+            sender.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
+            WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         }
-        
-//        if heartImages[sender.tag] == #imageLiteral(resourceName: "heart1") {
-//            heartImages[sender.tag] = #imageLiteral(resourceName: "heart2")
-//            WishListService.shared.delete(house: postData[sender.tag])
-//        } else {
-//            heartImages[sender.tag] = #imageLiteral(resourceName: "heart1")
-//            WishListService.shared.add(house: postData[sender.tag])
-//        }
-        
-        sender.setImage(WishListService.shared.heartImages[sender.tag], for: .normal)
-        
+    }
+    
+    func reloadTable() {
+        self.tableView.reloadData()
     }
 }
 

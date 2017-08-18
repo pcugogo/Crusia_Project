@@ -30,7 +30,19 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+        
+        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
+            
+            present(pageViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

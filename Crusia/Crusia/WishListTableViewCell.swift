@@ -58,7 +58,7 @@ class WishListTableViewCell: UITableViewCell {
         
         heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
         
-        mainImageView.image = #imageLiteral(resourceName: "preparingImage")
+        mainImageView.image = #imageLiteral(resourceName: "Flat")
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {

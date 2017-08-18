@@ -15,7 +15,6 @@ extension AddPhotoViewController: FusumaDelegate {
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
        
-        print("fusumaMultipleImageSelected")
         for i in 0...images.count - 1{
 //            images[i].scale(newWidth: 100.0)
             
@@ -26,7 +25,6 @@ extension AddPhotoViewController: FusumaDelegate {
 
             HostingService.shared.houseImages.append(imageData)
             
-            print("============이미지 공간===========",HostingService.shared.houseImages)
         }
 //
 //        
@@ -105,7 +103,6 @@ class AddPhotoViewController: UIViewController {
     func houseCreateUpload() {
         
         
-        print(parameters)
         let httpHeader:HTTPHeaders = ["Authorization":"Token \(HostingService.shared.header)"]
         let url = "http://crusia.xyz/apis/house/"
         // 이미지 파일 수정
@@ -115,7 +112,6 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? String{
-                    print(val)
                     multipartFormData.append(val.data(using: .utf8)!, withName: name!)
                     
                 }
@@ -123,7 +119,6 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? Int{
-                    print(val)
                     multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
                     
                 }
@@ -131,7 +126,6 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? Double{
-                    print(val)
                     multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
                     
                 }
@@ -161,7 +155,6 @@ class AddPhotoViewController: UIViewController {
                 
                 switch result {
                 case .success(let upload, _, _):
-                    print("success ......................................................")
                     
                     upload.uploadProgress(closure: { (progress) in
                         print("something")

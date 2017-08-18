@@ -68,4 +68,6 @@ class MainMapCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    
+    
 }

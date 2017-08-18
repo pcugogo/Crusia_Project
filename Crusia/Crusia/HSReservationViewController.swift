@@ -144,7 +144,7 @@ class HSReservationViewController: UIViewController {
         
         
         if cellState.selectedPosition() == .middle {
-            cell.selectedView.layer.cornerRadius = 0
+//            cell.selectedView.layer.cornerRadius = 0
             
         }
 //        switch cellState.selectedPosition() {

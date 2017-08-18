@@ -64,6 +64,8 @@
 		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
 		371E608E1F360BA70073AAF0 /* DetailedUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */; };
 		371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */; };
+		372362BB1F47762F00DA8D49 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372362BA1F47762F00DA8D49 /* WalkthroughContentViewController.swift */; };
+		372362BD1F47776C00DA8D49 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372362BC1F47776C00DA8D49 /* WalkthroughPageViewController.swift */; };
 		3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725298C1F38420200687E9A /* MapViewCustomCell.swift */; };
 		3725298F1F38449700687E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3725298E1F38449700687E9A /* MapKit.framework */; };
 		372619471F3CDFED0036EAB4 /* StartPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372619461F3CDFED0036EAB4 /* StartPoint.storyboard */; };
@@ -152,6 +154,8 @@
 		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
 		371E608D1F360BA70073AAF0 /* DetailedUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoViewController.swift; sourceTree = "<group>"; };
 		371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoCell.swift; sourceTree = "<group>"; };
+		372362BA1F47762F00DA8D49 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		372362BC1F47776C00DA8D49 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		3725298C1F38420200687E9A /* MapViewCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCustomCell.swift; sourceTree = "<group>"; };
 		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		372619461F3CDFED0036EAB4 /* StartPoint.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartPoint.storyboard; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 				372818311F333018003719D2 /* Service */,
 				3715D0331F321BB1002AD5CB /* Model */,
 				3730397D1F40A00900C41071 /* Util */,
+				372362B91F4775EC00DA8D49 /* WalkthroughContentView */,
 				3715D02E1F320011002AD5CB /* LogInView */,
 				37E85EAB1F39960F00CFA8DA /* SignUpView */,
 				3715D03D1F3243C4002AD5CB /* MainView */,
@@ -432,6 +437,15 @@
 				371E608F1F360C2B0073AAF0 /* DetailedUserInfoCell.swift */,
 			);
 			name = DetailedUserInfoView;
+			sourceTree = "<group>";
+		};
+		372362B91F4775EC00DA8D49 /* WalkthroughContentView */ = {
+			isa = PBXGroup;
+			children = (
+				372362BA1F47762F00DA8D49 /* WalkthroughContentViewController.swift */,
+				372362BC1F47776C00DA8D49 /* WalkthroughPageViewController.swift */,
+			);
+			name = WalkthroughContentView;
 			sourceTree = "<group>";
 		};
 		3728182E1F332E96003719D2 /* DetailView */ = {
@@ -704,6 +718,7 @@
 				3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */,
 				372818371F338815003719D2 /* DetailViewController.swift in Sources */,
 				1448BC771F3C585A006A1AEB /* GuestPrerequisiteViewController.swift in Sources */,
+				372362BB1F47762F00DA8D49 /* WalkthroughContentViewController.swift in Sources */,
 				3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */,
 				370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */,
 				371C39511F42C950000107F6 /* ImageRotating.swift in Sources */,
@@ -747,6 +762,7 @@
 				373255F21F372B5F00006C25 /* RefundPolicyCustomCell.swift in Sources */,
 				3715D0371F3220A8002AD5CB /* House.swift in Sources */,
 				3710998A1F397808003D87D5 /* MainTabBarController.swift in Sources */,
+				372362BD1F47776C00DA8D49 /* WalkthroughPageViewController.swift in Sources */,
 				1448BC6D1F3C585A006A1AEB /* PersonnelViewController.swift in Sources */,
 				37109C0C1F3A34D500CFCC55 /* WishListTableViewCell.swift in Sources */,
 				37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */,
