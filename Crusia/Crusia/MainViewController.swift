@@ -105,6 +105,9 @@ class MainViewController: UIViewController {
             }
             print("하트 숫자.............................................................")
 //            print(self.heartImages.count)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -214,12 +217,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 indexPaths.append(indexPath)
             }
             
-
-            
             self.tableView.insertRows(at: indexPaths, with: .fade)
-            self.tableView.endUpdates()
             
-            self.isLoadingPost = false
+            DispatchQueue.main.async {
+                self.tableView.endUpdates()
+                self.isLoadingPost = false
+            }
         }
     }
     

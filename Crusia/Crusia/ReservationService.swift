@@ -21,6 +21,9 @@ class ReservationService {
         let token: String = UserDefaults.standard.object(forKey: "token") as! String
         let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
         
+        print("현재 유저 토큰 !! .................................................")
+        print(token)
+        
         let parameters: Parameters = ["checkin_date": checkInDate, "checkout_date": checkOutDate]
         
         Alamofire.request("http://crusia.xyz/apis/reservations/?house=\(pk)", method: .post, parameters: parameters, headers: httpHeader).validate().responseJSON { (response) in
@@ -37,6 +40,45 @@ class ReservationService {
                 
             case .failure(let error):
                 print(error)
+                
+            }
+        }
+    }
+    
+    func checkDisableDatesOf(housePk pk: Int, completionHandler: @escaping (JSON) -> Void) {
+        
+        
+        Alamofire.request("http://crusia.xyz/apis/house/\(pk)", method: .get).validate().responseJSON { response in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                print("Validation Successful")
+                
+                let json = JSON(value)
+                
+                let unavailableDates = json["disable_days"]
+                
+                completionHandler(unavailableDates)
+
+//                print(json["disable_days"])
+//                
+//                var unavailableDates: [[String: JSON]] = [[v/:]]
+//                
+//                if let tempDates = json["disable_days"].array {
+//                    for i in tempDates {
+//                        unavailableDates.append(i.dictionaryValue)
+//                    }
+//                }
+//                
+//                
+//                
+//                print("불가능한 날짜....................")
+//                print(unavailableDates)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
                 
             }
         }
