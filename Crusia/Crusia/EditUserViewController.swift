@@ -237,7 +237,6 @@ extension EditUserViewController: FusumaDelegate {
         
         profileImageView.image = image
         
-        
         CurrentUserInfoService.shared.editUserProfileImage(imageData: imageData)
         
         

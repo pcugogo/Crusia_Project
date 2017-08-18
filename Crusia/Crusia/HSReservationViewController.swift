@@ -23,7 +23,7 @@ class HSReservationViewController: UIViewController {
     let currentDateSelectedViewColor = UIColor.blue
     
     let todaysDate = Date()
-    var eventsFromTheServer: [String: String] = [:]
+    var eventsFromTheServer: [String] = []
     var firstDate: Date?
     var lastDate: Date?
 
@@ -40,21 +40,25 @@ class HSReservationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            let serverObjects = self.getServerEvents()
-            
-            for (date, event) in serverObjects {
-                let stringDate = self.formatter.string(from: date)
-                self.eventsFromTheServer[stringDate] = event
-            }
-            
-            DispatchQueue.main.async {
-                self.calendarView.reloadData()
-            }
-        }
+        print("뷰디드로드........")
+//        eventsFromTheServer = getServerEvents()
+//        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+//            let serverObjects = self.getServerEvents()
+//            
+//            
+//            
+//            for (date, event) in serverObjects {
+////                let stringDate = self.formatter.string(from: date)
+////                self.eventsFromTheServer[stringDate] = event
+//            }
+//            
+//            DispatchQueue.main.async {
+//                self.calendarView.reloadData()
+//            }
+//        }
         
+        getServerEvents()
         setupCalenderView()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,10 +162,10 @@ class HSReservationViewController: UIViewController {
     
     // MARK: - 이벤트 처리(예약불가 날짜 표시)
     func handleCellEvents(cell: HSReservationViewCell, cellState: CellState) {
-        if eventsFromTheServer.contains(where: { $0.key == formatter.string(from: cellState.date)}) {
+        if eventsFromTheServer.contains(where: { $0 == formatter.string(from: cellState.date)}) {
             cell.dateLabel.textColor = UIColor.lightGray
         }
-        cell.unavailableLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
+        cell.unavailableLabel.isHidden = !eventsFromTheServer.contains { $0 == formatter.string(from: cellState.date)}
     }
     
     
@@ -293,19 +297,28 @@ extension HSReservationViewController: JTAppleCalendarViewDelegate {
 
 extension HSReservationViewController {
     
-    func getServerEvents() -> [Date: String] {
+    // 서버로 부터 예약 불가능한 날짜 호출
+    func getServerEvents() {
         
-        formatter.dateFormat = "yyyy MM dd"
-
-        return [
-            formatter.date(from: "2017 08 03")!: "Happy Birthday",
-            formatter.date(from: "2017 08 04")!: "Happy Birthday",
-            formatter.date(from: "2017 08 05")!: "Happy Birthday",
-            formatter.date(from: "2017 08 06")!: "Happy Birthday",
-            formatter.date(from: "2017 08 07")!: "Happy Birthday",
-            formatter.date(from: "2017 08 08")!: "Happy Birthday",
-            formatter.date(from: "2017 08 09")!: "Happy Birthday"
-        ]
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        ReservationService.shared.checkDisableDatesOf(housePk: currentHousePk) { (unavailableDates) in
+            
+            let tempArray = unavailableDates.array
+            var tempStrings: [String] = []
+            
+            for i in tempArray! {
+                print("getServerEvents 안 ..........")
+                print(i)
+                tempStrings.append(i["date"].stringValue)
+            }
+            
+            self.eventsFromTheServer = tempStrings
+            DispatchQueue.main.async {
+                self.calendarView.reloadData()
+            }
+        }
+        
     }
 }
 

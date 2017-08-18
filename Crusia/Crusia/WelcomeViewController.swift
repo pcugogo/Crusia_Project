@@ -30,9 +30,6 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-
-//        getUserInfoForTest()
-//        getHouseInfoForTest()
         
     }
 
@@ -66,7 +63,6 @@ class WelcomeViewController: UIViewController {
                 }
             }
         }
-
     }
     
     func getFBUserData(){
