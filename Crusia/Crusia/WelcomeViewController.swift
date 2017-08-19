@@ -30,6 +30,7 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

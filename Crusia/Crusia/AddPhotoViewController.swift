@@ -14,30 +14,32 @@ import SwiftyJSON
 extension AddPhotoViewController: FusumaDelegate {
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
-       
+        
+        print("fusumaMultipleImageSelected")
         for i in 0...images.count - 1{
-//            images[i].scale(newWidth: 100.0)
+            //            images[i].scale(newWidth: 100.0)
             
             
             guard let imageData = UIImageJPEGRepresentation(images[i], 0.3) else {
                 return
             }
-
+            
             HostingService.shared.houseImages.append(imageData)
             
+            print("============이미지 공간===========",HostingService.shared.houseImages)
         }
-//
-//        
+        //
+        //
         
         
-//        CurrentUserInfoService.shared.editUserProfileImage(imageData: imageData)
-    
+        //        CurrentUserInfoService.shared.editUserProfileImage(imageData: imageData)
+        
     }
     
     
     
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
- 
+        
     }
     
     func fusumaVideoCompleted(withFileURL fileURL: URL) {
@@ -65,21 +67,21 @@ extension AddPhotoViewController: FusumaDelegate {
 }
 
 class AddPhotoViewController: UIViewController {
-
+    
     let fusumaViewController = FusumaViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func addPhotoBtnAction(_ sender: UIButton) {
         // Configure Fusuma
         fusumaViewController.allowMultipleSelection = true
@@ -91,7 +93,7 @@ class AddPhotoViewController: UIViewController {
         
         // Bring it up
         present(fusumaViewController, animated: true, completion: nil)
-    
+        
     }
     @IBAction func dismissBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -103,6 +105,7 @@ class AddPhotoViewController: UIViewController {
     func houseCreateUpload() {
         
         
+        print(parameters)
         let httpHeader:HTTPHeaders = ["Authorization":"Token \(HostingService.shared.header)"]
         let url = "http://crusia.xyz/apis/house/"
         // 이미지 파일 수정
@@ -112,6 +115,7 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? String{
+                    print(val)
                     multipartFormData.append(val.data(using: .utf8)!, withName: name!)
                     
                 }
@@ -119,6 +123,7 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? Int{
+                    print(val)
                     multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
                     
                 }
@@ -126,14 +131,15 @@ class AddPhotoViewController: UIViewController {
             for key in self.parameters.keys{
                 let name = String(key)
                 if let val = self.parameters[name!] as? Double{
+                    print(val)
                     multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
                     
                 }
             }
-
             
-           
-                
+            
+            
+            
             
             if image.count == 1{
                 multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
@@ -155,6 +161,7 @@ class AddPhotoViewController: UIViewController {
                 
                 switch result {
                 case .success(let upload, _, _):
+                    print("success ......................................................")
                     
                     upload.uploadProgress(closure: { (progress) in
                         print("something")
@@ -175,13 +182,13 @@ class AddPhotoViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
