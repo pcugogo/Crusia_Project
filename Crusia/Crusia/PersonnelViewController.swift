@@ -10,13 +10,13 @@ import UIKit
 import Alamofire
 
 class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     
     
     @IBOutlet weak var registrationProgressView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextBtnOut: UIButton!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtnOut.layer.cornerRadius = 3
@@ -24,11 +24,11 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         print("================숙소 종류 데이터체크===================", HostingService.shared.roomType)
         
         HostingService.shared.title = "안녕하세요 테스트 " //2-3 숙소제목 (필)
-
+        
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         registrationProgressView.setProgress(0.2, animated: true)
@@ -39,9 +39,9 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-   
+    
     let totalGuest = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-    let totalBedRoom = 11
+    let totalBedRoom = ["1","2","3","4","5","6","7","8","9","10"]
     let totalBed = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","15"]
     
     
@@ -54,7 +54,7 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         
         if indexPath.row == 0 {
-            if HostingService.shared.oneStepComplete == true {
+            if HostingService.shared.firstStepComplete == true {
                 
                 cell.personneTextField.text = String(HostingService.shared.accommodates)
             }else {
@@ -67,7 +67,18 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
             
             
         }else if indexPath.row == 1 {
-            if HostingService.shared.oneStepComplete == true {
+            if HostingService.shared.firstStepComplete == true {
+                cell.personneTextField.text = String(HostingService.shared.beds)
+            }else {
+                cell.personneTextField.text = String(HostingService.shared.beds)
+            }
+            
+            cell.personneCheckLb.text = "게스트용 침실"
+            cell.pickerInputValue = totalBedRoom
+            cell.indexPath = indexPath.row
+            
+        }else{
+            if HostingService.shared.firstStepComplete == true {
                 cell.personneTextField.text = String(HostingService.shared.beds)
             }else {
                 cell.personneTextField.text = String(HostingService.shared.beds)
@@ -76,13 +87,12 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
             cell.personneCheckLb.text = "게스트용 침대"
             cell.pickerInputValue = totalBed
             cell.indexPath = indexPath.row
-          
         }
         
-    return cell
+        return cell
     }
-
-  
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -93,17 +103,17 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-       
         
-        if HostingService.shared.oneStepComplete == true{
+        
+        if HostingService.shared.firstStepComplete == true{
             navigationController?.popViewController(animated: true)
         }else if HostingService.shared.personnelSaveAndBack == true && HostingService.shared.accommodates != 1 && HostingService.shared.beds != 1 {
             backAlert()
         }else{
-
+            
             navigationController?.popViewController(animated: true)
         }
-       
+        
         
     }
     func backAlert() {
@@ -122,15 +132,16 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
         alert.addAction(saveBtn)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

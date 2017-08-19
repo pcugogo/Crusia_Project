@@ -9,7 +9,7 @@
 import UIKit
 
 class GuestSpaceDetailCell: UITableViewCell {
-
+    
     let guestSpaceView:GuestSpaceViewController = GuestSpaceViewController()
     
     var parameterName:String?
@@ -21,14 +21,14 @@ class GuestSpaceDetailCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
-  
+    
+    
     @IBAction func checkSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             if let parameter = parameterName {

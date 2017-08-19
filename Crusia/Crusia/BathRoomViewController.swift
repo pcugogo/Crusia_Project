@@ -49,16 +49,16 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         cell.pickerInputValue = totalBath
         
-        if HostingService.shared.oneStepComplete == true {
+        if HostingService.shared.firstStepComplete == true {
             cell.bathRoomCheckTextField.text = String(HostingService.shared.bathrooms)
         }else{
             cell.bathRoomCheckTextField.text = String(HostingService.shared.bathrooms)
         }
-       
+        
         return cell
     }
     
-   
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -70,7 +70,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
-        if HostingService.shared.oneStepComplete == true{
+        if HostingService.shared.firstStepComplete == true{
             navigationController?.popViewController(animated: true)
         }else if HostingService.shared.bathrooms == 0{
             HostingService.shared.bathrooms = 1
@@ -78,7 +78,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }else if HostingService.shared.bathRoomSaveAndBack == true && HostingService.shared.bathrooms != 1 {
             backAlert()
         }else{
-
+            
             navigationController?.popViewController(animated: true)
         }
         
@@ -98,7 +98,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         alert.addAction(saveBtn)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     
     /*
      // MARK: - Navigation

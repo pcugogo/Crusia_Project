@@ -9,7 +9,7 @@
 import UIKit
 
 class GuestSpaceBasicCell: UITableViewCell {
-
+    
     let guestSpaceView:GuestSpaceViewController = GuestSpaceViewController()
     
     var parameterName:String?
@@ -24,10 +24,10 @@ class GuestSpaceBasicCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-   
+    
     @IBAction func checkSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             if let parameter = parameterName {
@@ -39,5 +39,5 @@ class GuestSpaceBasicCell: UITableViewCell {
         }
         print("=========detailCellData=========", HostingService.shared.amenities)
     }
-
+    
 }

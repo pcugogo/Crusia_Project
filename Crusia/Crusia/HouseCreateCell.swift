@@ -32,30 +32,31 @@ class HouseCreateCell: UITableViewCell {
     
     @IBOutlet weak var secondStepBtnOut: UIButton!
     @IBOutlet weak var thirdStepBtnOut: UIButton!
-  
     
     
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         continueBtnOut.layer.cornerRadius = 3
-        
-//        topTextLabel.text = topText 이렇게 하니깐 시점이 늦다
-//        detailTextLb.text = detailText
-//        continueBtnOut.isHidden = btnHidden ?? true
+        secondStepBtnOut.layer.cornerRadius = 3
+        thirdStepBtnOut.layer.cornerRadius = 3
+        //        topTextLabel.text = topText 이렇게 하니깐 시점이 늦다
+        //        detailTextLb.text = detailText
+        //        continueBtnOut.isHidden = btnHidden ?? true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-   
+    
     @IBAction func nextBtnAction(_ sender: UIButton) {
         delegate?.nextBtn(indexPath: cellIndexPath!)
         
     }
     
-   
-
+    
+    
 }

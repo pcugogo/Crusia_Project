@@ -34,7 +34,7 @@ class AmenitiesDetailCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-   
+    
     
     
     @IBAction func checkSwitchAction(_ sender: UISwitch) {

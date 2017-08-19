@@ -35,7 +35,7 @@ class BathRoomCell: UITableViewCell,UITextFieldDelegate,UIPickerViewDelegate,UIP
         
         //        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(PersonnePickCell.donePressed))
         
-        let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PersonnePickCell.donePressed))
+        let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(BathRoomCell.donePressed))
         
         let flexsibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) // flexible space to add left end side
         
@@ -93,6 +93,7 @@ class BathRoomCell: UITableViewCell,UITextFieldDelegate,UIPickerViewDelegate,UIP
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         bathRoomCheckTextField.text = pickerInputValue[row]
     }
-
+    
     
 }
+

@@ -13,8 +13,8 @@ import MapKit
 
 
 class MapLocationViewController: UIViewController,MKMapViewDelegate {
-
-//    let manager = CLLocationManager()
+    
+    //    let manager = CLLocationManager()
     var address = ""
     var currentRoute:MKRoute?
     
@@ -24,7 +24,7 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     var currentTransportType = MKDirectionsTransportType.automobile
     
     @IBOutlet weak var registrationProgressView: UIProgressView!
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var centerPinImg: UIImageView!
@@ -33,57 +33,57 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
     
     
     var check = false
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nextBtnOut.layer.cornerRadius = 3
         
-            print("true@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-            let geoCoder = CLGeocoder()
-            
-            geoCoder.geocodeAddressString(address, completionHandler: { placemarks, error in
-                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", self.address)
-                if let error = error {
-                    print(error)
-                    return
-                }
-                print("!!!!!!!!!!!!!!!!!!!!!!!!!")
-                if let placemarks = placemarks {
-                    // Get the first placemark
-                    let placemark = placemarks[0]
-                    
-                    // Add annotation
-                    let annotation = MKPointAnnotation()
-                    annotation.title = ""
-                    annotation.subtitle = ""
-                    
-                    if let location = placemark.location {
-                        annotation.coordinate = location.coordinate
-                        print("#############")
-                        // Display the annotation
-                        
-                        self.mapView.showAnnotations([annotation], animated: true)
-                        self.mapView.selectAnnotation(annotation, animated: true)
-                        self.mapView.removeAnnotation(annotation)
-                    }
-                }
-                
-            })
+        print("true@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        let geoCoder = CLGeocoder()
         
-        
-       
-        
-//        if #available(iOS 9.0, *) {
-//            mapView.showsCompass = true
-//            mapView.showsScale = true
-//            mapView.showsTraffic = true
-//        }
-
-       
-       
+        geoCoder.geocodeAddressString(address, completionHandler: { placemarks, error in
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", self.address)
+            if let error = error {
+                print(error)
+                return
             }
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!")
+            if let placemarks = placemarks {
+                // Get the first placemark
+                let placemark = placemarks[0]
+                
+                // Add annotation
+                let annotation = MKPointAnnotation()
+                annotation.title = ""
+                annotation.subtitle = ""
+                
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    print("#############")
+                    // Display the annotation
+                    
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    self.mapView.selectAnnotation(annotation, animated: true)
+                    self.mapView.removeAnnotation(annotation)
+                }
+            }
+            
+        })
+        
+        
+        
+        
+        //        if #available(iOS 9.0, *) {
+        //            mapView.showsCompass = true
+        //            mapView.showsScale = true
+        //            mapView.showsTraffic = true
+        //        }
+        
+        
+        
+    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,38 +115,38 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
         }
     }
     
-//    
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let identifier = "MyPin"
-//        
-//        if annotation.isKind(of: MKUserLocation.self) {
-//            return nil
-//        }
-//        
-//        // Reuse the annotation if possible
-//        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-//        
-//        if annotationView == nil {
-//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView?.canShowCallout = true
-//        }
-//        
-//        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
-//        leftIconView.image = UIImage(named: "CheckImg")
-//        annotationView?.leftCalloutAccessoryView = leftIconView
-//        
-//        // Pin color customization
-//        if #available(iOS 9.0, *) {
-//            annotationView?.pinTintColor = UIColor.orange
-//        }
-//        
-//        return annotationView
-//    }
+    //
+    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    //        let identifier = "MyPin"
+    //
+    //        if annotation.isKind(of: MKUserLocation.self) {
+    //            return nil
+    //        }
+    //
+    //        // Reuse the annotation if possible
+    //        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+    //
+    //        if annotationView == nil {
+    //            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+    //            annotationView?.canShowCallout = true
+    //        }
+    //
+    //        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+    //        leftIconView.image = UIImage(named: "CheckImg")
+    //        annotationView?.leftCalloutAccessoryView = leftIconView
+    //
+    //        // Pin color customization
+    //        if #available(iOS 9.0, *) {
+    //            annotationView?.pinTintColor = UIColor.orange
+    //        }
+    //
+    //        return annotationView
+    //    }
     
     // MARK: - Action methods
     
-
-
+    
+    
     
     @IBAction func nextBtnAction(_ sender: UIButton) {
         HostingService.shared.latitude = mapView.centerCoordinate.latitude
@@ -157,15 +157,15 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
         
         navigationController?.popViewController(animated: true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
