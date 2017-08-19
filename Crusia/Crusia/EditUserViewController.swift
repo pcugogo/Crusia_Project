@@ -23,8 +23,7 @@ class EditUserViewController: UIViewController {
         
         configureUser()
         
-        // Note that SO highlighting makes the new selector syntax (#selector()) look
-        // like a comment but it isn't one
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     

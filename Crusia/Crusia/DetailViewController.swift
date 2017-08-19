@@ -66,8 +66,14 @@ class DetailViewController: UIViewController {
 //        self.navigationController?.navigationBar.isTranslucent = true
         self.automaticallyAdjustsScrollViewInsets = false
 //        self.edgesForExtendedLayout = .top
-
-
+        
+        // ReservationService에 현재 예약정보 저장
+        configureReservationInfo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureReserveButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,6 +142,19 @@ class DetailViewController: UIViewController {
 //        alertController.addAction(okayAction)
 //        
 //        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func configureReservationInfo () {
+        
+        // 하우스 설정
+        ReservationService.shared.house = self.house
+        ReservationService.shared.host = self.house.host
+    }
+    
+    func configureReserveButton() {
+        if ReservationService.shared.checkOutDate != nil {
+            reserveButton.setTitle("예약하기", for: .normal)
+        }
     }
     
 

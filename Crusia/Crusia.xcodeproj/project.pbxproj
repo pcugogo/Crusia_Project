@@ -70,6 +70,13 @@
 		3725298F1F38449700687E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3725298E1F38449700687E9A /* MapKit.framework */; };
 		372619471F3CDFED0036EAB4 /* StartPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372619461F3CDFED0036EAB4 /* StartPoint.storyboard */; };
 		37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262CFF1F482FC700AAF70E /* AvailableDatesTableViewCell.swift */; };
+		37262D031F48639F00AAF70E /* ReservationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D021F48639F00AAF70E /* ReservationStepOneViewController.swift */; };
+		37262D051F4863FB00AAF70E /* ReservationStepOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D041F4863FB00AAF70E /* ReservationStepOneCell.swift */; };
+		37262D091F48753400AAF70E /* ReservationStepOneHouseInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D081F48753400AAF70E /* ReservationStepOneHouseInfoCell.swift */; };
+		37262D0D1F488DCD00AAF70E /* ReservationStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D0C1F488DCD00AAF70E /* ReservationStepTwoViewController.swift */; };
+		37262D0F1F4890E000AAF70E /* ReservationStepTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D0E1F4890E000AAF70E /* ReservationStepTwoCell.swift */; };
+		37262D121F48989900AAF70E /* ReservationStepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D111F48989900AAF70E /* ReservationStepThreeViewController.swift */; };
+		37262D141F48994700AAF70E /* ReservationStepThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262D131F48994700AAF70E /* ReservationStepThreeCell.swift */; };
 		372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728182F1F332EC4003719D2 /* MainTableViewCell.swift */; };
 		372818331F33305D003719D2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818321F33305D003719D2 /* CacheManager.swift */; };
 		372818371F338815003719D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818361F338815003719D2 /* DetailViewController.swift */; };
@@ -161,6 +168,13 @@
 		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		372619461F3CDFED0036EAB4 /* StartPoint.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartPoint.storyboard; sourceTree = "<group>"; };
 		37262CFF1F482FC700AAF70E /* AvailableDatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableDatesTableViewCell.swift; sourceTree = "<group>"; };
+		37262D021F48639F00AAF70E /* ReservationStepOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepOneViewController.swift; sourceTree = "<group>"; };
+		37262D041F4863FB00AAF70E /* ReservationStepOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepOneCell.swift; sourceTree = "<group>"; };
+		37262D081F48753400AAF70E /* ReservationStepOneHouseInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepOneHouseInfoCell.swift; sourceTree = "<group>"; };
+		37262D0C1F488DCD00AAF70E /* ReservationStepTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepTwoViewController.swift; sourceTree = "<group>"; };
+		37262D0E1F4890E000AAF70E /* ReservationStepTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepTwoCell.swift; sourceTree = "<group>"; };
+		37262D111F48989900AAF70E /* ReservationStepThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepThreeViewController.swift; sourceTree = "<group>"; };
+		37262D131F48994700AAF70E /* ReservationStepThreeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepThreeCell.swift; sourceTree = "<group>"; };
 		37271A941F42EA0A00DB46D4 /* Crusia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crusia.entitlements; sourceTree = "<group>"; };
 		3728182F1F332EC4003719D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		372818321F33305D003719D2 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
@@ -453,8 +467,39 @@
 		37262D011F48318800AAF70E /* ReservationStepsViews */ = {
 			isa = PBXGroup;
 			children = (
+				37262D0A1F488D9200AAF70E /* Step1 */,
+				37262D0B1F488DA800AAF70E /* Step2 */,
+				37262D101F48987400AAF70E /* Step3 */,
 			);
 			name = ReservationStepsViews;
+			sourceTree = "<group>";
+		};
+		37262D0A1F488D9200AAF70E /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				37262D021F48639F00AAF70E /* ReservationStepOneViewController.swift */,
+				37262D081F48753400AAF70E /* ReservationStepOneHouseInfoCell.swift */,
+				37262D041F4863FB00AAF70E /* ReservationStepOneCell.swift */,
+			);
+			name = Step1;
+			sourceTree = "<group>";
+		};
+		37262D0B1F488DA800AAF70E /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				37262D0C1F488DCD00AAF70E /* ReservationStepTwoViewController.swift */,
+				37262D0E1F4890E000AAF70E /* ReservationStepTwoCell.swift */,
+			);
+			name = Step2;
+			sourceTree = "<group>";
+		};
+		37262D101F48987400AAF70E /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				37262D111F48989900AAF70E /* ReservationStepThreeViewController.swift */,
+				37262D131F48994700AAF70E /* ReservationStepThreeCell.swift */,
+			);
+			name = Step3;
 			sourceTree = "<group>";
 		};
 		3728182E1F332E96003719D2 /* DetailView */ = {
@@ -713,9 +758,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37262D031F48639F00AAF70E /* ReservationStepOneViewController.swift in Sources */,
 				37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */,
 				373039791F405A6800C41071 /* EditIntroduceCell.swift in Sources */,
 				37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */,
+				37262D051F4863FB00AAF70E /* ReservationStepOneCell.swift in Sources */,
 				1448BC671F3C585A006A1AEB /* AmenitiesCheckViewController.swift in Sources */,
 				3715D01B1F31FB44002AD5CB /* AppDelegate.swift in Sources */,
 				370BF3F31F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift in Sources */,
@@ -728,6 +775,7 @@
 				372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */,
 				3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */,
 				372818371F338815003719D2 /* DetailViewController.swift in Sources */,
+				37262D141F48994700AAF70E /* ReservationStepThreeCell.swift in Sources */,
 				1448BC771F3C585A006A1AEB /* GuestPrerequisiteViewController.swift in Sources */,
 				372362BB1F47762F00DA8D49 /* WalkthroughContentViewController.swift in Sources */,
 				3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */,
@@ -749,6 +797,7 @@
 				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,
 				1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */,
 				371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */,
+				37262D091F48753400AAF70E /* ReservationStepOneHouseInfoCell.swift in Sources */,
 				1448BC761F3C585A006A1AEB /* HouseCreateCell.swift in Sources */,
 				3715D02D1F31FFBD002AD5CB /* WelcomeViewController.swift in Sources */,
 				1448BC701F3C585A006A1AEB /* HouseCreateViewController.swift in Sources */,
@@ -761,11 +810,13 @@
 				372818331F33305D003719D2 /* CacheManager.swift in Sources */,
 				1448BC6F1F3C585A006A1AEB /* BathRoomCell.swift in Sources */,
 				3712F3F01F43EE6E00E07783 /* MainMapCollectionViewCell.swift in Sources */,
+				37262D0F1F4890E000AAF70E /* ReservationStepTwoCell.swift in Sources */,
 				370BF3F11F35795600A04A6F /* ExtraFeeViewController.swift in Sources */,
 				37109C071F3A1C4600CFCC55 /* WishListService.swift in Sources */,
 				1448BC681F3C585A006A1AEB /* AmenitiesBasicCell.swift in Sources */,
 				371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */,
 				1448BC6B1F3C585A006A1AEB /* BathRoomViewController.swift in Sources */,
+				37262D0D1F488DCD00AAF70E /* ReservationStepTwoViewController.swift in Sources */,
 				37CD3C4D1F3DC314008B695A /* HSReservationViewCell.swift in Sources */,
 				3730397F1F40A03B00C41071 /* ImageScale.swift in Sources */,
 				371E60901F360C2B0073AAF0 /* DetailedUserInfoCell.swift in Sources */,
@@ -781,6 +832,7 @@
 				371B34DD1F46012300F59C08 /* UIViewBounceAnimation.swift in Sources */,
 				3715D0301F32002B002AD5CB /* LogInViewController.swift in Sources */,
 				14ED53161F435E0800A81B37 /* IntroduceViewController.swift in Sources */,
+				37262D121F48989900AAF70E /* ReservationStepThreeViewController.swift in Sources */,
 				37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */,
 				1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */,
 				1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */,

@@ -14,6 +14,13 @@ class ReservationService {
     
     static let shared: ReservationService = ReservationService()
     
+    var checkInDate: Date?
+    var checkOutDate: Date?
+    var selectedDates: Int?
+    var message: String?
+    var house: House?
+    var host: User?
+    
     private init() {}
     
     func makeRservation(housePk pk: Int, checkInDate: String, checkOutDate: String) {
@@ -62,21 +69,6 @@ class ReservationService {
                 
                 completionHandler(unavailableDates)
 
-//                print(json["disable_days"])
-//                
-//                var unavailableDates: [[String: JSON]] = [[v/:]]
-//                
-//                if let tempDates = json["disable_days"].array {
-//                    for i in tempDates {
-//                        unavailableDates.append(i.dictionaryValue)
-//                    }
-//                }
-//                
-//                
-//                
-//                print("불가능한 날짜....................")
-//                print(unavailableDates)
-                
             case .failure(let error):
                 print(error.localizedDescription)
                 
@@ -85,3 +77,5 @@ class ReservationService {
     }
 
 }
+
+

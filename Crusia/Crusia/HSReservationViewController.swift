@@ -57,6 +57,9 @@ class HSReservationViewController: UIViewController {
 //            }
 //        }
         
+        firstDate = nil
+        lastDate = nil
+        
         getServerEvents()
         setupCalenderView()
     }
@@ -199,10 +202,16 @@ class HSReservationViewController: UIViewController {
             return print("예약정보 불충분")
         }
         
-        let firstDay = formatter.string(from: first)
-        let lastDay = formatter.string(from: last)
+        ReservationService.shared.checkInDate = first
+        ReservationService.shared.checkOutDate = last
+        ReservationService.shared.selectedDates = calendarView.selectedDates.count - 1
         
-        ReservationService.shared.makeRservation(housePk: currentHousePk, checkInDate: firstDay, checkOutDate: lastDay)
+        self.dismiss(animated: true, completion: nil)
+        
+//        let firstDay = formatter.string(from: first)
+//        let lastDay = formatter.string(from: last)
+        
+//        ReservationService.shared.makeRservation(housePk: currentHousePk, checkInDate: firstDay, checkOutDate: lastDay)
     }
     
 }
