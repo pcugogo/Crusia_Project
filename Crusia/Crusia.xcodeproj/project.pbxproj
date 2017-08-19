@@ -23,7 +23,6 @@
 		1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC621F3C585A006A1AEB /* HostingService.swift */; };
 		1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC631F3C585A006A1AEB /* MapLocationViewController.swift */; };
 		1448BC761F3C585A006A1AEB /* HouseCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC641F3C585A006A1AEB /* HouseCreateCell.swift */; };
-		1448BC771F3C585A006A1AEB /* GuestPrerequisiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC651F3C585A006A1AEB /* GuestPrerequisiteViewController.swift */; };
 		1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC661F3C585A006A1AEB /* AddPhotoViewController.swift */; };
 		1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */; };
 		1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448BC7B1F3C59CD006A1AEB /* CW.storyboard */; };
@@ -119,7 +118,6 @@
 		1448BC621F3C585A006A1AEB /* HostingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostingService.swift; sourceTree = "<group>"; };
 		1448BC631F3C585A006A1AEB /* MapLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationViewController.swift; sourceTree = "<group>"; };
 		1448BC641F3C585A006A1AEB /* HouseCreateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCreateCell.swift; sourceTree = "<group>"; };
-		1448BC651F3C585A006A1AEB /* GuestPrerequisiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestPrerequisiteViewController.swift; sourceTree = "<group>"; };
 		1448BC661F3C585A006A1AEB /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeCell.swift; sourceTree = "<group>"; };
 		1448BC7C1F3C59CD006A1AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CW.storyboard; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 		14ED53141F4336C500A81B37 /* ThirdStep */ = {
 			isa = PBXGroup;
 			children = (
-				1448BC651F3C585A006A1AEB /* GuestPrerequisiteViewController.swift */,
 			);
 			name = ThirdStep;
 			sourceTree = "<group>";
@@ -776,7 +773,6 @@
 				3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */,
 				372818371F338815003719D2 /* DetailViewController.swift in Sources */,
 				37262D141F48994700AAF70E /* ReservationStepThreeCell.swift in Sources */,
-				1448BC771F3C585A006A1AEB /* GuestPrerequisiteViewController.swift in Sources */,
 				372362BB1F47762F00DA8D49 /* WalkthroughContentViewController.swift in Sources */,
 				3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */,
 				370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */,
