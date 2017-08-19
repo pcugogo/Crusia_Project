@@ -69,6 +69,7 @@
 		3725298D1F38420200687E9A /* MapViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725298C1F38420200687E9A /* MapViewCustomCell.swift */; };
 		3725298F1F38449700687E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3725298E1F38449700687E9A /* MapKit.framework */; };
 		372619471F3CDFED0036EAB4 /* StartPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372619461F3CDFED0036EAB4 /* StartPoint.storyboard */; };
+		37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37262CFF1F482FC700AAF70E /* AvailableDatesTableViewCell.swift */; };
 		372818301F332EC4003719D2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728182F1F332EC4003719D2 /* MainTableViewCell.swift */; };
 		372818331F33305D003719D2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818321F33305D003719D2 /* CacheManager.swift */; };
 		372818371F338815003719D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818361F338815003719D2 /* DetailViewController.swift */; };
@@ -159,6 +160,7 @@
 		3725298C1F38420200687E9A /* MapViewCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCustomCell.swift; sourceTree = "<group>"; };
 		3725298E1F38449700687E9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		372619461F3CDFED0036EAB4 /* StartPoint.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartPoint.storyboard; sourceTree = "<group>"; };
+		37262CFF1F482FC700AAF70E /* AvailableDatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableDatesTableViewCell.swift; sourceTree = "<group>"; };
 		37271A941F42EA0A00DB46D4 /* Crusia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crusia.entitlements; sourceTree = "<group>"; };
 		3728182F1F332EC4003719D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		372818321F33305D003719D2 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
@@ -448,6 +450,13 @@
 			name = WalkthroughContentView;
 			sourceTree = "<group>";
 		};
+		37262D011F48318800AAF70E /* ReservationStepsViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ReservationStepsViews;
+			sourceTree = "<group>";
+		};
 		3728182E1F332E96003719D2 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +465,7 @@
 				37116C6A1F346B2800E31625 /* UserInfoCustomCell.swift */,
 				370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */,
 				370BF3F21F357E3B00A04A6F /* ExtraFeeInfoCustomCell.swift */,
+				37262CFF1F482FC700AAF70E /* AvailableDatesTableViewCell.swift */,
 				371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */,
 				373255F11F372B5F00006C25 /* RefundPolicyCustomCell.swift */,
 				3725298C1F38420200687E9A /* MapViewCustomCell.swift */,
@@ -463,6 +473,7 @@
 				3728183A1F3388B0003719D2 /* FirstCustomCell.swift */,
 				3728183C1F3388C3003719D2 /* SecondCustomCell.swift */,
 				3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */,
+				37262D011F48318800AAF70E /* ReservationStepsViews */,
 				37CD3C4B1F3DC2B1008B695A /* HSReservationView */,
 				373255F31F372C3600006C25 /* RefundPolicyView */,
 				371E608C1F360B580073AAF0 /* DetailedUserInfoView */,
@@ -733,6 +744,7 @@
 				374B8ACF1F3EB9AE00E9E010 /* CurrentUserInfoService.swift in Sources */,
 				370BF3EF1F35793F00A04A6F /* ExtraFeeCustomCell.swift in Sources */,
 				1448BC6E1F3C585A006A1AEB /* PersonnePickCell.swift in Sources */,
+				37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */,
 				3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */,
 				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,
 				1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */,

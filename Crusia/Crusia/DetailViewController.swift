@@ -147,7 +147,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return 11
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -252,17 +252,29 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         // Extra Fee 정보
         case 6:
             
-            let reuseIdentifier = "ExtraFeeCustomCell"
+            let reuseIdentifier = "AvailableDatesTableViewCell"
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ExtraFeeCustomCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AvailableDatesTableViewCell
             
 //            tableView.rowHeight = 80.0
             cell.selectionStyle = .none
             
             return cell
             
-        // Refund 정보
+        // 예약 가능일 정보
         case 7:
+            
+            let reuseIdentifier = "ExtraFeeCustomCell"
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ExtraFeeCustomCell
+            
+            //            tableView.rowHeight = 80.0
+            cell.selectionStyle = .none
+            
+            return cell
+            
+        // Refund 정보
+        case 8:
             
             let reuseIdentifier = "RefundInfoCustomCell"
             
@@ -275,7 +287,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
             
         // Amenities 정보
-        case 8:
+        case 9:
             
             let reuseIdentifier = "ThirdCustomCell"
             
@@ -287,7 +299,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
             
         // 엄격 환불 정책 정보
-        case 9:
+        case 10:
             
             let reuseIdentifier = "RefundPolicyCustomCell"
             
