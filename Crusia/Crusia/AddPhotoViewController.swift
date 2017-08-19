@@ -29,10 +29,10 @@ extension AddPhotoViewController: FusumaDelegate {
             print("============이미지 공간===========",HostingService.shared.houseImages)
         }
         //
-        //
+        //        나중에 수정하기 만들때 컬렉션뷰컨에 배열만들어서 배열에 어펜드 시키고 그 배열로 컬렉션뷰 뿌려준후 컬렉션 뷰마다 체크를 해서
+        // 삭제 버튼을 눌렀을때 삭제하도록 한다
         
         
-        //        CurrentUserInfoService.shared.editUserProfileImage(imageData: imageData)
         
     }
     
@@ -70,10 +70,24 @@ class AddPhotoViewController: UIViewController {
     
     let fusumaViewController = FusumaViewController()
     
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    @IBOutlet weak var addPhotoBtnOut: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addPhotoBtnOut.layer.cornerRadius = 3
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        progressView.progress = 0.3
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,86 +114,6 @@ class AddPhotoViewController: UIViewController {
     }
     
     
-    let parameters: Parameters = HostingService.shared.houseParameters()
-    
-    func houseCreateUpload() {
-        
-        
-        print(parameters)
-        let httpHeader:HTTPHeaders = ["Authorization":"Token \(HostingService.shared.header)"]
-        let url = "http://crusia.xyz/apis/house/"
-        // 이미지 파일 수정
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            let image = HostingService.shared.houseImages
-            
-            for key in self.parameters.keys{
-                let name = String(key)
-                if let val = self.parameters[name!] as? String{
-                    print(val)
-                    multipartFormData.append(val.data(using: .utf8)!, withName: name!)
-                    
-                }
-            }
-            for key in self.parameters.keys{
-                let name = String(key)
-                if let val = self.parameters[name!] as? Int{
-                    print(val)
-                    multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
-                    
-                }
-            }
-            for key in self.parameters.keys{
-                let name = String(key)
-                if let val = self.parameters[name!] as? Double{
-                    print(val)
-                    multipartFormData.append("\(val)".data(using: .utf8)!, withName: name!)
-                    
-                }
-            }
-            
-            
-            
-            
-            
-            if image.count == 1{
-                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-            }else if image.count == 2{
-                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-                multipartFormData.append(image[1], withName: "image1", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-            }else if image.count == 3{
-                multipartFormData.append(image[0], withName: "image", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-                multipartFormData.append(image[1], withName: "image1", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-                multipartFormData.append(image[2], withName: "image2", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
-            }
-            
-            
-        }, usingThreshold:UInt64.init(),
-           to: url, //URL Here
-            method: .post,
-            headers: httpHeader,
-            encodingCompletion: { (result) in
-                
-                switch result {
-                case .success(let upload, _, _):
-                    print("success ......................................................")
-                    
-                    upload.uploadProgress(closure: { (progress) in
-                        print("something")
-                    })
-                    
-                    upload.responseJSON { response in
-                        print("the resopnse code is : \(String(describing: response.response?.statusCode))")
-                        print("the response is : \(response)")
-                    }
-                    break
-                case .failure(let encodingError):
-                    print("the error is  : \(encodingError.localizedDescription)")
-                    break
-                }
-        })
-        
-        
-    }
     
     /*
      // MARK: - Navigation
@@ -192,3 +126,4 @@ class AddPhotoViewController: UIViewController {
      */
     
 }
+

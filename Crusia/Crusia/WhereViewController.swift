@@ -15,10 +15,11 @@ protocol WhereViewControllerDelegate {
 }
 
 class WhereViewController: UIViewController,UITextFieldDelegate {
-  
+    
     var delegate:WhereViewControllerDelegate?
-   
-//    let mapViewContrllor = MapLocationViewController()
+    
+    //    let mapViewContrllor = MapLocationViewController()
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var registrationProgressView: UIProgressView!
     
@@ -39,7 +40,7 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var postalNumberTextField: UITextField!
     
-   
+    
     @IBOutlet weak var detailExplanationBtnOut: UIButton!
     
     @IBOutlet weak var nextBtnOut: UIButton!
@@ -52,22 +53,22 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
         thirdLineAddressTextField.delegate = self
         postalNumberTextField.delegate = self
         
-//        if HostingService.shared.oneStepComplete == true{
-            countryTextField.text = HostingService.shared.whereViewCountry
-            firstLineAddressTextField.text = HostingService.shared.whereViewFirstLineAddress
-            secondLineAddressTextField.text = HostingService.shared.whereViewSecondLineAddress
-            thirdLineAddressTextField.text = HostingService.shared.whereViewThirdLineAddress
-            postalNumberTextField.text = HostingService.shared.whereViewPostalNumber
-//        }
+        //        if HostingService.shared.oneStepComplete == true{
+        countryTextField.text = HostingService.shared.whereViewCountry
+        firstLineAddressTextField.text = HostingService.shared.whereViewFirstLineAddress
+        secondLineAddressTextField.text = HostingService.shared.whereViewSecondLineAddress
+        thirdLineAddressTextField.text = HostingService.shared.whereViewThirdLineAddress
+        postalNumberTextField.text = HostingService.shared.whereViewPostalNumber
+        //        }
         
         nextBtnOut.layer.cornerRadius = 3
         detailExplanationBtnOut.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
+        
         registrationProgressView.setProgress(0.5, animated: true)
     }
     
@@ -75,29 +76,29 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if !(countryTextField.text?.isEmpty)! && !(firstLineAddressTextField.text?.isEmpty)! && !(secondLineAddressTextField.text?.isEmpty)! && !(thirdLineAddressTextField.text?.isEmpty)! && !(postalNumberTextField.text?.isEmpty)! {
+        if !(countryTextField.text?.isEmpty)! && !(firstLineAddressTextField.text?.isEmpty)! && !(secondLineAddressTextField.text?.isEmpty)! {
             
             return true
-
+            
         }else{
             
             let checkAlert:UIAlertController = UIAlertController(title: "오류", message: "모든 항목을 입력해주세요.", preferredStyle: .alert)
             let checkError:UIAlertAction = UIAlertAction(title: "네", style:UIAlertActionStyle.cancel, handler: nil)
             checkAlert.addAction(checkError)
             self.present(checkAlert, animated: true, completion:nil)
-
+            
             
             return false
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        
         
         if segue.identifier == "nextMapView" {
-             let mapViewControllor:MapLocationViewController = segue.destination as! MapLocationViewController
+            let mapViewControllor:MapLocationViewController = segue.destination as! MapLocationViewController
             print(secondLineAddressTextField.text!)
             mapViewControllor.address = "\(self.secondLineAddressTextField.text!)"
             HostingService.shared.address = "\(countryTextField.text!) \(firstLineAddressTextField.text!) \(secondLineAddressTextField.text!) \(thirdLineAddressTextField.text!) 우편번호: \(postalNumberTextField.text!)"
@@ -107,7 +108,7 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
             HostingService.shared.whereViewThirdLineAddress = thirdLineAddressTextField.text!
             HostingService.shared.whereViewPostalNumber = postalNumberTextField.text!
             print("=========================================, \(HostingService.shared.address)")
-
+            
         }else if segue.identifier == "WhereViewExplanation" {
             let explanationView = segue.destination as! ExplanationViewController
             explanationView.explanationTitle = "숙소의 주소는 예약이 확정된 게스트만 볼 수 있습니다."
@@ -120,44 +121,68 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         self.view.endEditing(true)
+        
     }
-
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("ReturnTouched")
-        
+        switch textField.tag { //텍스트들에 태그 걸어놨음
+        case 0...4:
+            self.view.viewWithTag(textField.tag + 1)?.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+            
+        }
         textField.resignFirstResponder()
         
         return true
     }
-
-  
-
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 0{
+            self.scrollView.setContentOffset(CGPoint(x: 0.0, y: 80.0), animated: true)
+        }else if textField.tag == 4{
+            self.scrollView.setContentOffset(CGPoint(x: 0.0, y: 130.0), animated: true)
+        }else{
+            self.scrollView.setContentOffset(CGPoint(x: 0.0, y: 150.0), animated: true)
+        }
+    }
+    
+    
     @IBAction func backBtnItem(_ sender: UIBarButtonItem) {
         
         navigationController?.popViewController(animated: true)
         
-//        if HostingService.shared.oneStepComplete == true{
-//            navigationController?.popViewController(animated: true)
-//        }else{
-//            HostingService.shared.address = ""
-//            navigationController?.popViewController(animated: true)
-//        }
-       
+        //        if HostingService.shared.oneStepComplete == true{
+        //            navigationController?.popViewController(animated: true)
+        //        }else{
+        //            HostingService.shared.address = ""
+        //            navigationController?.popViewController(animated: true)
+        //        }
+        
     }
-
     
-  
+    
+    
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

@@ -13,20 +13,20 @@ import Alamofire
 class HostingService {
     
     static var shared = HostingService()
-   //토큰 넣어야된다
-   
+    //토큰 넣어야된다
+    
     var title: String = ""
-    var address: String = "" 
-    var introduce: String?
-    var spaceInfo: String?
-    var guestAccess: String?
-    var pricePerDay: Int = 0
+    var address: String = ""
+    var introduce: String = ""
+    var spaceInfo: String = ""
+    var guestAccess: String = ""
+    var pricePerDay: Int = 25000
     var extraPeopleFee: Int = 0
     var cleaningFee: Int = 0
-    var weeklyDiscount: Int = 0
+    var weeklyDiscount: Int = 10
     var accommodates: Int = 1
     var bathrooms: Int = 1
-    var bedrooms: Int = 0
+    var bedrooms: Int = 1
     var beds: Int = 1
     var roomType: String = "" //구현 할때 세그먼트같은것으로 생각해보자
     var houseImages:[Data] = [] //필수인지 아닌지 헤깔린다
@@ -35,7 +35,9 @@ class HostingService {
     var longitude: Double = 0.0
     
     var switchCheckNumber = 0
-    var oneStepComplete = false
+    var firstStepComplete = false
+    var secondStepComplete = false
+    //    var thirdStepComplete = false
     
     var amenityString: String = ""
     
@@ -47,9 +49,10 @@ class HostingService {
     var whereViewPostalNumber = ""
     var personnelSaveAndBack = false
     var bathRoomSaveAndBack = false
-   
     
     
+    
+    let header = UserDefaults.standard.object(forKey: "token") as! String
     
     
     
@@ -59,9 +62,9 @@ class HostingService {
         
         let parameters: Parameters = ["title": title,
                                       "address":address,
-                                      "introduce":introduce!,
-                                      "space_info":spaceInfo!,
-                                      "guest_access":guestAccess!,
+                                      "introduce":introduce,
+                                      "space_info":spaceInfo,
+                                      "guest_access":guestAccess,
                                       "price_per_day":pricePerDay,
                                       "extra_people_fee":extraPeopleFee,
                                       "cleaning_fee":cleaningFee,
@@ -71,44 +74,44 @@ class HostingService {
                                       "bedrooms":bedrooms,
                                       "beds":beds,
                                       "room_type":roomType,
-//                                      "house_images":houseImages,
-                                      "amenities":amenityString,
-                                      "latitude":latitude,
-                                      "longitude":longitude
+                                      //                                      "house_images":houseImages,
+            "amenities":amenityString,
+            "latitude":latitude,
+            "longitude":longitude
         ]
         return parameters
     }
     
-    let header = UserDefaults.standard.object(forKey: "token") as! String
     
-    func houseCreateRequest(){
-        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
-        
-//        HostingService.shared.amenity()
-        print(HostingService.shared.amenityString)
-        
-        let parameters:Parameters = HostingService.shared.houseParameters()
-        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
-        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
-        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                
-                print("Validation Successful")
-                
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-            
-        }
-        
-    }
+    
+    //    func houseCreateRequest(){
+    //        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
+    //
+    ////        HostingService.shared.amenity()
+    //        print(HostingService.shared.amenityString)
+    //
+    //        let parameters:Parameters = HostingService.shared.houseParameters()
+    //        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
+    //        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
+    //        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
+    //            switch response.result {
+    //
+    //            case .success(let value):
+    //
+    //                print("Validation Successful")
+    //
+    //
+    //            case .failure(let error):
+    //                print(error)
+    //
+    //            }
+    //
+    //        }
+    //
+    //    }
     
     func remove(item: String) {
-
+        
         
         for i in 0...amenities.count - 1 {
             if item == amenities[i] {

@@ -9,10 +9,10 @@
 import UIKit
 
 class AmenitiesBasicCell: UITableViewCell {
- 
     
     
-   
+    
+    
     var parameterName:String?
     
     
@@ -31,16 +31,16 @@ class AmenitiesBasicCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-  
+    
     
     
     @IBAction func checkSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             if let parameter = parameterName {
-               HostingService.shared.amenities.append(parameter)
+                HostingService.shared.amenities.append(parameter)
             }
         }else{
-           HostingService.shared.amenities.removeLast()
+            HostingService.shared.amenities.removeLast()
         }
         print("========basicCellData========",HostingService.shared.amenities)
     }
@@ -48,5 +48,5 @@ class AmenitiesBasicCell: UITableViewCell {
     
     
     
-
+    
 }

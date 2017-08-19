@@ -1,3 +1,5 @@
+
+
 //
 //  AmenitiesCheckViewController.swift
 //  Crusia
@@ -12,8 +14,8 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     
     let amenitieTitleValues = ["생필품","무선인터넷","샴푸","옷걸이","TV","케이블 TV","난방","에어컨","아침식사,커피,차 제공","실내 벽난로","헤어드라이어","숙소에 반려동물이 있음","도어맨","휠체어 접근가능"]
     let parameterName = ["Essentials","Wireless_Internet","Shampoo","Hangers","TV","Cable_TV","Heating","Air_conditioning","Breakfast","Indoor_fireplace","Dryer","Pets_allowed","Doorman","Wheelchair_accessible"]
-        
-   
+    
+    
     let amenitieContentValues = ["수건, 침대시트, 비누, 휴지","숙소 내에서 끊김없이 연결","중앙 난방 또는 숙소 내 개별 난방","특정 요구사항이 있는지 현지 법규를 확인해보세요"]
     var detailCellData:[String] = []
     var basicCellData:[String] = []
@@ -39,7 +41,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-      
+        
         
         print(HostingService.shared.amenities)
     }
@@ -58,14 +60,14 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         if indexPath.row == 0 {
             
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
-           
-
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Essentials")  {
+            
+            
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Essentials")  {
                 amenitiesDetailCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Essentials") {
@@ -73,7 +75,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             }else{
                 amenitiesDetailCell.checkSwitchOut.isOn = false
             }
-        
+            
             amenitiesDetailCell.AmeitiesTitleLb.text = amenitieTitleValues[indexPath.row]
             amenitiesDetailCell.parameterName = parameterName[indexPath.row]
             amenitiesDetailCell.AmeitiesContentLb.text = amenitieContentValues[0]
@@ -83,7 +85,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 1{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Wireless_Internet") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Wireless_Internet") {
                 amenitiesDetailCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Wireless_Internet") {
@@ -101,7 +103,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 6{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Heating") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Heating") {
                 amenitiesDetailCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Heating") {
@@ -119,7 +121,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 13{
             let amenitiesDetailCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesDetailCell", for: indexPath) as! AmenitiesDetailCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Wheelchair_accessible") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Wheelchair_accessible") {
                 amenitiesDetailCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Wheelchair_accessible") {
@@ -136,7 +138,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 2 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Shampoo") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Shampoo") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Shampoo") {
@@ -144,7 +146,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             }else{
                 amenitiesBasicCell.checkSwitchOut.isOn = false
             }
-
+            
             
             amenitiesBasicCell.AmenitiesLb.text = amenitieTitleValues[indexPath.row]
             amenitiesBasicCell.parameterName = parameterName[indexPath.row]
@@ -152,7 +154,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 3 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Hangers") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Hangers") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Hangers") {
@@ -164,11 +166,11 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             amenitiesBasicCell.AmenitiesLb.text = amenitieTitleValues[indexPath.row]
             amenitiesBasicCell.parameterName = parameterName[indexPath.row]
             return amenitiesBasicCell
-//            ["Essentials","Wireless_Internet","Shampoo","Hangers","TV","Cable_TV","Heating","Air_conditioning","Breakfast","Indoor_fireplace","Dryer","Pets_allowed","Doorman","Wheelchair_accessible"]
+            //            ["Essentials","Wireless_Internet","Shampoo","Hangers","TV","Cable_TV","Heating","Air_conditioning","Breakfast","Indoor_fireplace","Dryer","Pets_allowed","Doorman","Wheelchair_accessible"]
         }else if indexPath.row == 4 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("TV") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("TV") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("TV") {
@@ -183,7 +185,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 5 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Cable_TV") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Cable_TV") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Cable_TV") {
@@ -198,7 +200,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 7 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Air_conditioning") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Air_conditioning") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Air_conditioning") {
@@ -213,7 +215,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 8 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Breakfast") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Breakfast") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Breakfast") {
@@ -228,7 +230,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 9 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Indoor_fireplace") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Indoor_fireplace") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Indoor_fireplace") {
@@ -243,7 +245,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 10 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Dryer") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Dryer") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Dryer") {
@@ -258,7 +260,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }else if indexPath.row == 11 {
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pets_allowed") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Pets_allowed") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Pets_allowed") {
@@ -275,7 +277,7 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             //12번인덱스
             let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
             
-            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Doorman") {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Doorman") {
                 amenitiesBasicCell.checkSwitchOut.isOn = true
                 
             }else if HostingService.shared.amenities.contains("Doorman") {
@@ -288,58 +290,58 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
             amenitiesBasicCell.parameterName = parameterName[indexPath.row]
             return amenitiesBasicCell
         }
-//        }else{
-//            
-//            let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
-//            
-//            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Shampoo") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//                
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Hangers") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("TV") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Cable_TV") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Air_conditioning") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Breakfast") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Indoor_fireplace") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Dryer") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pets_allowed") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Doorman") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Hangers") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("TV") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Cable_TV") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Air_conditioning") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Breakfast") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Indoor_fireplace") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Dryer") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Pets_allowed") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else if HostingService.shared.amenities.contains("Doorman") {
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            }else{
-//                amenitiesBasicCell.checkSwitchOut.isOn = false
-//        }
-//                amenitiesBasicCell.checkSwitchOut.isOn = true
-//            amenitiesBasicCell.AmenitiesLb.text = amenitieTitleValues[indexPath.row]
-//            amenitiesBasicCell.parameterName = parameterName[indexPath.row]
-//            
-//            return amenitiesBasicCell
-//        }
+        //        }else{
+        //
+        //            let amenitiesBasicCell = tableView.dequeueReusableCell(withIdentifier: "AmenitiesBasicCell", for: indexPath) as! AmenitiesBasicCell
+        //
+        //            if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Shampoo") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Hangers") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("TV") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Cable_TV") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Air_conditioning") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Breakfast") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Indoor_fireplace") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Dryer") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Pets_allowed") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.oneStepComplete == true && HostingService.shared.amenities.contains("Doorman") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Hangers") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("TV") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Cable_TV") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Air_conditioning") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Breakfast") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Indoor_fireplace") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Dryer") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Pets_allowed") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else if HostingService.shared.amenities.contains("Doorman") {
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            }else{
+        //                amenitiesBasicCell.checkSwitchOut.isOn = false
+        //        }
+        //                amenitiesBasicCell.checkSwitchOut.isOn = true
+        //            amenitiesBasicCell.AmenitiesLb.text = amenitieTitleValues[indexPath.row]
+        //            amenitiesBasicCell.parameterName = parameterName[indexPath.row]
+        //
+        //            return amenitiesBasicCell
+        //        }
         
     }
     
@@ -364,16 +366,16 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
         }
         
     }
-
+    
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-       navigationController?.popViewController(animated: true)
-//        if HostingService.shared.oneStepComplete == true{
-//            navigationController?.popViewController(animated: true)
-//        }else{
-//            HostingService.shared.amenities.removeAll()
-//            navigationController?.popViewController(animated: true)
-//        }
+        navigationController?.popViewController(animated: true)
+        //        if HostingService.shared.oneStepComplete == true{
+        //            navigationController?.popViewController(animated: true)
+        //        }else{
+        //            HostingService.shared.amenities.removeAll()
+        //            navigationController?.popViewController(animated: true)
+        //        }
         
     }
     
@@ -387,5 +389,5 @@ class AmenitiesCheckViewController: UIViewController,UITableViewDelegate,UITable
      // Pass the selected object to the new view controller.
      }
      */
-
+    
 }
