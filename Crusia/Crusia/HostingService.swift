@@ -50,11 +50,42 @@ class HostingService {
     var personnelSaveAndBack = false
     var bathRoomSaveAndBack = false
     
+    let amenitiesNameArr = ["Essentials","Wireless_Internet","Shampoo","Hangers","TV","Cable_TV","Heating","Air_conditioning","Breakfast","Indoor_fireplace","Dryer","Pets_allowed","Doorman","Wheelchair_accessible","Kitchen","Washer","Free_parking","Pool","Elevator","Gym"]
     
     
+    var amenitiesDic:[String:Bool] = ["Essentials":false,"Wireless_Internet":false,"Shampoo":false,"Hangers":false,"TV":false,"Cable_TV":false,"Heating":false,"Air_conditioning":false,"Breakfast":false,"Indoor_fireplace":false,"Dryer":false,"Pets_allowed":false,"Doorman":false,"Wheelchair_accessible":false,"Kitchen":false,"Washer":false,"Free_parking":false,"Pool":false,"Elevator":false,"Gym":false]
+    
+    var amenitiesCheck:[String] = []
+    
+    func amenitiesUpdate(){
+       
+        for i in amenitiesNameArr{
+            if amenitiesDic[i] == true{
+                amenitiesCheck.append(i)
+            }
+        }
+    }
+    
+    func amenitiesComplete(){
+        
+        for i in amenitiesNameArr{
+            if amenitiesDic[i] == true{
+                amenities.append(i)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //서버 통신
     let header = UserDefaults.standard.object(forKey: "token") as! String
-    
-    
     
     func houseParameters() -> Parameters{
         

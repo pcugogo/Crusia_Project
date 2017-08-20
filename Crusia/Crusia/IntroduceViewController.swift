@@ -27,11 +27,17 @@ class IntroduceViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if HostingService.shared.secondStepComplete == true{
+            textView.text = HostingService.shared.introduce
+        }
+        
         textView.delegate = self
         
         explanationViewBtn.layer.cornerRadius = 20
         
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
+        
         if textView.text.isEmpty {
             nextBtnOut.alpha = 0.7
         }

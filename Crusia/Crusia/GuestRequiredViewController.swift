@@ -19,7 +19,9 @@ class GuestRequiredViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         prograssView.progress = 0.3
-        nextBtnOut.layer.cornerRadius = 0.3
+        
+        nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     

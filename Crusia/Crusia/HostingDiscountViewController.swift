@@ -25,6 +25,8 @@ class HostingDiscountViewController: UIViewController,UITableViewDelegate,UITabl
         super.viewDidLoad()
         prograssView.progress = 0.7
         dismissBtnOut.layer.cornerRadius = 3
+        dismissBtnOut.clipsToBounds = true
+        
         print(HostingService.shared.pricePerDay)
         print(HostingService.shared.extraPeopleFee)
         print(HostingService.shared.cleaningFee)
@@ -65,6 +67,12 @@ class HostingDiscountViewController: UIViewController,UITableViewDelegate,UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PercentCell", for: indexPath) as! PercentCell
+        
+        if indexPath.row == 0{
+            if HostingService.shared.thirdStepComplete == true {
+                cell.percentTextField.text = String(HostingService.shared.weeklyDiscount)
+            }
+        }
         
         cell.fee = fee
         cell.weeklyDiscount = weeklyDiscount

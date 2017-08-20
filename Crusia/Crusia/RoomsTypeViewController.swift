@@ -26,6 +26,7 @@ class RoomsTypeViewController: UIViewController,UITableViewDelegate,UITableViewD
         super.viewDidLoad()
         
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         if HostingService.shared.roomType == "" {
             nextBtnOut.alpha = 0.7
         }else{

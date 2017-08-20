@@ -26,6 +26,7 @@ class BathRoomViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
         HostingService.shared.bathRoomSaveAndBack = false
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         
     }
     

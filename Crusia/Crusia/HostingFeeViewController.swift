@@ -20,8 +20,10 @@ class HostingFeeViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         prograssView.progress = 0.5
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
@@ -62,6 +64,9 @@ class HostingFeeViewController: UIViewController,UITableViewDelegate,UITableView
             hostingFeeCell.contentLb.text = "1박 요금"
             hostingFeeCell.indexPath = indexPath.row
             
+           if HostingService.shared.thirdStepComplete == true {
+                hostingFeeCell.feeTextField.text = String(HostingService.shared.pricePerDay)
+            }
             
             return hostingFeeCell
         }else if indexPath.row == 1{
@@ -71,6 +76,10 @@ class HostingFeeViewController: UIViewController,UITableViewDelegate,UITableView
             hostingFeeCell.indexPath = indexPath.row
             hostingFeeCell.feeTextField.text = "0"
             
+            if HostingService.shared.thirdStepComplete == true {
+                hostingFeeCell.feeTextField.text = String(HostingService.shared.extraPeopleFee)
+            }
+            
             return hostingFeeCell
             
         }else{
@@ -79,6 +88,10 @@ class HostingFeeViewController: UIViewController,UITableViewDelegate,UITableView
             hostingFeeCell.contentLb.text = "청소 비용"
             hostingFeeCell.indexPath = indexPath.row
             hostingFeeCell.feeTextField.text = "0"
+            
+            if HostingService.shared.thirdStepComplete == true {
+                hostingFeeCell.feeTextField.text = String(HostingService.shared.cleaningFee)
+            }
             
             return hostingFeeCell
         }
