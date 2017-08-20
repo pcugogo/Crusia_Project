@@ -47,7 +47,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29896232485771179" green="0.72785359621047974" blue="0.69506406784057617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dgR-w0-I2z" secondAttribute="trailing" constant="16" id="1L1-Xx-1lx"/>
                                     <constraint firstAttribute="height" secondItem="dgR-w0-I2z" secondAttribute="height" constant="50" id="TPh-yz-YuE"/>
@@ -87,14 +87,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckImg" translatesAutoresizingMaskIntoConstraints="NO" id="GuN-SG-C3O">
-                                                    <rect key="frame" x="8" y="90" width="40" height="40"/>
+                                                    <rect key="frame" x="18" y="100" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="XDL-ew-aM5"/>
                                                         <constraint firstAttribute="width" constant="40" id="n7N-hn-vR7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dja-vm-gMX">
-                                                    <rect key="frame" x="0.0" y="93" width="57" height="35"/>
+                                                    <rect key="frame" x="10" y="103" width="57" height="35"/>
                                                     <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="2NM-Hr-oh3"/>
@@ -110,7 +110,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bM-6G-PWP">
-                                                    <rect key="frame" x="0.0" y="93" width="57" height="35"/>
+                                                    <rect key="frame" x="10" y="103" width="57" height="35"/>
                                                     <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="QYk-1F-nlm"/>
@@ -126,13 +126,13 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN3-jK-BYI">
-                                                    <rect key="frame" x="-6.5" y="88" width="70" height="45"/>
-                                                    <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="3.5" y="98" width="70" height="45"/>
+                                                    <color key="backgroundColor" red="0.29896232490000002" green="0.72785359620000001" blue="0.69506406779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="c0t-sN-6AC"/>
                                                         <constraint firstAttribute="height" constant="45" id="dOm-wV-Ima"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="계속">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -151,9 +151,9 @@
                                                 <constraint firstItem="zIm-rN-GT9" firstAttribute="leading" secondItem="VWr-zO-RXW" secondAttribute="leading" id="QrM-VV-kXf"/>
                                                 <constraint firstItem="zIm-rN-GT9" firstAttribute="top" secondItem="VWr-zO-RXW" secondAttribute="top" id="Rx1-wt-MbA"/>
                                                 <constraint firstItem="8bM-6G-PWP" firstAttribute="centerY" secondItem="dja-vm-gMX" secondAttribute="centerY" id="SQA-Dt-hex"/>
-                                                <constraint firstItem="dja-vm-gMX" firstAttribute="leading" secondItem="eWm-Kd-MYa" secondAttribute="leading" id="SUR-q1-RPB"/>
+                                                <constraint firstItem="dja-vm-gMX" firstAttribute="leading" secondItem="eWm-Kd-MYa" secondAttribute="leading" constant="10" id="SUR-q1-RPB"/>
                                                 <constraint firstItem="eWm-Kd-MYa" firstAttribute="top" secondItem="zIm-rN-GT9" secondAttribute="bottom" id="YYw-qF-Nvd"/>
-                                                <constraint firstItem="dja-vm-gMX" firstAttribute="top" secondItem="eWm-Kd-MYa" secondAttribute="bottom" constant="15" id="da9-JM-UZl"/>
+                                                <constraint firstItem="dja-vm-gMX" firstAttribute="top" secondItem="eWm-Kd-MYa" secondAttribute="bottom" constant="25" id="da9-JM-UZl"/>
                                                 <constraint firstItem="WN3-jK-BYI" firstAttribute="centerY" secondItem="dja-vm-gMX" secondAttribute="centerY" id="ixN-GY-Yqo"/>
                                                 <constraint firstAttribute="trailing" secondItem="zIm-rN-GT9" secondAttribute="trailing" id="kkC-W3-FSl"/>
                                                 <constraint firstItem="GuN-SG-C3O" firstAttribute="centerX" secondItem="dja-vm-gMX" secondAttribute="centerX" id="zKf-uU-Y82"/>
@@ -176,7 +176,7 @@
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdw-TY-J5J">
                                 <rect key="frame" x="289" y="547" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29896232490000002" green="0.72785359620000001" blue="0.69506406779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2yl-yw-pVn"/>
                                     <constraint firstAttribute="width" constant="70" id="HNZ-av-4no"/>
@@ -339,15 +339,14 @@
                                     <segue destination="CP5-Ym-2lJ" kind="presentation" identifier="RoomTypeViewExplanation" id="N5x-B4-55W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-TF-vrw">
-                                <rect key="frame" x="279" y="545" width="80" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-TF-vrw">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="1nG-i6-d1o"/>
-                                    <constraint firstAttribute="height" constant="47" id="b3V-AV-Das"/>
+                                    <constraint firstAttribute="width" constant="100" id="1nG-i6-d1o"/>
+                                    <constraint firstAttribute="height" constant="50" id="b3V-AV-Das"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -473,15 +472,14 @@
                                     <outlet property="delegate" destination="pif-iv-Jm0" id="qfK-DC-tPW"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-rg-YHl">
-                                <rect key="frame" x="279" y="545" width="80" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-rg-YHl">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="K20-vc-4Ss"/>
-                                    <constraint firstAttribute="width" constant="80" id="Yc5-tj-LQC"/>
+                                    <constraint firstAttribute="height" constant="50" id="K20-vc-4Ss"/>
+                                    <constraint firstAttribute="width" constant="100" id="Yc5-tj-LQC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -578,7 +576,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOV-AI-2po">
-                                <rect key="frame" x="0.0" y="165" width="375" height="322"/>
+                                <rect key="frame" x="0.0" y="165" width="375" height="319"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BathRoomCell" rowHeight="108" id="4vR-rX-wbo" customClass="BathRoomCell" customModule="Crusia" customModuleProvider="target">
@@ -673,15 +671,14 @@
                                     <outlet property="delegate" destination="AlF-8h-Cpn" id="e6K-T8-uVX"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-1a-ESe">
-                                <rect key="frame" x="279" y="545" width="80" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-1a-ESe">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="rvC-at-Dt6"/>
-                                    <constraint firstAttribute="width" constant="80" id="soN-FL-qc3"/>
+                                    <constraint firstAttribute="height" constant="50" id="rvC-at-Dt6"/>
+                                    <constraint firstAttribute="width" constant="100" id="soN-FL-qc3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -817,15 +814,14 @@
                                     <outlet property="delegate" destination="fmU-qd-qQp" id="etJ-1A-gV5"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6V-Vs-eSq">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6V-Vs-eSq">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="szQ-bc-f4u"/>
-                                    <constraint firstAttribute="height" constant="37" id="zr8-jq-MCZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="szQ-bc-f4u"/>
+                                    <constraint firstAttribute="height" constant="50" id="zr8-jq-MCZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1080,15 +1076,14 @@
                                     <outlet property="delegate" destination="uG1-GW-Dxf" id="31U-h6-uVC"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-ek-HbX">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-ek-HbX">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="RWQ-bG-SCr"/>
-                                    <constraint firstAttribute="width" constant="70" id="uDI-cK-Ofk"/>
+                                    <constraint firstAttribute="height" constant="50" id="RWQ-bG-SCr"/>
+                                    <constraint firstAttribute="width" constant="100" id="uDI-cK-Ofk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1338,15 +1333,14 @@
                                     <outlet property="delegate" destination="jfd-bn-1Gs" id="6MO-Tu-fHq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4p-FL-D4a">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4p-FL-D4a">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="Qn9-cy-GCr"/>
-                                    <constraint firstAttribute="width" constant="70" id="Tem-gi-6J7"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qn9-cy-GCr"/>
+                                    <constraint firstAttribute="width" constant="100" id="Tem-gi-6J7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1514,15 +1508,14 @@
                                     <outlet property="delegate" destination="BlG-vO-VYO" id="RAh-sd-7SZ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf0-1f-aIg">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf0-1f-aIg">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="KXG-Ty-IWg"/>
-                                    <constraint firstAttribute="height" constant="37" id="aAn-zV-TAG"/>
+                                    <constraint firstAttribute="width" constant="100" id="KXG-Ty-IWg"/>
+                                    <constraint firstAttribute="height" constant="50" id="aAn-zV-TAG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1820,7 +1813,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Vk8-p7-Dif" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="imb-SD-AUJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="imb-SD-AUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1838,7 +1831,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SecondStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="anx-CL-vOa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="31p-Le-ZLx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="31p-Le-ZLx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1856,7 +1849,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ThirdStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3sF-yR-BGY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l5D-bJ-ytj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l5D-bJ-ytj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2266,15 +2259,14 @@
                                     <outlet property="delegate" destination="MNW-i2-1qE" id="FrS-es-rC5"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxZ-5o-Gii">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxZ-5o-Gii">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="9YT-wV-f9Y"/>
-                                    <constraint firstAttribute="width" constant="70" id="u0w-zb-2bd"/>
+                                    <constraint firstAttribute="height" constant="50" id="9YT-wV-f9Y"/>
+                                    <constraint firstAttribute="width" constant="100" id="u0w-zb-2bd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2480,15 +2472,14 @@
                                     <outlet property="delegate" destination="WMy-gI-pbk" id="p8G-zf-pkY"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48a-Jj-pF1">
-                                <rect key="frame" x="289" y="555" width="70" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48a-Jj-pF1">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="93g-Fc-V1C"/>
-                                    <constraint firstAttribute="height" constant="37" id="Y7g-Y6-O3g"/>
+                                    <constraint firstAttribute="width" constant="100" id="93g-Fc-V1C"/>
+                                    <constraint firstAttribute="height" constant="50" id="Y7g-Y6-O3g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2666,15 +2657,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAM-uT-60p">
-                                <rect key="frame" x="269" y="540" width="90" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAM-uT-60p">
+                                <rect key="frame" x="259" y="537" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="pcG-FQ-RZg"/>
-                                    <constraint firstAttribute="width" constant="90" id="syB-GR-N9i"/>
+                                    <constraint firstAttribute="height" constant="50" id="pcG-FQ-RZg"/>
+                                    <constraint firstAttribute="width" constant="100" id="syB-GR-N9i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2848,15 +2838,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em0-1b-jHg">
-                                <rect key="frame" x="269" y="545" width="90" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em0-1b-jHg">
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="KpD-wI-QR7"/>
-                                    <constraint firstAttribute="height" constant="47" id="XSg-5F-7iB"/>
+                                    <constraint firstAttribute="width" constant="100" id="KpD-wI-QR7"/>
+                                    <constraint firstAttribute="height" constant="50" id="XSg-5F-7iB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2987,7 +2976,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-XZ-sSJ">
                                 <rect key="frame" x="169" y="537" width="190" height="50"/>
-                                <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29896232485771179" green="0.72785359621047974" blue="0.69506406784057617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="H5I-Wz-XjW"/>
                                     <constraint firstAttribute="height" constant="50" id="SYT-ia-Qgb"/>
@@ -2998,7 +2987,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addPhotoBtnAction:" destination="Xoo-Qw-aba" eventType="touchUpInside" id="3sb-cw-rhq"/>
-                                    <segue destination="W8X-7v-kme" kind="show" id="xO7-Lv-1G5">
+                                    <segue destination="W8X-7v-kme" kind="show" identifier="AddPhotoBtnSegue" id="xO7-Lv-1G5">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -3023,6 +3012,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-AT-25p">
+                                <rect key="frame" x="259" y="467" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ihB-Jj-zia"/>
+                                    <constraint firstAttribute="width" constant="100" id="yhB-aQ-fuZ"/>
+                                </constraints>
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="W8X-7v-kme" kind="show" identifier="nextBtnSegue" id="l0c-h9-79o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -3039,7 +3042,9 @@
                             <constraint firstItem="NIo-dN-kUH" firstAttribute="top" secondItem="b7J-XZ-sSJ" secondAttribute="bottom" constant="10" id="Qws-V8-o0a"/>
                             <constraint firstAttribute="trailing" secondItem="PsS-lX-7lx" secondAttribute="trailing" id="UWs-wY-eJA"/>
                             <constraint firstAttribute="trailing" secondItem="FgY-RA-dJP" secondAttribute="trailing" id="VTN-Fn-adX"/>
+                            <constraint firstItem="3kn-AT-25p" firstAttribute="trailing" secondItem="b7J-XZ-sSJ" secondAttribute="trailing" id="VuE-7s-r3g"/>
                             <constraint firstItem="c7H-xl-Dxd" firstAttribute="top" secondItem="TP5-tS-vvU" secondAttribute="bottom" id="WhV-9y-0vA"/>
+                            <constraint firstItem="3kn-AT-25p" firstAttribute="centerY" secondItem="b7J-XZ-sSJ" secondAttribute="centerY" constant="-70" id="eZL-8B-iSE"/>
                             <constraint firstItem="Ntx-Py-16g" firstAttribute="leading" secondItem="Yal-Ng-9n1" secondAttribute="leadingMargin" id="f4g-LJ-gOa"/>
                             <constraint firstItem="PsS-lX-7lx" firstAttribute="leading" secondItem="Yal-Ng-9n1" secondAttribute="leading" id="g4Y-4y-cnE"/>
                             <constraint firstItem="PsS-lX-7lx" firstAttribute="top" secondItem="c0H-d4-FGM" secondAttribute="bottom" id="yIr-K5-M08"/>
@@ -3049,6 +3054,7 @@
                     <navigationItem key="navigationItem" id="HPK-T7-UQs"/>
                     <connections>
                         <outlet property="addPhotoBtnOut" destination="b7J-XZ-sSJ" id="Bp8-IR-6Cl"/>
+                        <outlet property="nextBtnOut" destination="3kn-AT-25p" id="dzc-Bd-CJU"/>
                         <outlet property="progressView" destination="PsS-lX-7lx" id="PGy-k7-vbE"/>
                     </connections>
                 </viewController>
@@ -3099,13 +3105,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예)서울특별시" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OE1-dH-dqC">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예)서울특별시 (필수 항목)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OE1-dH-dqC">
                                                 <rect key="frame" x="10" y="253" width="348.5" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) 35동 5층 507호 (선택사항)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZH-y2-Tdg">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) 35동 5층 507호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZH-y2-Tdg">
                                                 <rect key="frame" x="10" y="373" width="349" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KMt-sn-lpC"/>
@@ -3114,7 +3120,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예)135-919 (선택 사항)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHW-HP-7K8">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예)135-919 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHW-HP-7K8">
                                                 <rect key="frame" x="10" y="455" width="349" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="BJ2-uM-Hh7"/>
@@ -3123,7 +3129,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="서울 서초구 강남대로105길 12" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttF-cR-lnk">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="서울 서초구 강남대로105길 12 (필수 항목)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttF-cR-lnk">
                                                 <rect key="frame" x="10" y="313" width="349" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WDu-zc-Fd5"/>
@@ -3324,15 +3330,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-5O-voB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-5O-voB">
                                 <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="klS-lc-f1f"/>
                                     <constraint firstAttribute="height" constant="50" id="tOQ-Ae-wbi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="다음 &gt;">
+                                <state key="normal" title="다음 &gt;" image="nextBtnImg_go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -3415,8 +3420,10 @@
         <image name="MapCenterPinPick" width="240" height="369"/>
         <image name="UpArrow_Hosting" width="240" height="240"/>
         <image name="XbtnImg" width="200" height="200"/>
+        <image name="nextBtnImg_go" width="197" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xO7-Lv-1G5"/>
         <segue reference="4eW-Yo-fQd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.39971524479999998" green="0.71328240629999995" blue="0.74938315150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

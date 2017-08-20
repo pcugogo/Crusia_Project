@@ -20,6 +20,8 @@ class PersonnelViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
+        
         HostingService.shared.personnelSaveAndBack = false
         print("================숙소 종류 데이터체크===================", HostingService.shared.roomType)
         

@@ -75,14 +75,25 @@ class AddPhotoViewController: UIViewController {
     
     @IBOutlet weak var addPhotoBtnOut: UIButton!
     
+    @IBOutlet weak var nextBtnOut: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addPhotoBtnOut.layer.cornerRadius = 3
+        addPhotoBtnOut.clipsToBounds = true
+        nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         
-        // Do any additional setup after loading the view.
+        if HostingService.shared.secondStepComplete == true{
+            nextBtnOut.isHidden = false
+            addPhotoBtnOut.setTitle("사진 다시 올리기", for: .normal)
+        }else{
+            nextBtnOut.isHidden = true
+            addPhotoBtnOut.setTitle("지금 사진 추가하기", for: .normal)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

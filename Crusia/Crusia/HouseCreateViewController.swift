@@ -32,7 +32,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             completeInformationBtnOut.isHidden = true
         }
         
-        completeInformationBtnOut.layer.cornerRadius = 3
+        completeInformationBtnOut.layer.cornerRadius = 2
         
         houseCreateCell.delegate = self
         
@@ -239,6 +239,11 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         
         let completeBtn:UIAlertAction = UIAlertAction(title: "완료", style: .default) { (alert) in
             HouseCreateUpload.standard.houseCreateUpload()
+            
+            HostingService.shared.firstStepComplete = false
+            HostingService.shared.secondStepComplete = false
+            HostingService.shared.thirdStepComplete = false
+            
             self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(cancelBtn)

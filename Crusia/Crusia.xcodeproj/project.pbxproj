@@ -348,8 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				1448BC581F3C585A006A1AEB /* GuestSpaceViewController.swift */,
-				1448BC5A1F3C585A006A1AEB /* GuestSpaceBasicCell.swift */,
 				1448BC5F1F3C585A006A1AEB /* GuestSpaceDetailCell.swift */,
+				1448BC5A1F3C585A006A1AEB /* GuestSpaceBasicCell.swift */,
 			);
 			name = GuestSpace;
 			sourceTree = "<group>";

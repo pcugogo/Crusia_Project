@@ -10,9 +10,7 @@ import UIKit
 
 class AmenitiesDetailCell: UITableViewCell {
     
-    
-    
-    
+    var indexPath:Int?
     
     var parameterName:String?
     
@@ -38,24 +36,25 @@ class AmenitiesDetailCell: UITableViewCell {
     
     
     @IBAction func checkSwitchAction(_ sender: UISwitch) {
-        if sender.isOn == true{
-            if let parameter = parameterName {
-                
-                HostingService.shared.amenities.append(parameter)
-                
+       
+        
+            
+            if indexPath == 0{
+                HostingService.shared.amenitiesDic["Essentials"] = sender.isOn
+                HostingService.shared.amenitiesUpdate()
+            }else if indexPath == 1{
+                HostingService.shared.amenitiesDic["Wireless_Internet"] = sender.isOn
+                HostingService.shared.amenitiesUpdate()
+            }else if indexPath == 6{
+                HostingService.shared.amenitiesDic["Heating"] = sender.isOn
+                HostingService.shared.amenitiesUpdate()
+            }else if indexPath == 13{
+                HostingService.shared.amenitiesDic["Wheelchair_accessible"] = sender.isOn
+                HostingService.shared.amenitiesUpdate()
             }
-        }else{
-            
-            if let parameter = parameterName {
-                
-                HostingService.shared.remove(item: parameter)
-                
-            }
-            
-            
-            
-        }
-        print("=========detailCellData=========", HostingService.shared.amenities)
+
+
+
     }
     
     
