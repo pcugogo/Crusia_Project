@@ -71,6 +71,8 @@
 		371C14571F49901E00F2D865 /* RSFourRefundInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14561F49901E00F2D865 /* RSFourRefundInfoCell.swift */; };
 		371C14591F4990E300F2D865 /* RSFourPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14581F4990E300F2D865 /* RSFourPolicyCell.swift */; };
 		371C145C1F49BBE200F2D865 /* HSMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C145B1F49BBE200F2D865 /* HSMessageViewController.swift */; };
+		371C145E1F49C1FA00F2D865 /* TextTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C145D1F49C1FA00F2D865 /* TextTransition.swift */; };
+		371C14601F49C9EC00F2D865 /* TextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C145F1F49C9EC00F2D865 /* TextChange.swift */; };
 		371C39511F42C950000107F6 /* ImageRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C39501F42C950000107F6 /* ImageRotating.swift */; };
 		371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */; };
 		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
@@ -181,6 +183,8 @@
 		371C14561F49901E00F2D865 /* RSFourRefundInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFourRefundInfoCell.swift; sourceTree = "<group>"; };
 		371C14581F4990E300F2D865 /* RSFourPolicyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFourPolicyCell.swift; sourceTree = "<group>"; };
 		371C145B1F49BBE200F2D865 /* HSMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSMessageViewController.swift; sourceTree = "<group>"; };
+		371C145D1F49C1FA00F2D865 /* TextTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTransition.swift; sourceTree = "<group>"; };
+		371C145F1F49C9EC00F2D865 /* TextChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextChange.swift; sourceTree = "<group>"; };
 		371C39501F42C950000107F6 /* ImageRotating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRotating.swift; sourceTree = "<group>"; };
 		371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInOutCustomCell.swift; sourceTree = "<group>"; };
 		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 				3715D03B1F323FB4002AD5CB /* PostService.swift */,
 				37109C061F3A1C4600CFCC55 /* WishListService.swift */,
 				371B34DE1F46230C00F59C08 /* ReservationService.swift */,
+				371C145F1F49C9EC00F2D865 /* TextChange.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -623,6 +628,7 @@
 				3730397E1F40A03B00C41071 /* ImageScale.swift */,
 				371C39501F42C950000107F6 /* ImageRotating.swift */,
 				371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */,
+				371C145D1F49C1FA00F2D865 /* TextTransition.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -829,6 +835,7 @@
 				37262D031F48639F00AAF70E /* ReservationStepOneViewController.swift in Sources */,
 				37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */,
 				373039791F405A6800C41071 /* EditIntroduceCell.swift in Sources */,
+				371C145E1F49C1FA00F2D865 /* TextTransition.swift in Sources */,
 				37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */,
 				37262D051F4863FB00AAF70E /* ReservationStepOneCell.swift in Sources */,
 				1448BC671F3C585A006A1AEB /* AmenitiesCheckViewController.swift in Sources */,
@@ -867,6 +874,7 @@
 				1448BC6E1F3C585A006A1AEB /* PersonnePickCell.swift in Sources */,
 				14108C9C1F48ED76003F12E3 /* CreateTitleViewController.swift in Sources */,
 				37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */,
+				371C14601F49C9EC00F2D865 /* TextChange.swift in Sources */,
 				3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */,
 				147C44D81F4998E800179F11 /* HouseCreateUpload.swift in Sources */,
 				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,

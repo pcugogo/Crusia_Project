@@ -56,7 +56,7 @@ class ReservationStepFourViewController: UIViewController {
         // 호스트네임과 집 타입
         
         if let name = ReservationService.shared.host?.firstName.stringValue, let type = ReservationService.shared.house?.roomType.stringValue {
-            self.hostNanme.text = name + "님의 " + type
+            self.hostNanme.text = name + "님의 " + TextChange.shared.enter(text: type)
         }
 
         

@@ -28,7 +28,9 @@ class ReservationStepOneHouseInfoCell: UITableViewCell {
     func configureInformation() {
         
         self.hostNameLabel.text = "호스트: " + (ReservationService.shared.host?.firstName.stringValue)!
-        self.houseTypeLabel.text = ReservationService.shared.house?.roomType.stringValue
+        
+        let houseType = ReservationService.shared.house?.roomType.stringValue
+        self.houseTypeLabel.text = TextChange.shared.enter(text: houseType!)
         
         if let url = ReservationService.shared.house?.houseImages[0]["image"].url {
             self.houseImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "logo_bg"), options: [.keepCurrentImageWhileLoading], progressBlock: nil, completionHandler: nil)
