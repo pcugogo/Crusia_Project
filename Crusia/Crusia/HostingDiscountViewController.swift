@@ -15,8 +15,12 @@ class HostingDiscountViewController: UIViewController,UITableViewDelegate,UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var dismissBtnOut: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dismissBtnOut.layer.cornerRadius = 3
         print(HostingService.shared.pricePerDay)
         print(HostingService.shared.extraPeopleFee)
         print(HostingService.shared.cleaningFee)
@@ -54,10 +58,17 @@ class HostingDiscountViewController: UIViewController,UITableViewDelegate,UITabl
         self.view.endEditing(true)
     }
     
+    @IBAction func dismissBtnAction(_ sender: UIButton) {
+        
+        HostingService.shared.thirdStepComplete = true
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func backBtnAction(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
     
     /*
      // MARK: - Navigation

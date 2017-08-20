@@ -37,12 +37,12 @@ class HostingService {
     var switchCheckNumber = 0
     var firstStepComplete = false
     var secondStepComplete = false
-    //    var thirdStepComplete = false
+    var thirdStepComplete = false
     
     var amenityString: String = ""
     
     
-    var whereViewCountry = ""
+    var whereViewCountry = "대한민국"
     var whereViewFirstLineAddress = ""
     var whereViewSecondLineAddress = ""
     var whereViewThirdLineAddress = ""
