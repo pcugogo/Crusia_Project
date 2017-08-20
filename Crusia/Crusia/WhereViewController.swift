@@ -62,7 +62,9 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
         //        }
         
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         detailExplanationBtnOut.layer.cornerRadius = 25
+        
         // Do any additional setup after loading the view.
     }
     
@@ -88,7 +90,7 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
                 
             }else{
                 
-                let checkAlert:UIAlertController = UIAlertController(title: "오류", message: "모든 항목을 입력해주세요.", preferredStyle: .alert)
+                let checkAlert:UIAlertController = UIAlertController(title: "필수 항목이 비어있습니다.", message: "필수 항목을 입력해주세요.", preferredStyle: .alert)
                 let checkError:UIAlertAction = UIAlertAction(title: "네", style:UIAlertActionStyle.cancel, handler: nil)
                 checkAlert.addAction(checkError)
                 self.present(checkAlert, animated: true, completion:nil)

@@ -28,11 +28,15 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
         
         explanationViewBtn.layer.cornerRadius = 20
 
+        if HostingService.shared.secondStepComplete == true{
+            textView.text = HostingService.shared.title
+        }
         
         
         textView.delegate = self
         
         dismissBtnOut.layer.cornerRadius = 3
+        dismissBtnOut.clipsToBounds = true
         if textView.text.isEmpty{
             dismissBtnOut.alpha = 0.7
         }

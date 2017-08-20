@@ -38,9 +38,9 @@ class HouseCreateCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        continueBtnOut.layer.cornerRadius = 3
-        secondStepBtnOut.layer.cornerRadius = 3
-        thirdStepBtnOut.layer.cornerRadius = 3
+        continueBtnOut.layer.cornerRadius = 5
+        secondStepBtnOut.layer.cornerRadius = 5
+        thirdStepBtnOut.layer.cornerRadius = 5
         //        topTextLabel.text = topText 이렇게 하니깐 시점이 늦다
         //        detailTextLb.text = detailText
         //        continueBtnOut.isHidden = btnHidden ?? true

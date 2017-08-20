@@ -11,9 +11,9 @@ import UIKit
 class GuestSpaceBasicCell: UITableViewCell {
     
     let guestSpaceView:GuestSpaceViewController = GuestSpaceViewController()
-    
+    var indexPath:Int?
     var parameterName:String?
-    
+   
     @IBOutlet weak var guestSpaceTitleLb: UILabel!
     
     @IBOutlet weak var checkSwitchOut: UISwitch!
@@ -29,15 +29,13 @@ class GuestSpaceBasicCell: UITableViewCell {
     }
     
     @IBAction func checkSwitchAction(_ sender: UISwitch) {
-        if sender.isOn == true{
-            if let parameter = parameterName {
-                HostingService.shared.amenities.append(parameter)
-                HostingService.shared.switchCheckNumber += 1
-            }
-        }else{
-            HostingService.shared.amenities.removeLast()
+        if indexPath == 2{
+            HostingService.shared.amenitiesDic["Free_parking"] = sender.isOn
+            HostingService.shared.amenitiesUpdate()
+        }else if indexPath == 4{
+            HostingService.shared.amenitiesDic["Elevator"] = sender.isOn
+            HostingService.shared.amenitiesUpdate()
         }
-        print("=========detailCellData=========", HostingService.shared.amenities)
     }
     
 }

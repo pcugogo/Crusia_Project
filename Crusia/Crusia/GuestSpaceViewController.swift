@@ -62,9 +62,11 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         
         
+        
         HostingService.shared.switchCheckNumber = 0
         
         nextBtnOut.layer.cornerRadius = 3
+        nextBtnOut.clipsToBounds = true
         detailExplanationBtnOut.layer.cornerRadius = 25
         
         
@@ -89,9 +91,12 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
         
         if indexPath.row == 0 {
             let guestSpaceDetailCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceDetailCell", for: indexPath) as! GuestSpaceDetailCell
+            
+            guestSpaceDetailCell.indexPath = indexPath.row
+            
             if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Kitchen") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
-            }else if HostingService.shared.amenities.contains("Kitchen") {
+            }else if HostingService.shared.amenitiesCheck.contains("Kitchen") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceDetailCell.checkSwitchOut.isOn = false
@@ -102,14 +107,18 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             guestSpaceDetailCell.parameterName = parameterName[indexPath.row]
             guestSpaceDetailCell.guestSpaceContentLb.text = guestSpaceContentValues[0]
             
+            
             return guestSpaceDetailCell
             
         }else if indexPath.row == 1{
             let guestSpaceDetailCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceDetailCell", for: indexPath) as! GuestSpaceDetailCell
+           
+            guestSpaceDetailCell.indexPath = indexPath.row
+            
             if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Washer") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.amenities.contains("Washer") {
+            }else if HostingService.shared.amenitiesCheck.contains("Washer") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceDetailCell.checkSwitchOut.isOn = false
@@ -120,12 +129,15 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             
             return guestSpaceDetailCell
             
-        }else if indexPath.row == 4{
+        }else if indexPath.row == 3{
             let guestSpaceDetailCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceDetailCell", for: indexPath) as! GuestSpaceDetailCell
-            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Elevator") {
+            
+            guestSpaceDetailCell.indexPath = indexPath.row
+            
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Pool") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.amenities.contains("Elevator") {
+            }else if HostingService.shared.amenitiesCheck.contains("Pool") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceDetailCell.checkSwitchOut.isOn = false
@@ -138,10 +150,13 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             
         }else if indexPath.row == 5{
             let guestSpaceDetailCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceDetailCell", for: indexPath) as! GuestSpaceDetailCell
+            
+            guestSpaceDetailCell.indexPath = indexPath.row
+            
             if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Gym") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.amenities.contains("Gym") {
+            }else if HostingService.shared.amenitiesCheck.contains("Gym") {
                 guestSpaceDetailCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceDetailCell.checkSwitchOut.isOn = false
@@ -156,10 +171,12 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
         }else if indexPath.row == 2{
             let guestSpaceBasicCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceBasicCell", for: indexPath) as! GuestSpaceBasicCell
             
+            guestSpaceBasicCell.indexPath = indexPath.row
+            
             if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Free_parking") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.amenities.contains("Free_parking") {
+            }else if HostingService.shared.amenitiesCheck.contains("Free_parking") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceBasicCell.checkSwitchOut.isOn = false
@@ -173,10 +190,12 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
             
             let guestSpaceBasicCell = tableView.dequeueReusableCell(withIdentifier: "GuestSpaceBasicCell", for: indexPath) as! GuestSpaceBasicCell
             
-            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Pool") {
+            guestSpaceBasicCell.indexPath = indexPath.row
+            
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.amenities.contains("Elevator") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
                 
-            }else if HostingService.shared.amenities.contains("Pool") {
+            }else if HostingService.shared.amenitiesCheck.contains("Elevator") {
                 guestSpaceBasicCell.checkSwitchOut.isOn = true
             }else{
                 guestSpaceBasicCell.checkSwitchOut.isOn = false
@@ -216,24 +235,8 @@ class GuestSpaceViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBAction func toHouseCreateViewBtnAction(_ sender: UIButton) {
         
-        //        print("tttttttttttttttttttttttttttttttttttttttttttttttttttttt",header)
-        //        let parameters:Parameters = HostingService.shared.houseParameters()
-        //        let httpHeader:HTTPHeaders = ["Authorization":"Token \(header)"]
-        //        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", httpHeader)
-        //        Alamofire.request("http://crusia.xyz/apis/house/", method: .post, parameters: parameters,  headers: httpHeader).validate().responseJSON { response in
-        //            switch response.result {
-        //
-        //            case .success(let value):
-        //
-        //                print("Validation Successful")
-        //
-        //
-        //            case .failure(let error):
-        //                print(error)
-        //
-        //            }
-        //
-        //        }
+        HostingService.shared.amenitiesComplete()
+        print(HostingService.shared.amenities)
         HostingService.shared.amenity()
         HostingService.shared.firstStepComplete = true
         dismiss(animated: true, completion: nil)

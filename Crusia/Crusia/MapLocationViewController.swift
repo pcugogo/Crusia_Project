@@ -40,6 +40,7 @@ class MapLocationViewController: UIViewController,MKMapViewDelegate {
         
         nextBtnOut.layer.cornerRadius = 3
         
+        nextBtnOut.clipsToBounds = true
         print("true@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         let geoCoder = CLGeocoder()
         
