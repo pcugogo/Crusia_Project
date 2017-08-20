@@ -127,7 +127,7 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
     }
     
     @IBAction func dismissBtnAction(_ sender: UIButton) {
-        if textView.text == "제목 추가" || textView.text.characters.count >= 51 {
+        if textView.text == "제목 추가" || textView.text.characters.count >= 51 || textView.text == "" || textView.text.isEmpty {
             if textView.text.characters.count >= 50{
                 characterLimitLb.text = "50자 까지 가능합니다. -\(textView.text.characters.count - 50)"
             }else if textView.text == "제목 추가"{
@@ -135,7 +135,7 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
             }
         }else{
             HostingService.shared.secondStepComplete = true
-            HostingService.shared.title = textView.text
+            HostingService.shared.title = textView.text!
             dismiss(animated: true, completion: nil)
         }
     }

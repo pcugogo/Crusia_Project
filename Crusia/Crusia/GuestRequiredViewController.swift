@@ -11,11 +11,14 @@ import UIKit
 class GuestRequiredViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
+   
+    @IBOutlet weak var prograssView: UIProgressView!
     
     @IBOutlet weak var nextBtnOut: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prograssView.progress = 0.3
         nextBtnOut.layer.cornerRadius = 0.3
         // Do any additional setup after loading the view.
     }
