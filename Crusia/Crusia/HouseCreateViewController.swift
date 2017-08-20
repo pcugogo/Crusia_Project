@@ -14,7 +14,7 @@ import Alamofire
 
 class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HouseCreateViewCellDelegate {
     
-    
+    let houseCreateUpload = HouseCreateUpload()
     
     var currentUser: User?
     
@@ -24,11 +24,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
-    
-    
-    
+    @IBOutlet weak var completeInformationBtnOut: UIButton!
     
     
     override func viewDidLoad() {
@@ -222,6 +218,27 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         }else if indexPath == 2{
             present(thirdStepNavi, animated: true, completion: nil)
         }
+    }
+   
+    @IBAction func completeInformationBtnAction(_ sender: UIButton) {
+        let alert:UIAlertController = UIAlertController(title: "변경된 내용을 저장할까요?", message: "변경사항을 저장하지 않고 계속할 경우 변경사항이 적용되지 않습니다.", preferredStyle: .alert)
+        
+        let cancelBtn:UIAlertAction = UIAlertAction(title: "취소", style: .cancel) { (alert) in
+            HostingService.shared.accommodates = 1
+            HostingService.shared.beds = 1
+            self.navigationController?.popViewController(animated: true)
+            
+        }
+        
+        let completeBtn:UIAlertAction = UIAlertAction(title: "완료", style: .default) { (alert) in
+           self.houseCreateUpload.houseCreateUpload()
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancelBtn)
+        alert.addAction(completeBtn)
+        
+
+        
     }
     
     @IBAction func dismissBtn(_ sender: UIButton) {

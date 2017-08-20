@@ -21,12 +21,13 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var dismissBtnOut: UIButton!
     
     
+    @IBOutlet weak var explanationViewBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //         houseCreateUpload.houseCreateUpload() //전체 데이터 업로드(테스트용)
+        explanationViewBtn.layer.cornerRadius = 20
+
         
         
         textView.delegate = self
@@ -47,6 +48,7 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
     }
     
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         progressView.progress = 0.7
@@ -62,6 +64,7 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
     func dismissKeyboard(){
         textView.resignFirstResponder()
     }
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
@@ -113,7 +116,15 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CreateTitleViewSegue" {
+            let explanationView = segue.destination as! ExplanationViewController
+            explanationView.explanationTitle = "제목을 간략하게 검토해 보세요."
+            explanationView.explanationContent.append("사람들은 에어비앤비 숙소를 검색할 때 제목은 대충 훑어 봅니다. 간략하되 숙소의 개성을 잘 표현하는 제목을 작성하세요. 근처에 무엇이 있는지, 숙소가 넓거나 아늑한지 또는 숙소의 특이사항을 알려주세요. 밝은 분위기, 가족용숙소, 매력적인 건물 등 어떤 스타일의 숙소인지 알려주는 것도 중요합니다.")
+            
+        }
+        
+    }
     
     @IBAction func dismissBtnAction(_ sender: UIButton) {
         if textView.text == "제목 추가" || textView.text.characters.count >= 51 {
