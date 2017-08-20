@@ -25,9 +25,9 @@ class PercentCell: UITableViewCell,UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        if HostingService.shared.thirdStepComplete != true{
         HostingService.shared.weeklyDiscount = 10
-        
+        }
         percentTextField.addTarget(self, action: #selector(didChangeText(textField:)), for: .editingChanged)
         
         contentLb.text = "\(HostingService.shared.weeklyDiscount) % 할인을 반영한 평균 주간 요금은 ￦\((HostingService.shared.pricePerDay * 7) - (HostingService.shared.pricePerDay * 7 / HostingService.shared.weeklyDiscount))"
