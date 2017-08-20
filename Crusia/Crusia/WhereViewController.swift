@@ -78,19 +78,24 @@ class WhereViewController: UIViewController,UITextFieldDelegate {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if !(countryTextField.text?.isEmpty)! && !(firstLineAddressTextField.text?.isEmpty)! && !(secondLineAddressTextField.text?.isEmpty)! {
-            
+        if identifier == "WhereViewExplanation"{
             return true
-            
         }else{
             
-            let checkAlert:UIAlertController = UIAlertController(title: "오류", message: "모든 항목을 입력해주세요.", preferredStyle: .alert)
-            let checkError:UIAlertAction = UIAlertAction(title: "네", style:UIAlertActionStyle.cancel, handler: nil)
-            checkAlert.addAction(checkError)
-            self.present(checkAlert, animated: true, completion:nil)
-            
-            
-            return false
+            if !(countryTextField.text?.isEmpty)! && !(firstLineAddressTextField.text?.isEmpty)! && !(secondLineAddressTextField.text?.isEmpty)! {
+                
+                return true
+                
+            }else{
+                
+                let checkAlert:UIAlertController = UIAlertController(title: "오류", message: "모든 항목을 입력해주세요.", preferredStyle: .alert)
+                let checkError:UIAlertAction = UIAlertAction(title: "네", style:UIAlertActionStyle.cancel, handler: nil)
+                checkAlert.addAction(checkError)
+                self.present(checkAlert, animated: true, completion:nil)
+                
+                
+                return false
+            }
         }
     }
     

@@ -11,9 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 class HouseCreateUpload {
-        let parameters: Parameters = HostingService.shared.houseParameters()
+    static var standard = HouseCreateUpload()
+    let parameters: Parameters = HostingService.shared.houseParameters()
     
-        func houseCreateUpload() {
+    func houseCreateUpload() {
     
     
             print(parameters)
