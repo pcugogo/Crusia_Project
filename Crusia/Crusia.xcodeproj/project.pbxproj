@@ -733,7 +733,7 @@
 				TargetAttributes = {
 					3715D0161F31FB44002AD5CB = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6T7QK3ZAXH;
+						DevelopmentTeam = 3BPKLMWSQR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -1064,10 +1064,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crusia/Crusia.entitlements;
-				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
+				DEVELOPMENT_TEAM = 3BPKLMWSQR;
 				INFOPLIST_FILE = Crusia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1079,10 +1079,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crusia/Crusia.entitlements;
-				DEVELOPMENT_TEAM = 6T7QK3ZAXH;
+				DEVELOPMENT_TEAM = 3BPKLMWSQR;
 				INFOPLIST_FILE = Crusia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Crusia.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

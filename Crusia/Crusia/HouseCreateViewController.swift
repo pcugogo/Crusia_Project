@@ -14,8 +14,6 @@ import Alamofire
 
 class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HouseCreateViewCellDelegate {
     
-    let houseCreateUpload = HouseCreateUpload()
-    
     var currentUser: User?
     
     var houseCreateCell = HouseCreateCell()
@@ -30,6 +28,12 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if  HostingService.shared.firstStepComplete == false || HostingService.shared.secondStepComplete == false || HostingService.shared.thirdStepComplete == false {
+            completeInformationBtnOut.isHidden = true
+        }
+        
+        completeInformationBtnOut.layer.cornerRadius = 3
+        
         houseCreateCell.delegate = self
         
         //디드셀렉에서 뷰 식별해서 넘겨줘야됨
@@ -38,27 +42,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         
         hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요! 호스팅 준비를 시작하세요."
         
-        //                print("!!!!!!!!!!!!!!!!!!!!!!!!",currentUserData)
-        //        print("@@@@@@@@@@@@@@@@@@@@@@@@@@",CurrentUserInfoService.shared.currentUser)
-        //        hostingWelcomeLb.text = "\(String(describing: currentUserData?.firstName.stringValue))님 안녕하세요! 호스팅 준비를 시작하세요."
-        //        HostingService.shared.title = "안녕하세요 테스트"
-        //        HouseData.shared.address = "" //숙소가 어디에 있나요? 44444 주소 (국가, 시/도,시/군/구,도로명 주소, 아파트 동호수,우편번호
-        //        HostingService.shared.introduce = "안녕하세요" // 숙소 소개
-        //        HostingService.shared.spaceInfo = "정원 있습니다" // 숙소 부연 설명
-        //        HostingService.shared.guestAccess = "별거 다 있어요" // 2-2 숙소 내 비품 설명
-        //        HostingService.shared.pricePerDay = 10000 // 1박 비용 (필)
-        //        HostingService.shared.extraPeopleFee = 3 //숙박 가능 인원22222222 추가 인원에 대한 비용 (필)
-        //        HostingService.shared.cleaningFee = 10000 // 청소비 (필)
-        //        HostingService.shared.weeklyDiscount = 20 // 일주일이상 장기투숙시 할인율 (필)
-        //        HouseData.shared.accommodates = 1 //222222222 기본 숙박 가능 인원수 (필)
-        //        HouseData.shared.bathrooms = 3 //욕실 개수 333333화장실 개수 (필)
-        //        HostingService.shared.bedrooms = 5 //22222222침실 개수 (필)
-        //        HouseData.shared.beds = 5 //침대 개수 (필)
-        //        HouseData.shared.roomType = "House"     //등록할 숙소 종류는 무엇인가요?11111111 House(집전체 빌려줄 공간)  Individual(개인실),Shared_Room(다인실) 3개중 하나 (필)
-        //        HostingService.shared.houseImages = ""////2-1
-        //        HouseData.shared.amenities = ["TV","Internet"] //게스트가 이용할 수 있는 편의시설6666666,게스트가 어떤 공간을 사용 할 수 있나요?777777777 (테이블에 스위치로 구현) 숙소 내 편의시설 및 이용안내 사항
-        //        HostingService.shared.latitude = 37.517584 //핀이 놓인 위치가 정확한 가요?5555555 위도 (필)
-        //        HostingService.shared.longitude = 127.018133 //5555555555경도 (필)
+      
         self.currentUser = CurrentUserInfoService.shared.currentUser
         
         
@@ -74,7 +58,14 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        print(HostingService.shared.houseParameters())
+        if  HostingService.shared.firstStepComplete == true && HostingService.shared.secondStepComplete == true && HostingService.shared.thirdStepComplete == true {
+            completeInformationBtnOut.isHidden = false
+            print(HostingService.shared.houseParameters())
+        }else{
+            completeInformationBtnOut.isHidden = true
+            print(HostingService.shared.houseParameters())
+        }
+        
         
     }
     
@@ -111,6 +102,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
                 cell.checkImgView.isHidden = true
                 cell.secondStepBtnOut.isHidden = true
                 cell.thirdStepBtnOut.isHidden = true
+
             }
             
             return cell
@@ -148,12 +140,22 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             cell.detailTextLb.text = "요금,달력,예약 조건을 설정하세요."
             cell.cellIndexPath = indexPath.row
             
-            if HostingService.shared.firstStepComplete == true && HostingService.shared.secondStepComplete == true {
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.secondStepComplete == true && HostingService.shared.thirdStepComplete == false {
                 cell.continueBtnOut.isHidden = true
                 cell.secondStepBtnOut.isHidden = true
                 cell.thirdStepBtnOut.isHidden = false
                 cell.topTextLabel.textColor = UIColor.black
                 cell.detailTextLb.textColor = UIColor.black
+                
+                
+            }else if HostingService.shared.firstStepComplete == true && HostingService.shared.secondStepComplete == true && HostingService.shared.thirdStepComplete == true{
+                cell.continueBtnOut.isHidden = true
+                cell.secondStepBtnOut.isHidden = true
+                cell.thirdStepBtnOut.isHidden = true
+                cell.topTextLabel.textColor = UIColor.black
+                cell.detailTextLb.textColor = UIColor.black
+                cell.checkImgView.isHidden = false
+               
                 
             }else{
                 cell.continueBtnOut.isHidden = true
@@ -161,6 +163,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
                 cell.thirdStepBtnOut.isHidden = true
                 cell.topTextLabel.textColor = UIColor.lightGray
                 cell.detailTextLb.textColor = UIColor.lightGray
+                
             }
             
             return cell
@@ -192,7 +195,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             
         }else if indexPath.row == 2{
             
-            if HostingService.shared.firstStepComplete == true{//추후에 여기서 &&로 투스텝도 만들어야된다 그리고 버튼 프리페어 처리해야된다
+            if HostingService.shared.firstStepComplete == true && HostingService.shared.secondStepComplete == true && HostingService.shared.thirdStepComplete == true {
                 present(thirdStepNavi, animated: true, completion: nil)
             }
             
@@ -219,9 +222,13 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
             present(thirdStepNavi, animated: true, completion: nil)
         }
     }
+    
+    
    
     @IBAction func completeInformationBtnAction(_ sender: UIButton) {
-        let alert:UIAlertController = UIAlertController(title: "변경된 내용을 저장할까요?", message: "변경사항을 저장하지 않고 계속할 경우 변경사항이 적용되지 않습니다.", preferredStyle: .alert)
+        
+        print("==========================완료===========================",HostingService.shared.title)
+        let alert:UIAlertController = UIAlertController(title: "작성을 완료하셨나요?", message: "완료를 누르시면 하우스가 등록됩니다", preferredStyle: .alert)
         
         let cancelBtn:UIAlertAction = UIAlertAction(title: "취소", style: .cancel) { (alert) in
             HostingService.shared.accommodates = 1
@@ -231,13 +238,12 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         let completeBtn:UIAlertAction = UIAlertAction(title: "완료", style: .default) { (alert) in
-           self.houseCreateUpload.houseCreateUpload()
+            HouseCreateUpload.standard.houseCreateUpload()
             self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(cancelBtn)
         alert.addAction(completeBtn)
-        
-
+        self.present(alert, animated: true, completion: nil)
         
     }
     
