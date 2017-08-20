@@ -25,7 +25,7 @@ class ReservationStepThreeCell: UITableViewCell {
     
     func configureCell() {
 
-        textView.text = "Placeholder"
+        textView.text = "여기에 메시지를 작성하세요"
         textView.textColor = UIColor.lightGray
         
         textView.becomeFirstResponder()

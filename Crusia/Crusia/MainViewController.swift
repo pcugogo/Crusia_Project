@@ -21,10 +21,10 @@ class MainViewController: UIViewController {
     var postData: [House] = []
     var isLoadingPost = false
     let refreshControl = UIRefreshControl()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
 

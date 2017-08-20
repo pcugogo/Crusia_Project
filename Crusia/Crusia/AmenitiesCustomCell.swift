@@ -24,7 +24,7 @@ class AmenitiesCustomCell: UITableViewCell {
     
     func configure(data: JSON) {
         
-        self.amenityLabel.text = data["name"].string
+        self.amenityLabel.text = TextChange.shared.enter(text: data["name"].stringValue)
         
         if let imageName: String = data["name"].string {
             self.amenityImageView.image = UIImage(named: "\(imageName).png")

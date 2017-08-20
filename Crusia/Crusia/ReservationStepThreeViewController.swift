@@ -16,6 +16,10 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
     @IBOutlet weak var hostImageView: UIImageView!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
+    // 스테이더스 바 숨기기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +130,7 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
             
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             
+            
             return false
         }
             
@@ -133,6 +138,11 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
             textView.text = nil
             textView.textColor = UIColor.black
+        }
+        
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
         }
         
         return true
@@ -144,6 +154,13 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
                 textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             }
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 메시지 변경시 저장
+        ReservationService.shared.message = textView.text
+        print("메시지 변경 ...........")
+        print(ReservationService.shared.message ?? "")
     }
 }
 
