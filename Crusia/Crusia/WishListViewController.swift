@@ -110,6 +110,8 @@ extension WishListViewController: UITableViewDataSource, UITableViewDelegate {
     
     // 위시리스트 삭제
     func handleLikes(sender: AnyObject){
+    
+        
         
         WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         

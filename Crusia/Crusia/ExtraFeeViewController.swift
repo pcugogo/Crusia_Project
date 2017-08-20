@@ -11,8 +11,11 @@ import SwiftyJSON
 
 class ExtraFeeViewController: UIViewController {
     
-    var extraFeeInfo: [JSON] = []
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var extraFeeInfo: [JSON] = []
+    
     // 스테이더스 바 숨기기
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,6 +26,7 @@ class ExtraFeeViewController: UIViewController {
         
         print("ExtraFeeViewcontroller ..................................")
         print(extraFeeInfo)
+        self.configureTableView()
 
     }
 
@@ -32,6 +36,11 @@ class ExtraFeeViewController: UIViewController {
     
     @IBAction func dismissButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func configureTableView() {
+        // 안쓰는 테이블 로우 줄 지우기
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
 
@@ -58,4 +67,27 @@ extension ExtraFeeViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        // fade in
+        // 처음 상태
+        cell.alpha = 0
+        
+        // 마지막 상태
+        UIView.animate(withDuration: 1.0) {
+            cell.alpha = 1
+        }
+        
+        // rotating
+        // 처음 상태
+        let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
+        let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, 0, 0, 1)
+        cell.layer.transform = rotationTransform
+        
+        // 마지막 상태
+        UIView.animate(withDuration: 1.0, animations: { cell.layer.transform = CATransform3DIdentity })
+        
+    }
+
 }

@@ -9,13 +9,15 @@
 import UIKit
 
 class DetailedUserInfoViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
     
     var userInfo: User!
     var isUserInfoCellExtended: Bool = false
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureTableView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +26,11 @@ class DetailedUserInfoViewController: UIViewController {
     
     @IBAction func popButtonTouched(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func configureTableView() {
+        // 안쓰는 테이블 로우 줄 지우기
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 }
 

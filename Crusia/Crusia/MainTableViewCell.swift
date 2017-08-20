@@ -33,37 +33,7 @@ class MainTableViewCell: UITableViewCell {
     }
 
     @IBAction func heartTouched(_ sender: UIButton) {
-        
-//        if !isHeartTouched {
-//            var isAleady: Bool = false
-//            
-//            for i in WishListService.shared.houses {
-//                if i.pk == currentPost.pk {
-//                    isAleady = true
-//                }
-//            }
-//            
-//            if !isAleady {
-//                WishListService.shared.add(house: currentPost)
-//            }
-//            
-//            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
-//            isHeartTouched = true
-//            
-//        } else {
-//            
-//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-//            WishListService.shared.delete(house: currentPost)
-//            isHeartTouched = false
-//            
-//        }
-//        
-//
-//        print("Heart Button touched ....................................")
-//        for i in WishListService.shared.houses {
-//            print(i.pk)
-//        }
-        
+
     }
     
     func configure(post: House) {
