@@ -32,6 +32,7 @@
 		1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC661F3C585A006A1AEB /* AddPhotoViewController.swift */; };
 		1448BC7A1F3C5924006A1AEB /* RoomsTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */; };
 		1448BC7D1F3C59CD006A1AEB /* CW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448BC7B1F3C59CD006A1AEB /* CW.storyboard */; };
+		147C44D81F4998E800179F11 /* HouseCreateUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C44D71F4998E800179F11 /* HouseCreateUpload.swift */; };
 		14E9C61C1F3DBDCF00CD3CD3 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */; };
 		14ED53161F435E0800A81B37 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED53151F435E0800A81B37 /* IntroduceViewController.swift */; };
 		370BF3EB1F35720100A04A6F /* RefundInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */; };
@@ -138,6 +139,7 @@
 		1448BC661F3C585A006A1AEB /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		1448BC791F3C5924006A1AEB /* RoomsTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTypeCell.swift; sourceTree = "<group>"; };
 		1448BC7C1F3C59CD006A1AEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CW.storyboard; sourceTree = "<group>"; };
+		147C44D71F4998E800179F11 /* HouseCreateUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCreateUpload.swift; sourceTree = "<group>"; };
 		14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
 		14ED53151F435E0800A81B37 /* IntroduceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		370BF3EA1F35720100A04A6F /* RefundInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundInfoCustomCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				14ED53131F4336C300A81B37 /* SecondStep */,
 				14ED53141F4336C500A81B37 /* ThirdStep */,
 				1448BC621F3C585A006A1AEB /* HostingService.swift */,
+				147C44D71F4998E800179F11 /* HouseCreateUpload.swift */,
 				14E9C61B1F3DBDCF00CD3CD3 /* ExplanationViewController.swift */,
 			);
 			name = Hosting;
@@ -853,6 +856,7 @@
 				14108C9C1F48ED76003F12E3 /* CreateTitleViewController.swift in Sources */,
 				37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */,
 				3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */,
+				147C44D81F4998E800179F11 /* HouseCreateUpload.swift in Sources */,
 				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,
 				1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */,
 				371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */,
