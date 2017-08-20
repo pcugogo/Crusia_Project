@@ -23,6 +23,15 @@ class ReservationService {
     
     private init() {}
     
+    func clearReservationInfo() {
+        self.checkInDate = nil
+        self.checkOutDate = nil
+        self.selectedDates = nil
+        self.message = nil
+        self.house = nil
+        self.host = nil
+    }
+    
     func makeRservation(housePk pk: Int, checkInDate: String, checkOutDate: String) {
         
         let token: String = UserDefaults.standard.object(forKey: "token") as! String
@@ -32,22 +41,48 @@ class ReservationService {
         print(token)
         
         let parameters: Parameters = ["checkin_date": checkInDate, "checkout_date": checkOutDate]
+        print(checkInDate)
+        print(checkOutDate)
         
-        Alamofire.request("http://crusia.xyz/apis/reservations/?house=\(pk)", method: .post, parameters: parameters, headers: httpHeader).validate().responseJSON { (response) in
+        if let message = self.message {
+    
+            let parameters: Parameters = ["checkin_date": checkInDate, "checkout_date": checkOutDate, "message_to_host": message]
             
-            switch response.result {
+            Alamofire.request("http://crusia.xyz/apis/reservations/?house=\(pk)", method: .post, parameters: parameters, headers: httpHeader).validate().responseJSON { (response) in
                 
-            case .success(let value):
+                switch response.result {
+                    
+                case .success(let value):
+                    
+                    print("Validation Successful")
+                    
+                    let json = JSON(value)
+                    print("예약완료 .................................")
+                    print("예약정보가 다음과 같이 수정되었음!: \(json)")
+                    
+                case .failure(let error):
+                    print(error)
+                    
+                }
+            }
+            
+        } else {
+            Alamofire.request("http://crusia.xyz/apis/reservations/?house=\(pk)", method: .post, parameters: parameters, headers: httpHeader).validate().responseJSON { (response) in
                 
-                print("Validation Successful")
-                
-                let json = JSON(value)
-                print("예약완료 .................................")
-                print("예약정보가 다음과 같이 수정되었음!: \(json)")
-                
-            case .failure(let error):
-                print(error)
-                
+                switch response.result {
+                    
+                case .success(let value):
+                    
+                    print("Validation Successful")
+                    
+                    let json = JSON(value)
+                    print("예약완료 .................................")
+                    print("예약정보가 다음과 같이 수정되었음!: \(json)")
+                    
+                case .failure(let error):
+                    print(error)
+                    
+                }
             }
         }
     }

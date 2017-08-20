@@ -70,6 +70,7 @@
 		371C14551F4984FC00F2D865 /* RSFourPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14541F4984FC00F2D865 /* RSFourPriceCell.swift */; };
 		371C14571F49901E00F2D865 /* RSFourRefundInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14561F49901E00F2D865 /* RSFourRefundInfoCell.swift */; };
 		371C14591F4990E300F2D865 /* RSFourPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14581F4990E300F2D865 /* RSFourPolicyCell.swift */; };
+		371C145C1F49BBE200F2D865 /* HSMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C145B1F49BBE200F2D865 /* HSMessageViewController.swift */; };
 		371C39511F42C950000107F6 /* ImageRotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C39501F42C950000107F6 /* ImageRotating.swift */; };
 		371D27CB1F386CD400D7AF94 /* CheckInOutCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */; };
 		371E608B1F35D3870073AAF0 /* HouseInfoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */; };
@@ -179,6 +180,7 @@
 		371C14541F4984FC00F2D865 /* RSFourPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFourPriceCell.swift; sourceTree = "<group>"; };
 		371C14561F49901E00F2D865 /* RSFourRefundInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFourRefundInfoCell.swift; sourceTree = "<group>"; };
 		371C14581F4990E300F2D865 /* RSFourPolicyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFourPolicyCell.swift; sourceTree = "<group>"; };
+		371C145B1F49BBE200F2D865 /* HSMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSMessageViewController.swift; sourceTree = "<group>"; };
 		371C39501F42C950000107F6 /* ImageRotating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRotating.swift; sourceTree = "<group>"; };
 		371D27CA1F386CD400D7AF94 /* CheckInOutCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInOutCustomCell.swift; sourceTree = "<group>"; };
 		371E608A1F35D3870073AAF0 /* HouseInfoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseInfoCustomCell.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				37B646821F437872002FABBE /* MapView */,
 				3728182E1F332E96003719D2 /* DetailView */,
 				37109C081F3A2CC500CFCC55 /* WishListView */,
+				371C145A1F49BBBE00F2D865 /* MessageView */,
 				374B8AD01F3EDA4800E9E010 /* ProfileView */,
 				1448BC7B1F3C59CD006A1AEB /* CW.storyboard */,
 				1448BC541F3C582A006A1AEB /* Hosting */,
@@ -500,6 +503,14 @@
 				371C14581F4990E300F2D865 /* RSFourPolicyCell.swift */,
 			);
 			name = Step4;
+			sourceTree = "<group>";
+		};
+		371C145A1F49BBBE00F2D865 /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				371C145B1F49BBE200F2D865 /* HSMessageViewController.swift */,
+			);
+			name = MessageView;
 			sourceTree = "<group>";
 		};
 		371E608C1F360B580073AAF0 /* DetailedUserInfoView */ = {
@@ -844,6 +855,7 @@
 				37CD3C4F1F3DC32D008B695A /* HSReservationViewController.swift in Sources */,
 				1448BC711F3C585A006A1AEB /* GuestSpaceDetailCell.swift in Sources */,
 				373255F51F372C5600006C25 /* RefundPolicyViewController.swift in Sources */,
+				371C145C1F49BBE200F2D865 /* HSMessageViewController.swift in Sources */,
 				3715D2341F3F04A700643AED /* EditUserInfoCell.swift in Sources */,
 				3715D0391F323445002AD5CB /* SignUpViewController1.swift in Sources */,
 				37B646841F4378C4002FABBE /* MainMapViewController.swift in Sources */,
