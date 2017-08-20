@@ -130,6 +130,7 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
             
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             
+            
             return false
         }
             
@@ -153,6 +154,13 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
                 textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             }
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 메시지 변경시 저장
+        ReservationService.shared.message = textView.text
+        print("메시지 변경 ...........")
+        print(ReservationService.shared.message ?? "")
     }
 }
 

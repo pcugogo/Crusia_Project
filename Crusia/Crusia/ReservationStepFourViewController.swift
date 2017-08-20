@@ -56,7 +56,7 @@ class ReservationStepFourViewController: UIViewController {
         // 호스트네임과 집 타입
         
         if let name = ReservationService.shared.host?.firstName.stringValue, let type = ReservationService.shared.house?.roomType.stringValue {
-            self.hostNanme.text = name + "님의 " + type
+            self.hostNanme.text = name + "님의 " + TextChange.shared.enter(text: type)
         }
 
         
@@ -78,6 +78,48 @@ class ReservationStepFourViewController: UIViewController {
 //        tableView.isScrollEnabled = false
 //        tableView.rowHeight = 111.0
     }
+    
+    
+    @IBAction func makeARSVButtonTouched(_ sender: UIButton) {
+        
+        guard let first = ReservationService.shared.checkInDate,
+            let last = ReservationService.shared.checkOutDate, let currentHousePk = ReservationService.shared.house?.pk.intValue  else { return }
+        
+        print("예약하기 버튼 안 .........................")
+        formatter.dateFormat = "yyyy-MM-dd"
+
+        let firstDay = formatter.string(from: first)
+        let lastDay = formatter.string(from: last)
+        
+        ReservationService.shared.makeRservation(housePk: currentHousePk, checkInDate: firstDay, checkOutDate: lastDay)
+        
+        ReservationService.shared.clearReservationInfo()
+        
+        let alertController = UIAlertController(title: nil, message: "예약이 완료되었습니다.", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "확인", style: .cancel) {(alertAction) in
+            for controller in self.navigationController!.viewControllers as Array {
+                if controller.isKind(of: MainViewController.self) {
+                    self.navigationController!.popToViewController(controller, animated: true)
+                    break
+                }
+            }
+        }
+        alertController.addAction(okayAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cancelButtonTouched(_ sender: UIButton) {
+    
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: MainViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
+    }
+    
 }
 
 extension ReservationStepFourViewController: UITableViewDataSource, UITableViewDelegate {

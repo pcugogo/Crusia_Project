@@ -77,7 +77,7 @@ class MainTableViewCell: UITableViewCell {
         // 타이틀, 하우스타입, 가격 가져오기
         
         titleLabel.text = post.title.string
-        typeLabel.text = post.roomType.string
+        typeLabel.text = TextChange.shared.enter(text: post.roomType.stringValue)
         
         // 가격에 , 찍기
         if let price = post.pricePerDay.int {
@@ -88,7 +88,6 @@ class MainTableViewCell: UITableViewCell {
             
             priceLabel.text = "￦" + formattedNumber!
         }
-        
         
         mainImageView.image = #imageLiteral(resourceName: "Flat")
 //        if isPostShown == false {

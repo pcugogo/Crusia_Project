@@ -58,7 +58,6 @@ class ReservationStepOneViewController: UIViewController {
             self.priceLabel.text = "￦" + price
             self.dateLabel.text = "\(selectedDates)박"
         }
-        
     }
     
     // 테이블뷰 세팅

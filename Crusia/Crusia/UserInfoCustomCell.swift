@@ -33,7 +33,7 @@ class UserInfoCustomCell: UITableViewCell {
         
         self.userNameLabel.text = post.host.firstName.string ?? ""
         self.houseTitleLabel.text = post.title.string ?? ""
-        self.roomTypeLabel.text = post.roomType.string ?? ""
+        self.roomTypeLabel.text = TextChange.shared.enter(text: post.roomType.stringValue)
         
         if let url = post.host.imgProfile.url {
             self.profileImageView.kf.setImage(with: url)
