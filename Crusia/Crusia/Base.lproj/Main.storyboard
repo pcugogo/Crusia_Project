@@ -704,7 +704,9 @@
                             <constraint firstItem="K86-AB-9Gh" firstAttribute="top" secondItem="BbQ-sL-x3y" secondAttribute="bottom" constant="25" id="xHy-1j-xus"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bRk-tN-Sd9"/>
+                    <navigationItem key="navigationItem" id="bRk-tN-Sd9">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emptyView" destination="CrR-mZ-Hy7" id="5Wi-qM-47i"/>
                         <outlet property="loadingIndicator" destination="jW2-9u-bpz" id="2se-Sx-2qj"/>
@@ -713,7 +715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCJ-M3-wrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4505" y="1404"/>
+            <point key="canvasLocation" x="-4506.3999999999996" y="1403.7481259370315"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="EnL-kU-rRr">
@@ -4149,7 +4151,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ixm-fe-9BO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixm-fe-9BO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4190,7 +4192,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YO9-eu-OOo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YO9-eu-OOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4438,7 +4440,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Igd-Fn-rzT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Igd-Fn-rzT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4458,7 +4460,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YkA-Em-K9j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YkA-Em-K9j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4490,7 +4492,7 @@
         <image name="writeicon" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AuA-HA-qnc"/>
-        <segue reference="IiS-gz-hVq"/>
+        <segue reference="b8k-Ty-qFn"/>
+        <segue reference="zNk-WB-9Lf"/>
     </inferredMetricsTieBreakers>
 </document>
