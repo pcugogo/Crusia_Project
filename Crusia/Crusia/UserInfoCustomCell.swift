@@ -31,6 +31,8 @@ class UserInfoCustomCell: UITableViewCell {
     
     func configure(post: House) {
         
+        self.profileImageView.image = #imageLiteral(resourceName: "logo")
+        
         self.userNameLabel.text = post.host.firstName.string ?? ""
         self.houseTitleLabel.text = post.title.string ?? ""
         self.roomTypeLabel.text = TextChange.shared.enter(text: post.roomType.stringValue)

@@ -292,12 +292,17 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
             WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
             
         } else {
-            for i in 0...WishListService.shared.heartIndex.count - 1 {
-                if WishListService.shared.heartIndex[i] == sender.tag {
-                    WishListService.shared.heartIndex.remove(at: i)
-                }
-            }
             
+            
+            if WishListService.shared.heartIndex.contains(sender.tag) {
+                let tempIndex = WishListService.shared.heartIndex.filter { $0 != sender.tag}
+                WishListService.shared.heartIndex = tempIndex
+            }
+//            for i in 0...WishListService.shared.heartIndex.count - 1 {
+//                if WishListService.shared.heartIndex[i] == sender.tag {
+//                    WishListService.shared.heartIndex.remove(at: i)
+//                }
+//            }
             sender.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
             //            // 서버 데이터 통신 - 추가
             WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)

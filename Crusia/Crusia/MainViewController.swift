@@ -145,9 +145,9 @@ class MainViewController: UIViewController {
             }
             print("하트 숫자.............................................................")
 
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
         }
     }
     
@@ -197,11 +197,14 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if searchController.isActive {
-            return searchResults.count
-        } else {
-            return postData.count
-        }
+//        if searchController.isActive {
+//            return searchResults.count
+//        } else {
+//            return postData.count
+//        }
+        
+        return postData.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -233,7 +236,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         // 무한 로딩
         // 마지막 포스트 두개에 도달했을 때 더 오래된 포스트 로딩
-        guard !isLoadingPost, postData.count - indexPath.row == 3 else {
+        guard !isLoadingPost, postData.count - indexPath.row == 2 else {
             return
         }
         
@@ -267,9 +270,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 indexPaths.append(indexPath)
             }
             
-            self.tableView.insertRows(at: indexPaths, with: .fade)
-            
             DispatchQueue.main.async {
+                self.tableView.insertRows(at: indexPaths, with: .fade)
                 self.tableView.endUpdates()
                 self.isLoadingPost = false
             }
@@ -288,11 +290,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         // 삭제
         } else {
-            for i in 0...WishListService.shared.heartIndex.count - 1 {
-                if WishListService.shared.heartIndex[i] == sender.tag {
-                    WishListService.shared.heartIndex.remove(at: i)
-                }
+            
+            if WishListService.shared.heartIndex.contains(sender.tag) {
+                let tempIndex = WishListService.shared.heartIndex.filter { $0 != sender.tag}
+                WishListService.shared.heartIndex = tempIndex
             }
+
             sender.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
             WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         }

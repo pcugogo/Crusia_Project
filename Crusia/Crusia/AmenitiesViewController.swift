@@ -11,7 +11,10 @@ import SwiftyJSON
 
 class AmenitiesViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var amenities: JSON?
+    var postShown = [Bool]()
     
     // 스테이더스 바 숨기기
     override var prefersStatusBarHidden: Bool {
@@ -20,7 +23,7 @@ class AmenitiesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.configureTableView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +32,12 @@ class AmenitiesViewController: UIViewController {
     
     @IBAction func dismissButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func configureTableView() {
+        // 안쓰는 테이블 로우 줄 지우기
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        postShown = [Bool](repeating: false, count: (amenities?.arrayValue.count)!)
     }
     
 }
@@ -57,4 +66,53 @@ extension AmenitiesViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        // fade in
+//        // 처음 상태
+//        cell.alpha = 0
+//        
+//        // 마지막 상태
+//        UIView.animate(withDuration: 1.0) { 
+//            cell.alpha = 1
+//        }
+        
+        // rotating
+        // 처음 상태
+//        let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
+        
+        if postShown[indexPath.row] {
+            return
+        }
+        
+        postShown[indexPath.row] = true
+        
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
+//        let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, 0, 0, 1)
+        cell.layer.transform = rotationTransform
+        
+        // 마지막 상태
+        UIView.animate(withDuration: 1.0, animations: { cell.layer.transform = CATransform3DIdentity })
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
