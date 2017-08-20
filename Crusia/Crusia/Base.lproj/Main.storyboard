@@ -522,10 +522,10 @@
             </objects>
             <point key="canvasLocation" x="-8122" y="2174"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Crusia-->
         <scene sceneID="Rvg-5L-W4x">
             <objects>
-                <viewController id="o90-f1-0BI" customClass="MainViewController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Crusia" id="o90-f1-0BI" customClass="MainViewController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cVI-7C-PDB"/>
                         <viewControllerLayoutGuide type="bottom" id="K86-AB-9Gh"/>
@@ -535,7 +535,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="388" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-z8-ao9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="390" id="DeX-vQ-89g" customClass="MainTableViewCell" customModule="Crusia" customModuleProvider="target">
@@ -691,22 +691,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ZcW-z8-ao9" secondAttribute="bottom" constant="49" id="5tT-07-ZWr"/>
                             <constraint firstItem="K86-AB-9Gh" firstAttribute="top" secondItem="CrR-mZ-Hy7" secondAttribute="bottom" id="7CF-md-Lir"/>
                             <constraint firstItem="ZcW-z8-ao9" firstAttribute="leading" secondItem="ob5-2y-xsf" secondAttribute="leading" id="Aii-Xv-J8y"/>
                             <constraint firstItem="CrR-mZ-Hy7" firstAttribute="leading" secondItem="ob5-2y-xsf" secondAttribute="leading" id="NgW-HG-TrG"/>
                             <constraint firstAttribute="trailing" secondItem="ZcW-z8-ao9" secondAttribute="trailing" id="OIg-HP-GJd"/>
-                            <constraint firstItem="ZcW-z8-ao9" firstAttribute="centerY" secondItem="ob5-2y-xsf" secondAttribute="centerY" constant="7.5" id="UTg-15-6W8"/>
+                            <constraint firstItem="K86-AB-9Gh" firstAttribute="top" secondItem="ZcW-z8-ao9" secondAttribute="bottom" id="Xw9-0z-b69"/>
+                            <constraint firstItem="ZcW-z8-ao9" firstAttribute="top" secondItem="ob5-2y-xsf" secondAttribute="top" id="crT-5P-jDi"/>
                             <constraint firstItem="CrR-mZ-Hy7" firstAttribute="top" secondItem="cVI-7C-PDB" secondAttribute="bottom" id="luv-u1-DPA"/>
-                            <constraint firstItem="ZcW-z8-ao9" firstAttribute="centerX" secondItem="ob5-2y-xsf" secondAttribute="centerX" id="tpn-yI-5f7"/>
                             <constraint firstAttribute="trailing" secondItem="CrR-mZ-Hy7" secondAttribute="trailing" id="tsS-sI-iiu"/>
                             <constraint firstItem="BbQ-sL-x3y" firstAttribute="centerX" secondItem="ob5-2y-xsf" secondAttribute="centerX" id="va4-It-7LP"/>
                             <constraint firstItem="K86-AB-9Gh" firstAttribute="top" secondItem="BbQ-sL-x3y" secondAttribute="bottom" constant="25" id="xHy-1j-xus"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bRk-tN-Sd9">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Crusia" id="bRk-tN-Sd9"/>
                     <connections>
                         <outlet property="emptyView" destination="CrR-mZ-Hy7" id="5Wi-qM-47i"/>
                         <outlet property="loadingIndicator" destination="jW2-9u-bpz" id="2se-Sx-2qj"/>
@@ -1479,7 +1476,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="&lt;                ">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backBtnTouched:" destination="Pqh-mL-uYC" eventType="touchUpInside" id="5wN-1P-G2C"/>
@@ -1912,7 +1910,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="&lt;          ">
-                                    <color key="titleColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="popButtonTouched:" destination="auS-7d-9vu" eventType="touchUpInside" id="0eN-zy-4fy"/>
@@ -3291,7 +3289,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="&lt;          ">
-                                    <color key="titleColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissButtonTouched:" destination="Dam-NP-bsB" eventType="touchUpInside" id="TUd-Nr-LL5"/>
@@ -3433,7 +3431,7 @@
                             <constraint firstItem="whs-N1-Wkn" firstAttribute="leading" secondItem="3x6-Sa-98K" secondAttribute="leading" id="qwU-K6-O7b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="프로필" image="friend" id="9XQ-K0-YUt"/>
+                    <tabBarItem key="tabBarItem" title="프로필" image="ProfileImg_1_Sharpness_1" id="9XQ-K0-YUt"/>
                     <navigationItem key="navigationItem" id="ug5-y6-hfa"/>
                     <connections>
                         <outlet property="profileImageView" destination="VXG-TO-vgN" id="teD-V1-Lrh"/>
@@ -3528,7 +3526,7 @@
                             <constraint firstAttribute="trailing" secondItem="6lt-aw-keb" secondAttribute="trailing" id="n8A-pd-x16"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="메세지" id="tGG-af-zqg"/>
+                    <tabBarItem key="tabBarItem" title="메세지" image="Message_Sharpness_1" id="tGG-af-zqg"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="LqV-m8-1Va" id="419-VA-5dg"/>
                         <outlet property="messageStatusLabel" destination="lTu-P4-Kc7" id="hwF-AE-t7g"/>
@@ -4145,8 +4143,13 @@
         <scene sceneID="tOk-K4-h9D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nmu-07-hBG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="탐색하기" image="home" id="DSi-d2-Crc">
+                    <tabBarItem key="tabBarItem" title="탐색하기" image="searchImg_1_Sharpness_1" id="DSi-d2-Crc">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -4173,6 +4176,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="nmu-07-hBG" kind="relationship" relationship="viewControllers" id="mip-hf-e6g"/>
@@ -4436,7 +4447,13 @@
         <scene sceneID="ZvU-Fa-NXs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCT-NU-Sa4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="저장목록" image="writeicon" id="VR6-4O-WRX"/>
+                    <tabBarItem key="tabBarItem" title="저장목록" image="heartImg_1_Sharpness_1" id="VR6-4O-WRX">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -4477,22 +4494,23 @@
     <resources>
         <image name="ArrowRight" width="200" height="200"/>
         <image name="Flat" width="880" height="360"/>
+        <image name="Message_Sharpness_1" width="19" height="19"/>
+        <image name="ProfileImg_1_Sharpness_1" width="21" height="21"/>
         <image name="accommodates" width="200" height="200"/>
         <image name="bathrooms" width="200" height="200"/>
         <image name="bedrooms" width="200" height="200"/>
         <image name="beds" width="200" height="200"/>
         <image name="cross" width="200" height="200"/>
         <image name="cross1" width="200" height="200"/>
-        <image name="friend" width="24" height="23"/>
         <image name="heart2" width="200" height="200"/>
-        <image name="home" width="23" height="23"/>
+        <image name="heartImg_1_Sharpness_1" width="21" height="19"/>
         <image name="logo_bg" width="400" height="400"/>
         <image name="map" width="200" height="200"/>
         <image name="nextBtn" width="200" height="200"/>
-        <image name="writeicon" width="23" height="24"/>
+        <image name="searchImg_1_Sharpness_1" width="19" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b8k-Ty-qFn"/>
         <segue reference="zNk-WB-9Lf"/>
+        <segue reference="b8k-Ty-qFn"/>
     </inferredMetricsTieBreakers>
 </document>

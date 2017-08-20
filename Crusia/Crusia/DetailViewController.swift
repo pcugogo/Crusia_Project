@@ -32,9 +32,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
-    
-    
     var house: House!
     var isHouseInfoCellExtended: Bool = false
     
@@ -49,23 +46,12 @@ class DetailViewController: UIViewController {
         
         print("여기는 DetailViewCon .......")
         
-//        print(house)
         tableView.estimatedRowHeight = 140.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
-        
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.hidesBarsOnSwipe = true
+        configureNavigationController()
         
         self.tabBarController?.tabBar.isHidden = true
-//        self.navigationController?.navigationBar.isTranslucent = true
-        self.automaticallyAdjustsScrollViewInsets = false
-//        self.edgesForExtendedLayout = .top
         
         // ReservationService에 현재 예약정보 저장
         configureReservationInfo()
@@ -78,6 +64,22 @@ class DetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func configureNavigationController() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.hidesBarsOnSwipe = true
+        //        self.navigationController?.navigationBar.isTranslucent = true
+
+        self.automaticallyAdjustsScrollViewInsets = false
+        //        self.edgesForExtendedLayout = .top
+
     }
     
     func showMap() {

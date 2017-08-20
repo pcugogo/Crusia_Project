@@ -17,10 +17,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
     
-//    var heartImages: [UIImage] = []
     var postData: [House] = []
+    var searchResults: [House] = []
     var isLoadingPost = false
     let refreshControl = UIRefreshControl()
+    var searchController = UISearchController(searchResultsController: nil)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,23 +52,23 @@ class MainViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = true
         tableView.separatorColor = .clear
 
-        // Configure Navigationbar
-//        let backItem = UIBarButtonItem()
-//        backItem.title = ""
-//        backItem.tintColor = .clear
-//        self.navigationController?.navigationItem.backBarButtonItem = backItem
-
         // Load recent posts
         loadWishList()
         loadRecentPosts()
         
+        // configure search controller
+        configureSearchController()
+        
+        // 키보드 노티
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNoti"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNotiFromMapView"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        // configure navigation controller
+        configureNavigationController()
+        
         self.tabBarController?.tabBar.isHidden = false
     }
 
@@ -78,6 +80,40 @@ class MainViewController: UIViewController {
         WishListService.shared.loadWishList()
     }
     
+    func configureNavigationController() {
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.hidesBarsOnSwipe = false
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+    }
+    
+    func configureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchController.searchBar.placeholder = "위치를 입력하세요"
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.barTintColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+
+    }
+    
+    // 필터링 데이터
+    func filterContent(for searchText: String) {
+        searchResults = postData.filter({ (house) -> Bool in
+            if let address = house.address.string, let title = house.title.string  {
+                let isMatch = address.localizedCaseInsensitiveContains(searchText) || title.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            
+            return false
+        })
+    }
     
     
     // MARK: - 포스트 다운로드, 디스플레이
@@ -91,9 +127,6 @@ class MainViewController: UIViewController {
                 
                 // 새로운 포스트 데이터를 postData 어레이 제일 앞에 넣는다.
                 self.postData.insert(contentsOf: newPosts, at: 0)
-//                self.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
-                
-//                WishListService.shared.heartImages = [UIImage](repeating: #imageLiteral(resourceName: "heart2"), count: newPosts.count)
             }
             
             self.isLoadingPost = false
@@ -111,7 +144,7 @@ class MainViewController: UIViewController {
                 self.displayNewPosts(newPosts: newPosts)
             }
             print("하트 숫자.............................................................")
-//            print(self.heartImages.count)
+
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -150,7 +183,9 @@ class MainViewController: UIViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 
                 let destinationController = segue.destination as! DetailViewController
-                destinationController.house = postData[indexPath.row]
+                
+                destinationController.house = (searchController.isActive) ? searchResults[indexPath.row] : postData[indexPath.row]
+//                destinationController.house = postData[indexPath.row]
                 
             }
         }
@@ -162,7 +197,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return postData.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return postData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -171,7 +210,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MainTableViewCell
         
-        let currentPost = postData[indexPath.row]
+        // 분기 처리
+        let currentPost = (searchController.isActive) ? searchResults[indexPath.row] : postData[indexPath.row]
         let housePk: Int = currentPost.pk.numberValue as! Int
         
         cell.configure(post: currentPost)
@@ -263,6 +303,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension MainViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+}
 
 
 
