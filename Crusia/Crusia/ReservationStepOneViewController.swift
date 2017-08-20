@@ -15,6 +15,11 @@ class ReservationStepOneViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    // 스테이더스 바 숨기기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,11 +78,11 @@ class ReservationStepOneViewController: UIViewController {
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = UIColor.clear
+//        self.navigationController?.view.backgroundColor = UIColor.white
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.setNavigationBarHidden(false, animated: true)
-//        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnSwipe = false
         
         self.tabBarController?.tabBar.isHidden = true
         //        self.navigationController?.navigationBar.isTranslucent = true

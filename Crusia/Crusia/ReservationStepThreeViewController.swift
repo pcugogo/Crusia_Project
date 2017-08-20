@@ -16,6 +16,10 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
     @IBOutlet weak var hostImageView: UIImageView!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
+    // 스테이더스 바 숨기기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +137,11 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
             textView.text = nil
             textView.textColor = UIColor.black
+        }
+        
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
         }
         
         return true
