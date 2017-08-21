@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class WishListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
     
     var isLoadingPost = false
     var postData: [House] = []
@@ -18,14 +21,8 @@ class WishListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableViewSetting()
         loadPosts()
-
-        tableView.estimatedRowHeight = 390.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.showsVerticalScrollIndicator = true
-        tableView.separatorColor = .clear
-        
         navigationController?.setNavigationBarHidden(true, animated: true)
 
     }
@@ -33,7 +30,7 @@ class WishListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-//        loadRecentPosts()
+        configureLoadingIndicator()
         loadPosts()
         print("WishListViewwill appear ...........................................")
         
@@ -45,26 +42,42 @@ class WishListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func configureTableViewSetting() {
+        tableView.estimatedRowHeight = 390.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = true
+        tableView.separatorColor = .clear
+    }
+    
+    func configureLoadingIndicator() {
+        
+        // 로딩 애니메이션
+        loadingIndicator.type = .ballBeat
+        loadingIndicator.color = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+        
+        loadingView.isHidden = false
+        loadingIndicator.startAnimating()
+    }
+    
     func loadPosts() {
         
         WishListService.shared.requestWishList { (newPosts) in
             
-            self.postData = newPosts
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if self.postData.count != newPosts.count {
+                self.postData = newPosts
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    // 로딩 뷰 하이드
+                    self.loadingView.isHidden = true
+                    self.loadingIndicator.stopAnimating()
+                }
+                
+            } else {
+                // 로딩 뷰 하이드
+                self.loadingView.isHidden = true
+                self.loadingIndicator.stopAnimating()
             }
-            
-            for i in self.postData {
-                print("로드포스트 안 ..........")
-                print(i.pk.numberValue)
-            }
-            
-            print("하트 인덱스 프린트.....")
-            print(WishListService.shared.heartIndex)
-            
         }
-        
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,19 +118,28 @@ extension WishListViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
-    
 
     
     // 위시리스트 삭제
     func handleLikes(sender: AnyObject){
     
+        loadingView.isHidden = false
+        loadingIndicator.startAnimating()
         
+        if WishListService.shared.heartIndex.contains(sender.tag) {
+            let tempIndex = WishListService.shared.heartIndex.filter { $0 != sender.tag}
+            WishListService.shared.heartIndex = tempIndex
+        }
         
         WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         
         NotificationCenter.default.post(name: Notification.Name("WishChangedNoti"), object: "delete")
 
-        loadPosts()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.async {
+                self.loadPosts()
+            }
+        }
     }
     
 }

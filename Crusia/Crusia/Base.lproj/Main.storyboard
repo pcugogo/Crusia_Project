@@ -4129,19 +4129,43 @@
                                     <outlet property="delegate" destination="g1x-wn-cwe" id="uNS-sM-8ob"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-sR-5xX" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="150" width="375" height="468"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsG-cw-cgR" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="172" y="-41" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PsG-cw-cgR" secondAttribute="height" multiplier="1:1" id="32L-AM-YUT"/>
+                                            <constraint firstAttribute="width" constant="30" id="JBA-Fx-SWs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="PsG-cw-cgR" firstAttribute="centerX" secondItem="hrG-sR-5xX" secondAttribute="centerX" id="KMy-Fb-ShE"/>
+                                    <constraint firstItem="PsG-cw-cgR" firstAttribute="centerY" secondItem="hrG-sR-5xX" secondAttribute="centerY" constant="-260" id="k6K-fQ-7iY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="4Uh-sf-TgK"/>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="centerX" secondItem="aud-m8-POR" secondAttribute="centerX" id="DLw-es-3hF"/>
+                            <constraint firstItem="hrG-sR-5xX" firstAttribute="top" secondItem="O7U-2K-R0U" secondAttribute="bottom" constant="130" id="E2L-QU-o1z"/>
+                            <constraint firstItem="hrG-sR-5xX" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="Gnb-rn-CrS"/>
                             <constraint firstAttribute="trailing" secondItem="2qb-mC-mJu" secondAttribute="trailing" id="X39-lo-yR1"/>
+                            <constraint firstAttribute="trailing" secondItem="hrG-sR-5xX" secondAttribute="trailing" id="Xvg-Rh-Quz"/>
                             <constraint firstItem="ohV-3E-si8" firstAttribute="top" secondItem="2qb-mC-mJu" secondAttribute="bottom" id="lmL-Fa-isA"/>
+                            <constraint firstItem="ohV-3E-si8" firstAttribute="top" secondItem="hrG-sR-5xX" secondAttribute="bottom" id="maF-Kn-xIR"/>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="centerY" secondItem="aud-m8-POR" secondAttribute="centerY" constant="-14.5" id="orB-vF-56F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mwr-Fb-bZO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="PsG-cw-cgR" id="2Nc-18-30A"/>
+                        <outlet property="loadingView" destination="hrG-sR-5xX" id="3rE-q5-e9L"/>
                         <outlet property="tableView" destination="2qb-mC-mJu" id="Oob-PV-7dC"/>
                     </connections>
                 </viewController>
@@ -4164,7 +4188,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ixm-fe-9BO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixm-fe-9BO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4213,7 +4237,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YO9-eu-OOo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YO9-eu-OOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4467,7 +4491,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Igd-Fn-rzT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Igd-Fn-rzT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4487,7 +4511,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YkA-Em-K9j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YkA-Em-K9j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4520,7 +4544,7 @@
         <image name="searchImg_1_Sharpness_1" width="19" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AuA-HA-qnc"/>
         <segue reference="IiS-gz-hVq"/>
-        <segue reference="zNk-WB-9Lf"/>
     </inferredMetricsTieBreakers>
 </document>

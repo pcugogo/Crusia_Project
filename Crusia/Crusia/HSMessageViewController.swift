@@ -39,7 +39,7 @@ class HSMessageViewController: UIViewController {
         loadingIndicator.startAnimating()
         
         messageStatusLabel.text = "로딩중.."
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             DispatchQueue.main.async {
             self.loadingIndicator.stopAnimating()
                 self.messageStatusLabel.text = "메시지를 모두 읽으셨습니다."
