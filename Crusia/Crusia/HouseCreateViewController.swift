@@ -236,7 +236,7 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         
         let completeBtn:UIAlertAction = UIAlertAction(title: "완료", style: .default) { (alert) in
             HouseCreateUpload.standard.houseCreateUpload()
-            
+            HostingService.shared.resetData()
             HostingService.shared.firstStepComplete = false
             HostingService.shared.secondStepComplete = false
             HostingService.shared.thirdStepComplete = false

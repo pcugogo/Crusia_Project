@@ -77,7 +77,41 @@ class HostingService {
     
     
     
-    
+    func resetData(){
+         title = ""
+         address = ""
+         introduce = ""
+         spaceInfo = ""
+         guestAccess = ""
+         pricePerDay = 25000
+         extraPeopleFee = 0
+         cleaningFee = 0
+         weeklyDiscount = 10
+         accommodates = 1
+         bathrooms = 1
+         bedrooms = 1
+         beds = 1
+         roomType = "" 
+         amenities = []
+         latitude = 0.0
+         longitude = 0.0
+        
+         switchCheckNumber = 0
+         firstStepComplete = false
+         secondStepComplete = false
+         thirdStepComplete = false
+        
+         amenityString = ""
+        
+        
+         whereViewCountry = "대한민국"
+         whereViewFirstLineAddress = ""
+         whereViewSecondLineAddress = ""
+         whereViewThirdLineAddress = ""
+         whereViewPostalNumber = ""
+         personnelSaveAndBack = false
+         bathRoomSaveAndBack = false
+    }
     
     
     

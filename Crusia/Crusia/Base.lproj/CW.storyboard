@@ -87,18 +87,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckImg" translatesAutoresizingMaskIntoConstraints="NO" id="GuN-SG-C3O">
-                                                    <rect key="frame" x="18" y="100" width="40" height="40"/>
+                                                    <rect key="frame" x="24.5" y="102.5" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="XDL-ew-aM5"/>
                                                         <constraint firstAttribute="width" constant="40" id="n7N-hn-vR7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dja-vm-gMX">
-                                                    <rect key="frame" x="10" y="103" width="57" height="35"/>
+                                                    <rect key="frame" x="10" y="103" width="70" height="40"/>
                                                     <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="2NM-Hr-oh3"/>
-                                                        <constraint firstAttribute="width" constant="57" id="bqy-Gb-Ahg"/>
+                                                        <constraint firstAttribute="height" constant="40" id="2NM-Hr-oh3"/>
+                                                        <constraint firstAttribute="width" constant="70" id="bqy-Gb-Ahg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="계속">
@@ -110,7 +110,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bM-6G-PWP">
-                                                    <rect key="frame" x="10" y="103" width="57" height="35"/>
+                                                    <rect key="frame" x="16.5" y="105.5" width="57" height="35"/>
                                                     <color key="backgroundColor" red="0.27268478270000002" green="0.70252341029999998" blue="0.63614600899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="QYk-1F-nlm"/>
@@ -126,7 +126,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN3-jK-BYI">
-                                                    <rect key="frame" x="3.5" y="98" width="70" height="45"/>
+                                                    <rect key="frame" x="10" y="100.5" width="70" height="45"/>
                                                     <color key="backgroundColor" red="0.29896232490000002" green="0.72785359620000001" blue="0.69506406779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="c0t-sN-6AC"/>
@@ -175,11 +175,11 @@
                                 </connections>
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdw-TY-J5J">
-                                <rect key="frame" x="289" y="547" width="70" height="45"/>
+                                <rect key="frame" x="259" y="542" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.29896232490000002" green="0.72785359620000001" blue="0.69506406779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="2yl-yw-pVn"/>
-                                    <constraint firstAttribute="width" constant="70" id="HNZ-av-4no"/>
+                                    <constraint firstAttribute="height" constant="50" id="2yl-yw-pVn"/>
+                                    <constraint firstAttribute="width" constant="100" id="HNZ-av-4no"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="완료">
