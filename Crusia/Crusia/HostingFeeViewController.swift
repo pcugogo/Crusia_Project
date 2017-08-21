@@ -24,7 +24,7 @@ class HostingFeeViewController: UIViewController,UITableViewDelegate,UITableView
         prograssView.progress = 0.5
         nextBtnOut.layer.cornerRadius = 3
         nextBtnOut.clipsToBounds = true
-        
+        tableView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
