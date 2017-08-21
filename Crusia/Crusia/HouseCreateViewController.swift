@@ -49,9 +49,6 @@ class HouseCreateViewController: UIViewController,UITableViewDelegate,UITableVie
         print(HostingService.shared.amenities)
         
         
-        //        hostingWelcomeLb.text = (currentUser?.firstName.stringValue)! + "님 안녕하세요."
-        
-        // Do any additional setup after loading the view.
     }
     
     
