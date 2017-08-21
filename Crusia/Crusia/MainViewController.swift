@@ -55,7 +55,6 @@ class MainViewController: UIViewController {
         // Load recent posts
         loadWishList()
         loadRecentPosts()
-        
         // configure search controller
         configureSearchController()
         
@@ -197,14 +196,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if searchController.isActive {
-//            return searchResults.count
-//        } else {
-//            return postData.count
-//        }
-        
-        return postData.count
-
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return postData.count
+        }
+//        return postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -314,6 +311,8 @@ extension MainViewController: UISearchResultsUpdating {
             tableView.reloadData()
         }
     }
+    
+    
     
 }
 

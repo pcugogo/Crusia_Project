@@ -75,18 +75,24 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let title = "숙소등록"
             cell.configure(title: title)
+            cell.selectionStyle = .none
+            
         case 1:
             let title = "호스트 모드로 전환"
             cell.configure(title: title)
+            cell.selectionStyle = .none
         case 2:
             let title = "서비스 약관"
             cell.configure(title: title)
+            cell.selectionStyle = .none
         case 3:
             let title = "로그아웃"
             cell.configure(title: title)
+            cell.selectionStyle = .none
         default:
             let title = "숙소등록"
             cell.configure(title: title)
+            cell.selectionStyle = .none
         }
 
         return cell
