@@ -548,7 +548,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-Sx-2mt">
                                                     <rect key="frame" x="16" y="16" width="343" height="357.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flat" translatesAutoresizingMaskIntoConstraints="NO" id="SqN-P4-Ofy">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SqN-P4-Ofy">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="250" id="deZ-NR-dDh"/>
@@ -3869,7 +3869,7 @@
                                 <rect key="frame" x="0.0" y="169" width="375" height="449"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqV-m8-1Va" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                        <rect key="frame" x="172" y="109.5" width="30" height="30"/>
+                                        <rect key="frame" x="172" y="209.5" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LqV-m8-1Va" secondAttribute="height" multiplier="1:1" id="nfu-XK-CwA"/>
@@ -3879,7 +3879,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="LqV-m8-1Va" firstAttribute="centerY" secondItem="6lt-aw-keb" secondAttribute="centerY" constant="-100" id="O7o-gZ-0Cb"/>
+                                    <constraint firstItem="LqV-m8-1Va" firstAttribute="centerY" secondItem="6lt-aw-keb" secondAttribute="centerY" id="O7o-gZ-0Cb"/>
                                     <constraint firstItem="LqV-m8-1Va" firstAttribute="centerX" secondItem="6lt-aw-keb" secondAttribute="centerX" id="Wv1-Sm-FFs"/>
                                     <constraint firstAttribute="height" constant="449" id="dz3-L4-mH7"/>
                                 </constraints>
@@ -4491,10 +4491,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-sR-5xX" userLabel="Loading View">
-                                <rect key="frame" x="0.0" y="194" width="375" height="424"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="440"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsG-cw-cgR" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                        <rect key="frame" x="172" y="-63" width="30" height="30"/>
+                                        <rect key="frame" x="172" y="205" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PsG-cw-cgR" secondAttribute="height" multiplier="1:1" id="32L-AM-YUT"/>
@@ -4505,14 +4505,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="PsG-cw-cgR" firstAttribute="centerX" secondItem="hrG-sR-5xX" secondAttribute="centerX" id="KMy-Fb-ShE"/>
-                                    <constraint firstItem="PsG-cw-cgR" firstAttribute="centerY" secondItem="hrG-sR-5xX" secondAttribute="centerY" constant="-260" id="k6K-fQ-7iY"/>
+                                    <constraint firstItem="PsG-cw-cgR" firstAttribute="centerY" secondItem="hrG-sR-5xX" secondAttribute="centerY" id="k6K-fQ-7iY"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="4Uh-sf-TgK"/>
-                            <constraint firstItem="hrG-sR-5xX" firstAttribute="top" secondItem="O7U-2K-R0U" secondAttribute="bottom" constant="130" id="E2L-QU-o1z"/>
+                            <constraint firstItem="hrG-sR-5xX" firstAttribute="top" secondItem="O7U-2K-R0U" secondAttribute="bottom" constant="114" id="E2L-QU-o1z"/>
                             <constraint firstItem="hrG-sR-5xX" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="Gnb-rn-CrS"/>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="top" secondItem="aud-m8-POR" secondAttribute="top" constant="20" id="LbJ-KA-woD"/>
                             <constraint firstAttribute="trailing" secondItem="2qb-mC-mJu" secondAttribute="trailing" id="X39-lo-yR1"/>
@@ -4896,7 +4896,7 @@
         <image name="searchImg_1_Sharpness_1" width="19" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AuA-HA-qnc"/>
+        <segue reference="zNk-WB-9Lf"/>
         <segue reference="b8k-Ty-qFn"/>
     </inferredMetricsTieBreakers>
 </document>

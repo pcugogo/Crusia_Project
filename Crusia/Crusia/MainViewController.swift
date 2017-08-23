@@ -162,10 +162,6 @@ class MainViewController: UIViewController {
                 self.displayNewPosts(newPosts: newPosts)
             }
             print("하트 숫자.............................................................")
-
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
         }
     }
     
@@ -203,8 +199,6 @@ class MainViewController: UIViewController {
                 let destinationController = segue.destination as! DetailViewController
                 
                 destinationController.house = (searchController.isActive) ? searchResults[indexPath.row] : postData[indexPath.row]
-//                destinationController.house = postData[indexPath.row]
-                
             }
         }
     }
@@ -220,7 +214,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return postData.count
         }
-//        return postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -274,12 +267,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             for newPost in newPosts {
                 
                 self.postData.append(newPost)
-//                self.heartImages.append(#imageLiteral(resourceName: "heart2"))
-//                WishListService.shared.heartIndex.append(newPost.pk.numberValue as! Int)
-//                WishListService.shared.heartImages.append(#imageLiteral(resourceName: "heart2"))
-
-                print("하트 숫자.............................................................")
-//                print(self.heartImages.count)
                 
                 let indexPath = IndexPath(row: self.postData.count - 1, section: 0)
                 

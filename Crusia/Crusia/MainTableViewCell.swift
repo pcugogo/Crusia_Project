@@ -59,7 +59,7 @@ class MainTableViewCell: UITableViewCell {
             priceLabel.text = "￦" + formattedNumber!
         }
         
-        mainImageView.image = #imageLiteral(resourceName: "Flat")
+        mainImageView.image = #imageLiteral(resourceName: "HSDefaultImage")
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
