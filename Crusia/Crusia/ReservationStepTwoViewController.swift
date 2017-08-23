@@ -86,6 +86,10 @@ class ReservationStepTwoViewController: UIViewController {
         //        self.automaticallyAdjustsScrollViewInsets = false
     }
     
+    @IBAction func backBtnTouched(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
 
 }

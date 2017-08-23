@@ -88,6 +88,10 @@ class SignUpPasswordViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
+                DispatchQueue.main.async {
+                    self.logInAfterSignUp(email: email!)
+                }
+                
             case .failure(let error):
                 print(error)
                 
@@ -99,9 +103,11 @@ class SignUpPasswordViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-        
+    }
+    
+    func logInAfterSignUp(email: String) {
         // 사인업 후 자동 로그인
-        let loginParameters: Parameters = ["email": email!, "password": passwordTextField.text!]
+        let loginParameters: Parameters = ["email": email, "password": passwordTextField.text!]
         
         print("로그인")
         
@@ -127,22 +133,23 @@ class SignUpPasswordViewController: UIViewController {
                     print("JSON: \(json)")
                 }
                 
+                // Dismiss keyboard
+                self.view.endEditing(true)
+                
+                DispatchQueue.main.async {
+                    // Present the main view
+                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
+                        UIApplication.shared.keyWindow?.rootViewController = viewController
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+                
             case .failure(let error):
                 print(error)
                 
             }
         }
-        
-        
-        // Dismiss keyboard
-        self.view.endEditing(true)
-        
-        // Present the main view
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
-            UIApplication.shared.keyWindow?.rootViewController = viewController
-            self.dismiss(animated: true, completion: nil)
-        }
-        
+
     }
     
     func configure(userData: User) {

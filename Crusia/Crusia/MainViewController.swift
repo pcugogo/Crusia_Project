@@ -45,12 +45,7 @@ class MainViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(loadRecentPosts), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
         
-        // Configure Dynamic cell height
-        tableView.estimatedRowHeight = 390.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.showsVerticalScrollIndicator = true
-        tableView.separatorColor = .clear
+        configureTableViewSetting()
 
         // Load recent posts
         loadWishList()
@@ -83,6 +78,7 @@ class MainViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
         navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationController?.hidesBarsOnSwipe = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
@@ -100,6 +96,14 @@ class MainViewController: UIViewController {
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.barTintColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
 
+    }
+    
+    func configureTableViewSetting() {
+        // Configure Dynamic cell height
+        tableView.estimatedRowHeight = 390.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = true
+        tableView.separatorColor = .clear
     }
     
     // 필터링 데이터
@@ -311,9 +315,6 @@ extension MainViewController: UISearchResultsUpdating {
             tableView.reloadData()
         }
     }
-    
-    
-    
 }
 
 

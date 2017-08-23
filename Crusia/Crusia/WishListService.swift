@@ -24,8 +24,6 @@ class WishListService {
     // 위시 리스트에 하우스 추가
     func add(house: House) {
         
-//        var houseInfo = house
-        
         self.houses.append(house)
     }
     
@@ -57,7 +55,6 @@ class WishListService {
     
     func addAndDeleteHouseToWishList(housePk: Int) {
         
-//        let housePk = house.pk.numberValue
         let token: String = UserDefaults.standard.object(forKey: "token") as! String
         let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
         
@@ -78,29 +75,6 @@ class WishListService {
             }
         }
     }
-    
-//    func addAndDeleteHouseToWishList(housePk: Int, completionHandler: @escaping (Void) -> Void) {
-//        
-//        //        let housePk = house.pk.numberValue
-//        let token: String = UserDefaults.standard.object(forKey: "token") as! String
-//        let httpHeader: HTTPHeaders = ["Authorization": "Token " + token]
-//        
-//        Alamofire.request("http://crusia.xyz/apis/like/?house=\(housePk)", method: .post, headers: httpHeader).validate().responseJSON { (response) in
-//            
-//            switch response.result {
-//                
-//            case .success(let value):
-//                
-//                print("Validation Successful")
-//                
-//                let json = JSON(value)
-//                print("메세지: \(json)")
-//                
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
     
     func requestWishList(completionHandler: @escaping ([House]) -> Void) {
         
@@ -192,12 +166,6 @@ class WishListService {
         }
     }
 
-    
-    
-    func deleteHeart() {
-        
-        //
-    }
     
 }
 

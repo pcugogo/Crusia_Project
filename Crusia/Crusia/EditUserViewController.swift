@@ -92,9 +92,9 @@ class EditUserViewController: UIViewController {
         
         // Configure Fusuma
         fusumaViewController.hasVideo = false
-        fusumaBackgroundColor = UIColor.black
-        fusumaTintColor = UIColor(red: 46.0/255.0, green: 204.0/255.0, blue: 113.0/255.0, alpha: 1.0)
-        fusumaViewController.view.backgroundColor = UIColor.black
+        fusumaBackgroundColor = UIColor.white
+        fusumaTintColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+        fusumaViewController.view.backgroundColor = UIColor.white
         fusumaViewController.delegate = self
         
         // Bring it up

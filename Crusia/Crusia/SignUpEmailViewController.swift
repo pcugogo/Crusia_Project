@@ -62,6 +62,7 @@ class SignUpEmailViewController: UIViewController {
         let email: JSON = JSON(stringLiteral: emailTextfield.text!)
         
         signUpdata.email = email
+
     }
     
     
@@ -83,9 +84,10 @@ class SignUpEmailViewController: UIViewController {
         
 //        isLoading = true
         
-        emailCehck()
+//        emailCehck()
         
-        return proceed
+//        return proceed
+        return true
     }
     
     func emailCehck() {

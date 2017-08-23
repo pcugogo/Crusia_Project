@@ -96,6 +96,10 @@ class ReservationStepOneViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func backBtnTouched(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }
 

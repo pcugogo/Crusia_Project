@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
     
     var house: House!
     var isHouseInfoCellExtended: Bool = false
+    var indexPathRow = 0
     
     // 스테이더스 바 숨기기
     override var prefersStatusBarHidden: Bool {
@@ -50,7 +51,7 @@ class DetailViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         configureNavigationController()
-        
+        configureGesture()
         self.tabBarController?.tabBar.isHidden = true
         
         // ReservationService에 현재 예약정보 저장
@@ -118,12 +119,27 @@ class DetailViewController: UIViewController {
             let destinationcontroller = segue.destination as! MapViewController
             destinationcontroller.house = house
             
-
-            
         } else if segue.identifier == "reservationView" {
-            let destinationController = segue.destination as! HSReservationViewController
             
+            let destinationController = segue.destination as! HSReservationViewController
             destinationController.currentHousePk = house.pk.numberValue as! Int
+            
+        } else if segue.identifier == "showCarousel"{
+            
+            
+            let destinationController = segue.destination as! CarouselViewController
+
+//            destinationController.house = self.house
+
+            let indexPath = collectionView.indexPathsForVisibleItems[0]
+            print("인덱스 페스")
+            print(indexPath)
+            
+            destinationController.configureInitialInfo(house: house, indexPath: indexPath)
+//            destinationController.configureInitialInfo(house: house, indexPath: indexPathRow)
+            //            destinationController.count.text = String(describing: indexPath?.row)
+            
+
         } else {
             
         }
@@ -150,7 +166,6 @@ class DetailViewController: UIViewController {
             reserveButton.setTitle("예약하기", for: .normal)
         }
     }
-    
 
 }
 
@@ -379,9 +394,35 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
-//extension DetailViewController: UINavigationControllerDelegate {
-//
-//    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-//        viewController.edgesForExtendedLayout = []
-//    }
-//}
+extension DetailViewController: UIGestureRecognizerDelegate {
+    func configureGesture() {
+        collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailViewController.handleTap(sender:))))
+    }
+    
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        if let indexPath = self.collectionView?.indexPathForItem(at: (sender?.location(in: self.collectionView))!) {
+            
+            self.indexPathRow = indexPath.row
+//            let cell = self.collectionView?.cellForItem(at: indexPath)
+            print("you can do something with the cell or index path here")
+            print(indexPath.row)
+            
+            performSegue(withIdentifier: "showCarousel", sender: nil)
+        } else {
+            print("collection view was tapped")
+        }    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
