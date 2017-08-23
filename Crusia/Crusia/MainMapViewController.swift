@@ -117,18 +117,6 @@ class MainMapViewController: UIViewController {
         }
     }
     
-    // 마커 표시 (구글맵)
-//    func displayMarkerfor(house: House) {
-//        let marker = GMSMarker()
-//        let lat = house.latitude.numberValue as! Double
-//        let long = house.longitude.numberValue as! Double
-//        marker.position = CLLocationCoordinate2DMake(lat,long)
-//        marker.title = house.pricePerDay.stringValue
-//        marker.snippet = house.title.stringValue
-//        self.displayMarker = marker
-//        displayMarker.map = self.viewForMap
-////        marker.map = self.viewForMap
-//    }
     
     // 마커표시 (mapkit)
     func configureLocationOf(house: House) {
@@ -146,11 +134,13 @@ class MainMapViewController: UIViewController {
                 let formattedNumber = numberFormatter.string(from: NSNumber(value:price))
                 
                 pin.title = "￦" + formattedNumber!
+                pin.subtitle = house.title.stringValue
             }
             
             pin.coordinate = location.coordinate
             
             self.mapPin.append(pin)
+            mapView.delegate = self
             mapView.addAnnotation(pin)
             mapView.showAnnotations([pin], animated: true)
         }
@@ -228,7 +218,6 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
             // 기존 어레이에 새로운 포스트를 추가한다
             var indexPaths: [IndexPath] = []
             
-            
             for newPost in newPosts {
                 
                 self.postData.append(newPost)
@@ -242,7 +231,6 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
                 // 마커 표시
                 self.configureLocationOf(house: newPost)
             }
-            
             
             collectionView.reloadData()
 
@@ -298,13 +286,9 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
                 let tempIndex = WishListService.shared.heartIndex.filter { $0 != sender.tag}
                 WishListService.shared.heartIndex = tempIndex
             }
-//            for i in 0...WishListService.shared.heartIndex.count - 1 {
-//                if WishListService.shared.heartIndex[i] == sender.tag {
-//                    WishListService.shared.heartIndex.remove(at: i)
-//                }
-//            }
+
             sender.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-            //            // 서버 데이터 통신 - 추가
+            
             WishListService.shared.addAndDeleteHouseToWishList(housePk: sender.tag)
         }
         
@@ -320,5 +304,17 @@ extension MainMapViewController: UICollectionViewDataSource, UICollectionViewDel
 //        }
     }
     
+}
+
+extension MainMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        for i in 0...postData.count - 1 {
+            if postData[i].title.stringValue == (view.annotation?.subtitle)! {
+                self.collectionView.scrollToItem(at: IndexPath(row: i, section: 0), at: .left, animated: true)
+            }
+        }
+
+    }
 }
 

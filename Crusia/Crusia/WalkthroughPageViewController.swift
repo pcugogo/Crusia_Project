@@ -11,7 +11,7 @@ import UIKit
 class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     var pageHeadings = ["Search", "Reserve", "Host"]
-    var pageImages = ["walkthrough1", "walkthrough2", "walkthrough3"]
+    var pageImages = ["walk1", "walk2", "walk3"]
     var pageContent = ["숙박하길 원하는 하우스를 찾아서 위시리스트에 저장할 수 있습니다.",
                        "하우스 정보를 살펴보고 원하는 날짜에 예약할 수 있습니다.",
                        "집에 대한 여러가지 정보를 입력한 후 집을 빌려줄 수 있습니다."]

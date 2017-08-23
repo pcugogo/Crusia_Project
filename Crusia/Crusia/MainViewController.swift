@@ -245,7 +245,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         // 무한 로딩
         // 마지막 포스트 두개에 도달했을 때 더 오래된 포스트 로딩
-        guard !isLoadingPost, postData.count - indexPath.row == 2 else {
+        guard !isLoadingPost, postData.count - indexPath.row == 4 else {
             return
         }
         
@@ -257,7 +257,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         
-        PostService.shared.getOldPosts(start: lastPostTimestamp, limit: 3) { (newPosts) in
+        PostService.shared.getOldPosts(start: lastPostTimestamp, limit: 8) { (newPosts) in
             
             // 기존 어레이에 새로운 포스트를 추가한다
             var indexPaths: [IndexPath] = []
