@@ -35,14 +35,14 @@ class MainMapViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
 
         
-        // Apply blurring effect
+        // 블러 이펙트
         backgroundImageView.image = UIImage(named: "cloud")
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
-        // Make the colleciton view transparent
+        // 콜렉션뷰 투명하게 만들기
         collectionView.backgroundColor = UIColor.clear
         
         loadRecentPosts()

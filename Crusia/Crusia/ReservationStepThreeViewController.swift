@@ -162,5 +162,9 @@ class ReservationStepThreeViewController: UIViewController, UITextViewDelegate, 
         print("메시지 변경 ...........")
         print(ReservationService.shared.message ?? "")
     }
+    
+    @IBAction func backBtnTouched(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 

@@ -63,6 +63,8 @@
 		3715D03F1F324405002AD5CB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D03E1F324405002AD5CB /* MainViewController.swift */; };
 		3715D2321F3F048800643AED /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2311F3F048800643AED /* EditUserViewController.swift */; };
 		3715D2341F3F04A700643AED /* EditUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715D2331F3F04A700643AED /* EditUserInfoCell.swift */; };
+		371A9DD81F4C741B00F7E3ED /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A9DD71F4C741B00F7E3ED /* CarouselViewController.swift */; };
+		371A9DDA1F4C74CD00F7E3ED /* CarouselViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A9DD91F4C74CD00F7E3ED /* CarouselViewCell.swift */; };
 		371B34DD1F46012300F59C08 /* UIViewBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */; };
 		371B34DF1F46230C00F59C08 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B34DE1F46230C00F59C08 /* ReservationService.swift */; };
 		371C14511F497DB800F2D865 /* ReservationStepFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C14501F497DB800F2D865 /* ReservationStepFourViewController.swift */; };
@@ -113,6 +115,8 @@
 		37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EAE1F3996CA00CFA8DA /* SignUpNameViewController.swift */; };
 		37E85EB11F399FA500CFA8DA /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EB01F399FA500CFA8DA /* SignUpEmailViewController.swift */; };
 		37E85EB31F399FB300CFA8DA /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */; };
+		37F09E0F1F4CC123003EF400 /* AccessaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F09E0E1F4CC123003EF400 /* AccessaryViewController.swift */; };
+		37F09E111F4CCB8E003EF400 /* AccessaryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F09E101F4CCB8E003EF400 /* AccessaryViewCell.swift */; };
 		6156C1428082B3B7DBFB9A25 /* Pods_Crusia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FC64872741FA86EFBD6564 /* Pods_Crusia.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +179,8 @@
 		3715D03E1F324405002AD5CB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3715D2311F3F048800643AED /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		3715D2331F3F04A700643AED /* EditUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfoCell.swift; sourceTree = "<group>"; };
+		371A9DD71F4C741B00F7E3ED /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		371A9DD91F4C74CD00F7E3ED /* CarouselViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewCell.swift; sourceTree = "<group>"; };
 		371B34DC1F46012300F59C08 /* UIViewBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewBounceAnimation.swift; sourceTree = "<group>"; };
 		371B34DE1F46230C00F59C08 /* ReservationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
 		371C14501F497DB800F2D865 /* ReservationStepFourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStepFourViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 		37E85EAE1F3996CA00CFA8DA /* SignUpNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		37E85EB01F399FA500CFA8DA /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
 		37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		37F09E0E1F4CC123003EF400 /* AccessaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessaryViewController.swift; sourceTree = "<group>"; };
+		37F09E101F4CCB8E003EF400 /* AccessaryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessaryViewCell.swift; sourceTree = "<group>"; };
 		44A413DCC5958E830E43ACF0 /* Pods-Crusia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crusia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crusia/Pods-Crusia.release.xcconfig"; sourceTree = "<group>"; };
 		55FC64872741FA86EFBD6564 /* Pods_Crusia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crusia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8328C660F260FA235898D93E /* Pods-Crusia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crusia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crusia/Pods-Crusia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -497,6 +505,15 @@
 			name = EdituserInfo;
 			sourceTree = "<group>";
 		};
+		371A9DD61F4C73DF00F7E3ED /* CarouselImageView */ = {
+			isa = PBXGroup;
+			children = (
+				371A9DD71F4C741B00F7E3ED /* CarouselViewController.swift */,
+				371A9DD91F4C74CD00F7E3ED /* CarouselViewCell.swift */,
+			);
+			name = CarouselImageView;
+			sourceTree = "<group>";
+		};
 		371C144F1F497D9000F2D865 /* Step4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +607,8 @@
 				3728183A1F3388B0003719D2 /* FirstCustomCell.swift */,
 				3728183C1F3388C3003719D2 /* SecondCustomCell.swift */,
 				3728183E1F3388D2003719D2 /* ThirdCustomCell.swift */,
+				37F09E0D1F4CC0F1003EF400 /* AccessaryView */,
+				371A9DD61F4C73DF00F7E3ED /* CarouselImageView */,
 				37262D011F48318800AAF70E /* ReservationStepsViews */,
 				37CD3C4B1F3DC2B1008B695A /* HSReservationView */,
 				373255F31F372C3600006C25 /* RefundPolicyView */,
@@ -678,6 +697,15 @@
 				37E85EB21F399FB300CFA8DA /* SignUpPasswordViewController.swift */,
 			);
 			name = SignUpView;
+			sourceTree = "<group>";
+		};
+		37F09E0D1F4CC0F1003EF400 /* AccessaryView */ = {
+			isa = PBXGroup;
+			children = (
+				37F09E0E1F4CC123003EF400 /* AccessaryViewController.swift */,
+				37F09E101F4CCB8E003EF400 /* AccessaryViewCell.swift */,
+			);
+			name = AccessaryView;
 			sourceTree = "<group>";
 		};
 		40D5269099310E7F09106F33 /* Frameworks */ = {
@@ -834,6 +862,7 @@
 			files = (
 				37262D031F48639F00AAF70E /* ReservationStepOneViewController.swift in Sources */,
 				37116C6E1F34839B00E31625 /* AmenitiesCustomCell.swift in Sources */,
+				37F09E0F1F4CC123003EF400 /* AccessaryViewController.swift in Sources */,
 				373039791F405A6800C41071 /* EditIntroduceCell.swift in Sources */,
 				371C145E1F49C1FA00F2D865 /* TextTransition.swift in Sources */,
 				37E85EAF1F3996CA00CFA8DA /* SignUpNameViewController.swift in Sources */,
@@ -876,6 +905,7 @@
 				37262D001F482FC700AAF70E /* AvailableDatesTableViewCell.swift in Sources */,
 				371C14601F49C9EC00F2D865 /* TextChange.swift in Sources */,
 				3715D03C1F323FB4002AD5CB /* PostService.swift in Sources */,
+				371A9DDA1F4C74CD00F7E3ED /* CarouselViewCell.swift in Sources */,
 				147C44D81F4998E800179F11 /* HouseCreateUpload.swift in Sources */,
 				37B06B211F376A3C005E41CF /* HouseImagesCollectionViewCell.swift in Sources */,
 				1448BC781F3C585A006A1AEB /* AddPhotoViewController.swift in Sources */,
@@ -922,12 +952,14 @@
 				37262D121F48989900AAF70E /* ReservationStepThreeViewController.swift in Sources */,
 				37109C051F3A1AAF00CFCC55 /* WishList.swift in Sources */,
 				371C14531F49824F00F2D865 /* RSFourAvailableCell.swift in Sources */,
+				371A9DD81F4C741B00F7E3ED /* CarouselViewController.swift in Sources */,
 				1448BC751F3C585A006A1AEB /* MapLocationViewController.swift in Sources */,
 				1448BC741F3C585A006A1AEB /* HostingService.swift in Sources */,
 				1448BC691F3C585A006A1AEB /* AmenitiesDetailCell.swift in Sources */,
 				374B8AD61F3EE00900E9E010 /* ProfileViewCell.swift in Sources */,
 				1448BC6A1F3C585A006A1AEB /* GuestSpaceViewController.swift in Sources */,
 				3730397C1F405C1500C41071 /* EditIntroduceViewController.swift in Sources */,
+				37F09E111F4CCB8E003EF400 /* AccessaryViewCell.swift in Sources */,
 				37E85EB31F399FB300CFA8DA /* SignUpPasswordViewController.swift in Sources */,
 				374B8AD21F3EDAC400E9E010 /* ProfileViewController.swift in Sources */,
 				371099901F39896E003D87D5 /* WelcomeNavigationController.swift in Sources */,

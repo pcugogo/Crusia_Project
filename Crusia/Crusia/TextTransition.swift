@@ -147,7 +147,7 @@ extension OriginalText {
         case .individual:
             return "개인실"
         case .sharedRoom:
-            return "공용실"
+            return "다인실"
         }
     }
 }
