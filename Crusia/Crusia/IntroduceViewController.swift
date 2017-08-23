@@ -27,6 +27,31 @@ class IntroduceViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let toolBar = UIToolbar(frame:CGRect(x: 0,y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 50.0))
+        
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        
+        toolBar.tintColor = UIColor.black
+        
+        toolBar.backgroundColor = UIColor.white
+        
+        
+        
+        let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(IntroduceViewController.donePressed))
+        
+        let flexsibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) // flexible space to add left end side
+        
+        toolBar.setItems([flexsibleSpace,doneButton], animated: true)
+        
+        
+        textView.inputAccessoryView = toolBar
+        
+        
+        
+        
+        
+        
+        
         if HostingService.shared.secondStepComplete == true{
             textView.text = HostingService.shared.introduce
         }
@@ -61,6 +86,20 @@ class IntroduceViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    func donePressed(sender: UIBarButtonItem) {
+        HostingService.shared.introduce = textView.text
+        print("======================",HostingService.shared.introduce)
+      
+        textView.resignFirstResponder()
+        
+    }
+
+    
+    
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "IntroduceViewSegue" {
