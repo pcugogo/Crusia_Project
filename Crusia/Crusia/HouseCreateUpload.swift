@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class HouseCreateUpload {
     static var standard = HouseCreateUpload()
-    let parameters: Parameters = HostingService.shared.houseParameters()
+    var parameters: Parameters = HostingService.shared.houseParameters()
     
     func houseCreateUpload() {
     
@@ -79,6 +79,10 @@ class HouseCreateUpload {
                         upload.responseJSON { response in
                             print("the resopnse code is : \(String(describing: response.response?.statusCode))")
                             print("the response is : \(response)")
+                            
+//                            DispatchQueue.main.async {
+//                                HostingService.shared.resetData()
+//                            }
                         }
                         break
                     case .failure(let encodingError):

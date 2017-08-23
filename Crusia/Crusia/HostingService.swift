@@ -57,7 +57,7 @@ class HostingService {
     
     var amenitiesCheck:[String] = []
     
-    func amenitiesUpdate(){
+    func amenitiesUpdate(){ //뷰에서 보여주기용
        
         for i in amenitiesNameArr{
             if amenitiesDic[i] == true{
@@ -66,7 +66,7 @@ class HostingService {
         }
     }
     
-    func amenitiesComplete(){
+    func amenitiesComplete(){ //실제 업로드 되는 데이터
         
         for i in amenitiesNameArr{
             if amenitiesDic[i] == true{
@@ -74,48 +74,7 @@ class HostingService {
             }
         }
     }
-    
-    
-    
-    func resetData(){
-         title = ""
-         address = ""
-         introduce = ""
-         spaceInfo = ""
-         guestAccess = ""
-         pricePerDay = 25000
-         extraPeopleFee = 0
-         cleaningFee = 0
-         weeklyDiscount = 10
-         accommodates = 1
-         bathrooms = 1
-         bedrooms = 1
-         beds = 1
-         roomType = "" 
-         amenities = []
-         latitude = 0.0
-         longitude = 0.0
-        
-         switchCheckNumber = 0
-         firstStepComplete = false
-         secondStepComplete = false
-         thirdStepComplete = false
-        
-         amenityString = ""
-        
-        
-         whereViewCountry = "대한민국"
-         whereViewFirstLineAddress = ""
-         whereViewSecondLineAddress = ""
-         whereViewThirdLineAddress = ""
-         whereViewPostalNumber = ""
-         personnelSaveAndBack = false
-         bathRoomSaveAndBack = false
-    }
-    
-    
-    
-    
+ 
     
     
     //서버 통신
@@ -213,6 +172,47 @@ class HostingService {
     
     
     
+    
+    
+    func resetData(){
+        title = ""
+        address = ""
+        introduce = ""
+        spaceInfo = ""
+        guestAccess = ""
+        pricePerDay = 25000
+        extraPeopleFee = 0
+        cleaningFee = 0
+        weeklyDiscount = 10
+        accommodates = 1
+        bathrooms = 1
+        bedrooms = 1
+        beds = 1
+        roomType = ""
+        amenities = []
+        houseImages = []
+        amenitiesCheck = []
+        latitude = 0.0
+        longitude = 0.0
+        
+        switchCheckNumber = 0
+        firstStepComplete = false
+        secondStepComplete = false
+        thirdStepComplete = false
+        
+        amenityString = ""
+        
+        
+        whereViewCountry = "대한민국"
+        whereViewFirstLineAddress = ""
+        whereViewSecondLineAddress = ""
+        whereViewThirdLineAddress = ""
+        whereViewPostalNumber = ""
+        personnelSaveAndBack = false
+        bathRoomSaveAndBack = false
+        
+        HouseCreateUpload.standard.parameters = houseParameters()
+    }
     
     
     
