@@ -26,6 +26,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - SwiftyJSON (3.1.4)
+  - Toaster (2.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Kingfisher (~> 3.0)
   - NVActivityIndicatorView
   - SwiftyJSON (~> 3.1)
+  - Toaster (~> 2.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -53,7 +55,8 @@ SPEC CHECKSUMS:
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
 
-PODFILE CHECKSUM: 05310724f0e6e04ac956c87168933860f58d6963
+PODFILE CHECKSUM: 7290fb270059a214a2bdbb5f509be74c709462e8
 
 COCOAPODS: 1.2.1

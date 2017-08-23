@@ -98,9 +98,19 @@ class ReservationStepFourViewController: UIViewController {
         let alertController = UIAlertController(title: nil, message: "예약이 완료되었습니다.", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "확인", style: .cancel) {(alertAction) in
             for controller in self.navigationController!.viewControllers as Array {
+                
+                // 메인에서 접근했을 경우
                 if controller.isKind(of: MainViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
                     break
+                    
+                    // 위시리스트에서 접근했을 경우
+                } else if controller.isKind(of: WishListViewController.self) {
+                    self.navigationController!.popToViewController(controller, animated: true)
+                    
+                    // 맵뷰에서 접근했을 경우
+                } else {
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }

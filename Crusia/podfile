@@ -17,4 +17,5 @@ target 'Crusia' do
   pod 'FBSDKCoreKit', '~> 4.25'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Toaster', '~> 2.0'
 end

@@ -25,6 +25,13 @@ class CarouselViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
+    var number: Int = 0
+    
+    // 스테이더스 바 숨기기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     var centerCellIndexPath: IndexPath? {
         
         if let centerIndexPath = collectionView.indexPathForItem(at: self.centerPoint) {
@@ -111,7 +118,6 @@ class CarouselViewController: UIViewController, UICollectionViewDataSource, UICo
         
         countLabel.text = String(indexPath.row + 1)
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAccessary"{

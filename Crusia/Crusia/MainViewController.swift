@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
+import Toaster
 
 class MainViewController: UIViewController {
     
@@ -53,6 +54,8 @@ class MainViewController: UIViewController {
         // configure search controller
         configureSearchController()
         
+        configureToaster()
+        
         // 키보드 노티
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNoti"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNotiFromMapView"), object: nil)
@@ -72,6 +75,18 @@ class MainViewController: UIViewController {
     
     func loadWishList() {
         WishListService.shared.loadWishList()
+    }
+    
+    func configureToaster() {
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.async {
+                ToastView.appearance().backgroundColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+                ToastView.appearance().bottomOffsetPortrait = 300
+                let userName = CurrentUserInfoService.shared.currentUser?.firstName.stringValue
+                Toast(text: userName! + "님 환영합니다.", duration: Delay.long).show()
+            }
+        }
     }
     
     func configureNavigationController() {
@@ -147,10 +162,6 @@ class MainViewController: UIViewController {
                 self.displayNewPosts(newPosts: newPosts)
             }
             print("하트 숫자.............................................................")
-
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
         }
     }
     
@@ -188,8 +199,6 @@ class MainViewController: UIViewController {
                 let destinationController = segue.destination as! DetailViewController
                 
                 destinationController.house = (searchController.isActive) ? searchResults[indexPath.row] : postData[indexPath.row]
-//                destinationController.house = postData[indexPath.row]
-                
             }
         }
     }
@@ -205,7 +214,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return postData.count
         }
-//        return postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -259,12 +267,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             for newPost in newPosts {
                 
                 self.postData.append(newPost)
-//                self.heartImages.append(#imageLiteral(resourceName: "heart2"))
-//                WishListService.shared.heartIndex.append(newPost.pk.numberValue as! Int)
-//                WishListService.shared.heartImages.append(#imageLiteral(resourceName: "heart2"))
-
-                print("하트 숫자.............................................................")
-//                print(self.heartImages.count)
                 
                 let indexPath = IndexPath(row: self.postData.count - 1, section: 0)
                 

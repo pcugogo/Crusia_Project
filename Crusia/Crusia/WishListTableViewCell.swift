@@ -29,8 +29,6 @@ class WishListTableViewCell: UITableViewCell {
     }
     
     @IBAction func heartTouched(_ sender: UIButton) {
-        
-        
     }
     
     func configure(post: House) {
@@ -44,7 +42,7 @@ class WishListTableViewCell: UITableViewCell {
         // 타이틀, 하우스타입, 가격 가져오기
         
         titleLabel.text = post.title.string
-        typeLabel.text = post.roomType.string
+        typeLabel.text = TextChange.shared.enter(text: post.roomType.stringValue)
         
         // 가격에 , 찍기
         if let price = post.pricePerDay.int {
@@ -58,15 +56,11 @@ class WishListTableViewCell: UITableViewCell {
         
         heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
         
-        mainImageView.image = #imageLiteral(resourceName: "Flat")
+        mainImageView.image = #imageLiteral(resourceName: "HSDefaultImage")
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
-            print("image ......................")
-            print(url)
-            print("post ........................")
-            print(post)
-            self.mainImageView.kf.setImage(with: url)
+            self.mainImageView.kf.setImage(with: url, placeholder: nil, options: [.keepCurrentImageWhileLoading], progressBlock: nil, completionHandler: nil)
         }
         
     }

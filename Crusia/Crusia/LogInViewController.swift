@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Toaster
 
 class LogInViewController: UIViewController {
 
@@ -54,6 +55,7 @@ class LogInViewController: UIViewController {
         let parameters: Parameters = ["email": emailTextField.text!, "password": passwordTextField.text!]
         
         print("로그인")
+        
         
         Alamofire.request("http://crusia.xyz/apis/user/login/", method: .post, parameters: parameters).validate().responseJSON { response in
             

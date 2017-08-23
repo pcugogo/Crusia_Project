@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Toaster
 
 class SignUpPasswordViewController: UIViewController {
     
@@ -106,6 +107,7 @@ class SignUpPasswordViewController: UIViewController {
     }
     
     func logInAfterSignUp(email: String) {
+        
         // 사인업 후 자동 로그인
         let loginParameters: Parameters = ["email": email, "password": passwordTextField.text!]
         
@@ -123,15 +125,18 @@ class SignUpPasswordViewController: UIViewController {
                 print("JSON: \(json)")
                 
                 let currentUserToken = json["token"].stringValue
+                let currentUserPk = json["user_pk"].numberValue
                 
                 // UserDefaults 에 토큰 저장
                 UserDefaults.standard.set(currentUserToken, forKey: "token")
-                
-                print(UserDefaults.standard.object(forKey: "token") as! String)
+                UserDefaults.standard.set(currentUserPk, forKey: "userPk")
+                UserDefaults.standard.set(true, forKey: "Authentification")
                 
                 if let json = response.result.value {
                     print("JSON: \(json)")
                 }
+                
+                CurrentUserInfoService.shared.setCurrentUser()
                 
                 // Dismiss keyboard
                 self.view.endEditing(true)

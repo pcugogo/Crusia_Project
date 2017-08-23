@@ -22,9 +22,8 @@ class WishListViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableViewSetting()
+        configureNavigationbarSetting()
         loadPosts()
-        navigationController?.setNavigationBarHidden(true, animated: true)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +39,12 @@ class WishListViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func configureNavigationbarSetting() {
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func configureTableViewSetting() {

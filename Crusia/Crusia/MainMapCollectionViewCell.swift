@@ -55,15 +55,11 @@ class MainMapCollectionViewCell: UICollectionViewCell {
         }
         
         // 디폴트 이미지 설정
-        houseImage.image = #imageLiteral(resourceName: "Flat")
+        houseImage.image = #imageLiteral(resourceName: "HSDefaultImage")
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
-            print("image ......................")
-            print(url)
-            print("post ........................")
-            print(post)
-            //            self.mainImageView.kf.setImage(with: url)
+        
             self.houseImage.kf.setImage(with: url, placeholder: nil, options: [.keepCurrentImageWhileLoading], progressBlock: nil, completionHandler: nil)
         }
     }
