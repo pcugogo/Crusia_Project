@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Toaster
 
 class CurrentUserInfoService {
     
@@ -38,9 +39,10 @@ class CurrentUserInfoService {
                 let json = JSON(value)
                 print("GetCurrentUser: \(json)")
                 
-                self.currentUser = User.init(user: json)
-                
-                self.tempUser = self.currentUser
+                DispatchQueue.main.async {
+                    self.currentUser = User.init(user: json)
+                    self.tempUser = self.currentUser
+                }
                 
             case .failure(let error):
                 print(error)

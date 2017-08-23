@@ -60,45 +60,13 @@ class MainTableViewCell: UITableViewCell {
         }
         
         mainImageView.image = #imageLiteral(resourceName: "Flat")
-//        if isPostShown == false {
-//        
-//            // Reset image view's image
-//            mainImageView.image = nil
-//            
-//            isHeartTouched = false
-//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-//        }
         
         // 이미지 설정
         if let url = post.houseImages[0]["image"].url {
-            print("image ......................")
-            print(url)
-            print("post ........................")
-            print(post)
-//            self.mainImageView.kf.setImage(with: url)
+
             self.mainImageView.kf.setImage(with: url, placeholder: nil, options: [.keepCurrentImageWhileLoading], progressBlock: nil, completionHandler: nil)
         }
         
-//        isHeartTouched = nil
-//        
-//        isHeartTouched = post.addedTowishList
-        
-        // 버튼 컬러 바꾸기
-//        let origImage = UIImage(named: "heart2.png")
-//        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
-        
-        
-//        if isHeartTouched {
-//            heartButton.setImage(#imageLiteral(resourceName: "heart1"), for: .normal)
-//
-//        } else {
-//            heartButton.setImage(#imageLiteral(resourceName: "heart2"), for: .normal)
-//            heartButton.tintColor = .white
-//
-//        }
-//        print("Configure post ................................................")
-//        print(currentPost)
-
         // 포스트가 보여졌다고 표시
         isPostShown = true
     }

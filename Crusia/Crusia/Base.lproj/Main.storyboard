@@ -727,7 +727,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="biS-V2-v6p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="AcE-Tg-pOs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
@@ -1392,7 +1392,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-bX-DfL" userLabel="Make a Reservation View">
-                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="538" width="375" height="80"/>
                                 <subviews>
                                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-UQ-woH" userLabel="Line View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
@@ -2116,7 +2116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="191" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-am-Ymr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="569"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailedUserInfoCell" rowHeight="191" id="jzc-5S-Zr7" customClass="DetailedUserInfoCell" customModule="Crusia" customModuleProvider="target">
@@ -3696,7 +3696,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-Yy-xZ0">
-                                            <rect key="frame" x="16" y="52" width="343" height="60"/>
+                                            <rect key="frame" x="16" y="32" width="343" height="60"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bll-DC-HjL">
                                                     <rect key="frame" x="0.0" y="0.0" width="283" height="60"/>
@@ -3740,7 +3740,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="wm4-Cl-qyK" secondAttribute="bottom" id="Dlr-TW-iBM"/>
-                                        <constraint firstItem="6Dv-Yy-xZ0" firstAttribute="centerY" secondItem="mfi-qV-Sqr" secondAttribute="centerY" id="G3w-hl-qr1"/>
+                                        <constraint firstItem="6Dv-Yy-xZ0" firstAttribute="top" secondItem="mfi-qV-Sqr" secondAttribute="top" constant="32" id="DrJ-I0-7p2"/>
                                         <constraint firstItem="wm4-Cl-qyK" firstAttribute="top" secondItem="mfi-qV-Sqr" secondAttribute="top" id="ONU-dg-exc"/>
                                         <constraint firstItem="wm4-Cl-qyK" firstAttribute="leading" secondItem="mfi-qV-Sqr" secondAttribute="leading" id="QcG-Fy-K2I"/>
                                         <constraint firstAttribute="trailing" secondItem="wm4-Cl-qyK" secondAttribute="trailing" id="aqX-tc-nUQ"/>
@@ -3795,8 +3795,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="whs-N1-Wkn" firstAttribute="centerX" secondItem="3x6-Sa-98K" secondAttribute="centerX" id="9cW-yU-OBd"/>
-                            <constraint firstItem="whs-N1-Wkn" firstAttribute="centerY" secondItem="3x6-Sa-98K" secondAttribute="centerY" constant="10" id="NXa-Xy-0US"/>
+                            <constraint firstItem="whs-N1-Wkn" firstAttribute="top" secondItem="0NA-gn-UDM" secondAttribute="bottom" id="0Oh-G0-jN3"/>
                             <constraint firstAttribute="bottom" secondItem="whs-N1-Wkn" secondAttribute="bottom" id="fbw-98-QDO"/>
                             <constraint firstAttribute="trailing" secondItem="whs-N1-Wkn" secondAttribute="trailing" id="ol0-YM-FyG"/>
                             <constraint firstItem="whs-N1-Wkn" firstAttribute="leading" secondItem="3x6-Sa-98K" secondAttribute="leading" id="qwU-K6-O7b"/>
@@ -4403,7 +4402,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장목록" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSS-An-i8q">
-                                            <rect key="frame" x="16" y="22" width="94" height="33"/>
+                                            <rect key="frame" x="16" y="32" width="94" height="33"/>
                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -4411,7 +4410,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="eSS-An-i8q" firstAttribute="top" secondItem="0Oj-Zu-anr" secondAttribute="top" constant="22" id="1bI-Jv-6W3"/>
+                                        <constraint firstItem="eSS-An-i8q" firstAttribute="top" secondItem="0Oj-Zu-anr" secondAttribute="top" constant="32" id="1bI-Jv-6W3"/>
                                         <constraint firstItem="eSS-An-i8q" firstAttribute="leading" secondItem="0Oj-Zu-anr" secondAttribute="leading" constant="16" id="Ac5-Jh-45t"/>
                                     </constraints>
                                 </view>
@@ -4492,10 +4491,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-sR-5xX" userLabel="Loading View">
-                                <rect key="frame" x="0.0" y="150" width="375" height="468"/>
+                                <rect key="frame" x="0.0" y="194" width="375" height="424"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsG-cw-cgR" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                        <rect key="frame" x="172" y="-41" width="30" height="30"/>
+                                        <rect key="frame" x="172" y="-63" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PsG-cw-cgR" secondAttribute="height" multiplier="1:1" id="32L-AM-YUT"/>
@@ -4513,18 +4512,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2qb-mC-mJu" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="4Uh-sf-TgK"/>
-                            <constraint firstItem="2qb-mC-mJu" firstAttribute="centerX" secondItem="aud-m8-POR" secondAttribute="centerX" id="DLw-es-3hF"/>
                             <constraint firstItem="hrG-sR-5xX" firstAttribute="top" secondItem="O7U-2K-R0U" secondAttribute="bottom" constant="130" id="E2L-QU-o1z"/>
                             <constraint firstItem="hrG-sR-5xX" firstAttribute="leading" secondItem="aud-m8-POR" secondAttribute="leading" id="Gnb-rn-CrS"/>
+                            <constraint firstItem="2qb-mC-mJu" firstAttribute="top" secondItem="aud-m8-POR" secondAttribute="top" constant="20" id="LbJ-KA-woD"/>
                             <constraint firstAttribute="trailing" secondItem="2qb-mC-mJu" secondAttribute="trailing" id="X39-lo-yR1"/>
                             <constraint firstAttribute="trailing" secondItem="hrG-sR-5xX" secondAttribute="trailing" id="Xvg-Rh-Quz"/>
                             <constraint firstItem="ohV-3E-si8" firstAttribute="top" secondItem="2qb-mC-mJu" secondAttribute="bottom" id="lmL-Fa-isA"/>
                             <constraint firstItem="ohV-3E-si8" firstAttribute="top" secondItem="hrG-sR-5xX" secondAttribute="bottom" id="maF-Kn-xIR"/>
-                            <constraint firstItem="2qb-mC-mJu" firstAttribute="centerY" secondItem="aud-m8-POR" secondAttribute="centerY" constant="-14.5" id="orB-vF-56F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mwr-Fb-bZO"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="PsG-cw-cgR" id="2Nc-18-30A"/>
                         <outlet property="loadingView" destination="hrG-sR-5xX" id="3rE-q5-e9L"/>
@@ -4548,7 +4545,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixm-fe-9BO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ixm-fe-9BO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4595,7 +4592,7 @@
             <objects>
                 <navigationController storyboardIdentifier="WelcomeView" automaticallyAdjustsScrollViewInsets="NO" id="1bq-WF-EHo" customClass="WelcomeNavigationController" customModule="Crusia" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YO9-eu-OOo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YO9-eu-OOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4847,7 +4844,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Igd-Fn-rzT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Igd-Fn-rzT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4865,7 +4862,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Voy-Ag-KIX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YkA-Em-K9j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YkA-Em-K9j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4899,7 +4896,7 @@
         <image name="searchImg_1_Sharpness_1" width="19" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tkl-lf-H1R"/>
+        <segue reference="AuA-HA-qnc"/>
         <segue reference="b8k-Ty-qFn"/>
     </inferredMetricsTieBreakers>
 </document>

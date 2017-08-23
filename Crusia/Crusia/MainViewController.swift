@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
+import Toaster
 
 class MainViewController: UIViewController {
     
@@ -53,6 +54,8 @@ class MainViewController: UIViewController {
         // configure search controller
         configureSearchController()
         
+        configureToaster()
+        
         // 키보드 노티
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNoti"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadTable), name: Notification.Name("WishChangedNotiFromMapView"), object: nil)
@@ -72,6 +75,18 @@ class MainViewController: UIViewController {
     
     func loadWishList() {
         WishListService.shared.loadWishList()
+    }
+    
+    func configureToaster() {
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.async {
+                ToastView.appearance().backgroundColor = UIColor(red: 111/255, green: 183/255, blue: 173/255, alpha: 1.0)
+                ToastView.appearance().bottomOffsetPortrait = 300
+                let userName = CurrentUserInfoService.shared.currentUser?.firstName.stringValue
+                Toast(text: userName! + "님 환영합니다.", duration: Delay.long).show()
+            }
+        }
     }
     
     func configureNavigationController() {
