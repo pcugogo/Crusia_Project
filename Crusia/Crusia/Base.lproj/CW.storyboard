@@ -57,15 +57,15 @@
                                     <constraint firstItem="Qdl-0d-5lA" firstAttribute="leading" secondItem="vur-OD-Obb" secondAttribute="leading" constant="5" id="nBr-4W-9xz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ijO-c9-dmn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ijO-c9-dmn">
                                 <rect key="frame" x="16" y="134.5" width="343" height="532.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HouseCreateCell" rowHeight="169" id="R84-Bb-fbB" customClass="HouseCreateCell" customModule="Crusia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="169"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HouseCreateCell" rowHeight="155" id="R84-Bb-fbB" customClass="HouseCreateCell" customModule="Crusia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R84-Bb-fbB" id="VWr-zO-RXW">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="168.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="154.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 사항을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIm-rN-GT9">
@@ -982,7 +982,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0G-SX-yMb">
                                 <rect key="frame" x="0.0" y="165" width="375" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="hW0-4o-tYE">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="0jm-W5-6rO">
                                     <rect key="frame" x="0.0" y="187" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1244,7 +1244,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4L-ur-z7b">
                                 <rect key="frame" x="0.0" y="165" width="375" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="t9a-aO-kLl">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="VbF-zp-sP1">
                                     <rect key="frame" x="0.0" y="154" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1432,7 +1432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4o-zi-TMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7205.6000000000004" y="1724.8875562218891"/>
+            <point key="canvasLocation" x="7206" y="1725"/>
         </scene>
         <!--Guest Required View Controller-->
         <scene sceneID="9Hc-dT-fg2">
@@ -1823,7 +1823,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Vk8-p7-Dif" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="imb-SD-AUJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="imb-SD-AUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1841,7 +1841,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SecondStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="anx-CL-vOa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="31p-Le-ZLx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="31p-Le-ZLx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1859,7 +1859,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ThirdStep" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3sF-yR-BGY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l5D-bJ-ytj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l5D-bJ-ytj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3433,7 +3433,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xO7-Lv-1G5"/>
-        <segue reference="TZm-nZ-tKp"/>
+        <segue reference="fzJ-Ee-CKD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.39971524479999998" green="0.71328240629999995" blue="0.74938315150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
