@@ -89,15 +89,36 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsK-ko-rtD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ky1-CH-c3N" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="162" y="217" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="j7P-pq-bOZ"/>
+                                            <constraint firstAttribute="width" secondItem="Ky1-CH-c3N" secondAttribute="height" multiplier="1:1" id="nPs-td-pOE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ky1-CH-c3N" firstAttribute="centerY" secondItem="jsK-ko-rtD" secondAttribute="centerY" constant="-91.5" id="1uw-AY-gtr"/>
+                                    <constraint firstItem="Ky1-CH-c3N" firstAttribute="centerX" secondItem="jsK-ko-rtD" secondAttribute="centerX" id="pf8-UG-Tev"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.33155611157417297" green="0.72621965408325195" blue="0.67847931385040283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="sVY-2y-aM4" firstAttribute="top" secondItem="VEd-8F-nqC" secondAttribute="bottom" constant="35" id="0YG-ra-O0z"/>
                             <constraint firstItem="4aT-6g-gYK" firstAttribute="top" secondItem="c8g-xL-l1W" secondAttribute="bottom" constant="16" id="1hU-JP-v7P"/>
+                            <constraint firstItem="jsK-ko-rtD" firstAttribute="leading" secondItem="XGU-Q6-QWg" secondAttribute="leading" id="35V-r1-RzA"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="trailing" secondItem="FlY-DP-tm4" secondAttribute="trailing" id="3en-7M-Y9k"/>
                             <constraint firstAttribute="trailing" secondItem="4aT-6g-gYK" secondAttribute="trailing" constant="16" id="77F-a1-AG9"/>
+                            <constraint firstAttribute="trailing" secondItem="jsK-ko-rtD" secondAttribute="trailing" id="Aml-Uo-dvf"/>
+                            <constraint firstItem="Agj-pi-sQj" firstAttribute="top" secondItem="jsK-ko-rtD" secondAttribute="bottom" id="E72-uk-POJ"/>
                             <constraint firstItem="VEd-8F-nqC" firstAttribute="width" secondItem="gy5-Zi-U7I" secondAttribute="width" id="GO7-NC-ZxO"/>
                             <constraint firstItem="VEd-8F-nqC" firstAttribute="centerX" secondItem="XGU-Q6-QWg" secondAttribute="centerX" id="Gzu-jb-nEa"/>
+                            <constraint firstItem="jsK-ko-rtD" firstAttribute="top" secondItem="XGU-Q6-QWg" secondAttribute="top" id="I0d-Vr-tC5"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="leading" secondItem="sVY-2y-aM4" secondAttribute="leading" id="Iqe-T3-DR3"/>
                             <constraint firstAttribute="trailing" secondItem="sVY-2y-aM4" secondAttribute="trailing" constant="16" id="N2z-0k-USy"/>
                             <constraint firstItem="ao3-V7-zS6" firstAttribute="top" secondItem="sVY-2y-aM4" secondAttribute="bottom" constant="35" id="NQM-VW-wDF"/>
@@ -111,11 +132,13 @@
                     <connections>
                         <outlet property="emailLogInBtn" destination="FlY-DP-tm4" id="Q26-wh-NJP"/>
                         <outlet property="facebookLogInBtn" destination="gy5-Zi-U7I" id="Vhq-0W-9qE"/>
+                        <outlet property="loadingIndicator" destination="Ky1-CH-c3N" id="f9Z-4O-vOA"/>
+                        <outlet property="loadingView" destination="jsK-ko-rtD" id="9uL-iq-YkW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJp-4h-e1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8122" y="661"/>
+            <point key="canvasLocation" x="-8122.3999999999996" y="660.71964017991013"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="jJh-Cl-r0R">

@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import MessageUI
 import Social
+import Toaster
 
 class AccessaryViewController: UIViewController {
 

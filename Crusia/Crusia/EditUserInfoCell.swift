@@ -32,10 +32,10 @@ class EditUserInfoCell: UITableViewCell {
         
         contentTextField.placeholder = title + "을 입력하세요."
         
-        var user: User = CurrentUserInfoService.shared.currentUser!
+        var user: User = CurrentUserInfoService.shared.tempUser!
         
         switch title {
-        case "유저네임":
+        case "유저ID":
             contentTextField.text = user.userName.stringValue
         case "이름":
             contentTextField.text = user.firstName.stringValue
