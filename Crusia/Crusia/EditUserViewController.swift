@@ -135,7 +135,7 @@ extension EditUserViewController: UITableViewDelegate, UITableViewDataSource {
             let reuseIdentifier = "EditUserInfoCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditUserInfoCell
             cell.selectionStyle = .none
-            let title = "유저네임"
+            let title = "유저ID"
             cell.configure(title: title)
             return cell
 

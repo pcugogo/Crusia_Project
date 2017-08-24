@@ -10,11 +10,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import FBSDKLoginKit
+import NVActivityIndicatorView
 
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var facebookLogInBtn: UIButton!
     @IBOutlet weak var emailLogInBtn: UIButton!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
+    
     var dict : [String : AnyObject]!
     var facebookToken: FBSDKAccessToken?
     
@@ -31,6 +35,9 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
+        self.loadingView.isHidden = true
+        loadingIndicator.type = .ballPulse
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,14 +68,16 @@ class WelcomeViewController: UIViewController {
         // 로그인시 버튼 작동 x
 //        facebookLogInBtn.isEnabled = false
 //        emailLogInBtn.isEnabled = false
-        
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if (error == nil){
+                
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 if fbloginresult.grantedPermissions != nil {
                     if(fbloginresult.grantedPermissions.contains("email"))
                     {
+                        print("페북 로그인 테스트 .....")
+                        self.startLoading()
                         self.getFBUserData()
 //                        fbLoginManager.logOut()
                         self.facebookLogin()
@@ -133,7 +142,8 @@ class WelcomeViewController: UIViewController {
                 
 
                 // Present the main view
-                
+                print("페북 로그인 완료 .........")
+                self.stopLoading()
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarView") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
                     self.dismiss(animated: true, completion: nil)
@@ -159,6 +169,16 @@ class WelcomeViewController: UIViewController {
 //        // 페이스북 로그인 액션 끝나면 버튼 활성화
 //        self.facebookLogInBtn.isEnabled = true
 //        self.emailLogInBtn.isEnabled = true
+    }
+    
+    func startLoading() {
+        self.loadingView.isHidden = false
+        self.loadingIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        self.loadingView.isHidden = true
+        self.loadingIndicator.stopAnimating()
     }
 }
 
