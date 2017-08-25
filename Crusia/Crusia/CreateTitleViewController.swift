@@ -37,7 +37,7 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
         
         
         
-        let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(IntroduceViewController.donePressed))
+        let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CreateTitleViewController.donePressed))
         
         let flexsibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) // flexible space to add left end side
         
@@ -88,8 +88,8 @@ class CreateTitleViewController: UIViewController,UITextViewDelegate {
     
     
     func donePressed(sender: UIBarButtonItem) {
-        HostingService.shared.introduce = textView.text
-        print("======================",HostingService.shared.introduce)
+        HostingService.shared.title = textView.text
+        print("======================",HostingService.shared.title)
         
         textView.resignFirstResponder()
         
